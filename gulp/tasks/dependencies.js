@@ -13,7 +13,7 @@ gulp.task('clean:dependencies', function(callback) {
 });
 
 gulp.task('rebuild:dependencies', ['clean:dependencies'], function() {
-	return gulp.src(mainBowerFiles(), { base: 'bower_components'})
+	return gulp.src(mainBowerFiles({ includeDev: 'exclusive' }), { base: 'bower_components'})
 		.pipe(gulp.dest(config.src));
 });
 
