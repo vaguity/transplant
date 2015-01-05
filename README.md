@@ -1,4 +1,4 @@
-# Transplant, the Percolate marketing front-end library
+# Transplant: The Percolate marketing front-end library
 
 This is a bower package to include in marketing projects as a dependency.
 
