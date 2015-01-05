@@ -1,0 +1,13 @@
+// ------------------------------------
+// Vertical margin and padding
+// ------------------------------------
+
+$spacing-base: 10px;
+
+$spacing: $spacing-base;
+$spacing-xsmall: $spacing;
+$spacing-small: ($spacing * 2);
+$spacing-xmedium: ($spacing * 3);
+$spacing-medium: ($spacing * 4);
+$spacing-large: ($spacing * 6);
+$spacing-xlarge: ($spacing * 8);

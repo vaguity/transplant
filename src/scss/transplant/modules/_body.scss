@@ -1,0 +1,75 @@
+.body {
+	@include breakpoint($breakpoint-tablet) {
+		.copy {
+			&.third {
+				@include span(3 of 6);
+				&:nth-child(2n) {
+					@include span(3 of 6 last);
+				}
+			}
+		}
+	}
+	@include breakpoint($breakpoint-desktop) {
+		.copy, .q-and-a {
+			@include span(full last);
+			.row {
+				@include break;
+			}
+			&.left {
+				@include span(3 of 6);
+			}
+			&.right {
+				@include span(3 of 6 last);
+			}
+			&.third {
+				@include span(2 of 6);
+				&:nth-child(2n) {
+					@include span(2 of 6);
+				}
+				&:nth-child(3n), &.last {
+					@include span(2 of 6 last);
+				}
+			}
+		}
+	}
+}
+
+.body {
+	.copy {
+		margin-bottom: $spacing-medium;
+		.full {
+			width: 100%;
+			height: auto;
+		}
+		&.center {
+			text-align: center;
+		}
+		&.flush {
+			margin: 0;
+		}
+	}
+	h1 {
+		color: $orange;
+	}
+	p {
+		color: $midgray;
+		font-size: 16px;
+		font-family: $type-base;
+		line-height: 1.5em;
+	}
+	.title {
+		text-align: left;
+		text-transform: uppercase;
+		color: $orange;
+	}
+	.subhed {
+		display: block;
+		font-family: $type-serif;
+		font-size: 24px;
+		color: $midgray-light;
+		text-align: center;
+		text-transform: none;
+		margin: $spacing-small 0;
+		font-weight: normal;
+	}
+}

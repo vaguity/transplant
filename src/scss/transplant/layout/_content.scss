@@ -1,0 +1,87 @@
+.content-container {
+	@include breakpoint($breakpoint-desktop) {
+		@include container(full);
+	}
+}
+
+.content {
+	.container {
+		@include container(4);
+		padding: 0 5%;
+		&.full {
+			@include container(full);
+			padding: 0;
+			section {
+				@include container(4);
+				padding: 5%;
+			}
+			&.bleed {
+				section {
+					@include container(4);
+					padding: 0 5%;
+					&.full {
+						padding: 0;
+						@include container(full);
+					}
+				}
+			}
+			&.flush-bottom {
+				margin-bottom: 0;
+			}
+		}
+		.clear {
+			@include break;
+		}
+	}
+
+	.row {
+		@include span(full break);
+	}
+}
+
+.content {
+	@include breakpoint($breakpoint-desktop) {
+		.container {
+			padding: 0;
+			@include container(1100px);
+			&.full {
+				@include container(full);
+				section {
+					@include container(1100px);
+					padding: 0;
+					&.pad {
+						padding: $spacing-medium;
+					}
+				}
+				&.pad {
+					padding: $spacing-medium;
+				}
+				&.margin {
+					margin: $spacing-large;
+				}
+				&.bleed {
+					section {
+						@include container(1100px);
+						padding: 0;
+						&.full {
+							@include container(full);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.content-container {
+	@include breakpoint($breakpoint-desktop) {
+		margin-top: $spacing-large;
+		&.alternate {
+			margin-top: 0;
+		}
+	}
+}
+
+.container {
+	margin: $spacing-large 0 0;
+}

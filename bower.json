@@ -1,0 +1,39 @@
+{
+  "name": "percolate-transplant",
+  "version": "0.0.1",
+  "main": [
+    "dist/assets/css/transplant.css",
+    "dist/assets/js/transplant.min.js"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "normalize-scss": "~3.0.1",
+    "html5-boilerplate": "~4.3.0",
+    "modernizr": "~2.8.3",
+    "enquire": "~2.1.2",
+    "susy": "~2.1.3",
+    "compass-breakpoint": "~2.5.0",
+    "jquery": "~1.11.1"
+  },
+  "overrides": {
+    "html5-boilerplate": {
+      "main": "css/main.css"
+    },
+    "modernizr": {
+      "main": "modernizr.js"
+    },
+    "susy": {
+      "main": "sass/**"
+    },
+    "compass-breakpoint": {
+      "main": "stylesheets/**"
+    }
+  }
+}

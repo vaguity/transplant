@@ -1,0 +1,135 @@
+// ------------------------------------
+// Header
+// ------------------------------------
+
+// Container
+
+.header-container {
+	@include container(4);
+	padding: 0 5%;
+	@include breakpoint($breakpoint-desktop) {
+		@include container(1100px);
+		padding: 0;
+
+	}
+}
+
+// Header
+
+.header {
+	.logo {
+		@include span(10 of 12);
+	}
+	.nav-icon {
+		@include span(2 of 12 last);
+	}
+	.primary-nav {
+		display: none;
+		@include span(full last);
+	}
+	.secondary-nav {
+		display: none;
+		@include span(full last);
+	}
+	@include breakpoint($breakpoint-desktop) {
+		.logo {
+			@include span(3 of 12);
+		}
+		.nav-icon {
+			display: none;
+		}
+		.primary-nav {
+			display: block;
+			@include span(5 of 12);
+		}
+		.secondary-nav {
+			display: block;
+			@include span(4 of 12 last);
+		}
+	}
+}
+
+.header {
+
+	ul {
+		line-height: 18px;
+		margin: 0;
+		@include breakpoint($breakpoint-desktop) {
+			margin: 30px 0 0 0;
+		}
+	}
+
+	.logo a {
+		display: block;
+		margin: 30px 0;
+		width: 200px;
+		height: 30px;
+	}
+
+	.nav-icon {
+		padding: 0;
+		border: none;
+		color: transparent;
+		background: transparent;
+		font-size: 0;
+		margin: 30px 0;
+		height: 30px;
+		outline: 0;
+	}
+
+	.nav-icon-bar {
+		display: block;
+		background: $blue;
+		width: 20px;
+		height: 2px;
+		margin: 4px 0 4px auto;
+		text-align: right;
+	}
+
+	.primary-nav, .secondary-nav {
+		font-size: 18px;
+		font-family: $type-serif;
+		margin-bottom: $spacing-small;
+		ul li {
+			margin-top: 12px;
+			margin-right: 30px;
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+		@include breakpoint($breakpoint-desktop) {
+			text-align: right;
+			margin-bottom: 0;
+		}
+	}
+
+	@include breakpoint($breakpoint-desktop) {
+		.secondary-nav {
+			font-size: 13px;
+			font-family: $type-base;
+			ul li {
+				margin-top: 12px;
+				margin-right: 30px;
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+			.request-demo {
+				display: inline-block;
+				margin-top: 0;
+				text-transform: uppercase;
+				font-size: 13px;
+				font-family: $type-sans;
+				line-height: 13px;
+				a {
+					display: block;
+					padding: 10px;
+					border: 1px solid $blue;
+					&:hover, &:active {
+						border-color: $orange;
+					}
+				}
+			}
+		}
+	}
+}

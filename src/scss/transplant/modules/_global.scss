@@ -1,0 +1,147 @@
+body {
+	background: $white;
+	color: $darkgray;
+}
+
+.container {
+	color: $midgray;
+	font-size: 16px;
+	font-family: $type-base;
+	line-height: 1.5em;
+}
+
+a {
+	@include link($orange);
+	&.secondary {
+		@include link($blue);
+	}
+}
+
+.button {
+	@include button;
+}
+
+h1 {
+	margin: 0;
+	color: $white;
+	font-weight: 100;
+	font-size: 48px;
+	font-family: $type-serif;
+	line-height: 1.2em;
+    @include breakpoint($breakpoint-tablet) {
+        font-size: 60px;
+    }
+}
+
+h2 {
+	margin: $spacing-medium 0;
+	color: $orange;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 20px;
+	font-family: $type-sans;
+	line-height: 1.4em;
+
+	@include breakpoint($breakpoint-desktop) {
+		margin: $spacing-large 0;
+	}
+}
+
+h3 {
+	margin: $spacing-medium 0;
+	color: $darkgray;
+	font-size: 20px;
+	font-family: $type-sans;
+	line-height: 1.4em;
+}
+
+hr {
+	@include break;
+	margin: $spacing-medium 0;
+	height: 0;
+	border: 1px solid #e0e2e2;
+	border-width: 1px 0 0 0;
+	color: $lightgray;
+
+	@include breakpoint($breakpoint-desktop) {
+		margin: $spacing-large 0;
+	}
+}
+
+nav a, a.secondary {
+	@include link($blue);
+}
+
+form label {
+	display: none;
+}
+
+input, button {
+	display: block;
+	padding: .75em;
+	border: none;
+	line-height: 1em;
+	font-size: 14px;
+	margin: 1em auto;
+	width: 100%;
+	box-sizing: border-box;
+	&:focus {
+		outline: none;
+	}
+	@include breakpoint($breakpoint-tablet) {
+		display: inline-block;
+		width: 40%;
+		margin: 1em .5em;
+	}
+	@include breakpoint($breakpoint-desktop-small) {
+		display: inline-block;
+		width: auto;
+		font-size: 14px;
+		margin: 0 .5em;
+	}
+	&[type="submit"] {
+		display: block;
+		width: auto;
+		padding: .75em 1em;
+		color: $maroon;
+		font-family: $type-sans;
+		background: transparent;
+		text-transform: uppercase;
+		border: 1px solid $maroon;
+		margin: 2em auto;
+		&:hover {
+			color: $orange;
+			border-color: $orange;
+		}
+		@include breakpoint($breakpoint-desktop-small) {
+			display: inline-block;
+			margin: 0 .5em;
+		}
+	}
+}
+
+.break-word {
+	-ms-word-break: break-all;
+	word-break: break-all;
+	word-break: break-word;
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	hyphens: auto;
+}
+
+::-moz-selection {
+    background: $lightorange;
+    text-shadow: none;
+}
+
+::selection {
+    background: $lightorange;
+    text-shadow: none;
+}
+
+.btn {
+    font-family: $type-sans;
+    text-transform: uppercase;
+    border: 1px solid transparent;
+    padding: 6px 12px;
+}
