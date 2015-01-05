@@ -1,7 +1,3 @@
-// ------------------------------------
-// Site scripts
-// ------------------------------------
-
 // Enquire shim
 
 var mediaQueryCheck = Modernizr.mq('only all');
@@ -15,7 +11,6 @@ if (!mediaQueryCheck) {
 		}
 	};
 }
-
 
 // Mobile navigation
 
