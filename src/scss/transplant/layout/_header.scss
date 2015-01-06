@@ -1,33 +1,24 @@
-// ------------------------------------
-// Header
-// ------------------------------------
-
-// Container
-
 .header-container {
 	@include container(4);
 	padding: 0 5%;
 	@include breakpoint($breakpoint-desktop) {
-		@include container(1100px);
+		@include container(full);
 		padding: 0;
-
 	}
 }
 
-// Header
-
 .header {
+	@include breakpoint($breakpoint-desktop) {
+		@include container(1100px);
+		padding: 0;
+	}
 	.logo {
 		@include span(10 of 12);
 	}
 	.nav-icon {
 		@include span(2 of 12 last);
 	}
-	.primary-nav {
-		display: none;
-		@include span(full last);
-	}
-	.secondary-nav {
+	.primary-nav, .secondary-nav {
 		display: none;
 		@include span(full last);
 	}
@@ -50,7 +41,6 @@
 }
 
 .header {
-
 	ul {
 		line-height: 18px;
 		margin: 0;

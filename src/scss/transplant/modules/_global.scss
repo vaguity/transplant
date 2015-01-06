@@ -41,7 +41,6 @@ h2 {
 	font-size: 20px;
 	font-family: $type-sans;
 	line-height: 1.4em;
-
 	@include breakpoint($breakpoint-desktop) {
 		margin: $spacing-large 0;
 	}
@@ -62,7 +61,6 @@ hr {
 	border: 1px solid #e0e2e2;
 	border-width: 1px 0 0 0;
 	color: $lightgray;
-
 	@include breakpoint($breakpoint-desktop) {
 		margin: $spacing-large 0;
 	}

@@ -1,13 +1,8 @@
-// ------------------------------------
 // White and black
-// ------------------------------------
-
 $white: #fff;
 $black: #000;
 
-// ------------------------------------
 // Gray
-// ------------------------------------
 $gray2: #2b2c30;
 $gray3: #3c3c3e;
 $gray6: #666;
@@ -27,41 +22,29 @@ $lightgray: $grayE;
 $offwhite: $grayF5;
 $offwhite-light: $grayF9;
 
-// ------------------------------------
 // Primary colors
-// ------------------------------------
-
 $orange: #f16421;
 $blue: #0a506c;
 $darkorange: #b6400f;
 $lightorange: #fbd0bc;
 
-// ------------------------------------
 // Secondary colors
-// ------------------------------------
-
-$purple: #1f093c;
+$purple: #1f093c; // Probably change this to navy or blue at some point
 $maroon: #a42c50;
 $blue2: #2b5b91;
 
-// ------------------------------------
 // Alert colors
-// ------------------------------------
-
 $lightgreen: #f9ffe4;
 $green: #efffba;
 $darkgreen: #9fcb00;
 
-// ------------------------------------
 // Transparent colors
-// ------------------------------------
-
 $white-transparent: rgba($white, .8);
 $white-transparent-95: rgba($white, .95);
 
 $offwhite-transparent: rgba($offwhite, .8);
 $orange-transparent: rgba($orange, .8);
-$blue2-transparent: rgba(10, 79, 108, .8);
+$blue2-transparent: rgba(10, 79, 108, .8); // This is not actually $blue2, needs audit
 
 $purple-transparent: rgba($purple, .8);
 $purple-transparent-60: rgba($purple, .6);
