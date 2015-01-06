@@ -21,6 +21,15 @@ $(document).ready(function() {
 	});
 });
 
+$(window).load(function() {
+	if ($('.footer-container').length) {
+		if ($('body').height() < $(window).height()) {
+			var footerPadding = $(window).height() - $('body').height();
+			$('.footer-container').css('padding-bottom', footerPadding + 'px');
+		}
+	}
+});
+
 enquire.register("screen and (min-width: 1180px)", {
 	// Handle switch between previously toggled nav and desktop breakpoint
 	match: function() {
