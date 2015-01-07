@@ -1,10 +1,9 @@
 {
   "name": "transplant",
-  "version": "0.2.0",
+  "version": "0.2.3",
   "main": [
     "dist/assets/css/transplant.css",
-    "dist/assets/js/transplant.min.js",
-    "src/scss/transplant/variables"
+    "dist/assets/js/transplant.js"
   ],
   "private": true,
   "ignore": [
@@ -12,7 +11,14 @@
     "node_modules",
     "bower_components",
     "test",
-    "tests"
+    "tests",
+    "gulp",
+    "gulpfile.js",
+    "dist/*.html",
+    "src/css",
+    "src/js",
+    "src/lib",
+    "src/scss/lib"
   ],
   "devDependencies": {
     "normalize-scss": "~3.0.1",
