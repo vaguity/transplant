@@ -67,5 +67,23 @@
 }
 
 .typography-sample {
-
+	h1 {
+		color: $black;
+		text-align: center;
+		font-size: 100px;
+		line-height: 1.1em;
+	}
+	h1.alt {
+		color: $orange;
+		text-align: left;
+		font-size: 60px;
+		line-height: 1.1em;
+	}
+	p.highlight {
+		font-size: 24px;
+		line-height: 1.33em;
+		color: #2b2c30;
+		font-family: "Sentinel A","Sentinel B",Georgia,serif;
+		font-weight: 100;
+	}
 }
