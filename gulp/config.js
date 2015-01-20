@@ -52,7 +52,12 @@ var config = {
 			{
 				name: 'compass-breakpoint',
 				dest: packageType.cssLib,
-			}
+			},
+			{
+				name: 'ScrollMagic',
+				path: '/js',
+				dest: packageType.jsLib,
+			},
 		]
 	},
 };

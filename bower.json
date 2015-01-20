@@ -27,7 +27,8 @@
     "enquire": "~2.1.2",
     "susy": "~2.2.1",
     "compass-breakpoint": "~2.5.0",
-    "jquery": "~1.11.1"
+    "jquery": "~1.11.1",
+    "ScrollMagic": "~1.3.0"
   },
   "overrides": {
     "html5-boilerplate": {

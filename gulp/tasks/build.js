@@ -41,16 +41,16 @@ gulp.task('build', ['sass'], function() {
 			.on('error', handleErrors)
 			.pipe(gulp.dest(config.js.dist));
 
-		var scriptsmin = gulp.src(config.js.src)
-			.pipe(uglify())
-			.pipe(rename({ suffix: '.min' }))
-			.on('error', handleErrors)
-			.pipe(gulp.dest(config.js.dist));
+		// var scriptsmin = gulp.src(config.js.src)
+		// 	.pipe(uglify())
+		// 	.pipe(rename({ suffix: '.min' }))
+		// 	.on('error', handleErrors)
+		// 	.pipe(gulp.dest(config.js.dist));
 
 		var reload = gulp.src('')
 			.pipe(gulpif(watchCheck, livereload()));
 
-		return merge(styles, scripts, scriptsmin, reload);
+		return merge(styles, scripts, reload);
 	}
 
 });
