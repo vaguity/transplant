@@ -113,3 +113,23 @@
 		font-weight: 100;
 	}
 }
+
+.parallax-container .parallax-fixed {
+	height: 580px;
+	&.pinned {
+		// position: fixed;
+		// top: 0px;
+	}
+}
+
+.parallax-container .parallax-fixed > div {
+	z-index: 0;
+	width: 100%;
+}
+
+.parallax-container .parallax-sections {
+	z-index: 1;
+	position: relative;
+	background: $white;
+	padding-top: 1px;
+}
