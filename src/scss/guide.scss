@@ -2,10 +2,11 @@
 @import 'transplant/variables/base';
 
 .swatch {
-	@include span(1 of 6);
-	&:nth-of-type(6n) {
-		@include span(1 of 6 last);
+	@include span(1 of 12);
+	&:nth-of-type(12n) {
+		@include span(1 of 12 last);
 	}
+
 	p {
 		color: $midgray-light;
 		font-size: 12px;
@@ -40,6 +41,9 @@
 	.color.blue2 {
 		background: $blue2;
 	}
+	.color.black {
+		background: $black;
+	}
 	.color.darkgray {
 		background: $gray2;
 	}
@@ -64,6 +68,16 @@
 	.color.offwhite-light {
 		background: $grayF9;
 	}
+	.color.white {
+		background: $white;
+	}
+}
+
+.left .swatch, .right .swatch {
+	@include span(1 of 6);
+	&:nth-of-type(6n) {
+		@include span(1 of 6 last);
+	}
 }
 
 .typography-sample {
@@ -72,18 +86,30 @@
 		text-align: center;
 		font-size: 100px;
 		line-height: 1.1em;
+		margin: $spacing-xlarge 0;
 	}
 	h1.alt {
 		color: $orange;
 		text-align: left;
 		font-size: 60px;
-		line-height: 1.1em;
+		font-weight: 100;
+	}
+	p {
+		margin: $spacing-xlarge 0;
 	}
 	p.highlight {
 		font-size: 24px;
 		line-height: 1.33em;
-		color: #2b2c30;
-		font-family: "Sentinel A","Sentinel B",Georgia,serif;
+		color: $darkgray;
+		font-family: $type-serif;
+		font-weight: 100;
+	}
+	p.quote {
+		font-family: $type-serif;
+		font-size: 32px;
+		line-height: 1.25em;
+		color: $darkgray;
+		font-style: italic;
 		font-weight: 100;
 	}
 }
