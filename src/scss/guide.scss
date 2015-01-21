@@ -4,6 +4,9 @@
 @import 'lib/susy';
 @import 'transplant/variables/base';
 
+
+// Palette
+
 .swatch {
 	@include span(1 of 12);
 	&:nth-of-type(12n) {
@@ -83,6 +86,9 @@
 	}
 }
 
+
+// Typography guide
+
 .typography-sample {
 	h1 {
 		color: $black;
@@ -115,6 +121,13 @@
 		font-style: italic;
 		font-weight: 100;
 	}
+}
+
+
+// Parallax prototyping
+
+.parallax-container {
+	margin-top: 0;
 }
 
 .parallax-container .parallax-fixed {

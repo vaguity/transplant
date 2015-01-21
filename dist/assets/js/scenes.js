@@ -1,4 +1,5 @@
 $(document).ready(function($) {
+	$('.parallax-fixed').height($('.hero').height());
 	// init controller
 	var controller = new ScrollMagic({ globalSceneOptions: { triggerHook: 'onLeave' } });
 

@@ -78,12 +78,7 @@
 }
 
 .content-container {
-	@include breakpoint($breakpoint-desktop) {
-		margin-top: $spacing-large;
-		&.alternate {
-			margin-top: 0;
-		}
-	}
+	margin-top: 0;
 }
 
 .container {
