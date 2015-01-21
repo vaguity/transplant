@@ -11,12 +11,12 @@
 		&.full {
 			@include container(full);
 			padding: 0;
-			section {
+			section, nav {
 				@include container(4);
 				padding: 5%;
 			}
 			&.bleed {
-				section {
+				section, nav {
 					@include container(4);
 					padding: 0 5%;
 					&.full {
@@ -24,6 +24,10 @@
 						@include container(full);
 					}
 				}
+			}
+			&.flush {
+				margin-top: 0;
+				margin-bottom: 0;
 			}
 			&.flush-bottom {
 				margin-bottom: 0;
@@ -46,7 +50,7 @@
 			@include container(1100px);
 			&.full {
 				@include container(full);
-				section {
+				section, nav {
 					@include container(1100px);
 					padding: 0;
 					&.pad {
@@ -60,7 +64,7 @@
 					margin: $spacing-large;
 				}
 				&.bleed {
-					section {
+					section, nav {
 						@include container(1100px);
 						padding: 0;
 						&.full {

@@ -1,13 +1,3 @@
-.hero-container {
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	margin: 0;
-	@include breakpoint($breakpoint-desktop) {
-		margin-top: $spacing-medium;
-	}
-}
-
 .hero {
 	color: $white;
 	background: $orange;
@@ -71,7 +61,7 @@
 	}
 }
 
-.hero-container-alternate {
+.hero-container {
 	margin: 0;
 	background-position: center;
 	background-repeat: no-repeat;
