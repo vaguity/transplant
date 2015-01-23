@@ -1,0 +1,32 @@
+.demo-form-container {
+	background: $offwhite-light;
+}
+
+.demo-form {
+	color: $maroon;
+	text-align: center;
+	font-size: 24px;
+	h3 {
+		color: $maroon;
+		text-transform: uppercase;
+	}
+	p {
+		font-family: $type-serif;
+		margin: 2em 0;
+	}
+	input, button {
+		margin: 1em .5em;
+		font-size: 16px;
+	}
+}
+
+.mktoCustomError {
+	font-size: 14px;
+	color: $red;
+	border-bottom: 1px solid $midred;
+	background: $lightred;
+}
+
+.mktoError {
+	display: none !important;
+}

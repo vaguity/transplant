@@ -76,6 +76,10 @@ form label {
 	display: none;
 }
 
+input {
+	@include placeholder;
+}
+
 input, button {
 	display: block;
 	padding: .75em;

@@ -9,6 +9,15 @@
 .footer {
 	@include breakpoint($breakpoint-desktop) {
 		@include container(1100px);
+		.site-section {
+			@include span(1 of 6);
+			&:nth-of-type(6n) {
+				@include span(1 of 6 last);
+			}
+		}
+		.site-nav {
+			@include container;
+		}
 		.footer-logo {
 			@include span(3 of 12);
 		}
@@ -35,6 +44,24 @@
 	display: block;
 	width: 200px;
 	height: 30px;
+}
+
+.site-nav {
+	font-size: 13px;
+	padding-bottom: $spacing-medium;
+	border-bottom: 1px solid $darkorange;
+	h4 {
+		font-size: 16px;
+		margin: 1em 0;
+	}
+	ul li {
+		display: block;
+		margin: .75em 0;
+	}
+}
+
+.footer .secondary-nav {
+	margin-top: $spacing-xsmall;
 }
 
 .footer-nav {

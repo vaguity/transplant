@@ -96,8 +96,8 @@
 	}
 	@include breakpoint($breakpoint-desktop) {
 		h1 {
-			padding: 3.3em 0;
-			min-height: 2.2em;
+			padding: 180px 0;
+			min-height: 2.2em; // 220px
 			font-size: 100px;
 			line-height: 1.1em;
 		}
