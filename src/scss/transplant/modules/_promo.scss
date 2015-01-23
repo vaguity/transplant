@@ -1,0 +1,28 @@
+.promo-container {
+	.mask {
+		background: $purple-transparent-half;
+	}
+}
+
+.promo {
+	color: $white;
+	text-align: center;
+	h3 {
+		color: $white;
+		text-transform: uppercase;
+	}
+	p {
+		font-family: $type-serif;
+		font-size: 24px;
+		margin: 2em 0;
+		line-height: 1.5em;
+	}
+	.jump {
+		margin: 2em 0;
+	}
+	.btn {
+		@include link($white, $orange);
+		display: inline-block;
+		padding: .5em 1em;
+	}
+}
