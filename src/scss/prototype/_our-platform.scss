@@ -1,0 +1,140 @@
+.content.our-platform {
+
+	.hero-container {
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-image: url('../img/our_platform_hero.jpg');
+		background-size: cover;
+	}
+	.mask {
+		min-height: 900px;
+	}
+
+	.hero {
+		.copy {
+			padding-top: 220px;
+			padding-bottom: 220px;
+			&.left {
+				@include span(4 of 12);
+				@include prefix(1 of 12);
+				@include suffix(1 of 12);
+				text-align: left;
+				display: none;
+			}
+			&.right {
+				@include span(6 of 12 last);
+				text-align: center;
+				display: none;
+			}
+		}
+		h1 {
+			font-size: 48px;
+			padding: 0;
+			margin: 1em 0;
+		}
+		p {
+			font-size: 18px;
+			line-height: 1.4em;
+			font-family: $type-serif;
+		}
+		img {
+			margin: 1em 0;
+		}
+	}
+
+	.sub-nav {
+		ul {
+			margin: 1em 0;
+		}
+		.home a {
+			@include link($orange);
+		}
+		li {
+			@include span(1 of 9);
+			text-align: center;
+			&:nth-of-type(1) {
+				text-align: left;
+			}
+			&:nth-of-type(9) {
+				@include span(1 of 9 last);
+			}
+		}
+	}
+
+	.body {
+		h2 {
+			color: $black;
+			text-transform: none;
+			text-align: left;
+			margin: 4em 0;
+		}
+		.copy, .image {
+			min-height: 900px;
+			margin-bottom: 0;
+		}
+		.image {
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+		.left {
+			@include span(6 of 12);
+		}
+		.right {
+			@include span(4 of 12 last);
+			@include prefix(1 of 12);
+			@include suffix(1 of 12);
+		}
+		.highlight {
+			font-family: $type-serif;
+			font-size: 24px;
+		}
+		ul {
+			padding-left: 0;
+			list-style-type: none;
+			border-bottom: 1px solid $lightgray;
+			li {
+				border-top: 1px solid $lightgray;
+			}
+			a {
+				@include link($blue);
+				display: inline-block;
+				padding: 1em 0;
+				width: 100%;
+			}
+			.icon {
+				margin-right: 1em;
+			}
+			.icon-right {
+				float: right;
+				margin-right: 0;
+			}
+		}
+	}
+
+
+}
+
+.content.our-platform {
+	#plan .image {
+		background-image: url('../img/plan_highlight.jpg');
+	}
+	#inspire .image {
+		background-image: url('../img/inspire_highlight.jpg');
+	}
+	#source .image {
+		background-image: url('../img/source_highlight.jpg');
+	}
+	#create .image {
+		background-image: url('../img/create_highlight.jpg');
+	}
+	#distribute .image {
+		background-image: url('../img/distribute_highlight.jpg');
+	}
+	#convert .image {
+		background-image: url('../img/convert_highlight.jpg');
+	}
+	#learn .image {
+		background-image: url('../img/learn_highlight.jpg');
+	}
+}
