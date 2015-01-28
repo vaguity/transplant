@@ -85,18 +85,11 @@ $(function() {
 	var timer;
 	$(window).scroll(function() {
 		scrollCheck = $(this).scrollTop();
-		if (Math.abs(scrollCheck - scrollLast) > 20) {
-			scrollDirection = false;
-		}
-		else if (scrollCheck > scrollLast) {
-			scrollDirection = 'down';
-		}
-		else {
-			scrollDirection = 'up';
-		}
+		scrollDistance = scrollCheck - scrollLast;
+		scrollLast = scrollCheck;
     	clearTimeout(timer);
     	timer = setTimeout(function() {
-      		$(window).trigger("scrollStop");
+      		$(window).trigger('scrollStop');
     	}, 250);
     	scrollLast = scrollCheck;
   	});
@@ -105,29 +98,29 @@ $(function() {
 $(window).bind('scrollStop', function() {
 	var currentPage = {};
 
-	// function scrollCheckPage() {
-	// 	for (var i = 0; i < pagesLength; i++) {
-	// 		if (pages[i].top === null) {
-	// 			return;
-	// 		}
-	// 		if (window.scrollY < pages[i].top) {
-	// 			if ((i - 1) > -1) {
-	// 				currentPage = pages[i - 1];
-	// 			}
-	// 		}
-	// 		break;
-	// 	}
+	function scrollCheckPage() {
+		for (var i = 0; i < pagesLength; i++) {
+			if (pages[i].top === null) {
+				return;
+			}
+			if (window.scrollY < pages[i].top) {
+				if ((i - 1) > -1) {
+					currentPage = pages[i - 1];
+				}
+			}
+			break;
+		}
+	}
+
+	// if (scrollDirection === 'down') {
+
 	// }
+	// else if (scrollDirection === 'up') {
 
-	if (scrollDirection === 'down') {
-
-	}
-	else if (scrollDirection) === 'up') {
-
-	}
-	else {
-		// don't change the page, but align it if we're on a page
-	}
+	// }
+	// else {
+	// 	// don't change the page, but align it if we're on a page
+	// }
 
 	for (var i = 0; i < pagesLength; i++) {
 		if (pages[i].top === null) {
