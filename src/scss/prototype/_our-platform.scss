@@ -138,3 +138,10 @@
 		background-image: url('../img/learn_highlight.jpg');
 	}
 }
+
+.content.our-platform {
+	overflow-x: hidden;
+	> .container {
+		position: relative;
+	}
+}

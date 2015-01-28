@@ -58,6 +58,10 @@ var config = {
 				path: '/js',
 				dest: packageType.jsLib,
 			},
+			{
+				name: 'panelsnap',
+				dest: packageType.jsLib,
+			}
 		]
 	},
 };

@@ -31,14 +31,11 @@ var pages = [
 
 var pagesLength = pages.length;
 
-var scrollLast = 0;
-var scrollDirection = false;
-var scrollBottom = 0;
-
 $(document).ready(function() {
 	var windowHeight = $(window).height();
 	$('.hero-container .mask, .hero-container .hero').css('min-height', windowHeight + 'px');
 	$('.body-container .image.left').css('min-height', windowHeight + 'px');
+	$('.content.our-platform').css('height', windowHeight + 'px');
 	// set section, mask to min-height of window height
 	// grab height of .hero .copy.left and .hero .copy.right and add padding to vertically center
 });
@@ -51,6 +48,7 @@ $(window).load(function() {
 	var vertCenterSelectors = [
 		'.hero .copy.left',
 		'.hero .copy.right',
+		'.our-platform-sections',
 		'#plan .copy.right',
 		'#inspire .copy.right',
 		'#source .copy.right',
@@ -77,8 +75,52 @@ $(window).load(function() {
 	for (var i = 0; i < pagesLength; i++) {
 		pages[i].top = $(pages[i].id).position().top;
 	}
+	$('.header-container').slideUp();
+	$('.footer-container').hide();
+	$('.content.our-platform').panelSnap({
+		panelSelector: '> .container',
+		directionThreshold: 20,
+		slideSpeed: 400,
+	});
 
 });
+
+
+// ------------------------------------
+// Scrolling pagination
+// ------------------------------------
+/*
+// Global variables
+var scrollLast = 0;
+var scrollCurrent = 0;
+var scrollDirection = false;
+var scrollBottom = 0;
+
+// Cribbed scroll velocity detector, to deal with inertia scrolling
+var scrollVelocity = 0;
+var velocityRating = 1;
+function calculateVelocity() {
+    scrollLast = scrollCurrent;
+    scrollCurrent = $('#content').scrollTop();
+    scrollVelocity = scrollLast - scrollCurrent;
+    if (scrollVelocity > 20 || scrollVelocity < -20) {
+        velocityRating = 5;
+    } else {
+        velocityRating = 1;
+    }
+}
+
+$('#content').scroll(function () {
+    // get velocity while scrolling...
+    calculateVelocity();
+    // wait until finished scrolling...
+    clearTimeout($.data(this, 'scrollTimer'));
+    $.data(this, 'scrollTimer', setTimeout(function() {
+        // do your animation
+        $('#content').animate({scrollTop: snapPoint}, 300);
+    }, 300*velocityRating)); // short or long duration...
+});
+
 
 // could probably elegantly convert this using the debounce plugin?
 $(function() {
@@ -94,6 +136,14 @@ $(function() {
     	scrollLast = scrollCheck;
   	});
 });
+
+$(window).on('touchmove', function() {
+	console.log('touchmove triggered');
+});
+
+// $(window).bind('touchmove', function() {
+// 	console.log('moving!');
+// })
 
 $(window).bind('scrollStop', function() {
 	var currentPage = {};
@@ -151,6 +201,7 @@ $(window).bind('scrollStop', function() {
 	}
 
 });
+*/
 
 /*
 
