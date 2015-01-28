@@ -280,7 +280,7 @@
 			            	$('#mktoForm_1278 .mktoRequired').each(function() {
 			            		if ($(this).val() == '') {
 			            			form.submittable(false);
-			            			$('.mktoCustomError').html('Please fill out all the fields.').css('display', 'block');
+			            			$('.mktoCustomError').html('<strong>Uh oh.</strong> Please fill out all the fields.').css('display', 'block');
 			            		}
 			            	});
 			                var emailVal = $(formSelector + ' input#Email').val();
@@ -290,7 +290,7 @@
 			                for (i in personalDomains) {
 			                    if (emailDomain == personalDomains[i]) {
 			                        form.submittable(false);
-			                        $('.mktoCustomError').html('Please enter your company email address.').css('display', 'block');
+			                        $('.mktoCustomError').html('<strong>Uh oh.</strong> Please enter your company email address.').css('display', 'block');
 			                    }
 			                }
 			            });

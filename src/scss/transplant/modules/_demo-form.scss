@@ -21,10 +21,12 @@
 }
 
 .mktoCustomError {
-	font-size: 14px;
+	font-size: 16px;
 	color: $red;
 	border-bottom: 1px solid $midred;
 	background: $lightred;
+	line-height: 2em;
+	margin: 2em 0;
 }
 
 .mktoError {
