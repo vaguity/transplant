@@ -12,7 +12,7 @@
 		text-transform: uppercase;
 	}
 	a {
-		@include link($white);
+		@include link($white, $orange);
 	}
 	p {
 		font-family: $type-serif;
@@ -23,5 +23,11 @@
 	.jump {
 		margin: 2em 0;
 		font-size: 18px;
+		a {
+			@include link($white, $white);
+			&:hover {
+				text-decoration: underline;
+			}
+		}
 	}
 }
