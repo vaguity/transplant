@@ -1,38 +1,39 @@
 var pages = [
 	{
 		id: '#plan',
-		top: 0,
+		top: null,
 	},
 	{
 		id: '#inspire',
-		top: 0,
+		top: null,
 	},
 	{
 		id: '#source',
-		top: 0,
+		top: null,
 	},
 	{
 		id: '#create',
-		top: 0,
+		top: null,
 	},
 	{
 		id: '#distribute',
-		top: 0,
+		top: null,
 	},
 	{
 		id: '#convert',
-		top: 0,
+		top: null,
 	},
 	{
 		id: '#learn',
-		top: 0,
+		top: null,
 	},
 ];
 
 var pagesLength = pages.length;
 
-var lastScroll = $(window).scrollTop();
-var scrollDirection = 'down';
+var scrollLast = 0;
+var scrollDirection = false;
+var scrollBottom = 0;
 
 $(document).ready(function() {
 	var windowHeight = $(window).height();
@@ -43,7 +44,10 @@ $(document).ready(function() {
 });
 
 $(window).load(function() {
-	var windowHeight = $(window).height();
+	var windowHeight = $(this).height();
+	scrollLast = $(this).scrollTop();
+	scrollBottom = $(this).scrollTop() + $(this).height();
+
 	var vertCenterSelectors = [
 		'.hero .copy.left',
 		'.hero .copy.right',
@@ -76,37 +80,15 @@ $(window).load(function() {
 
 });
 
-// this should only fire when scrolling stops
-// $(window).scroll(function() {
-// 	var currentPage = {};
-// 	for (var i = 0; i < pagesLength; i++) {
-// 		if (window.scrollY < pages[i].top) {
-// 			window.scrollTo(0, currentPage.top);
-// 			console.log('1');
-// 			return;
-// 		}
-// 		else {
-// 			if (window.scrollY >= pages[i].top) {
-// 				console.log('current page set');
-// 				currentPage = pages[i];
-// 			}
-// 			else {
-// 				window.scrollTo(0, currentPage.top);
-// 				console.log(pages[i].top);
-// 				return;
-// 			}
-// 		}
-// 	}
-// });
-
+// could probably elegantly convert this using the debounce plugin?
 $(function() {
 	var timer;
 	$(window).scroll(function() {
 		scrollCheck = $(this).scrollTop();
-		if (Math.abs(scrollCheck - lastScroll) > 20) {
+		if (Math.abs(scrollCheck - scrollLast) > 20) {
 			scrollDirection = false;
 		}
-		else if (scrollCheck > lastScroll) {
+		else if (scrollCheck > scrollLast) {
 			scrollDirection = 'down';
 		}
 		else {
@@ -116,30 +98,65 @@ $(function() {
     	timer = setTimeout(function() {
       		$(window).trigger("scrollStop");
     	}, 250);
-    	lastScroll = scrollCheck;
+    	scrollLast = scrollCheck;
   	});
 });
 
-$(window).bind("scrollStop", function() {
+$(window).bind('scrollStop', function() {
 	var currentPage = {};
-	if (scrollDirection === false) {
-		// drop user on page they were previously on
+
+	// function scrollCheckPage() {
+	// 	for (var i = 0; i < pagesLength; i++) {
+	// 		if (pages[i].top === null) {
+	// 			return;
+	// 		}
+	// 		if (window.scrollY < pages[i].top) {
+	// 			if ((i - 1) > -1) {
+	// 				currentPage = pages[i - 1];
+	// 			}
+	// 		}
+	// 		break;
+	// 	}
+	// }
+
+	if (scrollDirection === 'down') {
+
 	}
+	else if (scrollDirection) === 'up') {
+
+	}
+	else {
+		// don't change the page, but align it if we're on a page
+	}
+
 	for (var i = 0; i < pagesLength; i++) {
-		if (window.scrollY < pages[i].top) {
-			window.scrollTo(0, currentPage.top);
+		if (pages[i].top === null) {
 			return;
+		}
+		if (window.scrollY < pages[i].top) {
+			// window.scrollTo(0, currentPage.top);
+			if ((i - 1) > -1) {
+				currentPage = pages[i - 1];
+			}
+			break;
 		}
 		else {
 			if (window.scrollY >= pages[i].top) {
+				// console.log(scrollDirection + ' ' + (window.scrollY - pages[i].top));
 				currentPage = pages[i];
 			}
 			else {
-				window.scrollTo(0, currentPage.top);
-				return;
+				continue;
 			}
 		}
 	}
+	if ($.isEmptyObject(currentPage)) {
+		return;
+	}
+	else {
+		window.scrollTo(0, currentPage.top);
+	}
+
 });
 
 /*
