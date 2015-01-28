@@ -154,7 +154,17 @@
 // Blue Bottle case study promo example
 
 .promo-container.blue-bottle {
-	background: url('http://placekitten.com/1280/580');
+	background: url('../img/blue_bottle_promo.jpg');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+// Next module example
+
+.next-container.ambassador {
+	background: url('../img/ambassador_next.jpg');
+	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
 }

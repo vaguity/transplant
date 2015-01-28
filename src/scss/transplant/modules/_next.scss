@@ -1,0 +1,27 @@
+.next-container {
+	.mask {
+		background: $purple-transparent-half;
+	}
+}
+
+.next {
+	color: $white;
+	text-align: center;
+	h3 {
+		color: $white;
+		text-transform: uppercase;
+	}
+	a {
+		@include link($white);
+	}
+	p {
+		font-family: $type-serif;
+		font-size: 60px;
+		margin: 1em 0;
+		line-height: 1em;
+	}
+	.jump {
+		margin: 2em 0;
+		font-size: 18px;
+	}
+}

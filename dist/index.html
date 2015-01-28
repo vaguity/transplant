@@ -267,8 +267,8 @@
 				</div>
 				<div class="form">
 					<script src="//app-sj02.marketo.com/js/forms2/js/forms2.js"></script>
-					<form id="mktoForm_1278"></form>
 					<div class="mktoCustomError" style="display: none;"></div>
+					<form id="mktoForm_1278"></form>
 					<script>
 					var formSelector = '#mktoForm_1278';
 					MktoForms2.loadForm("//app-sj02.marketo.com", "306-EXV-607", 1278, function(form) {
@@ -277,6 +277,12 @@
 			                return false;
 			            });
 			            form.onValidate(function(callback) {
+			            	$('#mktoForm_1278 .mktoRequired').each(function() {
+			            		if ($(this).val() == '') {
+			            			form.submittable(false);
+			            			$('.mktoCustomError').html('Please fill out all the fields.').css('display', 'block');
+			            		}
+			            	});
 			                var emailVal = $(formSelector + ' input#Email').val();
 			                var emailDomain = emailVal.replace(/.+@([^.]+).+/, '\$1');
 			                var i = 0;
@@ -311,6 +317,20 @@
 					<p>Learn how Percolate provides Blue Bottle Coffee with a central hub for content marketing, employee collaboration, and brand ambassadorship.</p>
 
 					<div class="jump"><a href="#" class="btn">View Case Study</a></div>
+				</div>
+			</section>
+			</div>
+		</div>
+
+		<div class="next-container container full ambassador">
+			<div class="mask">
+			<section class="next pad">
+				<div class="copy">
+					<h3>Next Product</h3>
+
+					<p><a href="#">Ambassador App</a></p>
+
+					<div class="jump"><a href="#">Back to Platform</a></div>
 				</div>
 			</section>
 			</div>
