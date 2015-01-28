@@ -1,3 +1,39 @@
+var pages = [
+	{
+		id: '#plan',
+		top: 0,
+	},
+	{
+		id: '#inspire',
+		top: 0,
+	},
+	{
+		id: '#source',
+		top: 0,
+	},
+	{
+		id: '#create',
+		top: 0,
+	},
+	{
+		id: '#distribute',
+		top: 0,
+	},
+	{
+		id: '#convert',
+		top: 0,
+	},
+	{
+		id: '#learn',
+		top: 0,
+	},
+];
+
+var pagesLength = pages.length;
+
+var lastScroll = $(window).scrollTop();
+var scrollDirection = 'down';
+
 $(document).ready(function() {
 	var windowHeight = $(window).height();
 	$('.hero-container .mask, .hero-container .hero').css('min-height', windowHeight + 'px');
@@ -34,6 +70,76 @@ $(window).load(function() {
 	$('.hero .copy.left').fadeIn();
 	$('.hero .copy.right').fadeIn();
 
+	for (var i = 0; i < pagesLength; i++) {
+		pages[i].top = $(pages[i].id).position().top;
+	}
+
+});
+
+// this should only fire when scrolling stops
+// $(window).scroll(function() {
+// 	var currentPage = {};
+// 	for (var i = 0; i < pagesLength; i++) {
+// 		if (window.scrollY < pages[i].top) {
+// 			window.scrollTo(0, currentPage.top);
+// 			console.log('1');
+// 			return;
+// 		}
+// 		else {
+// 			if (window.scrollY >= pages[i].top) {
+// 				console.log('current page set');
+// 				currentPage = pages[i];
+// 			}
+// 			else {
+// 				window.scrollTo(0, currentPage.top);
+// 				console.log(pages[i].top);
+// 				return;
+// 			}
+// 		}
+// 	}
+// });
+
+$(function() {
+	var timer;
+	$(window).scroll(function() {
+		scrollCheck = $(this).scrollTop();
+		if (Math.abs(scrollCheck - lastScroll) > 20) {
+			scrollDirection = false;
+		}
+		else if (scrollCheck > lastScroll) {
+			scrollDirection = 'down';
+		}
+		else {
+			scrollDirection = 'up';
+		}
+    	clearTimeout(timer);
+    	timer = setTimeout(function() {
+      		$(window).trigger("scrollStop");
+    	}, 250);
+    	lastScroll = scrollCheck;
+  	});
+});
+
+$(window).bind("scrollStop", function() {
+	var currentPage = {};
+	if (scrollDirection === false) {
+		// drop user on page they were previously on
+	}
+	for (var i = 0; i < pagesLength; i++) {
+		if (window.scrollY < pages[i].top) {
+			window.scrollTo(0, currentPage.top);
+			return;
+		}
+		else {
+			if (window.scrollY >= pages[i].top) {
+				currentPage = pages[i];
+			}
+			else {
+				window.scrollTo(0, currentPage.top);
+				return;
+			}
+		}
+	}
 });
 
 /*
