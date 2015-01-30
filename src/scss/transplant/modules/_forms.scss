@@ -1,0 +1,51 @@
+form label {
+	display: none;
+}
+
+input {
+	@include placeholder;
+}
+
+input, button {
+	display: block;
+	padding: .75em;
+	border: none;
+	line-height: 1em;
+	font-size: 14px;
+	margin: 1em auto;
+	width: 100%;
+	box-sizing: border-box;
+	&:focus {
+		outline: none;
+	}
+	@include breakpoint($breakpoint-tablet) {
+		display: inline-block;
+		width: 40%;
+		margin: 1em .5em;
+	}
+	@include breakpoint($breakpoint-desktop-small) {
+		display: inline-block;
+		width: auto;
+		font-size: 14px;
+		margin: 0 .5em;
+	}
+	&[type="submit"] {
+		display: block;
+		width: auto;
+		padding: .75em 1em;
+		color: $maroon;
+		font-family: $type-sans;
+		background: transparent;
+		text-transform: uppercase;
+		border: 1px solid $maroon;
+		margin: 2em auto;
+		&:hover {
+			color: $orange;
+			border-color: $orange;
+		}
+		@include breakpoint($breakpoint-desktop-small) {
+			display: inline-block;
+			margin: 0 .5em;
+		}
+	}
+}

@@ -80,7 +80,7 @@ $(window).load(function() {
 	$('.content.our-platform').panelSnap({
 		panelSelector: '> .container',
 		directionThreshold: 20,
-		slideSpeed: 200,
+		slideSpeed: 400,
 	});
 
 });
