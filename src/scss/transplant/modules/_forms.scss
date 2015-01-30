@@ -6,6 +6,11 @@ input {
 	@include placeholder;
 }
 
+input[type="text"], input[type="email"], textarea {
+	border: 1px solid $lightgray;
+	margin: .5em 0;
+}
+
 input, button {
 	display: block;
 	padding: .75em;
@@ -47,5 +52,17 @@ input, button {
 			display: inline-block;
 			margin: 0 .5em;
 		}
+	}
+}
+
+textarea {
+	box-sizing: border-box;
+	width: 100%;
+	resize: none;
+	font-size: 14px;
+	padding: .5em .75em;
+	@include breakpoint($breakpoint-desktop-small) {
+		width: 50%;
+		margin-right: 50%;
 	}
 }

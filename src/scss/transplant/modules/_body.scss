@@ -1,17 +1,16 @@
 .body {
-	@include breakpoint($breakpoint-tablet) {
-		.copy {
+	.copy {
+		@include break;
+		@include breakpoint($breakpoint-tablet) {
 			&.third {
-				@include span(3 of 6);
+				@include span(3 of 6 nobreak);
 				&:nth-child(2n) {
 					@include span(3 of 6 last);
 				}
 			}
 		}
-	}
-	@include breakpoint($breakpoint-desktop) {
-		.copy, .q-and-a {
-			@include span(full last);
+		@include breakpoint($breakpoint-desktop) {
+			@include span(full last nobreak);
 			.row {
 				@include break;
 			}
