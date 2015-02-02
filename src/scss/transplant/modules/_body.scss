@@ -10,7 +10,7 @@
 		}
 	}
 	@include breakpoint($breakpoint-desktop) {
-		.copy, .q-and-a {
+		.copy {
 			@include span(full last);
 			.row {
 				@include break;
@@ -29,6 +29,10 @@
 				&:nth-child(3n), &.last {
 					@include span(2 of 6 last);
 				}
+			}
+			&.two-thirds {
+				@include span(4 of 6 last);
+				@include suffix(2 of 6);
 			}
 		}
 	}
