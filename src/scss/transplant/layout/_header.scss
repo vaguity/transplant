@@ -24,18 +24,18 @@
 	}
 	@include breakpoint($breakpoint-desktop) {
 		.logo {
-			@include span(3 of 12);
+			@include span(5 of 24);
 		}
 		.nav-icon {
 			display: none;
 		}
 		.primary-nav {
 			display: block;
-			@include span(5 of 12);
+			@include span(12 of 24);
 		}
 		.secondary-nav {
 			display: block;
-			@include span(4 of 12 last);
+			@include span(7 of 24 last);
 		}
 	}
 }
@@ -88,9 +88,12 @@
 			}
 		}
 		@include breakpoint($breakpoint-desktop) {
-			text-align: right;
 			margin-bottom: 0;
 		}
+	}
+
+	a.active {
+		@include link($orange, $blue);
 	}
 
 	@include breakpoint($breakpoint-desktop) {
