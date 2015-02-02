@@ -29,9 +29,10 @@ $darkorange: #b6400f;
 $lightorange: #fbd0bc;
 
 // Secondary colors
-$purple: #1f093c;
+$indigo: #1f093c;
 $maroon: #a42c50;
 $blue2: #2b5b91;
+$purple: $indigo; // Legacy alias; remove when changed over
 
 // Alert colors
 $lightgreen: #f9ffe4;
