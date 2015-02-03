@@ -66,6 +66,13 @@
 		text-transform: uppercase;
 		color: $orange;
 	}
+	.highlight {
+		color: $darkgray;
+		font-family: $type-serif;
+		font-weight: 100;
+		font-size: 24px;
+		line-height: 32px;
+	}
 	.subhed {
 		display: block;
 		font-family: $type-serif;
