@@ -28,6 +28,9 @@
 			&.flush-bottom {
 				margin-bottom: 0;
 			}
+			&.flush-top {
+				margin-top: 0;
+			}
 		}
 		.clear {
 			@include break;
