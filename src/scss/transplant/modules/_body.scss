@@ -86,4 +86,13 @@
 		margin: $spacing-small 0;
 		font-weight: normal;
 	}
+	.flush {
+		margin: 0;
+	}
+	.flush-top {
+		margin-top: 0;
+	}
+	.flush-bottom {
+		margin-bottom: 0;
+	}
 }
