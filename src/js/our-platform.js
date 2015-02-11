@@ -1,87 +1,162 @@
-var pages = [
+var panels = [
 	{
-		id: '#plan',
+		id: '#customize',
 		top: null,
 	},
 	{
-		id: '#inspire',
+		id: '#planning',
 		top: null,
 	},
 	{
-		id: '#source',
+		id: '#briefing',
 		top: null,
 	},
 	{
-		id: '#create',
+		id: '#sourcing',
 		top: null,
 	},
 	{
-		id: '#distribute',
+		id: '#production',
 		top: null,
 	},
 	{
-		id: '#convert',
+		id: '#distribution',
 		top: null,
 	},
 	{
-		id: '#learn',
+		id: '#monitoring',
+		top: null,
+	},
+	{
+		id: '#analysis',
 		top: null,
 	},
 ];
 
-var pagesLength = pages.length;
+var panelsLength = panels.length;
 
-$(document).ready(function() {
-	var windowHeight = $(window).height();
-	$('.hero-container .mask, .hero-container .hero').css('min-height', windowHeight + 'px');
-	$('.body-container .image.left').css('min-height', windowHeight + 'px');
-	$('.content.our-platform').css('height', windowHeight + 'px');
-	// set section, mask to min-height of window height
-	// grab height of .hero .copy.left and .hero .copy.right and add padding to vertically center
-});
+var panelSetParameters = {
+	'container': '.content.our-platform',
+	'selectors': '.hero-container .mask, .hero-container .hero, .body-container .image.left',
+};
 
-$(window).load(function() {
-	var windowHeight = $(this).height();
-	scrollLast = $(this).scrollTop();
-	scrollBottom = $(this).scrollTop() + $(this).height();
+var vertCenterSelectors = [
+	'.hero .copy.left',
+	'.hero .copy.right',
+	'.our-platform-sections',
+	'#customize .copy.right',
+	'#planning .copy.right',
+	'#briefing .copy.right',
+	'#sourcing .copy.right',
+	'#production .copy.right',
+	'#distribution .copy.right',
+	'#monitoring .copy.right',
+	'#analysis .copy.right',
+];
 
-	var vertCenterSelectors = [
-		'.hero .copy.left',
-		'.hero .copy.right',
-		'.our-platform-sections',
-		'#plan .copy.right',
-		'#inspire .copy.right',
-		'#source .copy.right',
-		'#create .copy.right',
-		'#distribute .copy.right',
-		'#convert .copy.right',
-		'#learn .copy.right',
-	];
+function verticalCenter(selectors, reset) {
 
-	var vertCenterLength = vertCenterSelectors.length;
+	var vertCenterLength = selectors.length;
 	var vertCenterPad = 0;
 
+	if (reset === true) {
+		for (var i = 0; i < vertCenterLength; i++) {
+			$(selectors[i]).attr('style', '');
+		}
+		return;
+	}
+
+	var windowHeight = $(this).height();
+
 	for (var i = 0; i < vertCenterLength; i++) {
-		vertCenterPad = (windowHeight - $(vertCenterSelectors[i]).height()) / 2;
-		$(vertCenterSelectors[i]).css({
+		vertCenterPad = (windowHeight - $(selectors[i]).height()) / 2;
+		$(selectors[i]).css({
 			'padding-top': vertCenterPad + 'px',
 			'padding-bottom': vertCenterPad + 'px'
 		});
 	}
+}
 
-	$('.hero .copy.left').fadeIn();
-	$('.hero .copy.right').fadeIn();
+function panelSet(status, parameters) {
+	if (status === true) {
+		var windowHeight = $(window).height();
 
-	for (var i = 0; i < pagesLength; i++) {
-		pages[i].top = $(pages[i].id).position().top;
+		$(parameters.selectors).css('min-height', windowHeight + 'px');
+		$(parameters.container).css({
+			'height': windowHeight + 'px',
+			'overflow-x': 'hidden'
+		})
+		.panelSnap('enable');
+
+		return;
 	}
-	$('.header-container').slideUp();
-	$('.footer-container').hide();
-	$('.content.our-platform').panelSnap({
-		panelSelector: '> .container',
-		directionThreshold: 20,
-		slideSpeed: 400,
+
+	$(parameters.selectors).attr('style', '');
+
+	$(parameters.container).attr('style', '').panelSnap('disable');
+}
+
+
+// Enable panelled scrolling:
+
+// panel snap enable
+// set container to static height
+// set container to overflow-x hidden
+
+// Disable panelled scrolling:
+
+// panel snap disable
+// remove static height from container
+// remove overflow-x hidden
+
+
+// create the panelsnap object
+// disable panelsnap from the start
+// enable when scrolling past header
+// disable when at end of panels
+// enable on the reverse; or toggle?
+
+
+$(window).load(function() {
+
+
+
+
+	enquire.register('screen and (min-width: 1180px)', {
+		deferSetup: true,
+		setup: function() {
+			verticalCenter(vertCenterSelectors);
+			$(panelSetParameters.container).panelSnap({
+				panelSelector: '> .container',
+				directionThreshold: 20,
+				slideSpeed: 400,
+			});
+			panelSet(false, panelSetParameters);
+		},
+		match: function() {
+			verticalCenter(vertCenterSelectors);
+			$(window).scroll(function() {
+				if (window.scrollY > $('.header-container').height()) {
+					panelSet(true, panelSetParameters);
+				}
+			});
+
+		},
+		unmatch: function() {
+			panelSetup(true, panelSetParameters);
+			verticalCenter(vertCenterSelectors, true);
+		},
 	});
+
+
+
+	// for (var i = 0; i < pagesLength; i++) {
+	// 	pages[i].top = $(pages[i].id).position().top;
+	// }
+
+
+	// Panel Snap setup
+
 
 });
 

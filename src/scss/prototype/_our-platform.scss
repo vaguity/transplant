@@ -1,9 +1,11 @@
+@import '../lib/breakpoint';
+
 .content.our-platform {
 
 	.hero-container {
 		background-position: center center;
 		background-repeat: no-repeat;
-		background-image: url('../img/our_platform_hero.jpg');
+		background-image: url('../img/our_platform/our_platform_hero.jpg');
 		background-size: cover;
 	}
 	.mask {
@@ -11,34 +13,43 @@
 	}
 
 	.hero {
-		.copy {
-			padding-top: 220px;
-			padding-bottom: 220px;
-			&.left {
-				@include span(4 of 12);
-				@include prefix(1 of 12);
-				@include suffix(1 of 12);
-				text-align: left;
-				display: none;
+		.copy.left, .copy.right {
+			@include span(10 of 12 last);
+			@include prefix(1 of 12);
+			@include suffix(1 of 12);
+		}
+		@include breakpoint($breakpoint-desktop) {
+			.copy {
+				padding-top: 220px;
+				padding-bottom: 220px;
+				&.left {
+					@include span(4 of 12);
+					@include prefix(1 of 12);
+					@include suffix(1 of 12);
+					text-align: left;
+					display: none;
+				}
+				&.right {
+					@include span(6 of 12 last);
+					@include prefix(0);
+					@include suffix(0);
+					text-align: center;
+					display: none;
+				}
 			}
-			&.right {
-				@include span(6 of 12 last);
-				text-align: center;
-				display: none;
+			h1 {
+				font-size: 60px;
+				padding: 0;
+				margin: 1em 0;
 			}
-		}
-		h1 {
-			font-size: 60px;
-			padding: 0;
-			margin: 1em 0;
-		}
-		p {
-			font-size: 24px;
-			line-height: 1.4em;
-			font-family: $type-serif;
-		}
-		img {
-			margin: 1em 0;
+			p {
+				font-size: 24px;
+				line-height: 1.4em;
+				font-family: $type-serif;
+			}
+			img {
+				margin: 1em 0;
+			}
 		}
 	}
 
@@ -66,22 +77,15 @@
 			color: $black;
 			text-transform: none;
 			text-align: left;
-			margin: 4em 0;
-		}
-		.copy, .image {
-			min-height: 900px;
-			margin-bottom: 0;
 		}
 		.image {
+			min-height: 200px;
 			background-position: center center;
 			background-repeat: no-repeat;
 			background-size: cover;
 		}
-		.left {
-			@include span(6 of 12);
-		}
 		.right {
-			@include span(4 of 12 last);
+			@include span(10 of 12 last);
 			@include prefix(1 of 12);
 			@include suffix(1 of 12);
 		}
@@ -111,32 +115,53 @@
 				margin-right: 0;
 			}
 		}
+		@include breakpoint($breakpoint-desktop) {
+			h2 {
+				margin: 4em 0;
+			}
+			.copy, .image {
+				// min-height: 900px;
+				margin-bottom: 0;
+			}
+
+			.left {
+				@include span(6 of 12);
+			}
+			.right {
+				@include span(4 of 12 last);
+				@include prefix(1 of 12);
+				@include suffix(1 of 12);
+			}
+		}
 	}
 
 
 }
 
 .content.our-platform {
-	#plan .image {
-		background-image: url('../img/plan_highlight.jpg');
+	#customize .image {
+		background-image: url('../img/our_platform/customize_highlight.jpg');
 	}
-	#inspire .image {
-		background-image: url('../img/inspire_highlight.jpg');
+	#planning .image {
+		background-image: url('../img/our_platform/planning_highlight.jpg');
 	}
-	#source .image {
-		background-image: url('../img/source_highlight.jpg');
+	#briefing .image {
+		background-image: url('../img/our_platform/briefing_highlight.jpg');
 	}
-	#create .image {
-		background-image: url('../img/create_highlight.jpg');
+	#sourcing .image {
+		background-image: url('../img/our_platform/sourcing_highlight.jpg');
 	}
-	#distribute .image {
-		background-image: url('../img/distribute_highlight.jpg');
+	#production .image {
+		background-image: url('../img/our_platform/production_highlight.jpg');
 	}
-	#convert .image {
-		background-image: url('../img/convert_highlight.jpg');
+	#distribution .image {
+		background-image: url('../img/our_platform/distribution_highlight.jpg');
 	}
-	#learn .image {
-		background-image: url('../img/learn_highlight.jpg');
+	#monitoring .image {
+		background-image: url('../img/our_platform/monitoring_highlight.jpg');
+	}
+	#analysis .image {
+		background-image: url('../img/our_platform/analysis_highlight.jpg');
 	}
 }
 
