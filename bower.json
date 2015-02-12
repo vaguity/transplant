@@ -21,27 +21,27 @@
     "src/scss/lib"
   ],
   "devDependencies": {
-    "normalize-scss": "~3.0.1",
-    "html5-boilerplate": "~4.3.0",
-    "modernizr": "~2.8.3",
-    "enquire": "~2.1.2",
-    "susy": "~2.2.1",
     "compass-breakpoint": "~2.5.0",
+    "enquire": "~2.1.2",
+    "html5-boilerplate": "~5.0.0",
     "jquery": "~1.11.2",
-    "panelsnap": "~0.14.0"
+    "modernizr": "~2.8.3",
+    "normalize-scss": "~3.0.1",
+    "panelsnap": "~0.14.0",
+    "susy": "~2.2.1"
   },
   "overrides": {
+    "compass-breakpoint": {
+      "main": "stylesheets/**"
+    },
     "html5-boilerplate": {
-      "main": "css/main.css"
+      "main": "dist/css/main.css"
     },
     "modernizr": {
       "main": "modernizr.js"
     },
     "susy": {
       "main": "sass/**"
-    },
-    "compass-breakpoint": {
-      "main": "stylesheets/**"
     }
   }
 }

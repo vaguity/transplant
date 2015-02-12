@@ -50,7 +50,7 @@ input, button {
 		}
 		@include breakpoint($breakpoint-desktop-small) {
 			display: inline-block;
-			margin: 0 .5em;
+			margin: 0 auto;
 		}
 	}
 }
