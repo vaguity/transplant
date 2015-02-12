@@ -7,8 +7,8 @@
 		color: $darkgray;
 		font-family: $type-serif;
         font-weight: 100;
-        font-size: 18px;
-        line-height: 1.5;
+        font-size: 20px;
+        line-height: 1.5em;
 		strong {
 			font-weight: 100;
 			font-style: italic;
@@ -19,7 +19,7 @@
 		}
         @include breakpoint($breakpoint-tablet) {
             font-size: 24px;
-    		line-height: 32px;
+    		line-height: 1.5em;
         }
 
 		@include breakpoint($breakpoint-desktop) {

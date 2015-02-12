@@ -2,6 +2,7 @@
 // Specific to /dist in this repo
 
 @import 'lib/susy';
+@import 'lib/breakpoint';
 @import 'transplant/variables/base';
 
 
@@ -90,36 +91,38 @@
 // Typography guide
 
 .typography-sample {
-	h1 {
-		color: $black;
-		text-align: center;
-		font-size: 100px;
-		line-height: 1.1em;
-		margin: $spacing-xlarge 0;
-	}
-	h1.alt {
-		color: $orange;
-		text-align: left;
-		font-size: 60px;
-		font-weight: 100;
-	}
-	p {
-		margin: $spacing-xlarge 0;
-	}
-	p.highlight {
-		font-size: 24px;
-		line-height: 1.33em;
-		color: $darkgray;
-		font-family: $type-serif;
-		font-weight: 100;
-	}
-	p.quote {
-		font-family: $type-serif;
-		font-size: 32px;
-		line-height: 1.25em;
-		color: $darkgray;
-		font-style: italic;
-		font-weight: 100;
+	@include breakpoint($breakpoint-desktop) {
+		h1 {
+			color: $black;
+			text-align: center;
+			font-size: 100px;
+			line-height: 1.1em;
+			margin: $spacing-xlarge 0;
+		}
+		h1.alt {
+			color: $orange;
+			text-align: left;
+			font-size: 60px;
+			font-weight: 100;
+		}
+		p {
+			margin: $spacing-xlarge 0;
+		}
+		p.highlight {
+			font-size: 24px;
+			line-height: 1.33em;
+			color: $darkgray;
+			font-family: $type-serif;
+			font-weight: 100;
+		}
+		p.quote {
+			font-family: $type-serif;
+			font-size: 32px;
+			line-height: 1.25em;
+			color: $darkgray;
+			font-style: italic;
+			font-weight: 100;
+		}
 	}
 }
 

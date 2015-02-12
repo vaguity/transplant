@@ -23,22 +23,8 @@ var config = {
 		src: src + '/lib',
 		packages: [
 			{
-				name: 'normalize-scss',
-				dest: packageType.cssPartial,
-			},
-			{
-				name: 'html5-boilerplate',
-				rename: '_html5bp.scss',
-				dest: packageType.cssPartial,
-			},
-			{
-				name: 'modernizr',
-				dest: packageType.jsLib,
-			},
-			{
-				name: 'jquery',
-				path: '/dist',
-				dest: packageType.jsLib,
+				name: 'compass-breakpoint',
+				dest: packageType.cssLib,
 			},
 			{
 				name: 'enquire',
@@ -46,23 +32,36 @@ var config = {
 				dest: packageType.jsLib,
 			},
 			{
-				name: 'susy',
-				dest: packageType.cssLib,
+				name: 'html5-boilerplate',
+				rename: '_html5bp.scss',
+				dest: packageType.cssPartial,
 			},
 			{
-				name: 'compass-breakpoint',
-				dest: packageType.cssLib,
-			},
-			{
-				name: 'ScrollMagic',
-				path: '/js',
+				name: 'jquery',
+				path: '/dist',
 				dest: packageType.jsLib,
+			},
+			{
+				name: 'jquery-throttle-debounce',
+				dest: packageType.jsLib
+			},
+			{
+				name: 'modernizr',
+				dest: packageType.jsLib,
+			},
+			{
+				name: 'normalize-scss',
+				dest: packageType.cssPartial,
 			},
 			{
 				name: 'panelsnap',
 				dest: packageType.jsLib,
-			}
-		]
+			},
+			{
+				name: 'susy',
+				dest: packageType.cssLib,
+			},
+		],
 	},
 };
 

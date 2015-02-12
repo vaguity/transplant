@@ -1,10 +1,27 @@
+.content .container.full.sub-nav-container {
+	@include breakpoint($breakpoint-desktop) {
+		padding: $spacing-small 0;
+	}
+}
+
 .sub-nav-container {
+	background: $white;
 	border-bottom: 1px solid $lightgray;
+	&.sticky.enabled {
+		position: fixed;
+		top: 0;
+		width: 100%;
+	}
+}
+
+.sub-nav-placeholder.sticky-placeholder.enabled {
+	height: 2em;
+	padding: $spacing-small 0;
 }
 
 .sub-nav {
 	ul {
-		margin: $spacing-small 0;
+		margin: 0;
 	}
 	li {
 		margin-right: 1em;

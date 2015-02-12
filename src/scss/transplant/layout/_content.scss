@@ -11,18 +11,26 @@
 		&.full {
 			@include container(full);
 			padding: 0;
-			section, nav {
+			section {
 				@include container(4);
 				padding: 5%;
 			}
+			nav {
+				@include container(4);
+				padding: $spacing-small 5%;
+			}
 			&.bleed {
-				section, nav {
+				section {
 					@include container(4);
 					padding: 0 5%;
 					&.full {
 						padding: 0;
 						@include container(full);
 					}
+				}
+				nav {
+					@include container(4);
+					padding: $spacing-small 5%;
 				}
 			}
 			&.flush {
@@ -82,5 +90,8 @@
 }
 
 .container {
-	margin: $spacing-large 0 0;
+	margin: $spacing-medium 0 0;
+	@include breakpoint($breakpoint-desktop) {
+		margin: $spacing-large 0 0;
+	}
 }
