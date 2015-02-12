@@ -77,16 +77,34 @@ function verticalCenter(selectors, reset) {
 	}
 }
 
+function setFullFrame(element) {
+	var windowHeight = $(window).height();
+
+	$(element).css('height', windowHeight + 'px');
+}
+
 function panelSet(status, parameters) {
 	if (status === true) {
-		var windowHeight = $(window).height();
 
-		$(parameters.selectors).css('min-height', windowHeight + 'px');
-		$(parameters.container).css({
-			'height': windowHeight + 'px',
-			'overflow-x': 'hidden'
-		})
-		.panelSnap('enable');
+		$(parameters.container).panelSnap('enable');
+
+		// setFullFrame('.our-platform-placeholder, .content.our-platform');
+
+		setStickyRange();
+
+		if ((window.scrollY + $(window).height()) > stickyBottom) {
+			// console.log('scrollY + height: ' + (window.scrollY + $(window).height()));
+			// console.log('stickyBottom: ' + stickyBottom);
+			$(parameters.container).panelSnap('disable');
+			// panelSet(false, panelSetParameters);
+		}
+
+		// $(parameters.selectors).css('min-height', windowHeight + 'px');
+		// $(parameters.container).css({
+		// 	'height': windowHeight + 'px',
+		// 	'overflow-x': 'hidden'
+		// })
+		// .panelSnap('enable');
 
 		return;
 	}
@@ -96,31 +114,10 @@ function panelSet(status, parameters) {
 	$(parameters.container).attr('style', '').panelSnap('disable');
 }
 
-
-// Enable panelled scrolling:
-
-// panel snap enable
-// set container to static height
-// set container to overflow-x hidden
-
-// Disable panelled scrolling:
-
-// panel snap disable
-// remove static height from container
-// remove overflow-x hidden
-
-
-// create the panelsnap object
-// disable panelsnap from the start
-// enable when scrolling past header
-// disable when at end of panels
-// enable on the reverse; or toggle?
-
+// Check for if it's in between the two and enable/disable accordingly
+// No need to do position: fixed
 
 $(window).load(function() {
-
-
-
 
 	enquire.register('screen and (min-width: 1180px)', {
 		deferSetup: true,
@@ -136,8 +133,13 @@ $(window).load(function() {
 		match: function() {
 			verticalCenter(vertCenterSelectors);
 			$(window).scroll(function() {
-				if (window.scrollY > $('.header-container').height()) {
-					panelSet(true, panelSetParameters);
+				if ((window.scrollY + $(window).height()) > $('.our-platform-end').position().top) {
+					console.log('disable');
+					$(panelSetParameters.container).panelSnap('disable');
+				}
+				else if (window.scrollY > $('.header-container').height()) {
+					console.log('enable');
+					$(panelSetParameters.container).panelSnap('enable');
 				}
 			});
 
