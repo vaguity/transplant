@@ -73,6 +73,7 @@ $(document).ready(function() {
 	enquire.register('screen and (min-width: 1180px)', {
 		setup: function() {
 			setFullFrame(fullFrameSelectors);
+			setVerticalCenter(vertCenterSelectors);
 			$('.content.our-platform')
 				.panelSnap({
 					panelSelector: '> .container',
