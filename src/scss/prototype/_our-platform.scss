@@ -12,8 +12,9 @@
 		background-image: url('../img/our_platform/our_platform_hero.jpg');
 		background-size: cover;
 	}
+
 	.mask {
-		min-height: 900px;
+		min-height: 600px;
 	}
 
 	.hero {
@@ -24,8 +25,8 @@
 		}
 		@include breakpoint($breakpoint-desktop) {
 			.copy {
-				padding-top: 220px;
-				padding-bottom: 220px;
+				padding-top: 60px;
+				padding-bottom: 60px;
 				&.left {
 					@include span(4 of 12);
 					@include prefix(1 of 12);
