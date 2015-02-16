@@ -13,8 +13,10 @@
 		background-size: cover;
 	}
 
-	.mask {
-		min-height: 600px;
+	.hero-container section, .body-container section {
+		@include breakpoint($breakpoint-desktop) {
+			min-height: 600px;
+		}
 	}
 
 	.hero {
@@ -26,8 +28,20 @@
 		.icon {
 			display: none;
 		}
+		.copy.left {
+			padding-top: 20px;
+			padding-bottom: 20px;
+			text-align: left;
+		}
+		p {
+			line-height: 1.4em;
+		}
+		.copy.right {
+			display: none;
+		}
 		@include breakpoint($breakpoint-desktop) {
 			.copy {
+				display: none;
 				padding-top: 60px;
 				padding-bottom: 60px;
 				&.left {
@@ -35,14 +49,13 @@
 					@include prefix(1 of 12);
 					@include suffix(1 of 12);
 					text-align: left;
-					display: none;
 				}
 				&.right {
+					display: block;
 					@include span(6 of 12 last);
 					@include prefix(0);
 					@include suffix(0);
 					text-align: center;
-					display: none;
 				}
 			}
 			h1 {
@@ -183,5 +196,6 @@
 	overflow-x: hidden;
 	> .container {
 		position: relative;
+		overflow: hidden;
 	}
 }

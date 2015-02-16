@@ -26,43 +26,48 @@ function stickySetup() {
 	}
 }
 
+function stickyCalc() {
+	if (stickyTop === null) {
+		return;
+	}
+
+	if ((window.scrollY + $(window).height()) > stickyBottom) {
+		$('.sticky, .sticky-begin, .sticky-end').removeClass('enabled');
+	}
+	else if (stickyTop < window.scrollY) {
+		$('.sticky, .sticky-begin, .sticky-end').addClass('enabled');
+	}
+	else {
+		$('.sticky, .sticky-begin, .sticky-end').removeClass('enabled');
+	}
+
+	if ($('.sticky').hasClass('sticky-sections')) {
+
+		for (var i = 0; i < stickySections; i++) {
+			if ((window.scrollY + $('.sticky').height()) > $('.sticky-section').eq(i).position().top) {
+				stickySectionNew = i;
+			}
+			// check where the scroll is
+			// highlight that number list item in menu
+		}
+		if (stickySection === stickySectionNew) {
+			return;
+		}
+		else {
+			stickySection = stickySectionNew;
+			$('.sub-nav li').removeClass('active').eq(stickySection).addClass('active');
+		}
+	}
+}
+
 function stickyNav(set) {
 	if (set === true) {
 		$(window).on('scroll', $.throttle(150, function() {
 			if ($('.sticky').length === 0) {
 				$(window).off('scroll', window);
 			}
-			if (stickyTop === null) {
-				return;
-			}
 
-			if ((window.scrollY + $(window).height()) > stickyBottom) {
-				$('.sticky, .sticky-begin, .sticky-end').removeClass('enabled');
-			}
-			else if (stickyTop < window.scrollY) {
-				$('.sticky, .sticky-begin, .sticky-end').addClass('enabled');
-			}
-			else {
-				$('.sticky, .sticky-begin, .sticky-end').removeClass('enabled');
-			}
-
-			if ($('.sticky').hasClass('sticky-sections')) {
-
-				for (var i = 0; i < stickySections; i++) {
-					if ((window.scrollY + $('.sticky').height()) > $('.sticky-section').eq(i).position().top) {
-						stickySectionNew = i;
-					}
-					// check where the scroll is
-					// highlight that number list item in menu
-				}
-				if (stickySection === stickySectionNew) {
-					return;
-				}
-				else {
-					stickySection = stickySectionNew;
-					$('.sub-nav li').removeClass('active').eq(stickySection).addClass('active');
-				}
-			}
+			stickyCalc();
 		}));
 	}
 	else {
@@ -92,14 +97,26 @@ $(window).on('resize', $.throttle(300, function() {
 	stickySetup();
 }));
 
-enquire.register("screen and (min-width: 1180px)", {
+enquire
+.register("screen and (min-width: 1000px)", {
 	// Handle switch between previously toggled nav and desktop breakpoint
+	setup: function() {
+		stickyCalc();
+	},
 	match: function() {
-		$('.primary-nav, .secondary-nav').show();
+		$('.primary-nav, .secondary-nav').attr('style', '');
 		stickyNav(true);
 	},
 	unmatch: function() {
-		$('.primary-nav, .secondary-nav').hide();
+		$('.primary-nav, .secondary-nav').css('display', 'none');
 		stickyNav(false);
-	}
+	},
+})
+.register("screen and (min-width: 1000px) and (max-width: 1180px)", {
+	match: function() {
+		$('.secondary-nav .jobs-link').text('Jobs');
+	},
+	unmatch: function() {
+		$('.secondary-nav .jobs-link').text('We’re Hiring');
+	},
 });

@@ -14,7 +14,7 @@ var vertCenterSelectors = [
 	'#monitoring .copy.right',
 	'#analysis .copy.right',
 	{
-		'selector': '.hero-container .mask',
+		'selector': '.hero-container section',
 		'offset': '.header-container',
 	},
 ];
@@ -36,11 +36,19 @@ function setVerticalCenter(selectors, reset) {
 	for (var i = 0; i < vertCenterLength; i++) {
 		if (typeof selectors[i] === 'object') {
 			vertCenterPad = (windowHeight - $(selectors[i]['selector']).height() - $(selectors[i]['offset']).height()) / 2;
-			$(selectors[i]['selector']).css({
-				'padding-top': vertCenterPad + 'px',
-				'padding-bottom': vertCenterPad + 'px',
-			});
-
+			if (vertCenterPad < 0) {
+				vertCenterPad = 0;
+				$(selectors[i]['selector']).css({
+					'padding-top': '',
+					'padding-bottom': '',
+				});
+			}
+			else {
+				$(selectors[i]['selector']).css({
+					'padding-top': vertCenterPad + 'px',
+					'padding-bottom': vertCenterPad + 'px',
+				});
+			}
 			continue;
 		}
 
@@ -52,25 +60,27 @@ function setVerticalCenter(selectors, reset) {
 	}
 }
 
-function setFullFrame(el) {
-	var windowHeight = $(window).height();
+function setFullFrame(el, reset) {
+	if (reset === true) {
+		var windowHeight = '';
+	}
+	else {
+		var windowHeight = $(window).height() + 'px';
+	}
 
 	if (typeof el === 'string') {
-		$(el).css('height', windowHeight + 'px');
+		$(el).css('height', windowHeight);
 	}
 	else {
 		for (var i = 0; i < el.length; i++) {
-			$(el[i]).css('height', windowHeight + 'px');
-		};
+			$(el[i]).css('height', windowHeight);
+		}
 	}
 }
 
-// Check for if it's in between the two and enable/disable accordingly
-// No need to do position: fixed
-
 $(document).ready(function() {
-
 	enquire.register('screen and (min-width: 1180px)', {
+		deferSetup: true,
 		setup: function() {
 			setFullFrame(fullFrameSelectors);
 			setVerticalCenter(vertCenterSelectors);
@@ -95,19 +105,23 @@ $(document).ready(function() {
 });
 
 $(window).load(function() {
-
 	enquire.register('screen and (min-width: 1180px)', {
 		deferSetup: true,
 		setup: function() {
 			setVerticalCenter(vertCenterSelectors);
 			$('.content.our-platform .hero .copy').fadeIn();
+			$(window).resize($.throttle(150, function() {
+				setVerticalCenter(vertCenterSelectors);
+				setFullFrame(fullFrameSelectors);
+			}));
 		},
 		match: function() {
 			setVerticalCenter(vertCenterSelectors);
 		},
 		unmatch: function() {
+			setFullFrame(fullFrameSelectors, true);
 			setVerticalCenter(vertCenterSelectors, true);
+			$('.content.our-platform').panelSnap('disable');
 		},
 	});
-
 });
