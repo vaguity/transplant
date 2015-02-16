@@ -1,7 +1,7 @@
 var fullFrameSelectors = [
 	'.body-container .image.left',
 	'.content.our-platform',
-	'.content.our-platform > .container',
+	'.content.our-platform > .panel-container',
 ];
 
 var vertCenterSelectors = [
@@ -113,6 +113,9 @@ $(window).load(function() {
 			$(window).resize($.throttle(150, function() {
 				setVerticalCenter(vertCenterSelectors);
 				setFullFrame(fullFrameSelectors);
+			}));
+			$('window').on('scroll', $.throttle(150, function() {
+				console.log(window.scrollY);
 			}));
 		},
 		match: function() {

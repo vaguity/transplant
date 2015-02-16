@@ -81,9 +81,6 @@
 	}
 
 	.sub-nav {
-		ul {
-			margin: 1em 0;
-		}
 		.home a {
 			@include link($orange);
 		}
