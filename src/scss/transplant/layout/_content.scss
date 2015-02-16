@@ -31,6 +31,9 @@
 				nav {
 					@include container(4);
 					padding: $spacing-small 5%;
+					&.primary-nav, &.secondary-nav {
+						padding: 0;
+					}
 				}
 			}
 			&.flush {

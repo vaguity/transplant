@@ -67,7 +67,7 @@
 			</div>
 		</div>
 
-		<div class="sub-nav-placeholder container full flush sticky-placeholder"></div>
+		<div class="sub-nav-placeholder container full flush sticky-begin"></div>
 		<div class="sub-nav-container container full flush sticky">
 			<nav class="sub-nav">
 				<ul>
@@ -322,6 +322,8 @@
 				        $('.mktoAsterix, .mktoOffset, .mktoClear, .mktoLabel, .mktoGutter, .mktoError').remove();
 				        $(marketoForm[1282]['selector']).children('.mktoFormRow, .mktoFieldDescriptor, .mktoButtonRow, .mktoFieldWrap').css('display', marketoForm[1282]['display']);
 				        $(marketoForm[1282]['selector']).css('visibility', 'visible');
+
+				        stickySetRange();
 				    });
 				}
 
@@ -401,6 +403,8 @@
 					        $('.mktoAsterix, .mktoOffset, .mktoClear, .mktoLabel, .mktoGutter, .mktoError').remove();
 					        $(marketoForm[1278]['selector']).children('.mktoFormRow, .mktoFieldDescriptor, .mktoButtonRow, .mktoFieldWrap').css('display', marketoForm[1278]['display']);
 					        $(marketoForm[1278]['selector']).css('visibility', 'visible');
+
+					        stickySetRange();
 					    });
 					}
 
@@ -443,6 +447,8 @@
 			</section>
 			</div>
 		</div>
+
+		<div class="sticky-end"></div>
 
 	</div>
 </div>

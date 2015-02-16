@@ -23,6 +23,9 @@
 			@include prefix(1 of 12);
 			@include suffix(1 of 12);
 		}
+		.icon {
+			display: none;
+		}
 		@include breakpoint($breakpoint-desktop) {
 			.copy {
 				padding-top: 60px;
@@ -54,6 +57,12 @@
 			}
 			img {
 				margin: 1em 0;
+			}
+			.icon {
+				display: inline-block;
+				font-size: 60px;
+				width: 60px;
+				height: 60px;
 			}
 		}
 	}

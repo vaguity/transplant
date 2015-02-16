@@ -31,14 +31,14 @@ $(window).load(function() {
 		}
 	}
 
-	setStickyRange();
+	stickySetRange();
 });
 
 $(window).on('resize', $.throttle(300, function() {
-	setStickyRange();
+	stickySetRange();
 }));
 
-function setStickyRange() {
+function stickySetRange() {
 	if ($('.sticky-begin').length) {
 		stickyTop = $('.sticky-begin').position().top;
 	}
