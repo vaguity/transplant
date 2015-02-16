@@ -1,5 +1,4 @@
 // Enquire shim
-
 var mediaQueryCheck = Modernizr.mq('only all');
 if (!mediaQueryCheck) {
 	jQuery('html').addClass('no-mediaqueries');
@@ -12,44 +11,24 @@ if (!mediaQueryCheck) {
 	};
 }
 
-var stickyTop, stickyBottom;
+var footerPadding;
+var stickyTop, stickyBottom, stickySections, stickySection, stickySectionNew;
 
-// Mobile navigation
-
-$(document).ready(function() {
-	$('.nav-icon').click(function() {
-		$(this).toggleClass('nav-toggle');
-		$('.primary-nav, .secondary-nav').toggle();
-	});
-});
-
-$(window).load(function() {
-	if ($('.footer-container').length) {
-		if ($('body').height() < $(window).height()) {
-			var footerPadding = $(window).height() - $('body').height();
-			$('.footer-container').css('padding-bottom', footerPadding + 'px');
-		}
-	}
-
-	stickySetRange();
-});
-
-$(window).on('resize', $.throttle(300, function() {
-	stickySetRange();
-}));
-
-function stickySetRange() {
+function stickySetup() {
 	if ($('.sticky-begin').length) {
 		stickyTop = $('.sticky-begin').position().top;
 	}
 	if ($('.sticky-end').length) {
 		stickyBottom = $('.sticky-end').position().top;
 	}
+	if ($('.sticky-sections').length) {
+		stickySections = $('.sticky-section').length;
+	}
 }
 
 function stickyNav(set) {
 	if (set === true) {
-		$(window).on('scroll', $.throttle(100, function() {
+		$(window).on('scroll', $.throttle(150, function() {
 			if ($('.sticky').length === 0) {
 				$(window).off('scroll', window);
 			}
@@ -66,6 +45,24 @@ function stickyNav(set) {
 			else {
 				$('.sticky, .sticky-begin, .sticky-end').removeClass('enabled');
 			}
+
+			if ($('.sticky').hasClass('sticky-sections')) {
+
+				for (var i = 0; i < stickySections; i++) {
+					if ((window.scrollY + $('.sticky').height()) > $('.sticky-section').eq(i).position().top) {
+						stickySectionNew = i;
+					}
+					// check where the scroll is
+					// highlight that number list item in menu
+				}
+				if (stickySection === stickySectionNew) {
+					return;
+				}
+				else {
+					stickySection = stickySectionNew;
+					$('.sub-nav li').removeClass('active').eq(stickySection).addClass('active');
+				}
+			}
 		}));
 	}
 	else {
@@ -74,6 +71,26 @@ function stickyNav(set) {
 		$('.sticky-begin').removeClass('enabled');
 	}
 }
+
+$(document).ready(function() {
+	$('.nav-icon').click(function() {
+		$('.primary-nav, .secondary-nav').toggle();
+	});
+});
+
+$(window).load(function() {
+	if ($('.footer-container').length) {
+		if ($('body').height() < $(window).height()) {
+			footerPadding = $(window).height() - $('body').height();
+			$('.footer-container').css('padding-bottom', footerPadding + 'px');
+		}
+	}
+	stickySetup();
+});
+
+$(window).on('resize', $.throttle(300, function() {
+	stickySetup();
+}));
 
 enquire.register("screen and (min-width: 1180px)", {
 	// Handle switch between previously toggled nav and desktop breakpoint
