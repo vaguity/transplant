@@ -1,18 +1,51 @@
+// Set up offsets for full frame calculations as well?
+
 var fullFrameSelectors = [
-	'.body-container .image.left',
 	'.content.our-platform',
 	'.content.our-platform > .panel-container',
+	{
+		'selector': '.body-container .image.left',
+		'offset': '.sticky',
+	},
+	{
+		'selector': '.content.our-platform > .panel-container-offset',
+		'offset': '.sticky',
+	},
 ];
 
 var vertCenterSelectors = [
-	'#customize .copy.right',
-	'#planning .copy.right',
-	'#briefing .copy.right',
-	'#sourcing .copy.right',
-	'#production .copy.right',
-	'#distribution .copy.right',
-	'#monitoring .copy.right',
-	'#analysis .copy.right',
+	{
+		'selector': '#customize .copy.right',
+		'offset': '.sticky',
+	},
+	{
+		'selector': '#planning .copy.right',
+		'offset': '.sticky',
+	},
+	{
+		'selector': '#briefing .copy.right',
+		'offset': '.sticky',
+	},
+	{
+		'selector': '#sourcing .copy.right',
+		'offset': '.sticky',
+	},
+	{
+		'selector': '#production .copy.right',
+		'offset': '.sticky',
+	},
+	{
+		'selector': '#distribution .copy.right',
+		'offset': '.sticky',
+	},
+	{
+		'selector': '#monitoring .copy.right',
+		'offset': '.sticky',
+	},
+	{
+		'selector': '#analysis .copy.right',
+		'offset': '.sticky',
+	},
 	{
 		'selector': '.hero-container section',
 		'offset': '.header-container',
@@ -35,7 +68,7 @@ function setVerticalCenter(selectors, reset) {
 
 	for (var i = 0; i < vertCenterLength; i++) {
 		if (typeof selectors[i] === 'object') {
-			vertCenterPad = (windowHeight - $(selectors[i]['selector']).height() - $(selectors[i]['offset']).height()) / 2;
+			vertCenterPad = (windowHeight - $(selectors[i]['selector']).height() - $(selectors[i]['offset']).outerHeight()) / 2;
 			if (vertCenterPad < 0) {
 				vertCenterPad = 0;
 				$(selectors[i]['selector']).css({
@@ -65,7 +98,7 @@ function setFullFrame(el, reset) {
 		var windowHeight = '';
 	}
 	else {
-		var windowHeight = $(window).height() + 'px';
+		var windowHeight = $(window).height();
 	}
 
 	if (typeof el === 'string') {
@@ -73,7 +106,12 @@ function setFullFrame(el, reset) {
 	}
 	else {
 		for (var i = 0; i < el.length; i++) {
-			$(el[i]).css('height', windowHeight);
+			if (typeof el[i] === 'object') {
+				$(el[i]['selector']).css('height', (windowHeight - $(el[i]['offset']).outerHeight()) + 'px');
+			}
+			else {
+				$(el[i]).css('height', windowHeight + 'px');
+			}
 		}
 	}
 }
@@ -86,9 +124,10 @@ $(document).ready(function() {
 			setVerticalCenter(vertCenterSelectors);
 			$('.content.our-platform')
 				.panelSnap({
-					panelSelector: '> .container',
+					panelSelector: '> .panel-container',
 					directionThreshold: 20,
 					slideSpeed: 400,
+					offset: $('.sticky').outerHeight(),
 				});
 		},
 		match: function() {
@@ -114,8 +153,13 @@ $(window).load(function() {
 				setVerticalCenter(vertCenterSelectors);
 				setFullFrame(fullFrameSelectors);
 			}));
-			$('window').on('scroll', $.throttle(150, function() {
-				console.log(window.scrollY);
+			$('.content.our-platform').scroll($.throttle(150, function() {
+				if ($('.content.our-platform').scrollTop() >= ($(window).height() - $('.sticky').outerHeight())) {
+					$('.sticky').addClass('enabled').css('display', 'block');
+				}
+				else {
+					$('.sticky').removeClass('enabled').css('display', '');
+				}
 			}));
 		},
 		match: function() {
