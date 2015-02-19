@@ -1,11 +1,13 @@
 var path = require('path');
 var webpack = require('webpack');
+var CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin');
 
 var rootDir = path.resolve(__dirname, '..');
 var srcDir = path.resolve(rootDir, 'src');
 var distDir = path.resolve(rootDir, 'dist/assets');
 var nodeModulesDir = path.resolve(rootDir, 'node_modules');
 var recordsFile = path.resolve(__dirname, 'webpack.records.json');
+
 
 var uglifyEnvOptions = {
 	production: {
@@ -27,9 +29,14 @@ var uglifyEnvOptions = {
 
 var uglifyOptions = typeof isProduction !== 'undefined' ? uglifyEnvOptions.production : uglifyEnvOptions.development;
 
+var entries = {
+	transplant: srcDir + '/transplant.js',
+	ourplatform: srcDir + '/our-platform.js'
+}
+
 var config = {
 	context: rootDir,
-	entry: srcDir + '/transplant.js',
+	entry: entries,
 	module: {
 		loaders: [
 			{ test: /\.css$/, loader: 'style!css' },
@@ -40,7 +47,7 @@ var config = {
 	},
 	output: {
 		path: distDir,
-		filename: 'bundle.js',
+		filename: '[name].js',
 		publicPath: '/assets/'
 	},
 	resolve: {
@@ -56,7 +63,8 @@ var config = {
 			jQuery: 'jquery'
 		}),
 		new webpack.optimize.OccurenceOrderPlugin(),
-		new webpack.optimize.UglifyJsPlugin(uglifyOptions)
+		new webpack.optimize.UglifyJsPlugin(uglifyOptions),
+		new CommonsChunkPlugin('common.js', ['transplant', 'ourplatform'])
 	]
 };
 

@@ -23,7 +23,7 @@ gulp.task('build', ['sass'], function() {
 
 		var watchCheck = typeof isWatching !== 'undefined' ? true : false;
 
-		return gulp.src(webpackConfig.entry)
+		return gulp.src(config.src + '/main.js')
 			.pipe(gulpWebpack(webpackConfig, webpack))
 			.pipe(gulp.dest(webpackConfig.output.path))
 			.pipe(gulpif(watchCheck, livereload()));

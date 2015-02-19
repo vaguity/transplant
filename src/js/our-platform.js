@@ -1,6 +1,4 @@
-// Set up offsets for full frame calculations as well?
-
-fullFrameSelectors = fullFrameSelectors.concat([
+var fullFrameSelectors = [
 	'.content.our-platform',
 	'.content.our-platform > .panel-container',
 	{
@@ -11,9 +9,9 @@ fullFrameSelectors = fullFrameSelectors.concat([
 		'selector': '.content.our-platform > .panel-container-offset',
 		'offset': '.sticky',
 	},
-]);
+];
 
-vertCenterSelectors = vertCenterSelectors.concat([
+var vertCenterSelectors = [
 	{
 		'selector': '#customize .copy.right',
 		'offset': '.sticky',
@@ -50,10 +48,9 @@ vertCenterSelectors = vertCenterSelectors.concat([
 		'selector': '.hero-container section',
 		'offset': '.header-container',
 	},
-]);
+];
 
-
-$(document).ready(function() {
+$(window).load(function() {
 	enquire.register('screen and (min-width: 1180px)', {
 		deferSetup: true,
 		setup: function() {
@@ -64,22 +61,6 @@ $(document).ready(function() {
 					slideSpeed: 400,
 					offset: $('.sticky').outerHeight(),
 				});
-		},
-		match: function() {
-			$('.content.our-platform').panelSnap('enable');
-
-		},
-		unmatch: function() {
-			$('.content.our-platform').panelSnap('disable');
-		},
-	});
-
-});
-
-$(window).load(function() {
-	enquire.register('screen and (min-width: 1180px)', {
-		deferSetup: true,
-		setup: function() {
 			$('.content.our-platform .hero .copy').fadeIn();
 			$('.content.our-platform').scroll($.throttle(150, function() {
 				if ($('.content.our-platform').scrollTop() >= ($(window).height() - $('.sticky').outerHeight())) {
@@ -89,6 +70,11 @@ $(window).load(function() {
 					$('.sticky').removeClass('enabled').css('display', '');
 				}
 			}));
+		},
+		match: function() {
+			setFullFrame(fullFrameSelectors);
+			setVerticalCenter(vertCenterSelectors);
+			$('.content.our-platform').panelSnap('enable');
 		},
 		unmatch: function() {
 			$('.content.our-platform').panelSnap('disable');
