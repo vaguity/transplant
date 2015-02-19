@@ -29,7 +29,7 @@ var uglifyOptions = typeof isProduction !== 'undefined' ? uglifyEnvOptions.produ
 
 var config = {
 	context: rootDir,
-	entry: srcDir + '/entry.js',
+	entry: srcDir + '/transplant.js',
 	module: {
 		loaders: [
 			{ test: /\.css$/, loader: 'style!css' },

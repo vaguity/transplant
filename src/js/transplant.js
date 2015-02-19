@@ -105,12 +105,16 @@ function videoHero(set) {
 			}]);
 		}
 	}
+	else {
+		setVerticalCenter(['.hero-video-container h1'], true);
+	}
 }
 
 function setVerticalCenter(selectors, reset) {
 
 	var vertCenterLength = selectors.length;
 	var vertCenterPad = 0;
+
 	if (vertCenterLength < 1) {
 		return;
 	}
@@ -210,7 +214,6 @@ $(window).load(function() {
 	}
 	stickySetup();
 	videoHeroSetup();
-	videoHero(true);
 
 	enquire.register('screen and (min-width: 1180px)', {
 		deferSetup: true,
@@ -223,6 +226,7 @@ $(window).load(function() {
 		},
 		match: function() {
 			setVerticalCenter(vertCenterSelectors);
+			videoHero(true);
 		},
 		unmatch: function() {
 			setFullFrame(fullFrameSelectors, true);
@@ -231,7 +235,7 @@ $(window).load(function() {
 	});
 });
 
-$(window).on('resize', $.throttle(300, function() {
+$(window).resize($.throttle(300, function() {
 	stickySetup();
 	videoHeroSetup();
 	videoHero(true);
@@ -261,6 +265,7 @@ enquire
 })
 .register("screen and (min-width: 1000px) and (max-width: 1180px)", {
 	match: function() {
+		console.log('wut');
 		$('.secondary-nav .jobs-link').text('Jobs');
 	},
 	unmatch: function() {

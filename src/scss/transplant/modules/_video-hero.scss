@@ -2,10 +2,14 @@
 	position: relative;
 	overflow: hidden;
 	.wistia-embed {
-		position: absolute;
-		width: 100%;
-		min-height: 580px;
-		overflow-x: hidden;
+		display: none;
+		@include breakpoint($breakpoint-desktop) {
+			display: block;
+			position: absolute;
+			width: 100%;
+			min-height: 580px;
+			overflow-x: hidden;
+		}
 	}
 	.mask {
 		position: relative;
