@@ -7843,7 +7843,6 @@ function(module, exports, __webpack_require__) {
 function(module, exports, __webpack_require__) {
     /* WEBPACK VAR INJECTION */
     (function($) {
-        var fullFrameSelectors = [];
         function setFullFrame(el, reset) {
             if (reset === true) {
                 var windowHeight = "";
@@ -7855,43 +7854,24 @@ function(module, exports, __webpack_require__) {
             } else {
                 for (var i = 0; i < el.length; i++) {
                     if (typeof el[i] === "object") {
-                        $(el[i]["selector"]).css("height", windowHeight - $(el[i]["offset"]).outerHeight() + "px");
+                        var windowHeightOffset = windowHeight - $(el[i]["offset"]).outerHeight();
+                        $(el[i]["selector"]).css("height", windowHeightOffset + "px");
+                        if (typeof el[i]["ratio"] === "number") {
+                            if ($(window).width() / windowHeightOffset < el[i]["ratio"]) {
+                                $(el[i]["selector"]).css("width", parseInt(windowHeightOffset * el[i]["ratio"]) + "px");
+                            } else {
+                                $(el[i]["selector"]).css({
+                                    width: "100%",
+                                    height: $(window).width() / el[i]["ratio"] + "px"
+                                });
+                            }
+                        }
                     } else {
                         $(el[i]).css("height", windowHeight + "px");
                     }
                 }
             }
         }
-        $(document).ready(function() {
-            enquire.register("screen and (min-width: 1180px)", {
-                deferSetup: true,
-                setup: function() {
-                    setFullFrame(fullFrameSelectors);
-                },
-                match: function() {
-                    setFullFrame(fullFrameSelectors);
-                },
-                unmatch: function() {
-                    setFullFrame(fullFrameSelectors, true);
-                }
-            });
-        });
-        $(window).load(function() {
-            enquire.register("screen and (min-width: 1180px)", {
-                deferSetup: true,
-                setup: function() {
-                    $(window).resize($.throttle(150, function() {
-                        setFullFrame(fullFrameSelectors);
-                    }));
-                },
-                match: function() {
-                    setFullFrame(fullFrameSelectors);
-                },
-                unmatch: function() {
-                    setFullFrame(fullFrameSelectors, true);
-                }
-            });
-        });
         module.exports.setFullFrame = setFullFrame;
     }).call(exports, __webpack_require__(1));
 }, /* 4 */

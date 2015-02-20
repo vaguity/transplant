@@ -627,12 +627,13 @@ webpackJsonp([ 2 ], {
     function(module, exports, __webpack_require__) {
         /* WEBPACK VAR INJECTION */
         (function($) {
-            var fullFrameSelectors = [ ".content.our-platform", ".content.our-platform > .panel-container", {
-                selector: ".body-container .image.left",
-                offset: ".sticky"
-            }, {
+            var fullFrameSelectors = [ ".content.our-platform", ".content.our-platform > .panel-container", ".body-container .image.left", {
                 selector: ".content.our-platform > .panel-container-offset",
                 offset: ".sticky"
+            }, {
+                selector: ".wistia-embed",
+                offset: ".header-container",
+                ratio: 16 / 9
             } ];
             var vertCenterSelectors = [ {
                 selector: "#customize .copy.right",
@@ -662,6 +663,20 @@ webpackJsonp([ 2 ], {
                 selector: ".hero-container section",
                 offset: ".header-container"
             } ];
+            $(document).ready(function() {
+                enquire.register("screen and (min-width: 1180px)", {
+                    deferSetup: true,
+                    setup: function() {
+                        setFullFrame(fullFrameSelectors);
+                    },
+                    match: function() {
+                        setFullFrame(fullFrameSelectors);
+                    },
+                    unmatch: function() {
+                        setFullFrame(fullFrameSelectors, true);
+                    }
+                });
+            });
             $(window).load(function() {
                 enquire.register("screen and (min-width: 1180px)", {
                     deferSetup: true,
@@ -680,6 +695,10 @@ webpackJsonp([ 2 ], {
                                 $(".sticky").removeClass("enabled").css("display", "");
                             }
                         }));
+                        $(window).resize($.throttle(150, function() {
+                            setFullFrame(fullFrameSelectors);
+                            setVerticalCenter(vertCenterSelectors);
+                        }));
                     },
                     match: function() {
                         setFullFrame(fullFrameSelectors);
@@ -687,6 +706,7 @@ webpackJsonp([ 2 ], {
                         $(".content.our-platform").panelSnap("enable");
                     },
                     unmatch: function() {
+                        setFullFrame(fullFrameSelectors, true);
                         $(".content.our-platform").panelSnap("disable");
                     }
                 });

@@ -1,13 +1,15 @@
 var fullFrameSelectors = [
 	'.content.our-platform',
 	'.content.our-platform > .panel-container',
-	{
-		'selector': '.body-container .image.left',
-		'offset': '.sticky',
-	},
+	'.body-container .image.left',
 	{
 		'selector': '.content.our-platform > .panel-container-offset',
 		'offset': '.sticky',
+	},
+	{
+		'selector': '.wistia-embed',
+		'offset': '.header-container',
+		'ratio': 16 / 9,
 	},
 ];
 
@@ -50,6 +52,22 @@ var vertCenterSelectors = [
 	},
 ];
 
+$(document).ready(function() {
+	enquire.register('screen and (min-width: 1180px)', {
+		deferSetup: true,
+		setup: function() {
+			setFullFrame(fullFrameSelectors);
+		},
+		match: function() {
+			setFullFrame(fullFrameSelectors);
+
+		},
+		unmatch: function() {
+			setFullFrame(fullFrameSelectors, true);
+		},
+	});
+});
+
 $(window).load(function() {
 	enquire.register('screen and (min-width: 1180px)', {
 		deferSetup: true,
@@ -70,6 +88,10 @@ $(window).load(function() {
 					$('.sticky').removeClass('enabled').css('display', '');
 				}
 			}));
+			$(window).resize($.throttle(150, function() {
+				setFullFrame(fullFrameSelectors);
+				setVerticalCenter(vertCenterSelectors);
+			}));
 		},
 		match: function() {
 			setFullFrame(fullFrameSelectors);
@@ -77,6 +99,7 @@ $(window).load(function() {
 			$('.content.our-platform').panelSnap('enable');
 		},
 		unmatch: function() {
+			setFullFrame(fullFrameSelectors, true);
 			$('.content.our-platform').panelSnap('disable');
 		},
 	});

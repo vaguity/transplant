@@ -6,12 +6,12 @@
 
 .content.our-platform {
 
-	.hero-container {
-		background-position: center center;
-		background-repeat: no-repeat;
-		background-image: url('../img/our_platform/our_platform_hero.jpg');
-		background-size: cover;
-	}
+	// .hero-container {
+	// 	background-position: center center;
+	// 	background-repeat: no-repeat;
+	// 	background-image: url('../img/our_platform/our_platform_hero.jpg');
+	// 	background-size: cover;
+	// }
 
 	.hero-container section, .body-container section {
 		@include breakpoint($breakpoint-desktop) {
@@ -199,5 +199,6 @@
 	> .container {
 		position: relative;
 		overflow: hidden;
+		height: 100%;
 	}
 }

@@ -11,17 +11,22 @@ function videoHeroSetup() {
 function videoHero(set) {
 	if (set === true) {
 		if ($('.wistia-embed').length) {
-			var windowWidth = $(window).width();
-			var newHeroHeight = parseInt(windowWidth / videoHeroRatio);
-			$('.wistia-embed').css({
-				'width': windowWidth + 'px',
-				'height': newHeroHeight + 'px',
-				'display': 'block',
-			});
-			// This needs to appear after; causing a FOUC
-			$('.hero-video-container .mask').css('height', newHeroHeight + 'px');
+			if ($('.wistia-embed').data('mask-reset') !== true) {
+				var windowWidth = $(window).width();
+				var newHeroHeight = parseInt(windowWidth / videoHeroRatio);
+				$('.wistia-embed').css({
+					'width': windowWidth + 'px',
+					'height': newHeroHeight + 'px',
+				});
+				$('.hero-video-container .mask').css('height', newHeroHeight + 'px');
+			}
+			$('.wistia-embed').css('display', 'block');
+
+			var verticalCenterSelector = typeof $('.wistia-embed').data('selector') !== 'undefined' ? $('.wistia-embed').data('selector') : '.hero-video-container h1';
+
+
 			setVerticalCenter([{
-				'selector': '.hero-video-container h1',
+				'selector': verticalCenterSelector,
 				'offset': $(window).height() - newHeroHeight,
 			}]);
 		}
