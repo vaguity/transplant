@@ -26,7 +26,7 @@ function setVerticalCenter(selectors, reset) {
 			else {
 				offsetValue = selectors[i]['offset'];
 			}
-			vertCenterPad = (windowHeight - $(selectors[i]['selector']).height() - offsetValue) / 2;
+			vertCenterPad = parseInt((windowHeight - $(selectors[i]['selector']).height() - offsetValue) / 2);
 			if (vertCenterPad < 0) {
 				vertCenterPad = 0;
 				$(selectors[i]['selector']).css({
@@ -43,7 +43,7 @@ function setVerticalCenter(selectors, reset) {
 			continue;
 		}
 
-		vertCenterPad = (windowHeight - $(selectors).height()) / 2;
+		vertCenterPad = parseInt((windowHeight - $(selectors).height()) / 2);
 		$(selectors).css({
 			'padding-top': vertCenterPad + 'px',
 			'padding-bottom': vertCenterPad + 'px',

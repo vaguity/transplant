@@ -10,7 +10,7 @@ This is a bower package to include in marketing projects as a dependency.
 
 ### The Sass
 
-`src/scss/transplant/variables/_base.scss` should be imported into any project so the global variables are made available to any custom styles in a given project.
+`src/scss/transplant/variables/` should be imported into any project so the global variables are made available to any custom styles in a given project.
 
 ### The JavaScript
 
@@ -29,4 +29,4 @@ Run the following in the root directory before making changes:
 
 The tasks `gulp sass`, `gulp build` (which also processes Sass), and `gulp watch` are also available. The `gulp` command automatically builds and starts watching.
 
-Bump the version using a git version tag if changes are made to this repository. Each project should use a version tag when including this package.
+Bump the version using a git version tag if changes are made to this repository.

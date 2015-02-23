@@ -24,7 +24,6 @@ function videoHero(set) {
 
 			var verticalCenterSelector = typeof $('.wistia-embed').data('selector') !== 'undefined' ? $('.wistia-embed').data('selector') : '.hero-video-container h1';
 
-
 			setVerticalCenter([{
 				'selector': verticalCenterSelector,
 				'offset': $(window).height() - newHeroHeight,
@@ -32,8 +31,7 @@ function videoHero(set) {
 		}
 	}
 	else {
-		setVerticalCenter(['.hero-video-container h1'], true);
-		$('.wistia-embed').attr('style', '');
+		$('.wistia-embed, .hero-video-container .mask, .hero-video-container h1').attr('style', '');
 	}
 }
 
@@ -43,14 +41,17 @@ $(window).load(function() {
 	enquire.register('screen and (min-width: 1180px)', {
 		match: function() {
 			videoHero(true);
+			$(window).off('resize');
+			$(window).on('resize', $.debounce(300, function() {
+				videoHeroSetup();
+				videoHero(true);
+			}));
 		},
 		unmatch: function() {
-			videoHero(false);
+			$(window).off('resize');
+			$(window).on('resize', $.debounce(300, function() {
+				videoHero(false);
+			}));
 		},
 	});
 });
-
-$(window).resize($.throttle(300, function() {
-	videoHeroSetup();
-	videoHero(true);
-}));

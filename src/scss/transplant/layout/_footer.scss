@@ -7,6 +7,9 @@
 }
 
 .footer {
+	.site-nav {
+		display: none;
+	}
 	@include breakpoint($breakpoint-desktop) {
 		@include container(1100px);
 		.site-section {
@@ -16,6 +19,7 @@
 			}
 		}
 		.site-nav {
+			display: block;
 			@include container;
 		}
 		.footer-logo {

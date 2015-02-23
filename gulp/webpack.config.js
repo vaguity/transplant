@@ -31,7 +31,8 @@ var uglifyOptions = typeof isProduction !== 'undefined' ? uglifyEnvOptions.produ
 
 var entries = {
 	transplant: srcDir + '/transplant.js',
-	ourplatform: srcDir + '/our-platform.js'
+	ourplatform: srcDir + '/our-platform.js',
+	guide: srcDir + '/guide.js'
 }
 
 var config = {

@@ -127,37 +127,10 @@
 }
 
 
-// Parallax prototyping
-
-.parallax-container {
-	margin-top: 0;
-}
-
-.parallax-container .parallax-fixed {
-	height: 580px;
-	&.pinned {
-		// position: fixed;
-		// top: 0px;
-	}
-}
-
-.parallax-container .parallax-fixed > div {
-	z-index: 0;
-	width: 100%;
-}
-
-.parallax-container .parallax-sections {
-	z-index: 1;
-	position: relative;
-	background: $white;
-	padding-top: 1px;
-}
-
-
 // Blue Bottle case study promo example
 
 .promo-container.blue-bottle {
-	background: url('../img/blue_bottle_promo.jpg');
+	background: url('/assets/img/blue_bottle_promo.jpg');
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -166,7 +139,7 @@
 // Next module example
 
 .next-container.ambassador {
-	background: url('../img/ambassador_next.jpg');
+	background: url('/assets/img/ambassador_next.jpg');
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
