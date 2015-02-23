@@ -194,8 +194,12 @@
 
 .content.our-platform {
 	overflow-x: hidden;
-	> .panel-container {
+	.panel-container {
 		position: relative;
+		overflow: hidden;
 		height: 100%;
+	}
+	.panel-container-footer {
+		overflow: auto;
 	}
 }

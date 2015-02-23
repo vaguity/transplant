@@ -3,10 +3,6 @@ var fullFrameSelectors = [
 	'.content.our-platform > .panel-container',
 	'.body-container .image.left',
 	{
-		'selector': '.content.our-platform > .panel-container-offset',
-		'offset': '.sticky',
-	},
-	{
 		'selector': '.wistia-embed',
 		'offset': '.header-container',
 		'ratio': 16 / 9,
@@ -100,6 +96,7 @@ $(window).load(function() {
 		},
 		unmatch: function() {
 			setFullFrame(fullFrameSelectors, true);
+			setVerticalCenter(vertCenterSelectors, true);
 			$('.content.our-platform').panelSnap('disable');
 		},
 	});
