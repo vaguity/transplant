@@ -29,6 +29,10 @@
 					@include span(2 of 6 last);
 				}
 			}
+			&.two-thirds {
+				@include span(4 of 6 last);
+				@include suffix(2 of 6);
+			}
 		}
 	}
 }
@@ -47,19 +51,29 @@
 			margin: 0;
 		}
 	}
-	h1 {
-		color: $orange;
-	}
 	p {
 		color: $midgray;
 		font-size: 16px;
 		font-family: $type-base;
 		line-height: 1.5em;
 	}
+	h1 {
+		color: $orange;
+	}
+	h3 {
+		margin: $spacing-xmedium 0;
+	}
 	.title {
 		text-align: left;
 		text-transform: uppercase;
 		color: $orange;
+	}
+	.highlight {
+		color: $darkgray;
+		font-family: $type-serif;
+		font-weight: 100;
+		font-size: 24px;
+		line-height: 32px;
 	}
 	.subhed {
 		display: block;
@@ -70,5 +84,14 @@
 		text-transform: none;
 		margin: $spacing-small 0;
 		font-weight: normal;
+	}
+	.flush {
+		margin: 0;
+	}
+	.flush-top {
+		margin-top: 0;
+	}
+	.flush-bottom {
+		margin-bottom: 0;
 	}
 }
