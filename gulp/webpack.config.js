@@ -6,7 +6,6 @@ var rootDir = path.resolve(__dirname, '..');
 var srcDir = path.resolve(rootDir, 'src');
 var distDir = path.resolve(rootDir, 'dist/assets');
 var nodeModulesDir = path.resolve(rootDir, 'node_modules');
-var recordsFile = path.resolve(__dirname, 'webpack.records.json');
 
 
 var uglifyEnvOptions = {

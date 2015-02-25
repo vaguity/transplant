@@ -8,8 +8,8 @@ var packageType = {
 };
 
 var config = {
-	buildMethod: 'webpack',
-	// buildMethod: false,
+	// buildMethod: 'webpack',
+	buildMethod: false,
 	sass: {
 		src: src + '/scss/**/*.scss',
 		dest: src + '/css',
@@ -18,7 +18,15 @@ var config = {
 	js: {
 		src: src + '/js/**/*.js',
 		dist: dist + '/assets/js',
+		entries: [
+			src + '/js/main.js',
+			src + '/js/sticky.js',
+			src + '/js/vertical-center.js',
+			src + '/js/full-frame.js',
+			src + '/js/video-hero.js',
+		],
 	},
+
 	bower: {
 		src: src + '/lib',
 		packages: [

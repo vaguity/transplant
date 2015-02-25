@@ -5,6 +5,8 @@ var uglify = require('gulp-uglify');
 var jshint = require('gulp-jshint');
 var merge = require('merge-stream');
 var rename = require('gulp-rename');
+var replace = require('gulp-replace');
+var concat = require('gulp-concat');
 var sourcemaps = require('gulp-sourcemaps');
 var gutil = require('gulp-util');
 var gulpWebpack = require('gulp-webpack');
@@ -39,6 +41,16 @@ gulp.task('build', ['sass'], function() {
 			.on('error', handleErrors)
 			.pipe(gulp.dest(config.js.dist));
 
+		var transplant = gulp.src(config.js.entries)
+			.on('error', handleErrors)
+			.pipe(concat('transplant.js'))
+			.pipe(replace(/module\.exports(.+)\n/g, function() {
+				return '';
+			}))
+			.pipe(gulp.dest(config.js.dist));
+
+
+
 		// var scriptsmin = gulp.src(config.js.src)
 		// 	.pipe(uglify())
 		// 	.pipe(rename({ suffix: '.min' }))
@@ -48,7 +60,7 @@ gulp.task('build', ['sass'], function() {
 		var reload = gulp.src('')
 			.pipe(gulpif(watchCheck, livereload()));
 
-		return merge(styles, scripts, reload);
+		return merge(styles, scripts, transplant, reload);
 	}
 
 });
