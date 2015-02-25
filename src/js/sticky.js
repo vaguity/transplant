@@ -30,13 +30,17 @@ function stickyCalc() {
 	if ($('.sticky').hasClass('sticky-sections')) {
 
 		for (var i = 0; i < stickySections; i++) {
-			if ((window.scrollY + $('.sticky').height()) > $('.sticky-section').eq(i).position().top) {
+			if ((window.scrollY + $('.sticky').outerHeight()) > $('.sticky-section').eq(i).position().top) {
 				stickySectionNew = i;
 			}
-			// check where the scroll is
-			// highlight that number list item in menu
 		}
 		if (stickySection === stickySectionNew) {
+			if ((stickySection === 0) && ((window.scrollY + $('.sticky').outerHeight()) < $('.sticky-section').eq(0).position().top)) {
+				$('.sub-nav li').removeClass('active');
+			}
+			else {
+				$('.sub-nav li').eq(stickySection).addClass('active');
+			}
 			return;
 		}
 		else {

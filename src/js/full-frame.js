@@ -33,5 +33,4 @@ function setFullFrame(el, reset) {
 	}
 }
 
-
 module.exports.setFullFrame = setFullFrame;
