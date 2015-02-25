@@ -13,15 +13,16 @@ var handleErrors = require('../util/handleErrors');
 
 var config = require('../config');
 
+
 gulp.task('build', ['sass'], function() {
+
+	global.isProduction = typeof global.isProduction !== 'undefined' ? global.isProduction : undefined;
+	var watchCheck = typeof isWatching !== 'undefined' ? true : false;
 
 	// Webpack build
 	if (config.buildMethod == 'webpack') {
-		global.isProduction = typeof global.isProduction !== 'undefined' ? global.isProduction : undefined;
 
 		var webpackConfig = require('../webpack.config.js');
-
-		var watchCheck = typeof isWatching !== 'undefined' ? true : false;
 
 		return gulp.src(config.src + '/main.js')
 			.pipe(gulpWebpack(webpackConfig, webpack))
@@ -30,9 +31,6 @@ gulp.task('build', ['sass'], function() {
 	}
 	// Standard build
 	else {
-		global.isProduction = typeof global.isProduction !== 'undefined' ? global.isProduction : undefined;
-
-		var watchCheck = typeof isWatching !== 'undefined' ? true : false;
 
 		var styles = gulp.src(config.sass.dest + '/*.css')
 			.pipe(gulp.dest(config.sass.dist));
