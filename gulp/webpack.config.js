@@ -31,7 +31,6 @@ var uglifyOptions = typeof isProduction !== 'undefined' ? uglifyEnvOptions.produ
 
 var entries = {
 	transplant: srcDir + '/transplant.js',
-	ourplatform: srcDir + '/our-platform.js',
 	guide: srcDir + '/guide.js'
 }
 
@@ -65,7 +64,11 @@ var config = {
 		}),
 		new webpack.optimize.OccurenceOrderPlugin(),
 		new webpack.optimize.UglifyJsPlugin(uglifyOptions),
-		new CommonsChunkPlugin('common.js', ['transplant', 'ourplatform'])
+		new CommonsChunkPlugin({
+			name: 'common',
+			filename: 'common.js',
+			chunks: ['transplant', 'guide']
+		})
 	]
 };
 
