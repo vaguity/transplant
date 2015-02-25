@@ -8,3 +8,4 @@ global.$.extend(global.$, global.throttleDebounce);
 global.setVerticalCenter = require('js/vertical-center').setVerticalCenter;
 global.setFullFrame = require('js/full-frame').setFullFrame;
 global.stickySetup = require('js/sticky').stickySetup;
+global.videoHero = require('js/video-hero').videoHero;

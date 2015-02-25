@@ -53,11 +53,16 @@
 	<div id="content" class="content">
 
 		<div class="hero-container hero-video-container container full">
-			<div id="wistia_ci98uqexa1" class="wistia-embed" style="width:1920px;height:1080px;"> </div>
+			<div class="wistia-container">
+				<div id="wistia_ci98uqexa1" class="wistia-embed"></div>
+			</div>
 			<script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/E-v1.js"></script>
 			<script>
 			wistiaEmbed = Wistia.embed("ci98uqexa1", {
-			  videoFoam: true
+				videoFoam: true
+			});
+			wistiaEmbed.ready(function() {
+				videoHero(true, wistiaEmbed.height());
 			});
 			</script>
 			<div class="mask">

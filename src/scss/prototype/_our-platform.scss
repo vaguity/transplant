@@ -13,6 +13,10 @@
 	// 	background-size: cover;
 	// }
 
+	.hero-video-container .wistia-embed {
+		top: 0;
+	}
+
 	.hero-container section, .body-container section {
 		@include breakpoint($breakpoint-desktop) {
 			min-height: 600px;
@@ -45,9 +49,9 @@
 				padding-top: 60px;
 				padding-bottom: 60px;
 				&.left {
-					@include span(4 of 12);
-					@include prefix(1 of 12);
-					@include suffix(1 of 12);
+					@include span(10 of 24);
+					@include prefix(1 of 24);
+					@include suffix(1 of 24);
 					text-align: left;
 				}
 				&.right {
@@ -59,9 +63,10 @@
 				}
 			}
 			h1 {
-				font-size: 60px;
+				font-size: 80px;
 				padding: 0;
 				margin: 1em 0;
+				// margin-top:
 			}
 			p {
 				font-size: 24px;

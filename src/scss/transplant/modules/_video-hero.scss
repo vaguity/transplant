@@ -1,12 +1,15 @@
 .hero-video-container {
 	position: relative;
 	overflow: hidden;
-	.wistia-embed {
+	.wistia-container {
 		display: none;
+	}
+	.wistia-embed {
 		position: absolute;
 		width: 100%;
-		min-height: 580px;
+		height: 580px;
 		overflow-x: hidden;
+		top: -70px;
 	}
 	.mask {
 		position: relative;

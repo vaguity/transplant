@@ -7828,15 +7828,16 @@ function(module, exports, __webpack_require__) {
 function(module, exports, __webpack_require__) {
     /* WEBPACK VAR INJECTION */
     (function(global) {
-        __webpack_require__(10);
+        __webpack_require__(11);
         global.$ = global.jQuery = __webpack_require__(1);
-        __webpack_require__(13);
-        global.enquire = __webpack_require__(14);
-        global.throttleDebounce = __webpack_require__(15).Cowboy;
+        __webpack_require__(14);
+        global.enquire = __webpack_require__(15);
+        global.throttleDebounce = __webpack_require__(16).Cowboy;
         global.$.extend(global.$, global.throttleDebounce);
         global.setVerticalCenter = __webpack_require__(7).setVerticalCenter;
         global.setFullFrame = __webpack_require__(5).setFullFrame;
         global.stickySetup = __webpack_require__(6).stickySetup;
+        global.videoHero = __webpack_require__(8).videoHero;
     }).call(exports, function() {
         return this;
     }());
@@ -8027,8 +8028,51 @@ function(module, exports, __webpack_require__) {
         module.exports.setVerticalCenter = setVerticalCenter;
     }).call(exports, __webpack_require__(1));
 }, /* 8 */
-, /* 9 */
+/***/
+function(module, exports, __webpack_require__) {
+    /* WEBPACK VAR INJECTION */
+    (function($) {
+        function videoHero(set, height) {
+            if (set === true && $(".wistia-embed").length) {
+                if ($(".wistia-embed").data("mask-reset") !== true) {
+                    if (typeof height !== "undefined") {
+                        var newHeroOffset = parseInt((height - $(".hero-video-container").height()) / 2);
+                    } else {
+                        var videoHeroRatio = $(".wistia-embed").width() / $(".wistia-embed").height();
+                        var newHeroHeight = parseInt($(window).width() / videoHeroRatio);
+                        var newHeroOffset = parseInt((newHeroHeight - $(".hero-video-container").height()) / 2);
+                    }
+                    $(".wistia-embed").css({
+                        top: "-" + newHeroOffset + "px"
+                    });
+                }
+                $(".wistia-container").css("display", "block");
+            } else {
+                $(".wistia-embed").attr("style", "");
+            }
+        }
+        $(window).load(function() {
+            enquire.register("screen and (min-width: 1180px)", {
+                match: function() {
+                    videoHero(true);
+                    $(window).off("resize");
+                    $(window).on("resize", $.debounce(300, function() {
+                        videoHero(true);
+                    }));
+                },
+                unmatch: function() {
+                    $(window).off("resize");
+                    $(window).on("resize", $.debounce(300, function() {
+                        videoHero(false);
+                    }));
+                }
+            });
+        });
+        module.exports.videoHero = videoHero;
+    }).call(exports, __webpack_require__(1));
+}, /* 9 */
 , /* 10 */
+, /* 11 */
 /***/
 function(module, exports, __webpack_require__) {
     /*** IMPORTS FROM imports-loader ***/
@@ -9084,9 +9128,9 @@ function(module, exports, __webpack_require__) {
         /*** EXPORTS FROM exports-loader ***/
         module.exports = window.Modernizr;
     }).call(window);
-}, /* 11 */
-, /* 12 */
+}, /* 12 */
 , /* 13 */
+, /* 14 */
 /***/
 function(module, exports, __webpack_require__) {
     /* WEBPACK VAR INJECTION */
@@ -9103,7 +9147,7 @@ function(module, exports, __webpack_require__) {
             };
         }
     }).call(exports, __webpack_require__(1));
-}, /* 14 */
+}, /* 15 */
 /***/
 function(module, exports, __webpack_require__) {
     var __WEBPACK_AMD_DEFINE_RESULT__;
@@ -9363,7 +9407,7 @@ function(module, exports, __webpack_require__) {
         };
         return new MediaQueryDispatch();
     });
-}, /* 15 */
+}, /* 16 */
 /***/
 function(module, exports, __webpack_require__) {
     /*

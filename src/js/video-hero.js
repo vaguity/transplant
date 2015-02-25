@@ -1,49 +1,31 @@
-var videoHeroRatio;
-
-function videoHeroSetup() {
-	if ($('.wistia-embed').length) {
-		var videoHeroWidth = parseInt($('.wistia-embed').css('width'));
-		var videoHeroHeight = parseInt($('.wistia-embed').css('height'));
-		videoHeroRatio = videoHeroWidth / videoHeroHeight;
-	}
-}
-
-function videoHero(set) {
-	if (set === true) {
-		if ($('.wistia-embed').length) {
-			if ($('.wistia-embed').data('mask-reset') !== true) {
-				var windowWidth = $(window).width();
-				var newHeroHeight = parseInt(windowWidth / videoHeroRatio);
-				$('.wistia-embed').css({
-					'width': windowWidth + 'px',
-					'height': newHeroHeight + 'px',
-				});
-				$('.hero-video-container .mask').css('height', newHeroHeight + 'px');
+function videoHero(set, height) {
+	if (set === true && $('.wistia-embed').length) {
+		if ($('.wistia-embed').data('mask-reset') !== true) {
+			if (typeof height !== 'undefined') {
+				var newHeroOffset = parseInt((height - $('.hero-video-container').height()) / 2);
 			}
-			$('.wistia-embed').css('display', 'block');
-
-			var verticalCenterSelector = typeof $('.wistia-embed').data('selector') !== 'undefined' ? $('.wistia-embed').data('selector') : '.hero-video-container h1';
-
-			setVerticalCenter([{
-				'selector': verticalCenterSelector,
-				'offset': $(window).height() - newHeroHeight,
-			}]);
+			else {
+				var videoHeroRatio = $('.wistia-embed').width() / $('.wistia-embed').height();
+				var newHeroHeight = parseInt($(window).width() / videoHeroRatio);
+				var newHeroOffset = parseInt((newHeroHeight - $('.hero-video-container').height()) / 2);
+			}
+			$('.wistia-embed').css({
+				'top': '-' + newHeroOffset + 'px',
+			});
 		}
+		$('.wistia-container').css('display', 'block');
 	}
 	else {
-		$('.wistia-embed, .hero-video-container .mask, .hero-video-container h1').attr('style', '');
+		$('.wistia-embed').attr('style', '');
 	}
 }
 
 $(window).load(function() {
-	videoHeroSetup();
-
 	enquire.register('screen and (min-width: 1180px)', {
 		match: function() {
 			videoHero(true);
 			$(window).off('resize');
 			$(window).on('resize', $.debounce(300, function() {
-				videoHeroSetup();
 				videoHero(true);
 			}));
 		},
@@ -55,3 +37,5 @@ $(window).load(function() {
 		},
 	});
 });
+
+module.exports.videoHero = videoHero;
