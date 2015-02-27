@@ -1,10 +1,10 @@
-require('js/main');
-require('js/sticky');
-require('js/vertical-center');
-require('js/full-frame');
-require('js/video-hero');
+require('main');
+require('sticky');
+require('vertical-center');
+require('full-frame');
+require('video-hero');
 
-global.setVerticalCenter = require('js/vertical-center').setVerticalCenter;
-global.setFullFrame = require('js/full-frame').setFullFrame;
-global.stickySetup = require('js/sticky').stickySetup;
-global.videoHero = require('js/video-hero').videoHero;
+global.setVerticalCenter = require('vertical-center').setVerticalCenter;
+global.setFullFrame = require('full-frame').setFullFrame;
+global.stickySetup = require('sticky').stickySetup;
+global.videoHero = require('video-hero').videoHero;
