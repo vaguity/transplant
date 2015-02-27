@@ -41,26 +41,10 @@ gulp.task('build', ['sass'], function() {
 			.on('error', handleErrors)
 			.pipe(gulp.dest(config.js.dist));
 
-		var transplant = gulp.src(config.js.entries)
-			.on('error', handleErrors)
-			.pipe(concat('transplant.js'))
-			.pipe(replace(/module\.exports(.+)\n/g, function() {
-				return '';
-			}))
-			.pipe(gulp.dest(config.js.dist));
-
-
-
-		// var scriptsmin = gulp.src(config.js.src)
-		// 	.pipe(uglify())
-		// 	.pipe(rename({ suffix: '.min' }))
-		// 	.on('error', handleErrors)
-		// 	.pipe(gulp.dest(config.js.dist));
-
 		var reload = gulp.src('')
 			.pipe(gulpif(watchCheck, livereload()));
 
-		return merge(styles, scripts, transplant, reload);
+		return merge(styles, scripts, reload);
 	}
 
 });

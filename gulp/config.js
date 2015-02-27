@@ -18,13 +18,6 @@ var config = {
 	js: {
 		src: src + '/js/**/*.js',
 		dist: dist + '/assets/js',
-		entries: [
-			src + '/js/main.js',
-			src + '/js/sticky.js',
-			src + '/js/vertical-center.js',
-			src + '/js/full-frame.js',
-			src + '/js/video-hero.js',
-		],
 	},
 
 	bower: {

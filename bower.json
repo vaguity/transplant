@@ -1,9 +1,8 @@
 {
   "name": "transplant",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": [
     "dist/assets/css/transplant.css",
-    "dist/assets/js/transplant.js"
   ],
   "private": true,
   "ignore": [
