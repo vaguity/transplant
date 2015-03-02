@@ -13,9 +13,9 @@ function stickySetup() {
 }
 
 function stickyCalc() {
-	// if (stickyTop === null) {
-		// stickySetup();
-	// }
+    if (typeof stickyTop === 'undefined') {
+        stickySetup();
+    }
 
 	if ((window.scrollY + $(window).height()) > stickyBottom) {
 		$('.sticky, .sticky-begin, .sticky-end').removeClass('enabled');
@@ -90,21 +90,19 @@ $(document).ready(function() {
 			}
 		}
 	});
+	enquire.register("screen and (min-width: 1000px)", {
+		setup: function() {
+			stickySetup();
+		},
+		match: function() {
+			stickySetup();
+			stickyNav(true);
+		},
+		unmatch: function() {
+			stickyNav(false);
+		},
+	});
 });
 
-enquire.register("screen and (min-width: 1000px)", {
-	setup: function() {
-		stickySetup();
-	},
-	match: function() {
-		$('.primary-nav, .secondary-nav').attr('style', '');
-		stickySetup();
-		stickyNav(true);
-	},
-	unmatch: function() {
-		$('.primary-nav, .secondary-nav').css('display', 'none');
-		stickyNav(false);
-	},
-});
 
 module.exports.stickySetup = stickySetup;
