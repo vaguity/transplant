@@ -13,9 +13,9 @@ function stickySetup() {
 }
 
 function stickyCalc() {
-	if (stickyTop === null) {
-		return;
-	}
+	// if (stickyTop === null) {
+		// stickySetup();
+	// }
 
 	if ((window.scrollY + $(window).height()) > stickyBottom) {
 		$('.sticky, .sticky-begin, .sticky-end').removeClass('enabled');
@@ -55,7 +55,7 @@ function stickyCalc() {
 
 function stickyNav(set) {
 	if (set === true) {
-		$(window).on('scroll', $.debounce(200, function() {
+		$(window).on('scroll', $.throttle(100, function() {
 			if ($('.sticky').length === 0) {
 				$(window).off('scroll', window);
 			}
@@ -69,8 +69,9 @@ function stickyNav(set) {
 	}
 }
 
-$(window).resize($.throttle(300, function() {
+$(window).resize($.debounce(300, function() {
 	stickySetup();
+	stickyCalc();
 }));
 
 $(document).ready(function() {
@@ -93,7 +94,7 @@ $(document).ready(function() {
 
 enquire.register("screen and (min-width: 1000px)", {
 	setup: function() {
-		stickyCalc();
+		stickySetup();
 	},
 	match: function() {
 		$('.primary-nav, .secondary-nav').attr('style', '');

@@ -75,9 +75,9 @@ function(module, exports, __webpack_require__) {
             }
         }
         function stickyCalc() {
-            if (stickyTop === null) {
-                return;
-            }
+            // if (stickyTop === null) {
+            // stickySetup();
+            // }
             if (window.scrollY + $(window).height() > stickyBottom) {
                 $(".sticky, .sticky-begin, .sticky-end").removeClass("enabled");
             } else if (stickyTop < window.scrollY) {
@@ -109,7 +109,7 @@ function(module, exports, __webpack_require__) {
         }
         function stickyNav(set) {
             if (set === true) {
-                $(window).on("scroll", $.debounce(200, function() {
+                $(window).on("scroll", $.throttle(100, function() {
                     if ($(".sticky").length === 0) {
                         $(window).off("scroll", window);
                     }
@@ -120,8 +120,9 @@ function(module, exports, __webpack_require__) {
                 $(".sticky-begin").removeClass("enabled");
             }
         }
-        $(window).resize($.throttle(300, function() {
+        $(window).resize($.debounce(300, function() {
             stickySetup();
+            stickyCalc();
         }));
         $(document).ready(function() {
             $(".sub-nav a, a.scroll-to").click(function(e) {
@@ -142,7 +143,7 @@ function(module, exports, __webpack_require__) {
         });
         enquire.register("screen and (min-width: 1000px)", {
             setup: function() {
-                stickyCalc();
+                stickySetup();
             },
             match: function() {
                 $(".primary-nav, .secondary-nav").attr("style", "");
