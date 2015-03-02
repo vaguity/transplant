@@ -26,11 +26,11 @@
 	li {
 		margin-right: 1em;
 		line-height: 2em;
-		&.active a {
-			@include link($orange);
-		}
 		&:last-child {
 			margin-right: 0;
 		}
+	}
+	a.active {
+		@include link($orange);
 	}
 }
