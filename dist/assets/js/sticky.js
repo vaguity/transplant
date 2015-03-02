@@ -13,9 +13,7 @@ function stickySetup() {
 }
 
 function stickyCalc() {
-    if (typeof stickyTop === 'undefined') {
-        stickySetup();
-    }
+    stickySetup();
 
 	if ((window.scrollY + $(window).height()) > stickyBottom) {
 		$('.sticky, .sticky-begin, .sticky-end').removeClass('enabled');
@@ -91,21 +89,13 @@ $(document).ready(function() {
 		}
 	});
 	enquire.register("screen and (min-width: 1000px)", {
-		setup: function() {
-			stickySetup();
-		},
 		match: function() {
-			stickySetup();
 			stickyNav(true);
 		},
 		unmatch: function() {
 			stickyNav(false);
 		},
 	});
-});
-
-$(window).load(function() {
-	stickySetup();
 });
 
 
