@@ -104,5 +104,9 @@ $(document).ready(function() {
 	});
 });
 
+$(window).load(function() {
+	stickySetup();
+});
+
 
 module.exports.stickySetup = stickySetup;
