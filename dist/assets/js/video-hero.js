@@ -24,13 +24,11 @@ $(window).load(function() {
 	enquire.register('screen and (min-width: 1180px)', {
 		match: function() {
 			videoHero(true);
-			$(window).off('resize');
 			$(window).on('resize', $.debounce(300, function() {
 				videoHero(true);
 			}));
 		},
 		unmatch: function() {
-			$(window).off('resize');
 			$(window).on('resize', $.debounce(300, function() {
 				videoHero(false);
 			}));
