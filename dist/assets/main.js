@@ -1,22 +1,9 @@
 webpackJsonp([ 1 ], [ /* 0 */
 /***/
 function(module, exports, __webpack_require__) {
-    /* WEBPACK VAR INJECTION */
-    (function(global) {
-        var common = __webpack_require__(4);
-        __webpack_require__(13);
-        __webpack_require__(17);
-        __webpack_require__(6);
-        __webpack_require__(7);
-        __webpack_require__(5);
-        __webpack_require__(8);
-        global.setVerticalCenter = __webpack_require__(7).setVerticalCenter;
-        global.setFullFrame = __webpack_require__(5).setFullFrame;
-        global.stickySetup = __webpack_require__(6).stickySetup;
-        global.videoHero = __webpack_require__(8).videoHero;
-    }).call(exports, function() {
-        return this;
-    }());
+    var common = __webpack_require__(4);
+    __webpack_require__(13);
+    __webpack_require__(18);
 }, /* 1 */
 , /* 2 */
 , /* 3 */
@@ -75,9 +62,7 @@ function(module, exports, __webpack_require__) {
             }
         }
         function stickyCalc() {
-            // if (stickyTop === null) {
-            // stickySetup();
-            // }
+            stickySetup();
             if (window.scrollY + $(window).height() > stickyBottom) {
                 $(".sticky, .sticky-begin, .sticky-end").removeClass("enabled");
             } else if (stickyTop < window.scrollY) {
@@ -140,20 +125,14 @@ function(module, exports, __webpack_require__) {
                     }
                 }
             });
-        });
-        enquire.register("screen and (min-width: 1000px)", {
-            setup: function() {
-                stickySetup();
-            },
-            match: function() {
-                $(".primary-nav, .secondary-nav").attr("style", "");
-                stickySetup();
-                stickyNav(true);
-            },
-            unmatch: function() {
-                $(".primary-nav, .secondary-nav").css("display", "none");
-                stickyNav(false);
-            }
+            enquire.register("screen and (min-width: 1000px)", {
+                match: function() {
+                    stickyNav(true);
+                },
+                unmatch: function() {
+                    stickyNav(false);
+                }
+            });
         });
         module.exports.stickySetup = stickySetup;
     }).call(exports, __webpack_require__(1));
@@ -311,27 +290,51 @@ function(module, exports, __webpack_require__) {
 function(module, exports, __webpack_require__) {
     /* WEBPACK VAR INJECTION */
     (function($) {
-        var footerPadding;
         $(document).ready(function() {
             $(".nav-icon").click(function() {
                 $(".primary-nav, .secondary-nav").toggle();
             });
+            enquire.register("screen and (min-width: 1000px) and (max-width: 1180px)", {
+                match: function() {
+                    $(".secondary-nav .jobs-link").text("Jobs");
+                },
+                unmatch: function() {
+                    $(".secondary-nav .jobs-link").text("We’re Hiring");
+                }
+            }).register("screen and (min-width: 1000px)", {
+                match: function() {
+                    $(".primary-nav, .secondary-nav").attr("style", "");
+                },
+                unmatch: function() {
+                    $(".primary-nav, .secondary-nav").css("display", "none");
+                }
+            });
         });
         $(window).load(function() {
             if ($(".footer-container").length) {
+                var footerPadding;
                 if ($("body").height() < $(window).height()) {
                     footerPadding = $(window).height() - $("body").height();
                     $(".footer-container").css("padding-bottom", footerPadding + "px");
                 }
             }
         });
-        enquire.register("screen and (min-width: 1000px) and (max-width: 1180px)", {
-            match: function() {
-                $(".secondary-nav .jobs-link").text("Jobs");
-            },
-            unmatch: function() {
-                $(".secondary-nav .jobs-link").text("We’re Hiring");
-            }
-        });
     }).call(exports, __webpack_require__(1));
+}, /* 18 */
+/***/
+function(module, exports, __webpack_require__) {
+    /* WEBPACK VAR INJECTION */
+    (function(global) {
+        __webpack_require__(17);
+        __webpack_require__(6);
+        __webpack_require__(7);
+        __webpack_require__(5);
+        __webpack_require__(8);
+        global.setVerticalCenter = __webpack_require__(7).setVerticalCenter;
+        global.setFullFrame = __webpack_require__(5).setFullFrame;
+        global.stickySetup = __webpack_require__(6).stickySetup;
+        global.videoHero = __webpack_require__(8).videoHero;
+    }).call(exports, function() {
+        return this;
+    }());
 } ]);

@@ -8,8 +8,8 @@ var packageType = {
 };
 
 var config = {
-	// buildMethod: 'webpack',
-	buildMethod: false,
+	buildMethod: 'webpack',
+	// buildMethod: false,
 	sass: {
 		src: src + '/scss/**/*.scss',
 		dest: src + '/css',

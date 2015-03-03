@@ -78,4 +78,6 @@ $(window).load(function() {
 	});
 });
 
+console.log('hi');
+
 module.exports.setVerticalCenter = setVerticalCenter;

@@ -29,7 +29,7 @@ var uglifyEnvOptions = {
 var uglifyOptions = typeof isProduction !== 'undefined' ? uglifyEnvOptions.production : uglifyEnvOptions.development;
 
 var entries = {
-	transplant: srcDir + '/transplant.js',
+	main: srcDir + '/main.js',
 	guide: srcDir + '/guide.js'
 }
 
@@ -66,7 +66,7 @@ var config = {
 		new CommonsChunkPlugin({
 			name: 'common',
 			filename: 'common.js',
-			chunks: ['transplant', 'guide']
+			chunks: ['main', 'guide']
 		})
 	]
 };
