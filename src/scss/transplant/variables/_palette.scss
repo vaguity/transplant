@@ -33,7 +33,7 @@ $lightorange: #fbd0bc;
 $indigo: #1f093c;
 $maroon: #a42c50;
 $blue2: #2b5b91;
-$purple: $indigo; // Legacy alias; remove when changed over
+$purple: $indigo; // TODO: Legacy alias; remove when changed over
 
 // Alert colors
 $lightred: #fdebe9;
@@ -50,7 +50,7 @@ $white-transparent-95: rgba($white, .95);
 
 $offwhite-transparent: rgba($offwhite, .8);
 $orange-transparent: rgba($orange, .8);
-$blue2-transparent: rgba(10, 79, 108, .8); // This is not actually $blue2, needs audit
+$blue2-transparent: rgba(10, 79, 108, .8); // TODO: This is not $blue2, needs audit
 
 $indigo-transparent: rgba($indigo, .8);
 $indigo-transparent-60: rgba($indigo, .6);

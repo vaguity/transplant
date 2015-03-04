@@ -1,7 +1,3 @@
-form label {
-	display: none;
-}
-
 input {
 	@include placeholder;
 }
@@ -65,4 +61,8 @@ textarea {
 		width: 50%;
 		margin-right: 50%;
 	}
+}
+
+form label {
+	display: none;
 }

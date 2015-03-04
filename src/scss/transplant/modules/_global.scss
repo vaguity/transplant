@@ -21,8 +21,8 @@ a {
 	@include button;
 }
 
-// Audit this; does this get used anywhere other than heroes?
-// _hero module currently owns h1s used in heroes
+// TODO: Audit this; does this get used anywhere other than heroes?
+// _hero module currently owns h1 used in heroes
 h1 {
 	margin: 0;
 	color: $white;
