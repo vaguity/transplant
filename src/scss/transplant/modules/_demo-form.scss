@@ -1,5 +1,8 @@
 .demo-form-container {
 	background: $offwhite-light;
+	&.alternate {
+		background: $white;
+	}
 }
 
 .demo-form {
