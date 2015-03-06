@@ -1,9 +1,10 @@
+.content .container.full section.hero {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
 .hero {
 	color: $white;
-	h1 {
-		min-height: 4em;
-		font-size: 48px;
-	}
 	&.hero-form h1 {
 		min-height: 0;
 		text-align: center;
@@ -57,6 +58,52 @@
 			}
 		}
 	}
+	h1 {
+		min-height: 4em;
+		font-size: 36px;
+		line-height: 1.2em;
+	}
+	.tagline {
+		display: block;
+		font-size: 36px;
+		line-height: 1.2em;
+	}
+	.subhed {
+		display: block;
+		font-size: 24px;
+		line-height: 1.2em;
+		padding: $spacing-small 0;
+	}
+	.feature-hed {
+		display: block;
+		font-family: $type-sans;
+		font-size: 20px;
+		line-height: 1.2em;
+		padding: $spacing-small 0;
+		text-transform: uppercase;
+	}
+	@include breakpoint($breakpoint-tablet) {
+		h1 {
+			font-size: 60px;
+		}
+	}
+	@include breakpoint($breakpoint-desktop) {
+		display: table;
+		height: 580px;
+		> div {
+			display: table-cell;
+			vertical-align: middle;
+		}
+		h1 {
+			font-size: 100px;
+			line-height: 1.1em;
+			padding: 0;
+			min-height: 0;
+		}
+		.subhed {
+			font-size: 30px;
+		}
+	}
 }
 
 .hero-container {
@@ -78,31 +125,5 @@
 		background: none;
 		top: 0;
 	}
-	h1 {
-		min-height: 4em;
-		font-size: 60px;
-		line-height: 1.2em;
-	}
-	.tagline {
-		display: block;
-		font-size: 36px;
-		line-height: 1.2em;
-	}
-	.subhed {
-		display: block;
-		font-size: 24px;
-		line-height: 1.2em;
-		padding: $spacing-small 0;
-	}
-	@include breakpoint($breakpoint-desktop) {
-		h1 {
-			padding: 180px 0;
-			min-height: 2.2em;
-			font-size: 100px;
-			line-height: 1.1em;
-		}
-		.subhed {
-			font-size: 30px;
-		}
-	}
+
 }

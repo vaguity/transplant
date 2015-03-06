@@ -33,6 +33,10 @@
 				@include span(4 of 6 last);
 				@include suffix(2 of 6);
 			}
+			&.three-fourths {
+				@include span(6 of 8 last);
+				@include suffix(2 of 8);
+			}
 		}
 	}
 }
