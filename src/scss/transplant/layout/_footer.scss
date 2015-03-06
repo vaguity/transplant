@@ -14,7 +14,7 @@
 		@include container(1100px);
 		.site-section {
 			@include span(1 of 6);
-			&:nth-of-type(6n) {
+			&:last-of-type {
 				@include span(1 of 6 last);
 			}
 		}
