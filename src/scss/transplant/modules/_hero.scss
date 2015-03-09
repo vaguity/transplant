@@ -77,9 +77,9 @@
 	.feature-hed {
 		display: block;
 		font-family: $type-sans;
-		font-size: 20px;
+		font-size: 16px;
 		line-height: 1.2em;
-		padding: $spacing-small 0;
+		padding: $spacing-xsmall 0;
 		text-transform: uppercase;
 	}
 	@include breakpoint($breakpoint-tablet) {
@@ -102,6 +102,10 @@
 		}
 		.subhed {
 			font-size: 30px;
+		}
+		.feature-hed {
+			font-size: 20px;
+			padding: $spacing-small 0;
 		}
 	}
 }
