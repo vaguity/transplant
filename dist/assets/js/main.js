@@ -1,25 +1,26 @@
 
 $(document).ready(function() {
 	$('.nav-icon').click(function() {
-		$('.primary-nav, .secondary-nav').toggle();
+		$('.header .primary-nav, .header .secondary-nav').toggle();
 	});
 
-	enquire.register("screen and (min-width: 1000px) and (max-width: 1180px)", {
+	enquire	.register("screen and (min-width: 1000px)", {
 		match: function() {
-			$('.secondary-nav .jobs-link').text('Jobs');
+			$('.header .primary-nav, .header .secondary-nav').attr('style', '');
 		},
 		unmatch: function() {
-			$('.secondary-nav .jobs-link').text('We’re Hiring');
+			$('.header .primary-nav, .header .secondary-nav').css('display', 'none');
 		},
 	})
-	.register("screen and (min-width: 1000px)", {
+	.register("screen and (min-width: 1000px) and (max-width: 1180px)", {
 		match: function() {
-			$('.primary-nav, .secondary-nav').attr('style', '');
+			$('.header .secondary-nav .jobs-link').text('Jobs');
 		},
 		unmatch: function() {
-			$('.primary-nav, .secondary-nav').css('display', 'none');
+			$('.header .secondary-nav .jobs-link').text('We’re Hiring');
 		},
 	});
+;
 });
 
 $(window).load(function() {

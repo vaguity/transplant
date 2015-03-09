@@ -549,7 +549,14 @@
 					        $(marketoForm[1278]['selector'] + ' style').remove();
 					        $('.mktoFormRow, .mktoFieldDescriptor, .mktoField, .mktoHasWidth, .mktoButtonWrap').removeAttr('style');
 					        $('.mktoAsterix, .mktoOffset, .mktoClear, .mktoLabel, .mktoGutter, .mktoError').remove();
-					        $(marketoForm[1278]['selector']).children('.mktoFormRow, .mktoFieldDescriptor, .mktoButtonRow, .mktoFieldWrap').css('display', marketoForm[1278]['display']);
+					        enquire.register("screen and (min-width: 1000px", {
+					        	match: function() {
+					        		$(marketoForm[1278]['selector']).children('.mktoFormRow, .mktoFieldDescriptor, .mktoButtonRow, .mktoFieldWrap').css('display', marketoForm[1278]['display']);
+					        	},
+					        	unmatch: function() {
+					        		$(marketoForm[1278]['selector']).children('.mktoFormRow, .mktoFieldDescriptor, .mktoButtonRow, .mktoFieldWrap').css('display', '');
+					        	}
+					        });
 					        $(marketoForm[1278]['selector']).css('visibility', 'visible');
 
 					        stickySetup();
