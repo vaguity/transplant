@@ -179,6 +179,7 @@ if ( typeof Object.create !== 'function' ) {
       } else {
         childNumber = Math.round(offset / self.scrollInterval);
       }
+
       childNumber = Math.max(0, Math.min(childNumber, panelCount));
 
       var $target = self.getPanel(':eq(' + childNumber + ')');
