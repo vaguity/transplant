@@ -4,65 +4,27 @@
 }
 
 .hero {
+	display: table;
+	min-height: 5em;
 	color: $white;
-	&.hero-form h1 {
-		min-height: 0;
-		text-align: center;
+	font-size: 48px;
+	> div {
+		display: table-cell;
+		vertical-align: middle;
 	}
-	.location {
-		display: none;
-	}
-
 	a {
 		@include link($white);
 	}
-	@include breakpoint($breakpoint-desktop) {
-		position: relative;
-		top: -40px;
-		padding: $spacing-medium;
-		h1 {
-			padding: 20px 0 100px 0;
-			min-height: 4em;
-			font-size: 60px;
-		}
-		&.hero-form h1 {
-			min-height: 0;
-			text-align: center;
-			font-size: 80px;
-			padding: 20px 0;
-		}
-		.primary-location {
-			display: none;
-		}
-		.location {
-			display: block;
-			margin-bottom: $spacing-medium;
-			strong, span {
-				display: block;
-			}
-			strong {
-				font-family: $type-sans;
-				font-size: 24px;
-				line-height: 2em;
-			}
-			span {
-				font-family: $type-base;
-				font-size: 16px;
-			}
-			@include span(4 of 12);
-			&.break {
-				@include break;
-			}
-			&.last {
-				@include span(4 of 12 last);
-			}
-		}
-	}
+
 	h1 {
 		min-height: 4em;
 		font-size: 36px;
 		line-height: 1.2em;
 	}
+	// &.hero-form h1 {
+	// 	min-height: 0;
+	// 	text-align: center;
+	// }
 	.tagline {
 		display: block;
 		font-size: 36px;
@@ -85,21 +47,26 @@
 	@include breakpoint($breakpoint-tablet) {
 		h1 {
 			font-size: 60px;
+			min-height: 0;
+			line-height: 1.1em;
 		}
 	}
 	@include breakpoint($breakpoint-desktop) {
-		display: table;
+		position: relative;
 		height: 580px;
-		> div {
-			display: table-cell;
-			vertical-align: middle;
-		}
+		top: -40px;
+		padding: $spacing-medium;
 		h1 {
 			font-size: 100px;
 			line-height: 1.1em;
-			padding: 0;
 			min-height: 0;
 		}
+		// &.hero-form h1 {
+		// 	min-height: 0;
+		// 	text-align: center;
+		// 	font-size: 80px;
+		// 	padding: 20px 0;
+		// }
 		.subhed {
 			font-size: 30px;
 		}
