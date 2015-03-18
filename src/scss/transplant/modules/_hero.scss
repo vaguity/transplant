@@ -15,16 +15,11 @@
 	a {
 		@include link($white);
 	}
-
 	h1 {
 		min-height: 4em;
 		font-size: 36px;
 		line-height: 1.2em;
 	}
-	// &.hero-form h1 {
-	// 	min-height: 0;
-	// 	text-align: center;
-	// }
 	.tagline {
 		display: block;
 		font-size: 36px;
@@ -45,6 +40,7 @@
 		text-transform: uppercase;
 	}
 	@include breakpoint($breakpoint-tablet) {
+		min-height: 400px;
 		h1 {
 			font-size: 60px;
 			min-height: 0;
@@ -61,12 +57,6 @@
 			line-height: 1.1em;
 			min-height: 0;
 		}
-		// &.hero-form h1 {
-		// 	min-height: 0;
-		// 	text-align: center;
-		// 	font-size: 80px;
-		// 	padding: 20px 0;
-		// }
 		.subhed {
 			font-size: 30px;
 		}
