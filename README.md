@@ -30,3 +30,9 @@ Run the following in the root directory before making changes:
 The tasks `gulp sass`, `gulp build` (which also processes Sass), and `gulp watch` are also available. The `gulp` command automatically builds and starts watching.
 
 Bump the version using a git version tag if changes are made to this repository.
+
+## Deployment
+
+Lives in the marketing prototype S3 bucket at .
+
+`aws s3 sync dist s3://prototype.marketing.prclt.com/audit --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers`

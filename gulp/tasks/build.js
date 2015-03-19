@@ -15,17 +15,17 @@ gulp.task('build', ['sass'], function() {
 	var watchCheck = typeof isWatching !== 'undefined' ? true : false;
 
 	// Webpack build
-	if (config.buildMethod == 'webpack') {
+	// if (config.buildMethod == 'webpack') {
 
 		var webpackConfig = require('../webpack.config.js');
 
-		return gulp.src(config.src + '/main.js')
+		var webpackBundle = gulp.src(config.src + '/main.js')
 			.pipe(gulpWebpack(webpackConfig, webpack))
 			.pipe(gulp.dest(webpackConfig.output.path))
 			.pipe(gulpif(watchCheck, livereload()));
-	}
+	// }
 	// Standard build
-	else {
+	// else {
 
 		var styles = gulp.src(config.sass.dest + '/*.css')
 			.pipe(gulp.dest(config.sass.dist));
@@ -34,10 +34,10 @@ gulp.task('build', ['sass'], function() {
 			.on('error', handleErrors)
 			.pipe(gulp.dest(config.js.dist));
 
-		var reload = gulp.src('')
-			.pipe(gulpif(watchCheck, livereload()));
+		// var reload = gulp.src('')
+			// .pipe(gulpif(watchCheck, livereload()));
 
-		return merge(styles, scripts, reload);
-	}
+		return merge(webpackBundle, styles, scripts);
+	// }
 
 });

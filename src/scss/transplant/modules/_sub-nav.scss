@@ -26,8 +26,15 @@
 	li {
 		margin-right: 1em;
 		line-height: 2em;
-		&:last-child {
+		&:nth-last-child(2) {
 			margin-right: 0;
+		}
+	}
+	li.back-to-top {
+		margin-right: 0;
+		float: right;
+		a {
+			@include link($lightgray);
 		}
 	}
 	a.active {

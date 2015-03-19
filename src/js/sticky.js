@@ -77,14 +77,18 @@ $(document).ready(function() {
 		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
 			e.preventDefault();
 	  		var target = $(this.hash);
-	  		target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-	  		if (target.length) {
+	  		if (target.length > 0) {
 	  			var stickyOffset = $('.sub-nav-container').length > 0 ? $('.sub-nav-container').outerHeight() : 0;
 	  			var scrollOffset = target.offset().top - $('.sub-nav-container').outerHeight() + 1;
 				$('html, body').animate({
-		  			scrollTop: scrollOffset
+					scrollTop: scrollOffset
 				}, 750);
 				return false;
+			}
+			else {
+				$('html, body').animate({
+		  			scrollTop: 0
+				}, 750);
 			}
 		}
 	});

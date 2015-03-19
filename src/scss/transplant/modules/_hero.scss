@@ -5,20 +5,18 @@
 
 .hero {
 	display: table;
-	min-height: 5em;
+	min-height: 240px;
 	color: $white;
-	font-size: 48px;
 	> div {
 		display: table-cell;
 		vertical-align: middle;
 	}
-	a {
-		@include link($white);
-	}
 	h1 {
-		min-height: 4em;
 		font-size: 36px;
 		line-height: 1.2em;
+	}
+	a {
+		@include link($white);
 	}
 	.tagline {
 		display: block;
@@ -27,7 +25,7 @@
 	}
 	.subhed {
 		display: block;
-		font-size: 24px;
+		font-size: 20px;
 		line-height: 1.2em;
 		padding: $spacing-small 0;
 	}
@@ -40,7 +38,7 @@
 		text-transform: uppercase;
 	}
 	@include breakpoint($breakpoint-tablet) {
-		min-height: 400px;
+		min-height: 420px;
 		h1 {
 			font-size: 60px;
 			min-height: 0;
@@ -50,10 +48,9 @@
 	@include breakpoint($breakpoint-desktop) {
 		position: relative;
 		height: 580px;
-		top: -40px;
 		padding: $spacing-medium;
 		h1 {
-			font-size: 100px;
+			font-size: 80px;
 			line-height: 1.1em;
 			min-height: 0;
 		}
@@ -73,18 +70,7 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 	text-align: center;
-	line-height: 48px;
-	vertical-align: middle;
-	@include breakpoint($breakpoint-desktop) {
-		line-height: 60px;
-		vertical-align: middle;
-	}
 	.mask {
 		background: $indigo-transparent-half;
 	}
-	.hero {
-		background: none;
-		top: 0;
-	}
-
 }
