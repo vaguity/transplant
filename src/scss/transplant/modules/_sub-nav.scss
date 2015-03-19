@@ -33,9 +33,6 @@
 	li.back-to-top {
 		margin-right: 0;
 		float: right;
-		a {
-			@include link($lightgray);
-		}
 	}
 	a.active {
 		@include link($orange);
