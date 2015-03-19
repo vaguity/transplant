@@ -11,7 +11,6 @@ var config = require('../config');
 
 gulp.task('build', ['sass'], function() {
 
-	global.isProduction = typeof global.isProduction !== 'undefined' ? global.isProduction : undefined;
 	var watchCheck = typeof isWatching !== 'undefined' ? true : false;
 
 	// Webpack build
