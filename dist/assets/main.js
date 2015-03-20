@@ -244,8 +244,8 @@ function(module, exports, __webpack_require__) {
             enquire.register("screen and (min-width: 1180px)", {
                 match: function() {
                     videoHero(true);
-                    if (typeof wistiaEmbed !== "undefined") {
-                        wistiaEmbed.play();
+                    if (typeof wistiaVideoHero !== "undefined") {
+                        wistiaVideoHero.play();
                     }
                     $(window).on("resize", $.debounce(300, function() {
                         videoHero(true);
