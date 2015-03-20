@@ -221,7 +221,6 @@ function(module, exports, __webpack_require__) {
     (function($) {
         function videoHero(set, height) {
             if (set === true && $(".wistia-embed").length) {
-                console.log("true runs");
                 if ($(".wistia-embed").data("mask-reset") !== true) {
                     if (typeof height !== "undefined") {
                         var newHeroOffset = parseInt((height - $(".hero-video-container").height()) / 2);
@@ -238,7 +237,6 @@ function(module, exports, __webpack_require__) {
                     opacity: 1
                 }, 1e3);
             } else {
-                console.log("not true runs");
                 $(".wistia-container").attr("style", "");
             }
         }
