@@ -2,7 +2,11 @@
 	position: relative;
 	overflow: hidden;
 	.wistia-container {
+		opacity: 0;
 		display: none;
+		@include breakpoint($breakpoint-desktop) {
+			display: block;
+		}
 	}
 	.wistia-embed {
 		position: absolute;

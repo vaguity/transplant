@@ -1,5 +1,6 @@
 function videoHero(set, height) {
 	if (set === true && $('.wistia-embed').length) {
+		console.log('true runs');
 		if ($('.wistia-embed').data('mask-reset') !== true) {
 			if (typeof height !== 'undefined') {
 				var newHeroOffset = parseInt((height - $('.hero-video-container').height()) / 2);
@@ -13,9 +14,12 @@ function videoHero(set, height) {
 				'top': '-' + newHeroOffset + 'px',
 			});
 		}
-		$('.wistia-container').css('display', 'block');
+		$('.wistia-container').animate({
+			opacity: 1,
+		}, 1000);
 	}
 	else {
+		console.log('not true runs');
 		$('.wistia-container').attr('style', '');
 	}
 }
@@ -24,11 +28,15 @@ $(window).load(function() {
 	enquire.register('screen and (min-width: 1180px)', {
 		match: function() {
 			videoHero(true);
+			if (typeof wistiaEmbed !== 'undefined') {
+				wistiaEmbed.play();
+			}
 			$(window).on('resize', $.debounce(300, function() {
 				videoHero(true);
 			}));
 		},
 		unmatch: function() {
+			videoHero(false);
 			$(window).on('resize', $.debounce(300, function() {
 				videoHero(false);
 			}));
