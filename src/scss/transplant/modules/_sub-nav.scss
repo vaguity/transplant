@@ -28,8 +28,12 @@
 		line-height: 2em;
 	}
 	li.back-to-top {
+		display: none;
 		margin-right: 0;
 		float: right;
+		@include breakpoint($breakpoint-desktop-small) {
+			display: inline-block;
+		}
 	}
 	a.active {
 		@include link($orange);
