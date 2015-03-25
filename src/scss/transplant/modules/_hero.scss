@@ -38,7 +38,7 @@
 		text-transform: uppercase;
 	}
 	@include breakpoint($breakpoint-tablet) {
-		min-height: 420px;
+		min-height: 400px;
 		h1 {
 			font-size: 60px;
 			min-height: 0;
@@ -47,7 +47,7 @@
 	}
 	@include breakpoint($breakpoint-desktop) {
 		position: relative;
-		height: 580px;
+		height: 500px;
 		padding: $spacing-medium;
 		h1 {
 			font-size: 80px;
