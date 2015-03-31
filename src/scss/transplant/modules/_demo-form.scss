@@ -9,6 +9,9 @@
 	color: $maroon;
 	text-align: center;
 	font-size: 24px;
+	form {
+	    margin: 0 auto;
+	}
 	h3 {
 		color: $maroon;
 		text-transform: uppercase;
@@ -26,12 +29,19 @@
 	button {
 		margin: 1em auto;
 		font-size: 16px;
+		line-height: 1em;
 	}
 	button[type="submit"] {
 		@include breakpoint($breakpoint-desktop-small) {
 			margin-left: .5em;
 			margin-right: .5em;
 		}
+	}
+	&.alternate {
+	    input[type="text"], input[type="email"], input[type="tel"] {
+	        border: 1px solid $lightgray;
+	        margin: .25em;
+	    }
 	}
 }
 
