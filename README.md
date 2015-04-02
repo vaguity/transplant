@@ -33,6 +33,6 @@ Bump the version using a git version tag if changes are made to this repository.
 
 ## Deployment
 
-Lives in the marketing prototype S3 bucket at .
+Lives in the marketing prototype S3 bucket at [http://prototype.marketing.prclt.com/audit](http://prototype.marketing.prclt.com/audit).
 
 `aws s3 sync dist s3://prototype.marketing.prclt.com/audit --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers`
