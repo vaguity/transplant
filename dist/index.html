@@ -56,7 +56,7 @@
 
 		<div class="hero-container hero-video-container container full" style="background-image: url('http://percolate-dotcom-preview.appspot.com/static/images/company/hero.png');">
 			<div class="wistia-container">
-				<div id="wistia_ci98uqexa1" class="wistia-embed" data-manual-offset="0"></div>
+				<div id="wistia_ci98uqexa1" class="wistia-embed"></div>
 			</div>
 			<script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/E-v1.js"></script>
 			<script>
@@ -610,13 +610,27 @@
 			</div>
 		</div>
 
-		<div class="next-container container full ambassador">
+		<div class="promo-container container full" style="background-image: url('http://percolate.com/static/images/modules/jobs/hero.jpg');">
 			<div class="mask">
-			<section class="next pad">
+			<section class="promo jobs pad">
+				<div class="copy">
+					<h3>Join Us</h3>
+
+					<p class="callout"><a href="{{ url_for('jobs') }}">70 jobs available</a></p>
+
+					<a href="{{ url_for('jobs') }}" class="btn">Apply Now</a>
+				</div>
+			</section>
+			</div>
+		</div>
+
+		<div class="promo-container container full ambassador" style="background-image: url('http://percolate.com/static/images/product/asset_manager/hero.jpg');">
+			<div class="mask">
+			<section class="promo next pad">
 				<div class="copy">
 					<h3>Next Product</h3>
 
-					<p><a href="#">Ambassador App</a></p>
+					<p class="callout"><a href="#">Asset Manager</a></p>
 
 					<div class="jump"><a href="#">Back to Platform</a></div>
 				</div>
