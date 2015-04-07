@@ -16,12 +16,13 @@ input, button {
 	margin: 1em auto;
 	width: 100%;
 	box-sizing: border-box;
+	color: $gray2;
 	&:focus {
 		outline: none;
 	}
 	@include breakpoint($breakpoint-tablet) {
 		display: inline-block;
-		width: 40%;
+		width: 70%;
 		margin: 1em .5em;
 	}
 	@include breakpoint($breakpoint-desktop-small) {
