@@ -125,23 +125,4 @@
 	}
 }
 
-
-// Blue Bottle case study promo example
-
-.promo-container.blue-bottle {
-	background: url('/assets/img/blue_bottle_promo.jpg');
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-
-// Next module example
-
-.next-container.ambassador {
-	background: url('/assets/img/ambassador_next.jpg');
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-
 @import 'prototype/base';
