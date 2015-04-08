@@ -23,43 +23,36 @@
 				<div class="copy">
 					<h3>Video 1</h3>
 
-					<p><iframe class="vimeo" id="player1" src="https://player.vimeo.com/video/123637666?loop=1&color=ffffff&title=0&byline=0&portrait=0api=1&player_id=player1" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></p>
+					<p><iframe class="vimeo" id="player1" src="https://player.vimeo.com/video/123637666?loop=1&color=ffffff&title=0&byline=0&portrait=0api=1&player_id=player1" width="720" height="405" frameborder="0"></iframe></p>
 
 					<h3>Video 2</h3>
 
-					<p><iframe class="vimeo" id="player2" src="https://player.vimeo.com/video/123637581?loop=1&color=ffffff&title=0&byline=0&portrait=0api=1&player_id=player2" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></p>
+					<p><iframe class="vimeo" id="player2" src="https://player.vimeo.com/video/123637581?loop=1&color=ffffff&title=0&byline=0&portrait=0api=1&player_id=player2" width="720" height="405" frameborder="0"></iframe></p>
 
 					<h3>Video 3</h3>
 
-					<p><iframe class="vimeo" id="player3" src="https://player.vimeo.com/video/123637577?loop=1&color=ffffff&title=0&byline=0&portrait=0api=1&player_id=player3" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></p>
+					<p><iframe class="vimeo" id="player3" src="https://player.vimeo.com/video/123637577?loop=1&color=ffffff&title=0&byline=0&portrait=0api=1&player_id=player3" width="720" height="405" frameborder="0"></iframe></p>
 
 					<h3>Video 4</h3>
 
-					<p><iframe class="vimeo" id="player4" src="https://player.vimeo.com/video/123637578?loop=1&color=ffffff&title=0&byline=0&portrait=0api=1&player_id=player4" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></p>
+					<p><iframe class="vimeo" id="player4" src="https://player.vimeo.com/video/123637578?loop=1&color=ffffff&title=0&byline=0&portrait=0api=1&player_id=player4" width="720" height="405" frameborder="0"></iframe></p>
 
 					<h3>Video 5</h3>
 
-					<p><iframe class="vimeo" id="player5" src="https://player.vimeo.com/video/123637579?loop=1&color=ffffff&title=0&byline=0&portrait=0api=1&player_id=player5" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></p>
+					<p><iframe class="vimeo" id="player5" src="https://player.vimeo.com/video/123637579?loop=1&color=ffffff&title=0&byline=0&portrait=0api=1&player_id=player5" width="720" height="405" frameborder="0"></iframe></p>
 
 					<h3>Video 6</h3>
 
-					<p><iframe class="vimeo" id="player6" src="https://player.vimeo.com/video/123637584?loop=1&color=ffffff&title=0&byline=0&portrait=0api=1&player_id=player6" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></p>
+					<p><iframe class="vimeo" id="player6" src="https://player.vimeo.com/video/123637584?loop=1&color=ffffff&title=0&byline=0&portrait=0api=1&player_id=player6" width="720" height="405" frameborder="0"></iframe></p>
 
-					<script src="http://a.vimeocdn.com/js/froogaloop2.min.js"></script>
+					<script src="https://secure-a.vimeocdn.com/js/froogaloop2.min.js"></script>
 					<script type="text/javascript">
-
 					$(document).ready(function() {
 						$('iframe.vimeo').each(function() {
-							Froogaloop(this).addEvent('ready', ready);
+							$f(this).addEvent('ready', ready);
 						});
-
 						function ready(playerID) {
-							Froogaloop(playerID).addEvent('play', play(playerID));
-							Froogaloop(playerID).api('play');
-						}
-
-						function play(playerID) {
-							console.log(playerID + " is playing");
+							$f(playerID).api('play');
 						}
 					});
 					</script>
