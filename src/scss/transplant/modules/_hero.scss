@@ -75,33 +75,29 @@
 	}
 }
 
-// TODO: Add hero form styling
-// The selectors below are cribbed from learn
-// .hero .form {
-// 	margin-bottom: 20px;
-// 	min-height: 75px;
-// 	input {
-// 		border: none;
-// 		margin: .5em auto;
-// 		@include breakpoint($breakpoint-desktop-small) {
-// 			margin: .25em;
-// 		}
-// 	}
-// 	button {
-// 		margin: 1em auto;
-// 		font-size: 16px;
-// 		line-height: 16px;
-// 		color: $white;
-// 		border-color: $white;
-// 		&:hover {
-// 			color: $lightgray;
-// 			border-color: $lightgray;
-// 		}
-// 	}
-// 	button[type="submit"] {
-// 		@include breakpoint($breakpoint-desktop-small) {
-// 			margin-left: .5em;
-// 			margin-right: .5em;
-// 		}
-// 	}
-// }
+.hero .form {
+	margin-bottom: 20px;
+	min-height: 75px;
+	input {
+		border: none;
+		margin: .5em auto;
+		@include breakpoint($breakpoint-desktop-small) {
+			margin: .25em;
+		}
+	}
+	button {
+		margin: 1em auto;
+		color: $white;
+		border-color: $white;
+		&:hover {
+			color: $lightgray;
+			border-color: $lightgray;
+		}
+	}
+	button[type="submit"] {
+		@include breakpoint($breakpoint-desktop-small) {
+			margin-left: .5em;
+			margin-right: .5em;
+		}
+	}
+}
