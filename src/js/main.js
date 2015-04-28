@@ -1,4 +1,3 @@
-
 $(document).ready(function() {
 	$('.nav-icon').click(function() {
 		$('.header .primary-nav, .header .secondary-nav').toggle();
@@ -12,7 +11,7 @@ $(document).ready(function() {
 			$('.header .primary-nav, .header .secondary-nav').css('display', 'none');
 		},
 	})
-	.register("screen and (min-width: 1000px) and (max-width: 1180px)", {
+	.register("screen and (min-width: 1000px) and (max-width: 1100px)", {
 		match: function() {
 			$('.header .secondary-nav .jobs-link').text('Jobs');
 		},

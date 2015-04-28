@@ -113,21 +113,24 @@
 
 	.primary-nav, .secondary-nav {
 		font-size: 16px;
-		line-height: 1em;
 		font-family: $type-serif;
-		margin-bottom: 10px;
 		@include breakpoint($breakpoint-desktop-small) {
 			font-size: 18px;
 			margin-bottom: 0;
 		}
 		ul li {
 			margin: 5px 14px 0 0;
-			&:last-child {
-				margin-right: 0;
-			}
 			@include breakpoint($breakpoint-desktop) {
 				margin-right: 20px;
 			}
+		}
+	}
+
+	.primary-nav {
+		margin-bottom: 10px;
+		line-height: 1em;
+		ul li:last-child {
+			margin-right: 0;
 		}
 	}
 
@@ -138,7 +141,8 @@
 			font-size: 13px;
 			font-family: $type-base;
 			margin-bottom: 0;
-			.request-demo {
+			text-align: right;
+			.request-demo, .highlight {
 				display: inline-block;
 				margin-top: 0;
 				text-transform: uppercase;
@@ -146,7 +150,7 @@
 				font-family: $type-sans;
 				line-height: 13px;
 			}
-			.request-demo a {
+			.request-demo a, .highlight a {
 				display: block;
 				padding: 10px;
 				border: 1px solid $blue;
