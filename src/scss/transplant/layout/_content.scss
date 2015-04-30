@@ -36,16 +36,16 @@
 					}
 				}
 			}
-			&.flush {
-				margin-top: 0;
-				margin-bottom: 0;
-			}
-			&.flush-bottom {
-				margin-bottom: 0;
-			}
-			&.flush-top {
-				margin-top: 0;
-			}
+		}
+		&.flush {
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+		&.flush-bottom {
+			margin-bottom: 0;
+		}
+		&.flush-top {
+			margin-top: 0;
 		}
 		.clear {
 			@include break;
