@@ -1,60 +1,45 @@
-.body {
-	.copy {
-		@include break;
-		@include breakpoint($breakpoint-tablet) {
-			&.third {
-				@include span(3 of 6 nobreak);
-				&:nth-child(2n) {
-					@include span(3 of 6 last);
-				}
-			}
-		}
-		@include breakpoint($breakpoint-desktop) {
-			@include span(full last nobreak);
-			.row {
-				@include break;
-			}
-			&.left {
-				@include span(3 of 6);
-			}
-			&.right {
+.body .copy {
+	margin-bottom: $spacing-medium;
+	.full {
+		width: 100%;
+		height: auto;
+	}
+	&.center {
+		text-align: center;
+	}
+	@include break;
+	@include breakpoint($breakpoint-tablet) {
+		&.third {
+			@include span(3 of 6 nobreak);
+			&:nth-child(2n) {
 				@include span(3 of 6 last);
 			}
-			&.third {
+		}
+	}
+	@include breakpoint($breakpoint-desktop) {
+		@include span(full last nobreak);
+		.row {
+			@include break;
+		}
+		&.left {
+			@include span(3 of 6);
+		}
+		&.right {
+			@include span(3 of 6 last);
+		}
+		&.third {
+			@include span(2 of 6);
+			&:nth-child(2n) {
 				@include span(2 of 6);
-				&:nth-child(2n) {
-					@include span(2 of 6);
-				}
-				&:nth-child(3n), &.last {
-					@include span(2 of 6 last);
-				}
 			}
-			&.two-thirds {
-				@include span(4 of 6 last);
-				@include suffix(2 of 6);
-			}
-			&.three-fourths {
-				@include span(6 of 8 last);
-				@include suffix(2 of 8);
+			&:nth-child(3n), &.last {
+				@include span(2 of 6 last);
 			}
 		}
 	}
 }
 
 .body {
-	.copy {
-		margin-bottom: $spacing-medium;
-		.full {
-			width: 100%;
-			height: auto;
-		}
-		&.center {
-			text-align: center;
-		}
-		&.flush {
-			margin: 0;
-		}
-	}
 	p {
 		color: $midgray;
 		font-size: 16px;
