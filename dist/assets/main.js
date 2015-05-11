@@ -137,6 +137,16 @@ function(module, exports, __webpack_require__) {
                 }
             });
         });
+        $(window).load(function() {
+            enquire.register("screen and (min-width: 1000px)", {
+                match: function() {
+                    stickyNav(true);
+                },
+                unmatch: function() {
+                    stickyNav(false);
+                }
+            });
+        });
         module.exports.stickySetup = stickySetup;
     }).call(exports, __webpack_require__(1));
 }, /* 7 */

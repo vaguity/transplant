@@ -102,5 +102,15 @@ $(document).ready(function() {
 	});
 });
 
+$(window).load(function() {
+	enquire.register("screen and (min-width: 1000px)", {
+		match: function() {
+			stickyNav(true);
+		},
+		unmatch: function() {
+			stickyNav(false);
+		},
+	});
+});
 
 module.exports.stickySetup = stickySetup;
