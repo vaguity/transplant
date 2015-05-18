@@ -116,7 +116,10 @@ function(module, exports, __webpack_require__) {
                     var target = $(this.hash);
                     if (target.length > 0) {
                         var stickyOffset = $(".sub-nav-container").length > 0 ? $(".sub-nav-container").outerHeight() : 0;
-                        var scrollOffset = target.offset().top - $(".sub-nav-container").outerHeight() + 1;
+                        if ($(this).data("sticky-offset") > 0) {
+                            var stickyOffset = stickyOffset + $(this).data("sticky-offset");
+                        }
+                        var scrollOffset = target.offset().top - stickyOffset + 1;
                         $("html, body").animate({
                             scrollTop: scrollOffset
                         }, 750);
