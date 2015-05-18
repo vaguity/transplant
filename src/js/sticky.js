@@ -40,19 +40,20 @@ function stickyCalc() {
 		}
 		if (stickySection === stickySectionNew) {
 			if ((stickySection === 0) && ((window.scrollY + $('.sticky').outerHeight()) < $('.sticky-section').eq(0).position().top)) {
-				$(stickyLinkSelector).removeClass('active');
+				$(stickyLinkSelector).removeClass('active').parent('li').removeClass('sticky-menu-active');
 			}
 			else {
-				$(stickyLinkSelector).eq(stickySection).addClass('active');
+				$(stickyLinkSelector).eq(stickySection).addClass('active').parent('li').addClass('sticky-menu-active');
 			}
 			return;
 		}
 		else if (stickySectionNew === null) {
-			$(stickyLinkSelector).removeClass('active');
+			$(stickyLinkSelector).removeClass('active').parent('li').removeClass('sticky-menu-active');
 		}
 		else {
 			stickySection = stickySectionNew;
-			$(stickyLinkSelector).removeClass('active').eq(stickySection).addClass('active');
+			$(stickyLinkSelector).removeClass('active').parent('li').removeClass('sticky-menu-active');
+			$(stickyLinkSelector).eq(stickySection).addClass('active').parent('li').addClass('sticky-menu-active');
 		}
 	}
 }
