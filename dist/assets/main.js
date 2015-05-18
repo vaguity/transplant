@@ -49,7 +49,7 @@ function(module, exports, __webpack_require__) {
 function(module, exports, __webpack_require__) {
     /* WEBPACK VAR INJECTION */
     (function($) {
-        var stickyTop, stickyBottom, stickySections, stickySection, stickySectionNew;
+        var stickyTop, stickyBottom, stickySections, stickySection, stickySectionNew, stickyLinkSelector;
         function stickySetup() {
             if ($(".sticky-begin").length) {
                 stickyTop = $(".sticky-begin").position().top;
@@ -59,6 +59,11 @@ function(module, exports, __webpack_require__) {
             }
             if ($(".sticky-sections").length) {
                 stickySections = $(".sticky-section").length;
+            }
+            if ($(".sub-nav a.sticky-link").length) {
+                stickyLinkSelector = ".sub-nav a.sticky-link";
+            } else {
+                stickyLinkSelector = ".sub-nav a";
             }
         }
         function stickyCalc() {
@@ -79,16 +84,16 @@ function(module, exports, __webpack_require__) {
                 }
                 if (stickySection === stickySectionNew) {
                     if (stickySection === 0 && window.scrollY + $(".sticky").outerHeight() < $(".sticky-section").eq(0).position().top) {
-                        $(".sub-nav a").removeClass("active");
+                        $(stickyLinkSelector).removeClass("active");
                     } else {
-                        $(".sub-nav a").eq(stickySection).addClass("active");
+                        $(stickyLinkSelector).eq(stickySection).addClass("active");
                     }
                     return;
                 } else if (stickySectionNew === null) {
-                    $(".sub-nav a").removeClass("active");
+                    $(stickyLinkSelector).removeClass("active");
                 } else {
                     stickySection = stickySectionNew;
-                    $(".sub-nav a").removeClass("active").eq(stickySection).addClass("active");
+                    $(stickyLinkSelector).removeClass("active").eq(stickySection).addClass("active");
                 }
             }
         }
