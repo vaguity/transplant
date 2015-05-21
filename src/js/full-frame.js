@@ -1,8 +1,5 @@
-function setFullFrame(el, reset, matchEl) {
-	if (typeof matchEl == 'string') {
-		var windowHeight = $(matchEl).outerHeight();
-	}
-	else if (reset === true) {
+function setFullFrame(el, reset) {
+	if (reset === true) {
 		var windowHeight = '';
 	}
 	else {
@@ -15,6 +12,9 @@ function setFullFrame(el, reset, matchEl) {
 	else {
 		for (var i = 0; i < el.length; i++) {
 			if (typeof el[i] === 'object') {
+				if (typeof el[i]['match'] === 'string') {
+					windowHeight = $(el[i]['match']).outerHeight();
+				}
 				var windowHeightOffset = windowHeight - $(el[i]['offset']).outerHeight();
 				$(el[i]['selector']).css('height', windowHeightOffset + 'px');
 				if (typeof el[i]['ratio'] === 'number') {
