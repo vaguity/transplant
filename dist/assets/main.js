@@ -13,8 +13,10 @@ function(module, exports, __webpack_require__) {
 function(module, exports, __webpack_require__) {
     /* WEBPACK VAR INJECTION */
     (function($) {
-        function setFullFrame(el, reset) {
-            if (reset === true) {
+        function setFullFrame(el, reset, matchEl) {
+            if (typeof matchEl == "string") {
+                var windowHeight = $(matchEl).outerHeight();
+            } else if (reset === true) {
                 var windowHeight = "";
             } else {
                 var windowHeight = $(window).height();
