@@ -15,11 +15,13 @@ function setFullFrame(el, reset) {
 				if (typeof el[i]['match'] === 'string') {
 					windowHeight = $(el[i]['match']).outerHeight();
 				}
-				var windowHeightOffset = windowHeight - $(el[i]['offset']).outerHeight();
-				$(el[i]['selector']).css('height', windowHeightOffset + 'px');
+				if (typeof el[i]['offset'] === 'number') {
+					windowHeight = windowHeight - $(el[i]['offset']).outerHeight();
+				}
+				$(el[i]['selector']).css('height', windowHeight + 'px');
 				if (typeof el[i]['ratio'] === 'number') {
-					if (($(window).width() / windowHeightOffset) < el[i]['ratio']) {
-						$(el[i]['selector']).css('width', parseInt(windowHeightOffset * el[i]['ratio']) + 'px');
+					if (($(window).width() / windowHeight) < el[i]['ratio']) {
+						$(el[i]['selector']).css('width', parseInt(windowHeight * el[i]['ratio']) + 'px');
 					}
 					else {
 						$(el[i]['selector']).css({
