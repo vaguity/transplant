@@ -27,7 +27,7 @@ function(module, exports, __webpack_require__) {
                         if (typeof el[i]["match"] === "string") {
                             windowHeight = $(el[i]["match"]).outerHeight();
                         }
-                        if (typeof el[i]["offset"] === "number") {
+                        if (typeof el[i]["offset"] === "string") {
                             windowHeight = windowHeight - $(el[i]["offset"]).outerHeight();
                         }
                         $(el[i]["selector"]).css("height", windowHeight + "px");
