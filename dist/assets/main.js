@@ -13,6 +13,29 @@ function(module, exports, __webpack_require__) {
 function(module, exports, __webpack_require__) {
     /* WEBPACK VAR INJECTION */
     (function($) {
+        var windowHeight;
+        function fullFrameRatio(el) {
+            if ($(window).width() / windowHeight < el["ratio"]) {
+                $(el["selector"]).css("width", parseInt(windowHeight * el["ratio"]) + "px");
+            } else {
+                $(el["selector"]).css({
+                    width: "100%",
+                    height: $(window).width() / el["ratio"] + "px"
+                });
+            }
+        }
+        function fullFrameObject(el) {
+            if (typeof el["match"] === "string") {
+                windowHeight = $(el["match"]).outerHeight();
+            }
+            if (typeof el["offset"] === "string") {
+                windowHeight = windowHeight - $(el["offset"]).outerHeight();
+            }
+            $(el["selector"]).css("height", windowHeight + "px");
+            if (typeof el["ratio"] === "number") {
+                fullFrameRatio(el);
+            }
+        }
         function setFullFrame(el, reset) {
             if (reset === true) {
                 var windowHeight = "";
@@ -24,23 +47,7 @@ function(module, exports, __webpack_require__) {
             } else {
                 for (var i = 0; i < el.length; i++) {
                     if (typeof el[i] === "object") {
-                        if (typeof el[i]["match"] === "string") {
-                            windowHeight = $(el[i]["match"]).outerHeight();
-                        }
-                        if (typeof el[i]["offset"] === "string") {
-                            windowHeight = windowHeight - $(el[i]["offset"]).outerHeight();
-                        }
-                        $(el[i]["selector"]).css("height", windowHeight + "px");
-                        if (typeof el[i]["ratio"] === "number") {
-                            if ($(window).width() / windowHeight < el[i]["ratio"]) {
-                                $(el[i]["selector"]).css("width", parseInt(windowHeight * el[i]["ratio"]) + "px");
-                            } else {
-                                $(el[i]["selector"]).css({
-                                    width: "100%",
-                                    height: $(window).width() / el[i]["ratio"] + "px"
-                                });
-                            }
-                        }
+                        fullFrameObject(el[i]);
                     } else {
                         $(el[i]).css("height", windowHeight + "px");
                     }
@@ -56,6 +63,7 @@ function(module, exports, __webpack_require__) {
     (function($) {
         var stickyTop, stickyBottom, stickySections, stickySection, stickySectionNew, stickyLinkSelector;
         function stickySetup() {
+            // Performs size calculations and gathers information on the sticky navs
             if ($(".sticky-begin").length) {
                 stickyTop = $(".sticky-begin").position().top;
             }
@@ -70,6 +78,17 @@ function(module, exports, __webpack_require__) {
             } else {
                 stickyLinkSelector = ".sub-nav a";
             }
+        }
+        function stickyEnquire() {
+            // Enquire call to enable or disable the function depending on screen size
+            enquire.register("screen and (min-width: 1000px)", {
+                match: function() {
+                    stickyNav(true);
+                },
+                unmatch: function() {
+                    stickyNav(false);
+                }
+            });
         }
         function stickyCalc() {
             stickySetup();
@@ -105,20 +124,25 @@ function(module, exports, __webpack_require__) {
         }
         function stickyNav(set) {
             if (set === true) {
-                $(window).on("scroll", $.throttle(100, function() {
+                stickyCalc();
+                $(window).bind("scroll", $.throttle(100, function() {
                     if ($(".sticky").length === 0) {
-                        $(window).off("scroll", window);
+                        $(window).unbind("scroll");
                     }
                     stickyCalc();
                 }));
             } else {
-                $(".sticky").removeClass("enabled");
-                $(".sticky-begin").removeClass("enabled");
+                $(window).unbind("scroll");
+                var stickyNavFalse = function() {
+                    $(".sticky").removeClass("enabled");
+                    $(".sticky-begin").removeClass("enabled");
+                };
+                setTimeout(stickyNavFalse, 401);
             }
         }
         $(window).resize($.debounce(300, function() {
             stickySetup();
-            stickyCalc();
+            stickyEnquire();
         }));
         $(document).ready(function() {
             $(".sub-nav a, a.scroll-to").click(function(e) {
@@ -142,24 +166,10 @@ function(module, exports, __webpack_require__) {
                     }
                 }
             });
-            enquire.register("screen and (min-width: 1000px)", {
-                match: function() {
-                    stickyNav(true);
-                },
-                unmatch: function() {
-                    stickyNav(false);
-                }
-            });
+            stickyEnquire();
         });
         $(window).load(function() {
-            enquire.register("screen and (min-width: 1000px)", {
-                match: function() {
-                    stickyNav(true);
-                },
-                unmatch: function() {
-                    stickyNav(false);
-                }
-            });
+            stickyEnquire();
         });
         module.exports.stickySetup = stickySetup;
     }).call(exports, __webpack_require__(1));

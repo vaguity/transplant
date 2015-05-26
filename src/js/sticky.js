@@ -1,6 +1,7 @@
 var stickyTop, stickyBottom, stickySections, stickySection, stickySectionNew, stickyLinkSelector;
 
 function stickySetup() {
+	// Performs size calculations and gathers information on the sticky navs
 	if ($('.sticky-begin').length) {
 		stickyTop = $('.sticky-begin').position().top;
 	}
@@ -16,6 +17,18 @@ function stickySetup() {
 	else {
 		stickyLinkSelector = '.sub-nav a';
 	}
+}
+
+function stickyEnquire() {
+	// Enquire call to enable or disable the function depending on screen size
+	enquire.register("screen and (min-width: 1000px)", {
+		match: function() {
+			stickyNav(true);
+		},
+		unmatch: function() {
+			stickyNav(false);
+		},
+	});
 }
 
 function stickyCalc() {
@@ -60,23 +73,28 @@ function stickyCalc() {
 
 function stickyNav(set) {
 	if (set === true) {
-		$(window).on('scroll', $.throttle(100, function() {
+		stickyCalc();
+		$(window).bind('scroll', $.throttle(100, function() {
 			if ($('.sticky').length === 0) {
-				$(window).off('scroll', window);
+				$(window).unbind('scroll');
 			}
 
 			stickyCalc();
 		}));
 	}
 	else {
-		$('.sticky').removeClass('enabled');
-		$('.sticky-begin').removeClass('enabled');
+		$(window).unbind('scroll');
+		var stickyNavFalse = function() {
+			$('.sticky').removeClass('enabled');
+			$('.sticky-begin').removeClass('enabled');
+		};
+		setTimeout(stickyNavFalse, 401);
 	}
 }
 
 $(window).resize($.debounce(300, function() {
 	stickySetup();
-	stickyCalc();
+	stickyEnquire();
 }));
 
 $(document).ready(function() {
@@ -102,25 +120,11 @@ $(document).ready(function() {
 			}
 		}
 	});
-	enquire.register("screen and (min-width: 1000px)", {
-		match: function() {
-			stickyNav(true);
-		},
-		unmatch: function() {
-			stickyNav(false);
-		},
-	});
+	stickyEnquire();
 });
 
 $(window).load(function() {
-	enquire.register("screen and (min-width: 1000px)", {
-		match: function() {
-			stickyNav(true);
-		},
-		unmatch: function() {
-			stickyNav(false);
-		},
-	});
+	stickyEnquire();
 });
 
 module.exports.stickySetup = stickySetup;
