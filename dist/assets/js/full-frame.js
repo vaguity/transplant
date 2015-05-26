@@ -1,8 +1,8 @@
-var windowHeight;
+var frameHeight;
 
 function fullFrameRatio(el) {
-	if (($(window).width() / windowHeight) < el['ratio']) {
-		$(el['selector']).css('width', parseInt(windowHeight * el['ratio']) + 'px');
+	if (($(window).width() / frameHeight) < el['ratio']) {
+		$(el['selector']).css('width', parseInt(frameHeight * el['ratio']) + 'px');
 	}
 	else {
 		$(el['selector']).css({
@@ -14,12 +14,12 @@ function fullFrameRatio(el) {
 
 function fullFrameObject(el) {
 	if (typeof el['match'] === 'string') {
-		windowHeight = $(el['match']).outerHeight();
+		frameHeight = $(el['match']).outerHeight();
 	}
 	if (typeof el['offset'] === 'string') {
-		windowHeight = windowHeight - $(el['offset']).outerHeight();
+		frameHeight = frameHeight - $(el['offset']).outerHeight();
 	}
-	$(el['selector']).css('height', windowHeight + 'px');
+	$(el['selector']).css('height', frameHeight + 'px');
 	if (typeof el['ratio'] === 'number') {
 		fullFrameRatio(el);
 	}
@@ -27,14 +27,14 @@ function fullFrameObject(el) {
 
 function setFullFrame(el, reset) {
 	if (reset === true) {
-		var windowHeight = '';
+		frameHeight = '';
 	}
 	else {
-		var windowHeight = $(window).height();
+		frameHeight = $(window).height();
 	}
 
 	if (typeof el === 'string') {
-		$(el).css('height', windowHeight);
+		$(el).css('height', frameHeight);
 	}
 	else {
 		for (var i = 0; i < el.length; i++) {
@@ -42,7 +42,7 @@ function setFullFrame(el, reset) {
 				fullFrameObject(el[i]);
 			}
 			else {
-				$(el[i]).css('height', windowHeight + 'px');
+				$(el[i]).css('height', frameHeight + 'px');
 			}
 		}
 	}
