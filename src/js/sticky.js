@@ -1,4 +1,5 @@
 var stickyTop, stickyBottom, stickySections, stickySection, stickySectionNew, stickyLinkSelector;
+var scrollOffset;
 
 function stickySetup() {
 	// Performs size calculations and gathers information on the sticky navs
@@ -99,28 +100,43 @@ $(window).resize($.debounce(300, function() {
 
 $(document).ready(function() {
 	$('.sub-nav a, a.scroll-to').click(function(e) {
-		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+		if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
 			e.preventDefault();
-	  		var target = $(this.hash);
+	  		var newHash = this.hash;
+	  		var newHref = this.href;
+	  		var target = $(newHash);
 	  		if (target.length > 0) {
 	  			var stickyOffset = $('.sub-nav-container').length > 0 ? $('.sub-nav-container').outerHeight() : 0;
 	  			if ($(this).data('sticky-offset') > 0) {
 	  				var stickyOffset = stickyOffset + $(this).data('sticky-offset');
 	  			}
-	  			var scrollOffset = target.offset().top - stickyOffset + 1;
+	  			scrollOffset = target.offset().top - stickyOffset + 1;
 				$('html, body').animate({
 					scrollTop: scrollOffset
 				}, 750);
+				function hashUpdate() {
+					location.hash = newHash;
+					history.pushState({}, "", newHref);
+				};
+				setTimeout(hashUpdate, 751);
 				return false;
 			}
 			else {
+				scrollOffset = 0;
 				$('html, body').animate({
-		  			scrollTop: 0
+		  			scrollTop: scrollOffset
 				}, 750);
 			}
 		}
 	});
 	stickyEnquire();
+});
+
+$(window).bind('hashchange', function(e) {
+	if (typeof scrollOffset == 'number') {
+		document.body.scrollTop = scrollOffset;
+		scrollOffset = undefined;
+	}
 });
 
 $(window).load(function() {
