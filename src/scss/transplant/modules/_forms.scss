@@ -67,3 +67,36 @@ textarea {
 form label {
 	display: none;
 }
+
+select {
+	width: 100%;
+	margin: 0;
+	border-radius: 0;
+	padding: .75em;
+	color: #999;
+	font-size: 16px;
+	line-height: normal;
+	background-color: white;
+	background-repeat: no-repeat;
+	background-position: 95% center;
+	background-image: url('../images/icon-down.png');
+	border: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-webkit-appearance: button;
+	-moz-appearance: none;
+	&:focus {
+		outline: none;
+	}
+	@include breakpoint($breakpoint-tablet) {
+		width: 70%;
+		margin: .5em auto;
+		background-position: 98% center;
+	}
+	@include breakpoint($breakpoint-desktop-small) {
+		width: auto;
+		margin: .25em;
+		padding-right: 2em;
+		background-position: 95% center;
+	}
+}
