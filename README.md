@@ -53,4 +53,6 @@ Bump the version using a git version tag if changes are made to the CSS, Sass or
 
 The `/dist` directory is also uploaded to the Marketing Prototype S3 Bucket at [http://prototype.marketing.prclt.com/transplant](http://prototype.marketing.prclt.com/transplant). The HTML files in `/dist` should include thorough examples of what the library contains.
 
-`aws s3 sync dist s3://prototype.marketing.prclt.com/transplant --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers`
+```
+aws s3 sync dist s3://prototype.marketing.prclt.com/transplant --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers --exclude "*.git/*"
+```
