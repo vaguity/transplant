@@ -21,10 +21,13 @@
 		font-family: $type-serif;
 		margin: 32px 0;
 	}
-	input {
-		margin: 0 .5em 1em;
+	input, select {
 		font-size: 16px;
+		margin: 0 .5em 1em;
 		border: none;
+		@include breakpoint($breakpoint-desktop) {
+			min-width: 200px;
+		}
 	}
 	button {
 		margin: 1em auto;
@@ -38,7 +41,7 @@
 		}
 	}
 	&.alternate {
-	    input[type="text"], input[type="email"], input[type="tel"] {
+	    input[type="text"], input[type="email"], input[type="tel"], select {
 	        border: 1px solid $lightgray;
 	        margin: .25em;
 	    }

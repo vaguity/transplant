@@ -2,7 +2,7 @@ input {
 	@include placeholder;
 }
 
-input[type="text"], input[type="email"], textarea {
+input[type="text"], input[type="email"], input[type="tel"] textarea, select {
 	border: 1px solid $lightgray;
 	margin: .5em 0;
 }
@@ -12,7 +12,7 @@ input, button {
 	padding: .75em;
 	border: none;
 	line-height: 1em;
-	font-size: 14px;
+	font-size: 16px;
 	margin: 1em auto;
 	width: 100%;
 	box-sizing: border-box;
@@ -28,7 +28,6 @@ input, button {
 	@include breakpoint($breakpoint-desktop-small) {
 		display: inline-block;
 		width: auto;
-		font-size: 14px;
 		margin: 0 .5em;
 	}
 	&[type="submit"] {
@@ -80,7 +79,7 @@ select {
 	background-repeat: no-repeat;
 	background-position: 95% center;
 	background-image: url('../images/icon-down.png');
-	border: 0;
+	border: 1px solid $lightgray;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	-webkit-appearance: button;

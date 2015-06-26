@@ -78,7 +78,7 @@
 .hero .form {
 	margin-bottom: 20px;
 	min-height: 75px;
-	input {
+	input, select {
 		border: none;
 		margin: .5em auto;
 		@include breakpoint($breakpoint-desktop-small) {
