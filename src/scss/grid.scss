@@ -1,0 +1,28 @@
+// Grid prototype, specific to this repo
+
+@import 'lib/susy';
+@import 'lib/breakpoint';
+@import 'transplant/variables/base';
+
+$susy: (
+	columns: 4,
+	debug: (image:show)
+);
+
+.grid-container {
+	height: 100vh;
+	@include container;
+	@include breakpoint($breakpoint-desktop) {
+		@include show-grid(12);
+	}
+}
+
+.header {
+	@include show-grid(12);
+	@include breakpoint($breakpoint-desktop-small) {
+		@include show-grid(48);
+	}
+	@include breakpoint($breakpoint-desktop) {
+		@include show-grid(24);
+	}
+}

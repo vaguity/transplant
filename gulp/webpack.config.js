@@ -30,7 +30,8 @@ var uglifyOptions = typeof isProduction !== 'undefined' ? uglifyEnvOptions.produ
 
 var entries = {
 	main: srcDir + '/main.js',
-	guide: srcDir + '/guide.js'
+	guide: srcDir + '/guide.js',
+	grid: srcDir + '/grid.js'
 }
 
 var config = {
@@ -66,7 +67,7 @@ var config = {
 		new CommonsChunkPlugin({
 			name: 'common',
 			filename: 'common.js',
-			chunks: ['main', 'guide']
+			chunks: ['main', 'guide', 'grid']
 		})
 	]
 };

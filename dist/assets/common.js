@@ -133,7 +133,8 @@
             /******/
             script.src = __webpack_require__.p + "" + chunkId + "." + ({
                 "1": "main",
-                "2": "guide"
+                "2": "guide",
+                "3": "grid"
             }[chunkId] || chunkId) + ".js";
             /******/
             head.appendChild(script);
@@ -8019,11 +8020,11 @@ function(module, exports, __webpack_require__) {
 function(module, exports, __webpack_require__) {
     /* WEBPACK VAR INJECTION */
     (function(global) {
-        __webpack_require__(11);
+        __webpack_require__(12);
         global.$ = global.jQuery = __webpack_require__(1);
-        __webpack_require__(15);
-        global.enquire = __webpack_require__(16);
-        global.throttleDebounce = __webpack_require__(17).Cowboy;
+        __webpack_require__(17);
+        global.enquire = __webpack_require__(18);
+        global.throttleDebounce = __webpack_require__(19).Cowboy;
         global.$.extend(global.$, global.throttleDebounce);
     }).call(exports, function() {
         return this;
@@ -8035,6 +8036,7 @@ function(module, exports, __webpack_require__) {
 , /* 9 */
 , /* 10 */
 , /* 11 */
+, /* 12 */
 /***/
 function(module, exports, __webpack_require__) {
     /*** IMPORTS FROM imports-loader ***/
@@ -9090,10 +9092,11 @@ function(module, exports, __webpack_require__) {
         /*** EXPORTS FROM exports-loader ***/
         module.exports = window.Modernizr;
     }).call(window);
-}, /* 12 */
-, /* 13 */
+}, /* 13 */
 , /* 14 */
 , /* 15 */
+, /* 16 */
+, /* 17 */
 /***/
 function(module, exports, __webpack_require__) {
     /* WEBPACK VAR INJECTION */
@@ -9110,7 +9113,7 @@ function(module, exports, __webpack_require__) {
             };
         }
     }).call(exports, __webpack_require__(1));
-}, /* 16 */
+}, /* 18 */
 /***/
 function(module, exports, __webpack_require__) {
     var __WEBPACK_AMD_DEFINE_RESULT__;
@@ -9370,7 +9373,7 @@ function(module, exports, __webpack_require__) {
         };
         return new MediaQueryDispatch();
     });
-}, /* 17 */
+}, /* 19 */
 /***/
 function(module, exports, __webpack_require__) {
     /*
