@@ -23,10 +23,17 @@
 	}
 	input, select {
 		font-size: 16px;
-		margin: 0 .5em 1em;
+		margin: .5em auto;
 		border: none;
 		@include breakpoint($breakpoint-desktop) {
+			margin: 0 .5em 1em;
 			min-width: 200px;
+		}
+	}
+	select {
+		margin-top: 0;
+		@include breakpoint($breakpoint-desktop) {
+			margin-top: .5em;
 		}
 	}
 	button {
@@ -36,8 +43,9 @@
 	}
 	button[type="submit"] {
 		@include breakpoint($breakpoint-desktop-small) {
-			margin-left: .5em;
-			margin-right: .5em;
+			margin: 1em .5em;
+			// margin-left: .5em;
+			// margin-right: .5em;
 		}
 	}
 	&.alternate {

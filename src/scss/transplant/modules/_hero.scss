@@ -82,7 +82,14 @@
 		border: none;
 		margin: .5em auto;
 		@include breakpoint($breakpoint-desktop-small) {
+			min-width: 200px;
 			margin: .25em;
+		}
+	}
+	select {
+		margin-top: 0;
+		@include breakpoint($breakpoint-desktop) {
+			margin-top: .5em;
 		}
 	}
 	button {
