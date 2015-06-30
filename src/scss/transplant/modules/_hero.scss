@@ -74,31 +74,3 @@
 		background: $indigo-transparent-half;
 	}
 }
-
-.hero .form {
-	margin-bottom: 20px;
-	min-height: 75px;
-	input, select {
-		border: none;
-		margin: .5em auto;
-		@include breakpoint($breakpoint-desktop-small) {
-			min-width: 200px;
-			margin: .25em;
-		}
-	}
-	button {
-		margin: 1em auto;
-		color: $white;
-		border-color: $white;
-		&:hover {
-			color: $lightgray;
-			border-color: $lightgray;
-		}
-	}
-	button[type="submit"] {
-		@include breakpoint($breakpoint-desktop-small) {
-			margin-left: .5em;
-			margin-right: .5em;
-		}
-	}
-}

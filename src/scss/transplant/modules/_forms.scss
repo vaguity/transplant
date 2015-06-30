@@ -1,65 +1,81 @@
-input {
-	@include placeholder;
-}
-
-input[type="text"], input[type="email"], input[type="tel"] textarea, select {
+input, select, textarea {
+	display: inline-block;
+	font-size: 14px;
 	border: 1px solid $lightgray;
 	margin: .5em 0;
-}
-
-input, button {
-	display: block;
-	padding: .75em;
-	border: none;
-	line-height: 1em;
-	font-size: 16px;
-	margin: 1em auto;
+	border-radius: 0;
 	width: 100%;
+	padding: .75em;
+	overflow: hidden;
+	line-height: 1.2em;
+	color: $lightgray-dark;
 	box-sizing: border-box;
-	color: $gray2;
 	&:focus {
 		outline: none;
 	}
 	@include breakpoint($breakpoint-tablet) {
-		display: inline-block;
 		width: 70%;
-		margin: 1em .5em;
+		margin: .25em;
 	}
 	@include breakpoint($breakpoint-desktop-small) {
-		display: inline-block;
-		width: auto;
-		margin: 0 .5em;
+		vertical-align: bottom;
 	}
-	&[type="submit"] {
-		display: block;
-		width: auto;
-		padding: .75em 1em;
-		color: $maroon;
-		font-family: $type-sans;
-		background: transparent;
-		text-transform: uppercase;
-		border: 1px solid $maroon;
-		margin: 2em auto;
-		&:hover {
-			color: $orange;
-			border-color: $orange;
-		}
-		@include breakpoint($breakpoint-desktop-small) {
-			display: inline-block;
-			margin: 0 auto;
-		}
+}
+
+input, select {
+	@include breakpoint($breakpoint-desktop-small) {
+		height: 44px;
+		width: 200px;
+	}
+}
+
+input, textarea {
+	@include placeholder;
+}
+
+select {
+	background-color: $white;
+	background-repeat: no-repeat;
+	background-image: url('../images/icon-down.png');
+	background-position: 95% center;
+	text-overflow: ellipsis;
+	-webkit-appearance: button;
+	-moz-appearance: none;
+	@include breakpoint($breakpoint-tablet) {
+		background-position: 98% center;
+	}
+	@include breakpoint($breakpoint-desktop-small) {
+		background-position: 95% center;
+		padding-right: 2em;
 	}
 }
 
 textarea {
-	box-sizing: border-box;
-	width: 100%;
 	resize: none;
-	font-size: 14px;
-	padding: .5em .75em;
 	@include breakpoint($breakpoint-desktop-small) {
 		width: 50%;
-		margin-right: 50%;
+	}
+}
+
+button {
+	display: inline-block;
+	width: auto;
+	font-family: $type-sans;
+	color: $maroon;
+	padding: .75em;
+	line-height: 1em;
+	margin: 1em auto;
+	background: transparent;
+	box-sizing: border-box;
+	text-transform: uppercase;
+	border: 1px solid $maroon;
+	margin: 2em auto;
+	&:focus {
+		outline: none;
+	}
+	&:hover {
+		color: $orange;
+		border-color: $orange;
 	}
 }
 
@@ -67,49 +83,114 @@ form label {
 	display: none;
 }
 
-select {
-	width: 100%;
-	margin: 0 .5em 1em;
-	border-radius: 0;
-	padding: .75em;
-	color: #999;
-	font-size: 16px;
-	line-height: normal;
-	background-color: white;
-	background-repeat: no-repeat;
-	background-position: 95% center;
-	background-image: url('../images/icon-down.png');
-	border: 1px solid $lightgray;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	-webkit-appearance: button;
-	-moz-appearance: none;
-	&:focus {
-		outline: none;
-	}
-	@include breakpoint($breakpoint-tablet) {
-		width: 70%;
-		margin: .5em auto;
-		background-position: 98% center;
-	}
-	@include breakpoint($breakpoint-desktop-small) {
-		padding-right: 2em;
-		background-position: 95% center;
+.hero .form, .demo-form {
+	input, select {
+		border: 0;
 	}
 }
 
-input, select {
-	font-size: 14px;
-	margin: .5em auto;
-	@include breakpoint($breakpoint-desktop-small) {
-		vertical-align: bottom;
+.hero .form {
+	margin-bottom: 20px;
+	min-height: 75px;
+	button {
+		margin: 1em auto;
+		color: $white;
+		border-color: $white;
+		&:hover {
+			color: $lightgray;
+			border-color: $lightgray;
+		}
+	}
+}
+
+.demo-form-container {
+	background: $offwhite-light;
+	&.alternate {
+		background: $white;
+	}
+}
+
+.demo-form {
+	color: $maroon;
+	text-align: center;
+	font-size: 24px;
+	form {
+	    margin: 0 auto;
+	}
+	h3 {
+		color: $maroon;
+		text-transform: uppercase;
+		margin: 32px 0;
+	}
+	p {
+		font-family: $type-serif;
+		margin: 32px 0;
+	}
+	input, select {
+		font-size: 16px;
+		border: none;
+	}
+	button {
+		margin: 1em auto;
+		font-size: 16px;
 		line-height: 1em;
-		height: 44px;
-		width: 200px;
-		margin: .25em;
+	}
+	&.alternate {
+	    input, select {
+	        border: 1px solid $lightgray;
+	    }
 	}
 }
 
-input, select, button {
-	display: inline-block;
+.contact-form-container {
+	background: $white;
+}
+
+.contact-form {
+	text-align: center;
+	form {
+		text-align: center;
+		margin: 20px 0 60px;
+		@include breakpoint($breakpoint-desktop-small) {
+			margin: 20px 0;
+		}
+	}
+	button {
+		display: inline-block;
+		margin: 1em auto;
+		&[type="submit"] {
+			color: $white;
+			background: $orange;
+			border-color: $orange;
+			margin: .5em 0;
+			&:hover {
+				color: $white;
+				border-color: $darkorange;
+				background: $darkorange;
+			}
+		}
+	}
+	textarea, select {
+		@include breakpoint($breakpoint-desktop-small) {
+			width: 821px;
+		}
+	}
+	select {
+		@include breakpoint($breakpoint-desktop-small) {
+			background-position: 98% center;
+		}
+	}
+}
+
+.mktoCustomError {
+	font-size: 14px;
+	color: $red;
+	border-bottom: 1px solid $midred;
+	background: $lightred;
+	line-height: 2em;
+	margin: 2em 0;
+}
+
+.mktoError {
+	display: none !important;
 }
