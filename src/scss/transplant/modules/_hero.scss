@@ -86,12 +86,6 @@
 			margin: .25em;
 		}
 	}
-	select {
-		margin-top: 0;
-		@include breakpoint($breakpoint-desktop) {
-			margin-top: .5em;
-		}
-	}
 	button {
 		margin: 1em auto;
 		color: $white;

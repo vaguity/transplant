@@ -93,9 +93,23 @@ select {
 		background-position: 98% center;
 	}
 	@include breakpoint($breakpoint-desktop-small) {
-		width: auto;
-		margin: .25em;
 		padding-right: 2em;
 		background-position: 95% center;
 	}
+}
+
+input, select {
+	font-size: 14px;
+	margin: .5em auto;
+	@include breakpoint($breakpoint-desktop-small) {
+		vertical-align: bottom;
+		line-height: 1em;
+		height: 44px;
+		width: 200px;
+		margin: .25em;
+	}
+}
+
+input, select, button {
+	display: inline-block;
 }
