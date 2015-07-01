@@ -88,7 +88,13 @@
 						    $(marketoForm[1278]['selector']).empty();
 						    MktoForms2.loadForm("//app-sj02.marketo.com", "306-EXV-607", 1278, function(form) {
 						        form.onSuccess(function(values, followUpUrl) {
-						            location.href = marketoForm[1278]['redirect-url'];
+						            var redirectUrl = marketoForm[{{ form_id }}]['redirect-url'];
+						            if ('Job_Function__c' in values) {
+						                if (values['Job_Function__c'] == 'Agency or Consultant') {
+						                    redirectUrl = 'https://percolate.com/request-demo?success=2';
+						                }
+						            }
+						            location.href = redirectUrl;
 						            return false;
 						        });
 						        form.onValidate(function(callback) {
@@ -183,7 +189,13 @@
 					    $(marketoForm[1524]['selector']).empty();
 					    MktoForms2.loadForm("//app-sj02.marketo.com", "306-EXV-607", 1524, function(form) {
 					        form.onSuccess(function(values, followUpUrl) {
-					            location.href = marketoForm[1524]['redirect-url'];
+					            var redirectUrl = marketoForm[{{ form_id }}]['redirect-url'];
+					            if ('Job_Function__c' in values) {
+					                if (values['Job_Function__c'] == 'Agency or Consultant') {
+					                    redirectUrl = 'https://percolate.com/request-demo?success=2';
+					                }
+					            }
+					            location.href = redirectUrl;
 					            return false;
 					        });
 					        form.onValidate(function(callback) {
@@ -276,7 +288,13 @@
 					    $(marketoForm[1282]['selector']).empty();
 					    MktoForms2.loadForm("//app-sj02.marketo.com", "306-EXV-607", 1282, function(form) {
 					        form.onSuccess(function(values, followUpUrl) {
-					            location.href = marketoForm[1282]['redirect-url'];
+					            var redirectUrl = marketoForm[{{ form_id }}]['redirect-url'];
+					            if ('Job_Function__c' in values) {
+					                if (values['Job_Function__c'] == 'Agency or Consultant') {
+					                    redirectUrl = 'https://percolate.com/request-demo?success=2';
+					                }
+					            }
+					            location.href = redirectUrl;
 					            return false;
 					        });
 					        form.onValidate(function(callback) {
