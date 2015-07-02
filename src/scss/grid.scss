@@ -18,11 +18,20 @@ $susy: (
 }
 
 .header {
+	height: 50vh;
 	@include show-grid(12);
 	@include breakpoint($breakpoint-desktop-small) {
 		@include show-grid(48);
 	}
 	@include breakpoint($breakpoint-desktop) {
 		@include show-grid(24);
+	}
+}
+
+.footer {
+	height: 50vh;
+	@include container;
+	@include breakpoint($breakpoint-desktop) {
+		@include show-grid(6);
 	}
 }

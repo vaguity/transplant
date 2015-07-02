@@ -88,7 +88,13 @@
 						    $(marketoForm[1278]['selector']).empty();
 						    MktoForms2.loadForm("//app-sj02.marketo.com", "306-EXV-607", 1278, function(form) {
 						        form.onSuccess(function(values, followUpUrl) {
-						            location.href = marketoForm[1278]['redirect-url'];
+						            var redirectUrl = marketoForm[{{ form_id }}]['redirect-url'];
+						            if ('Job_Function__c' in values) {
+						                if (values['Job_Function__c'] == 'Agency or Consultant') {
+						                    redirectUrl = 'https://percolate.com/request-demo?success=2';
+						                }
+						            }
+						            location.href = redirectUrl;
 						            return false;
 						        });
 						        form.onValidate(function(callback) {
@@ -183,7 +189,13 @@
 					    $(marketoForm[1524]['selector']).empty();
 					    MktoForms2.loadForm("//app-sj02.marketo.com", "306-EXV-607", 1524, function(form) {
 					        form.onSuccess(function(values, followUpUrl) {
-					            location.href = marketoForm[1524]['redirect-url'];
+					            var redirectUrl = marketoForm[{{ form_id }}]['redirect-url'];
+					            if ('Job_Function__c' in values) {
+					                if (values['Job_Function__c'] == 'Agency or Consultant') {
+					                    redirectUrl = 'https://percolate.com/request-demo?success=2';
+					                }
+					            }
+					            location.href = redirectUrl;
 					            return false;
 					        });
 					        form.onValidate(function(callback) {
@@ -241,17 +253,105 @@
 			</section>
 		</div>
 
-		<div class="body-container container">
-			<section class="body">
+        <div class="body-container contact-form-container container">
+            <section class="body contact-form">
 
-			</section>
-		</div>
+                <h2>Get in Touch</h2>
 
-		<div class="body-container container">
-			<section class="body">
+                <div class="copy">
+                    <p class="highlight flush">To find out more about Percolate, send us a note below and we’ll get in touch.</p>
 
-			</section>
-		</div>
+					<!-- begin macro -->
+					<script>
+					if (typeof MktoForms2 === 'undefined') {
+					    document.write("\x3Cscript src=\"//app-sj02.marketo.com/js/forms2/js/forms2.min.js\">\x3C/script>");
+					}
+					</script>
+					<div class="mktoCustomError mktoCustomError_1282" style="display: none;"></div>
+
+					<form id="mktoForm_1282" style="visibility: hidden;" class="marketo-form" data-id="1282" data-redirect-url="https://percolate.com/request-demo?success=1" data-field-display="inline-block"></form>
+
+					<script>
+					if (typeof marketoForm === 'undefined') {
+					    var marketoForm = {};
+					}
+					var marketoFormID = 1282;
+					var marketoFormSelector = '#mktoForm_' + marketoFormID;
+					marketoForm[marketoFormID] = {
+					    'selector': '#mktoForm_' + marketoFormID,
+					    'redirect-url': $(marketoFormSelector).data('redirect-url'),
+					    'display': typeof $(marketoFormSelector).data('field-display') !== 'undefined' ? $(marketoFormSelector).data('field-display') : 'inline',
+					    'marketoLoadForm': function() {},
+					};
+
+					marketoForm[1282]['marketoLoadForm'] = function() {
+					    $(marketoForm[1282]['selector']).empty();
+					    MktoForms2.loadForm("//app-sj02.marketo.com", "306-EXV-607", 1282, function(form) {
+					        form.onSuccess(function(values, followUpUrl) {
+					            var redirectUrl = marketoForm[{{ form_id }}]['redirect-url'];
+					            if ('Job_Function__c' in values) {
+					                if (values['Job_Function__c'] == 'Agency or Consultant') {
+					                    redirectUrl = 'https://percolate.com/request-demo?success=2';
+					                }
+					            }
+					            location.href = redirectUrl;
+					            return false;
+					        });
+					        form.onValidate(function(callback) {
+					            var submittable = true;
+					            $(marketoForm[1282]['selector']  + ' .mktoRequired').each(function() {
+					                if ($(this).val() == '') {
+					                    submittable = false;
+					                    $('.mktoCustomError_1282').html('<strong>Uh oh.</strong> Please fill out all the fields.').css('display', 'block');
+					                }
+					            });
+					            var emailVal = $(marketoForm[1282]['selector'] + ' input#Email').val();
+					            var emailDomain = emailVal.replace(/.+@([^.]+).+/, '\$1');
+					            var i = 0;
+					            var personalDomains = ['gmail', 'hotmail', 'yahoo'];
+					            for (i in personalDomains) {
+					                if (emailDomain == personalDomains[i]) {
+					                    submittable = false;
+					                    $('.mktoCustomError_1282').html('<strong>Uh oh.</strong> Please enter your company email address.').css('display', 'block');
+					                }
+					            }
+					            form.submittable(submittable);
+					        });
+					    });
+
+					    MktoForms2.whenReady(function(form) {
+					        $('#mktoForms2BaseStyle, #mktoForms2ThemeStyle').remove();
+					        $(marketoForm[1282]['selector'] + ' style').remove();
+					        $(marketoForm[1282]['selector'] + ', ' + marketoForm[1282]['selector'] + ' .mktoFormRow, ' + marketoForm[1282]['selector'] + ' .mktoFieldDescriptor, ' + marketoForm[1282]['selector'] + ' .mktoField, ' + marketoForm[1282]['selector'] + ' .mktoHasWidth, ' + marketoForm[1282]['selector'] + ' .mktoButtonWrap').removeAttr('style');
+					        $('.mktoAsterix, .mktoOffset, .mktoClear, .mktoLabel, .mktoGutter, .mktoError').remove();
+					        enquire.register("screen and (min-width: 1000px)", {
+					            match: function() {
+					                $(marketoForm[1282]['selector']).find('.mktoFieldDescriptor, .mktoFieldWrap').css('display', marketoForm[1282]['display']);
+					                $(marketoForm[1282]['selector'] + ' textarea').closest('.mktoFormRow').css('display', 'block');
+					            },
+					            unmatch: function() {
+					                $(marketoForm[1282]['selector']).find('.mktoFormRow, .mktoFieldDescriptor, .mktoButtonRow, .mktoFieldWrap').css('display', '');
+					            }
+					        });
+					        $(marketoForm[1282]['selector']).css('visibility', 'visible');
+
+					        stickySetup();
+					    });
+					}
+
+					marketoForm[1282]['marketoLoadForm']();
+
+					enquire.register("screen and (max-width: 1000px)", {
+					    unmatch: function() {
+					        marketoForm[1282]['marketoLoadForm']();
+					    }
+					});
+					</script>
+					<!-- end macro -->
+                </div>
+
+            </section>
+        </div>
 
 	</div>
 </div>
