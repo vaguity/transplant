@@ -131,6 +131,7 @@
             /******/
             script.async = true;
             /******/
+            /******/
             script.src = __webpack_require__.p + "" + chunkId + "." + ({
                 "1": "main",
                 "2": "guide",
@@ -161,7 +162,7 @@
 function(module, exports, __webpack_require__) {
     var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
     /*!
-	 * jQuery JavaScript Library v1.11.2
+	 * jQuery JavaScript Library v1.11.3
 	 * http://jquery.com/
 	 *
 	 * Includes Sizzle.js
@@ -171,7 +172,7 @@ function(module, exports, __webpack_require__) {
 	 * Released under the MIT license
 	 * http://jquery.org/license
 	 *
-	 * Date: 2014-12-17T15:27Z
+	 * Date: 2015-04-28T16:19Z
 	 */
     (function(global, factory) {
         if (typeof module === "object" && typeof module.exports === "object") {
@@ -206,7 +207,7 @@ function(module, exports, __webpack_require__) {
         var toString = class2type.toString;
         var hasOwn = class2type.hasOwnProperty;
         var support = {};
-        var version = "1.11.2", // Define a local copy of jQuery
+        var version = "1.11.3", // Define a local copy of jQuery
         jQuery = function(selector, context) {
             // The jQuery object is actually just the init constructor 'enhanced'
             // Need init if jQuery is called (just allow error to be thrown if not included)
@@ -577,7 +578,11 @@ function(module, exports, __webpack_require__) {
             class2type["[object " + name + "]"] = name.toLowerCase();
         });
         function isArraylike(obj) {
-            var length = obj.length, type = jQuery.type(obj);
+            // Support: iOS 8.2 (not reproducible in simulator)
+            // `in` check used to prevent JIT error (gh-2145)
+            // hasOwn isn't used here due to false negatives
+            // regarding Nodelist length in IE
+            var length = "length" in obj && obj.length, type = jQuery.type(obj);
             if (type === "function" || jQuery.isWindow(obj)) {
                 return false;
             }
@@ -7824,9 +7829,15 @@ function(module, exports, __webpack_require__) {
     });
 }, /* 2 */
 /***/
-function(module, exports, __webpack_require__) {
+function(module, exports) {
+    /*
+		MIT License http://www.opensource.org/licenses/mit-license.php
+		Author Tobias Koppers @sokra
+	*/
+    // css base code, injected by the css-loader
     module.exports = function() {
         var list = [];
+        // return the list of modules as css string
         list.toString = function toString() {
             var result = [];
             for (var i = 0; i < this.length; i++) {
@@ -7838,6 +7849,30 @@ function(module, exports, __webpack_require__) {
                 }
             }
             return result.join("");
+        };
+        // import a list of modules into the list
+        list.i = function(modules, mediaQuery) {
+            if (typeof modules === "string") modules = [ [ null, modules, "" ] ];
+            var alreadyImportedModules = {};
+            for (var i = 0; i < this.length; i++) {
+                var id = this[i][0];
+                if (typeof id === "number") alreadyImportedModules[id] = true;
+            }
+            for (i = 0; i < modules.length; i++) {
+                var item = modules[i];
+                // skip already imported module
+                // this implementation is not 100% perfect for weird media query combinations
+                //  when a module is imported multiple times with different media queries.
+                //  I hope this will never occur (Hey this way we have smaller bundles)
+                if (typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+                    if (mediaQuery && !item[2]) {
+                        item[2] = mediaQuery;
+                    } else if (mediaQuery) {
+                        item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+                    }
+                    list.push(item);
+                }
+            }
         };
         return list;
     };
@@ -7854,8 +7889,8 @@ function(module, exports, __webpack_require__) {
             if (typeof memo === "undefined") memo = fn.apply(this, arguments);
             return memo;
         };
-    }, isIE9 = memoize(function() {
-        return /msie 9\b/.test(window.navigator.userAgent.toLowerCase());
+    }, isOldIE = memoize(function() {
+        return /msie [6-9]\b/.test(window.navigator.userAgent.toLowerCase());
     }), getHeadElement = memoize(function() {
         return document.head || document.getElementsByTagName("head")[0];
     }), singletonElement = null, singletonCounter = 0;
@@ -7864,9 +7899,9 @@ function(module, exports, __webpack_require__) {
             if (typeof document !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
         }
         options = options || {};
-        // Force single-tag solution on IE9, which has a hard limit on the # of <style>
+        // Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
         // tags it will allow on a page
-        if (typeof options.singleton === "undefined") options.singleton = isIE9();
+        if (typeof options.singleton === "undefined") options.singleton = isOldIE();
         var styles = listToStyles(list);
         addStylesToDom(styles, options);
         return function update(newList) {
@@ -7943,6 +7978,13 @@ function(module, exports, __webpack_require__) {
         head.appendChild(styleElement);
         return styleElement;
     }
+    function createLinkElement() {
+        var linkElement = document.createElement("link");
+        var head = getHeadElement();
+        linkElement.rel = "stylesheet";
+        head.appendChild(linkElement);
+        return linkElement;
+    }
     function addStyle(obj, options) {
         var styleElement, update, remove;
         if (options.singleton) {
@@ -7950,6 +7992,13 @@ function(module, exports, __webpack_require__) {
             styleElement = singletonElement || (singletonElement = createStyleElement());
             update = applyToSingletonTag.bind(null, styleElement, styleIndex, false);
             remove = applyToSingletonTag.bind(null, styleElement, styleIndex, true);
+        } else if (obj.sourceMap && typeof URL === "function" && typeof URL.createObjectURL === "function" && typeof URL.revokeObjectURL === "function" && typeof Blob === "function" && typeof btoa === "function") {
+            styleElement = createLinkElement();
+            update = updateLink.bind(null, styleElement);
+            remove = function() {
+                styleElement.parentNode.removeChild(styleElement);
+                if (styleElement.href) URL.revokeObjectURL(styleElement.href);
+            };
         } else {
             styleElement = createStyleElement();
             update = applyToTag.bind(null, styleElement);
@@ -7967,21 +8016,17 @@ function(module, exports, __webpack_require__) {
             }
         };
     }
-    function replaceText(source, id, replacement) {
-        var boundaries = [ "/** >>" + id + " **/", "/** " + id + "<< **/" ];
-        var start = source.lastIndexOf(boundaries[0]);
-        var wrappedReplacement = replacement ? boundaries[0] + replacement + boundaries[1] : "";
-        if (source.lastIndexOf(boundaries[0]) >= 0) {
-            var end = source.lastIndexOf(boundaries[1]) + boundaries[1].length;
-            return source.slice(0, start) + wrappedReplacement + source.slice(end);
-        } else {
-            return source + wrappedReplacement;
-        }
-    }
+    var replaceText = function() {
+        var textStore = [];
+        return function(index, replacement) {
+            textStore[index] = replacement;
+            return textStore.filter(Boolean).join("\n");
+        };
+    }();
     function applyToSingletonTag(styleElement, index, remove, obj) {
         var css = remove ? "" : obj.css;
         if (styleElement.styleSheet) {
-            styleElement.styleSheet.cssText = replaceText(styleElement.styleSheet.cssText, index, css);
+            styleElement.styleSheet.cssText = replaceText(index, css);
         } else {
             var cssNode = document.createTextNode(css);
             var childNodes = styleElement.childNodes;
@@ -7997,12 +8042,6 @@ function(module, exports, __webpack_require__) {
         var css = obj.css;
         var media = obj.media;
         var sourceMap = obj.sourceMap;
-        if (sourceMap && typeof btoa === "function") {
-            try {
-                css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(JSON.stringify(sourceMap)) + " */";
-                css = '@import url("data:text/css;base64,' + btoa(css) + '")';
-            } catch (e) {}
-        }
         if (media) {
             styleElement.setAttribute("media", media);
         }
@@ -8014,6 +8053,21 @@ function(module, exports, __webpack_require__) {
             }
             styleElement.appendChild(document.createTextNode(css));
         }
+    }
+    function updateLink(linkElement, obj) {
+        var css = obj.css;
+        var media = obj.media;
+        var sourceMap = obj.sourceMap;
+        if (sourceMap) {
+            // http://stackoverflow.com/a/26603875
+            css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + " */";
+        }
+        var blob = new Blob([ css ], {
+            type: "text/css"
+        });
+        var oldSrc = linkElement.href;
+        linkElement.href = URL.createObjectURL(blob);
+        if (oldSrc) URL.revokeObjectURL(oldSrc);
     }
 }, /* 4 */
 /***/
@@ -8038,7 +8092,7 @@ function(module, exports, __webpack_require__) {
 , /* 11 */
 , /* 12 */
 /***/
-function(module, exports, __webpack_require__) {
+function(module, exports) {
     /*** IMPORTS FROM imports-loader ***/
     (function() {
         /*!
@@ -9375,7 +9429,7 @@ function(module, exports, __webpack_require__) {
     });
 }, /* 19 */
 /***/
-function(module, exports, __webpack_require__) {
+function(module, exports) {
     /*
 	 * jQuery throttle / debounce - v1.1 - 3/7/2010
 	 * http://benalman.com/projects/jquery-throttle-debounce-plugin/
