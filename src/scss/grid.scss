@@ -18,6 +18,7 @@ $susy: (
 }
 
 .header {
+	height: 100vh;
 	@include show-grid(12);
 	@include breakpoint($breakpoint-desktop-small) {
 		@include show-grid(48);
