@@ -1,15 +1,13 @@
-var dist = './dist';
-var src = './src';
+var dist = './dist'
+var src = './src'
 
 var packageType = {
 	cssPartial: src + '/scss/lib/reset',
 	cssLib: src + '/scss/lib',
-	jsLib: src + '/js/lib'
-};
+	jsLib: src + '/js/lib',
+}
 
 var config = {
-	// buildMethod: 'webpack',
-	buildMethod: false,
 	sass: {
 		src: src + '/scss/**/*.scss',
 		dest: src + '/css',
@@ -19,7 +17,6 @@ var config = {
 		src: src + '/js/**/*.js',
 		dist: dist + '/assets/js',
 	},
-
 	bower: {
 		src: src + '/lib',
 		packages: [
@@ -44,7 +41,7 @@ var config = {
 			},
 			{
 				name: 'jquery-throttle-debounce',
-				dest: packageType.jsLib
+				dest: packageType.jsLib,
 			},
 			{
 				name: 'modernizr',
@@ -64,6 +61,6 @@ var config = {
 			},
 		],
 	},
-};
+}
 
-module.exports = config;
+module.exports = config
