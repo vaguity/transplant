@@ -2,7 +2,7 @@ var gulp = require('gulp');
 var gulpif = require('gulp-if');
 var merge = require('merge-stream');
 var livereload = require('gulp-livereload');
-var rubySass = require('gulp-ruby-sass');
+var rubySass = require('gulp-sass');
 var rename = require('gulp-rename');
 var handleErrors = require('../util/handleErrors');
 
