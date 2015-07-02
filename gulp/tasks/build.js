@@ -2,7 +2,7 @@ var gulp = require('gulp')
 var gulpif = require('gulp-if')
 var livereload = require('gulp-livereload')
 var merge = require('merge-stream')
-var gulpWebpack = require('gulp-webpack')
+var gulpWebpack = require('webpack-stream')
 var webpack = require('webpack')
 var handleErrors = require('../util/handleErrors')
 
@@ -27,5 +27,4 @@ gulp.task('build', ['sass'], function () {
         .pipe(gulp.dest(config.js.dist))
 
     return merge(webpackBundle, styles, scripts)
-
 })

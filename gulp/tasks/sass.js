@@ -1,5 +1,5 @@
 var gulp = require('gulp')
-var rubySass = require('gulp-ruby-sass')
+var sass = require('gulp-sass')
 var handleErrors = require('../util/handleErrors')
 
 var config = require('../config').sass
@@ -7,7 +7,7 @@ var config = require('../config').sass
 
 gulp.task('sass', function () {
     return gulp.src(config.src)
-        .pipe(rubySass({
+        .pipe(sass({
             style: 'compressed',
             'sourcemap=none': true,
         }))
