@@ -10,16 +10,26 @@
 	}
 }
 
+.header-container.modal-active {
+	padding: 0;
+	background: $orange;
+	height: 100vh;
+	z-index: 20;
+	@include span(full);
+}
+
 .header {
 	.logo {
 		@include span(10 of 12);
 	}
 	.nav-icon {
 		@include span(2 of 12 last);
+		.icon {
+			display: none;
+		}
 	}
-	.primary-nav, .secondary-nav {
+	.primary-nav, .secondary-nav, .footer-nav {
 		display: none;
-		@include span(full last);
 	}
 	@include breakpoint($breakpoint-desktop-small) {
 		@include container(full);
@@ -58,9 +68,47 @@
 	}
 }
 
+.header-container.modal-active .header {
+	background: $orange;
+	position: absolute;
+	padding: 30px;
+	.logo {
+		display: none;
+	}
+	.nav-icon {
+		@include span(2 of 12 last);
+		margin: 0;
+		min-height: 32px;
+		.nav-icon-bar {
+			display: none;
+		}
+		.icon {
+			display: block;
+			color: $white;
+			line-height: 1em;
+		}
+	}
+	.primary-nav {
+		display: block;
+		@include span(10 of 12);
+	}
+	.secondary-nav {
+		display: block;
+		@include span(full last);
+	}
+	.footer-nav {
+		display: block;
+	}
+	a {
+		@include link($white, $indigo);
+		&.active {
+			@include link($indigo, $white);
+		}
+	}
+}
+
 .header {
 	ul {
-		line-height: 18px;
 		margin: 0;
 		@include breakpoint($breakpoint-desktop-small) {
 			line-height: 35px;
@@ -113,23 +161,25 @@
 	}
 
 	.primary-nav, .secondary-nav {
-		font-size: 16px;
 		font-family: $type-serif;
-		@include breakpoint($breakpoint-desktop-small) {
-			font-size: 18px;
-			margin-bottom: 0;
-		}
 		ul li {
-			margin: 5px 14px 0 0;
-			@include breakpoint($breakpoint-desktop) {
-				margin-right: 20px;
+			display: block;
+			@include breakpoint($breakpoint-tablet) {
+				display: inline-block;
+				margin: 5px 20px 0 0;
 			}
 		}
 	}
 
 	.primary-nav {
 		margin-bottom: 10px;
-		line-height: 1em;
+		font-size: 42px;
+		line-height: 54px;
+		@include breakpoint($breakpoint-desktop-small) {
+			font-size: 18px;
+			line-height: 1em;
+			margin-bottom: 0;
+		}
 		ul li:last-child {
 			margin-right: 0;
 		}
@@ -138,6 +188,8 @@
 	.secondary-nav {
 		margin-bottom: 20px;
 		line-height: 38px;
+		font-size: 24px;
+		line-height: 42px;
 		@include breakpoint($breakpoint-desktop-small) {
 			font-size: 13px;
 			font-family: $type-base;

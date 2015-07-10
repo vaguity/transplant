@@ -1,9 +1,23 @@
 $(document).ready(function () {
     $('.nav-icon').click(function () {
-        $('.header .primary-nav, .header .secondary-nav').toggle()
+        console.log($('.modal-active'))
+        if ($('.modal-active').length) {
+            console.log('modal-active exists')
+            setFullFrame('.modal-active', true)
+            $('.modal-active').removeClass('.modal-active')
+        }
+        else {
+            setFullFrame('.modal-active')
+            $('.header-container').addClass('modal-active')
+        }
     })
 
     enquire
+    .register('screen and (min-width: 720px', {
+        match: function () {
+            $('.modal-active').removeClass('modal-active')
+        },
+    })
     .register('screen and (min-width: 1000px)', {
         match: function () {
             $('.header .primary-nav, .header .secondary-nav').attr('style', '')

@@ -13,7 +13,7 @@
 
 <body>
 
-<div class="header-container">
+<div class="header-container modal-active">
     <header id="header" class="header">
         <div class="logo">
             <a href="#"><img src="https://percolate.com/static/images/logo.png" alt="Percolate" /></a>
@@ -24,6 +24,7 @@
             <i class="nav-icon-bar"></i>
             <i class="nav-icon-bar"></i>
             <i class="nav-icon-bar"></i>
+            <span class="icon icon-32 icon-close"></span>
         </button>
 
         <nav class="primary-nav">
@@ -38,13 +39,27 @@
 
         <nav class="secondary-nav">
             <ul>
-                <li><a href="#">We're Hiring</a></li>
+                <li><a href="#">We’re Hiring</a></li>
                 <li><a href="{{ app_url }}/login">Login</a></li>
                 <li class="request-demo"><a href="#">Request a Demo</a></li>
             </ul>
         </nav>
 
+        <nav class="footer-nav">
+            <ul>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Privacy</a></li>
+                <li><a href="http://wearemadeinny.com/" class="made-in">Made in NYC, SF, ATX, CHI, MIA &amp; LDN</a></li>
+                <li class="copyright">&copy; Percolate Industries, Inc.</li>
+            </ul>
+        </nav>
     </header>
+</div>
+
+<div class="content-container">
+    <div id="content">
+
+    </div>
 </div>
 
 </body>

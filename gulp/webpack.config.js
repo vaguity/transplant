@@ -10,7 +10,6 @@ var nodeModulesDir = path.resolve(rootDir, 'node_modules')
 var uglifyOptions = {
 	compress: {
 		warnings: false,
-		drop_console: true,
 	},
 	comments: false,
 	sourceMap: false,
