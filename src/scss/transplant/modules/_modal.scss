@@ -1,0 +1,47 @@
+.modal-container {
+	display: none;
+	button {
+		padding: 0;
+		border: none;
+		color: $white;
+		background: transparent;
+		font-size: 0;
+		line-height: 32px;
+		outline: 0;
+		@include span(2 of 12 last);
+	}
+	.modal-title {
+		@include span(10 of 12);
+	}
+}
+
+.modal {
+	padding: 30px;
+}
+
+.modal-active {
+	display: block;
+	position: absolute;
+	top: 0;
+	background: $orange;
+	height: 100vh;
+	z-index: 20;
+	color: $white;
+	@include span(full);
+}
+
+.modal-content {
+	@include span(full);
+}
+
+.modal-title h3 {
+	font-size: 18px;
+	color: $white;
+	text-transform: uppercase;
+	margin: 0 0 30px;
+}
+
+.modal-close span {
+	float: right;
+	margin: 0;
+}

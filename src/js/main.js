@@ -1,26 +1,21 @@
 $(document).ready(function () {
     $('.nav-icon').click(function () {
-        console.log($('.modal-active'))
-        if ($('.modal-active').length) {
-            console.log('modal-active exists')
-            setFullFrame('.modal-active', true)
-            $('.modal-active').removeClass('.modal-active')
+        if ($('.header-modal-active').length) {
+            setFullFrame('.header-modal-active', true)
+            $('.header-modal-active').removeClass('header-modal-active')
         }
         else {
-            setFullFrame('.modal-active')
-            $('.header-container').addClass('modal-active')
+            setFullFrame('.header-modal-active')
+            $('.header .primary-nav, .header .secondary-nav').attr('style', '')
+            $('.header-container').addClass('header-modal-active')
         }
     })
 
     enquire
-    .register('screen and (min-width: 720px', {
-        match: function () {
-            $('.modal-active').removeClass('modal-active')
-        },
-    })
     .register('screen and (min-width: 1000px)', {
         match: function () {
             $('.header .primary-nav, .header .secondary-nav').attr('style', '')
+            $('.header-modal-active').removeClass('header-modal-active')
         },
         unmatch: function () {
             $('.header .primary-nav, .header .secondary-nav').css('display', 'none')

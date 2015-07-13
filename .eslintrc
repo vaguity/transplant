@@ -6,6 +6,7 @@
 		"$": true,
 		"enquire": true,
 		"wistiaVideoHero": false,
+		"setFullFrame": true,
 	},
 	"extends": "./node_modules/eslint-config-percolate/.eslintrc",
 }
