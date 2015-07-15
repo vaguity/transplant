@@ -2564,6 +2564,13 @@ form label {
   margin-left: 0;
   margin-right: 0; }
 
+@media (min-width: 1000px) {
+  .modal-link {
+    display: none; } }
+
+.no-mediaqueries .modal-link {
+  display: none; }
+
 .modal-content {
   width: 100%;
   float: left;
@@ -2579,7 +2586,3 @@ form label {
 .modal-close span {
   float: right;
   margin: 0; }
-
-@media (min-width: 1000px) {
-  .modal-link {
-    display: none; } }

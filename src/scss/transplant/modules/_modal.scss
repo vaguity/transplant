@@ -30,6 +30,12 @@
 	@include span(full);
 }
 
+.modal-link {
+	@include breakpoint($breakpoint-desktop-small) {
+		display: none;
+	}
+}
+
 .modal-content {
 	@include span(full);
 }
