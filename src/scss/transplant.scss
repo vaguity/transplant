@@ -3,3 +3,9 @@
 
 @import 'lib/reset';
 @import 'transplant/base';
+
+@media (min-width: 1000px) {
+  .modal-link {
+    display: none;
+  }
+}

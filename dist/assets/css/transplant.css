@@ -2579,3 +2579,7 @@ form label {
 .modal-close span {
   float: right;
   margin: 0; }
+
+@media (min-width: 1000px) {
+  .modal-link {
+    display: none; } }

@@ -18,7 +18,7 @@ function modalToggle ($modalEl) {
 }
 
 $(document).ready(function () {
-    enquire.register('screen and (max-width: 720px)', {
+    enquire.register('screen and (max-width: 1000px)', {
         match: function () {
             $('.modal-link').bind('click', modalHandler)
             $('.modal-close').bind('click', modalClose)
@@ -26,6 +26,7 @@ $(document).ready(function () {
         unmatch: function () {
             $('.modal-link').unbind('click', modalHandler)
             $('.modal-close').unbind('click', modalClose)
+            $('.modal-active').removeClass('modal-active')
         },
     })
 })
