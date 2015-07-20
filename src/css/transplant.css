@@ -368,7 +368,7 @@ td,
 th {
   padding: 0; }
 
-/*! HTML5 Boilerplate v5.0.0 | MIT License | http://h5bp.com/ */
+/*! HTML5 Boilerplate v5.2.0 | MIT License | https://html5boilerplate.com/ */
 /*
  * What follows is the result of much research on cross-browser styling.
  * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
@@ -452,11 +452,9 @@ textarea {
    ========================================================================== */
 /*
  * Hide visually and from screen readers:
- * http://juicystudio.com/article/screen-readers-display-none.php
  */
 .hidden {
-  display: none !important;
-  visibility: hidden; }
+  display: none !important; }
 
 /*
  * Hide only visually, but have it available for screen readers:
