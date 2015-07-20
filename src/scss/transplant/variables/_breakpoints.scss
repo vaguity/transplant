@@ -1,4 +1,4 @@
-$breakpoint-no-query-fallbacks: true;
+@include breakpoint-set('no query fallbacks', true);
 
 $breakpoint-mobile: 480px;
 $breakpoint-tablet: 720px;

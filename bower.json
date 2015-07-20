@@ -1,6 +1,6 @@
 {
   "name": "transplant",
-  "version": "1.1.10",
+  "version": "1.2.0",
   "main": [
     "dist/assets/css/transplant.css"
   ],
