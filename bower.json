@@ -20,10 +20,10 @@
     "src/scss/lib"
   ],
   "devDependencies": {
-    "compass-breakpoint": "~2.5.0",
+    "compass-breakpoint": "~2.6.1",
     "enquire": "~2.1.2",
-    "html5-boilerplate": "~5.0.0",
-    "jquery": "~1.11.2",
+    "html5-boilerplate": "~5.2.0",
+    "jquery": "~1.11.3",
     "jquery-throttle-debounce": "git://github.com/cowboy/jquery-throttle-debounce.git#v1.1",
     "modernizr": "~2.8.3",
     "normalize-scss": "~3.0.1",
