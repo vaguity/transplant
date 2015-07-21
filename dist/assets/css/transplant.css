@@ -2544,7 +2544,7 @@ body.modal-active {
     margin-right: 1.69492%; }
     .header-container.modal-active .header .primary-nav ul li {
       display: block;
-      margin: 0 0 20px; }
+      margin: 0 0 12px; }
   .header-container.modal-active .header .secondary-nav, .header-container.modal-active .header .footer-nav {
     display: block;
     width: 100%;
