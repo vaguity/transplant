@@ -1,3 +1,7 @@
+body.modal-active {
+	overflow: hidden;
+}
+
 .modal-container {
 	display: none;
 	button {
@@ -21,10 +25,13 @@
 
 .modal-active {
 	display: block;
-	position: absolute;
-	top: 0;
+    top: 0;
+    bottom: 0;
+    position: fixed;
+    overflow-y: scroll;
+    overflow-x: hidden;
 	background: $orange;
-	height: 100vh;
+	min-height: 100vh;
 	z-index: 20;
 	color: $white;
 	@include span(full);
@@ -50,4 +57,49 @@
 .modal-close span {
 	float: right;
 	margin: 0;
+}
+
+.header-container.modal-active {
+	padding: 0;
+}
+
+.header-container.modal-active .header {
+	padding: 30px;
+	.logo {
+		display: none;
+	}
+	.nav-icon {
+		margin: 0;
+		@include span(2 of 12 last);
+		min-height: 32px;
+		.nav-icon-bar {
+			display: none;
+		}
+		.icon {
+			display: block;
+			float: right;
+			color: $white;
+			line-height: 1em;
+			margin: 0;
+		}
+	}
+	.primary-nav {
+		display: inline-block;
+		@include span(10 of 12);
+		ul li {
+			display: block;
+			margin: 5px 0;
+		}
+	}
+	.secondary-nav, .footer-nav {
+		display: block;
+		margin: 0 30px;
+		@include span(full last);
+	}
+	a {
+		@include link($white, $indigo);
+		&.active {
+			@include link($indigo, $white);
+		}
+	}
 }

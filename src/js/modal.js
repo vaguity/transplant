@@ -15,6 +15,7 @@ function modalClose (e) {
 
 function modalToggle ($modalEl) {
     $modalEl.toggleClass('modal-active')
+    $('body').toggleClass('modal-active')
 }
 
 $(document).ready(function () {

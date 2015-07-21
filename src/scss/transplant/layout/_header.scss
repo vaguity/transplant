@@ -10,16 +10,6 @@
 	}
 }
 
-.header-container.header-modal-active {
-	padding: 0;
-	background: $orange;
-	position: absolute;
-	top: 0;
-	height: 100vh;
-	z-index: 20;
-	@include span(full);
-}
-
 .header {
 	.logo {
 		@include span(10 of 12);
@@ -66,47 +56,6 @@
 		.secondary-nav {
 			display: block;
 			@include span(7 of 24 last);
-		}
-	}
-}
-
-.header-container.header-modal-active .header {
-	padding: 30px;
-	.logo {
-		display: none;
-	}
-	.nav-icon {
-		margin: 0;
-		@include span(2 of 12 last);
-		min-height: 32px;
-		.nav-icon-bar {
-			display: none;
-		}
-		.icon {
-			display: block;
-			float: right;
-			color: $white;
-			line-height: 1em;
-			margin: 0;
-		}
-	}
-	.primary-nav {
-		display: inline-block;
-		@include span(10 of 12);
-		ul li {
-			display: block;
-			margin: 5px 0;
-		}
-	}
-	.secondary-nav, .footer-nav {
-		display: block;
-		margin: 0 30px;
-		@include span(full last);
-	}
-	a {
-		@include link($white, $indigo);
-		&.active {
-			@include link($indigo, $white);
 		}
 	}
 }

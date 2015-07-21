@@ -1278,18 +1278,6 @@ i {
         display: block;
         clear: both; } }
 
-.header-container.header-modal-active {
-  padding: 0;
-  background: #f16421;
-  position: absolute;
-  top: 0;
-  height: 100vh;
-  z-index: 20;
-  width: 100%;
-  float: left;
-  margin-left: 0;
-  margin-right: 0; }
-
 .header .logo {
   width: 83.05085%;
   float: left;
@@ -1381,67 +1369,6 @@ i {
       width: 28.57143%;
       float: right;
       margin-right: 0; } }
-
-.header-container.header-modal-active .header {
-  padding: 30px; }
-  .header-container.header-modal-active .header .logo {
-    display: none; }
-  .header-container.header-modal-active .header .nav-icon {
-    margin: 0;
-    width: 15.25424%;
-    float: right;
-    margin-right: 0;
-    min-height: 32px; }
-    .header-container.header-modal-active .header .nav-icon .nav-icon-bar {
-      display: none; }
-    .header-container.header-modal-active .header .nav-icon .icon {
-      display: block;
-      float: right;
-      color: #fff;
-      line-height: 1em;
-      margin: 0; }
-  .header-container.header-modal-active .header .primary-nav {
-    display: inline-block;
-    width: 83.05085%;
-    float: left;
-    margin-right: 1.69492%; }
-    .header-container.header-modal-active .header .primary-nav ul li {
-      display: block;
-      margin: 5px 0; }
-  .header-container.header-modal-active .header .secondary-nav, .header-container.header-modal-active .header .footer-nav {
-    display: block;
-    margin: 0 30px;
-    width: 100%;
-    float: right;
-    margin-right: 0; }
-  .header-container.header-modal-active .header a {
-    text-decoration: none; }
-    .header-container.header-modal-active .header a:link {
-      color: #fff;
-      border-color: #fff; }
-    .header-container.header-modal-active .header a:visited {
-      color: #fff;
-      border-color: #fff; }
-    .header-container.header-modal-active .header a:hover {
-      color: #1f093c;
-      border-color: #1f093c; }
-    .header-container.header-modal-active .header a:active {
-      color: #1f093c;
-      border-color: #1f093c; }
-    .header-container.header-modal-active .header a.active {
-      text-decoration: none; }
-      .header-container.header-modal-active .header a.active:link {
-        color: #1f093c;
-        border-color: #1f093c; }
-      .header-container.header-modal-active .header a.active:visited {
-        color: #1f093c;
-        border-color: #1f093c; }
-      .header-container.header-modal-active .header a.active:hover {
-        color: #fff;
-        border-color: #fff; }
-      .header-container.header-modal-active .header a.active:active {
-        color: #fff;
-        border-color: #fff; }
 
 .header ul {
   margin: 0; }
@@ -2528,6 +2455,9 @@ form label {
     color: #0a506c;
     border-color: #0a506c; }
 
+body.modal-active {
+  overflow: hidden; }
+
 .modal-container {
   display: none; }
   .modal-container button {
@@ -2551,10 +2481,13 @@ form label {
 
 .modal-active {
   display: block;
-  position: absolute;
   top: 0;
+  bottom: 0;
+  position: fixed;
+  overflow-y: scroll;
+  overflow-x: hidden;
   background: #f16421;
-  height: 100vh;
+  min-height: 100vh;
   z-index: 20;
   color: #fff;
   width: 100%;
@@ -2584,3 +2517,67 @@ form label {
 .modal-close span {
   float: right;
   margin: 0; }
+
+.header-container.modal-active {
+  padding: 0; }
+
+.header-container.modal-active .header {
+  padding: 30px; }
+  .header-container.modal-active .header .logo {
+    display: none; }
+  .header-container.modal-active .header .nav-icon {
+    margin: 0;
+    width: 15.25424%;
+    float: right;
+    margin-right: 0;
+    min-height: 32px; }
+    .header-container.modal-active .header .nav-icon .nav-icon-bar {
+      display: none; }
+    .header-container.modal-active .header .nav-icon .icon {
+      display: block;
+      float: right;
+      color: #fff;
+      line-height: 1em;
+      margin: 0; }
+  .header-container.modal-active .header .primary-nav {
+    display: inline-block;
+    width: 83.05085%;
+    float: left;
+    margin-right: 1.69492%; }
+    .header-container.modal-active .header .primary-nav ul li {
+      display: block;
+      margin: 5px 0; }
+  .header-container.modal-active .header .secondary-nav, .header-container.modal-active .header .footer-nav {
+    display: block;
+    margin: 0 30px;
+    width: 100%;
+    float: right;
+    margin-right: 0; }
+  .header-container.modal-active .header a {
+    text-decoration: none; }
+    .header-container.modal-active .header a:link {
+      color: #fff;
+      border-color: #fff; }
+    .header-container.modal-active .header a:visited {
+      color: #fff;
+      border-color: #fff; }
+    .header-container.modal-active .header a:hover {
+      color: #1f093c;
+      border-color: #1f093c; }
+    .header-container.modal-active .header a:active {
+      color: #1f093c;
+      border-color: #1f093c; }
+    .header-container.modal-active .header a.active {
+      text-decoration: none; }
+      .header-container.modal-active .header a.active:link {
+        color: #1f093c;
+        border-color: #1f093c; }
+      .header-container.modal-active .header a.active:visited {
+        color: #1f093c;
+        border-color: #1f093c; }
+      .header-container.modal-active .header a.active:hover {
+        color: #fff;
+        border-color: #fff; }
+      .header-container.modal-active .header a.active:active {
+        color: #fff;
+        border-color: #fff; }
