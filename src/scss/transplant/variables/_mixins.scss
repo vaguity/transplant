@@ -4,6 +4,8 @@
 }
 
 @mixin link($primary-color: $orange, $secondary-color: $blue) {
+	color: $primary-color;
+	border-color: $primary-color;
 	text-decoration: none;
 	@if $primary-color == $blue {
 		$secondary-color: $orange;

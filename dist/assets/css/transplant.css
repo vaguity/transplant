@@ -1381,6 +1381,8 @@ i {
     margin: 25px 0 0 0; }
 
 .header a.active {
+  color: #f16421;
+  border-color: #f16421;
   text-decoration: none; }
   .header a.active:link {
     color: #f16421;
@@ -1721,6 +1723,8 @@ i {
   padding: 20px 0; }
   .footer a {
     margin: 30px 0;
+    color: #fff;
+    border-color: #fff;
     text-decoration: none; }
     .footer a:link {
       color: #fff;
@@ -1783,6 +1787,8 @@ body {
   line-height: 1.5em; }
 
 a {
+  color: #f16421;
+  border-color: #f16421;
   text-decoration: none; }
   a:link {
     color: #f16421;
@@ -1797,6 +1803,8 @@ a {
     color: #0a506c;
     border-color: #0a506c; }
   a.secondary {
+    color: #0a506c;
+    border-color: #0a506c;
     text-decoration: none; }
     a.secondary:link {
       color: #0a506c;
@@ -1861,6 +1869,8 @@ hr {
       margin: 60px 0; } }
 
 nav a, a.secondary {
+  color: #0a506c;
+  border-color: #0a506c;
   text-decoration: none; }
   nav a:link, a.secondary:link {
     color: #0a506c;
@@ -2189,6 +2199,8 @@ form label {
     font-size: 36px;
     line-height: 1.2em; }
   .hero a {
+    color: #fff;
+    border-color: #fff;
     text-decoration: none; }
     .hero a:link {
       color: #fff;
@@ -2309,6 +2321,8 @@ form label {
     margin: 20px 0;
     line-height: 28px; }
   .promo a {
+    color: #fff;
+    border-color: #fff;
     text-decoration: none; }
     .promo a:link {
       color: #fff;
@@ -2334,6 +2348,8 @@ form label {
   .promo .jump {
     margin: 28px 0 20px; }
   .promo .btn {
+    color: #fff;
+    border-color: #fff;
     text-decoration: none;
     display: inline-block;
     padding: 0.5em 1em; }
@@ -2372,6 +2388,8 @@ form label {
     margin: 60px 0 20px; }
 
 .promo.next .jump a {
+  color: #fff;
+  border-color: #fff;
   text-decoration: none; }
   .promo.next .jump a:link {
     color: #fff;
@@ -2440,6 +2458,8 @@ form label {
     display: inline-block; }
 
 .sub-nav a.active {
+  color: #f16421;
+  border-color: #f16421;
   text-decoration: none; }
   .sub-nav a.active:link {
     color: #f16421;
@@ -2575,6 +2595,8 @@ body.modal-active {
       .header-container.modal-active .header .footer-nav ul li {
         margin: 0 2em 12px 0; }
   .header-container.modal-active .header a {
+    color: #fff;
+    border-color: #fff;
     text-decoration: none; }
     .header-container.modal-active .header a:link {
       color: #fff;
@@ -2589,6 +2611,8 @@ body.modal-active {
       color: #1f093c;
       border-color: #1f093c; }
     .header-container.modal-active .header a.active {
+      color: #1f093c;
+      border-color: #1f093c;
       text-decoration: none; }
       .header-container.modal-active .header a.active:link {
         color: #1f093c;

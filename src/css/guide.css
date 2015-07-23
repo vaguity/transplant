@@ -822,6 +822,8 @@
     z-index: 10; }
 
 .content.our-platform .sub-nav .home a {
+  color: #f16421;
+  border-color: #f16421;
   text-decoration: none; }
   .content.our-platform .sub-nav .home a:link {
     color: #f16421;
@@ -878,6 +880,8 @@
   .content.our-platform .body ul li {
     border-top: 1px solid #e0e2e2; }
   .content.our-platform .body ul a {
+    color: #0a506c;
+    border-color: #0a506c;
     text-decoration: none;
     display: inline-block;
     padding: 1em 0;
