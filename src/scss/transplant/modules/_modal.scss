@@ -97,6 +97,9 @@ body.modal-active {
 			&:first-of-type {
 				margin-top: 0;
 			}
+			&:last-of-type {
+				margin-bottom: 0;
+			}
 		}
 	}
 	.secondary-nav, .footer-nav {
@@ -110,9 +113,18 @@ body.modal-active {
 			&:first-of-type {
 				margin-top: 0;
 			}
+			&:last-of-type {
+				margin-bottom: 0;
+			}
 		}
 	}
 	.footer-nav {
+		ul {
+			margin-top: 0;
+			li {
+				margin: 0 2em 12px 0;
+			}
+		}
 		margin-bottom: 20px;
 	}
 	a {
