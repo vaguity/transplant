@@ -30,6 +30,7 @@ body.modal-active {
     position: fixed;
     overflow-y: scroll;
     overflow-x: hidden;
+	-webkit-overflow-scrolling: touch;
 	background: $orange;
 	min-height: 100vh;
 	z-index: 20;
@@ -45,10 +46,12 @@ body.modal-active {
 
 .modal-content {
 	@include span(full);
+	margin-top: 120px;
 }
 
 .modal-title h3 {
 	font-size: 18px;
+	line-height: 1em;
 	color: $white;
 	text-transform: uppercase;
 	margin: 0 0 30px;
@@ -64,7 +67,8 @@ body.modal-active {
 }
 
 .header-container.modal-active .header {
-	padding: 20px;
+	display: inline-block;
+	padding: 20px 20px 80px 20px;
 	.logo {
 		display: none;
 	}
@@ -85,11 +89,14 @@ body.modal-active {
 	}
 	.primary-nav {
 		display: inline-block;
-		margin-bottom: 48px;
+		margin-bottom: 40px;
 		@include span(10 of 12);
 		ul li {
 			display: block;
-			margin: 0 0 12px;
+			margin: 20px 0;
+			&:first-of-type {
+				margin-top: 0;
+			}
 		}
 	}
 	.secondary-nav, .footer-nav {
@@ -97,14 +104,16 @@ body.modal-active {
 		@include span(full last);
 	}
 	.secondary-nav {
-		margin-bottom: 72px;
+		margin-bottom: 40px;
 		ul li {
-			margin-bottom: 15px;
+			margin: 12px 0;
+			&:first-of-type {
+				margin-top: 0;
+			}
 		}
 	}
-
 	.footer-nav {
-		margin-bottom: 15px;
+		margin-bottom: 20px;
 	}
 	a {
 		@include link($white, $indigo);
