@@ -2459,7 +2459,7 @@ body.modal-active {
 
 .modal-container {
   display: none; }
-  .modal-container button {
+  .modal-container .modal-close {
     padding: 0;
     border: none;
     color: #fff;
