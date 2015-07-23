@@ -1446,63 +1446,60 @@ i {
         display: inline-block;
         margin: 5px 20px 0 0; } }
 
-.header .primary-nav {
-  font-size: 32pt;
-  line-height: 0.8em; }
-  @media (min-width: 1000px) {
-    .header .primary-nav {
-      font-size: 18px;
-      line-height: 1em;
-      margin-bottom: 0; } }
-  .no-mediaqueries .header .primary-nav {
+@media (min-width: 1000px) {
+  .header .primary-nav {
     font-size: 18px;
     line-height: 1em;
-    margin-bottom: 0; }
-  .header .primary-nav ul li:last-child {
-    margin-right: 0; }
+    margin-bottom: 0; } }
 
-.header .secondary-nav {
-  font-size: 18pt;
-  line-height: 1em; }
-  @media (min-width: 1000px) {
-    .header .secondary-nav {
-      font-size: 13px;
-      line-height: 1em;
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      margin-bottom: 0;
-      text-align: right; }
-      .header .secondary-nav .request-demo, .header .secondary-nav .highlight {
-        display: inline-block;
-        margin-top: 0;
-        text-transform: uppercase;
-        font-size: 13px;
-        font-family: "Futura W01 Bold", Arial, sans-serif;
-        line-height: 13px; }
-      .header .secondary-nav .request-demo a, .header .secondary-nav .highlight a {
-        display: block;
-        padding: 10px;
-        border: 1px solid #0a506c; }
-        .header .secondary-nav .request-demo a:hover, .header .secondary-nav .request-demo a:active, .header .secondary-nav .highlight a:hover, .header .secondary-nav .highlight a:active {
-          border-color: #f16421; } }
-  .no-mediaqueries .header .secondary-nav {
+.no-mediaqueries .header .primary-nav {
+  font-size: 18px;
+  line-height: 1em;
+  margin-bottom: 0; }
+
+.header .primary-nav ul li:last-child {
+  margin-right: 0; }
+
+@media (min-width: 1000px) {
+  .header .secondary-nav {
     font-size: 13px;
     line-height: 1em;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin-bottom: 0;
     text-align: right; }
-    .no-mediaqueries .header .secondary-nav .request-demo, .no-mediaqueries .header .secondary-nav .highlight {
+    .header .secondary-nav .request-demo, .header .secondary-nav .highlight {
       display: inline-block;
       margin-top: 0;
       text-transform: uppercase;
       font-size: 13px;
       font-family: "Futura W01 Bold", Arial, sans-serif;
       line-height: 13px; }
-    .no-mediaqueries .header .secondary-nav .request-demo a, .no-mediaqueries .header .secondary-nav .highlight a {
+    .header .secondary-nav .request-demo a, .header .secondary-nav .highlight a {
       display: block;
       padding: 10px;
       border: 1px solid #0a506c; }
-      .no-mediaqueries .header .secondary-nav .request-demo a:hover, .no-mediaqueries .header .secondary-nav .request-demo a:active, .no-mediaqueries .header .secondary-nav .highlight a:hover, .no-mediaqueries .header .secondary-nav .highlight a:active {
-        border-color: #f16421; }
+      .header .secondary-nav .request-demo a:hover, .header .secondary-nav .request-demo a:active, .header .secondary-nav .highlight a:hover, .header .secondary-nav .highlight a:active {
+        border-color: #f16421; } }
+
+.no-mediaqueries .header .secondary-nav {
+  font-size: 13px;
+  line-height: 1em;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin-bottom: 0;
+  text-align: right; }
+  .no-mediaqueries .header .secondary-nav .request-demo, .no-mediaqueries .header .secondary-nav .highlight {
+    display: inline-block;
+    margin-top: 0;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-family: "Futura W01 Bold", Arial, sans-serif;
+    line-height: 13px; }
+  .no-mediaqueries .header .secondary-nav .request-demo a, .no-mediaqueries .header .secondary-nav .highlight a {
+    display: block;
+    padding: 10px;
+    border: 1px solid #0a506c; }
+    .no-mediaqueries .header .secondary-nav .request-demo a:hover, .no-mediaqueries .header .secondary-nav .request-demo a:active, .no-mediaqueries .header .secondary-nav .highlight a:hover, .no-mediaqueries .header .secondary-nav .highlight a:active {
+      border-color: #f16421; }
 
 @media (min-width: 1180px) {
   .content-container {
@@ -2496,7 +2493,7 @@ body.modal-active {
     margin-right: 1.69492%; }
 
 .modal {
-  padding: 30px; }
+  padding: 20px; }
 
 .modal-active {
   display: block;
@@ -2505,7 +2502,6 @@ body.modal-active {
   position: fixed;
   overflow-y: scroll;
   overflow-x: hidden;
-  -webkit-overflow-scrolling: touch;
   background: #f16421;
   min-height: 100vh;
   z-index: 20;
@@ -2513,7 +2509,8 @@ body.modal-active {
   width: 100%;
   float: left;
   margin-left: 0;
-  margin-right: 0; }
+  margin-right: 0;
+  -webkit-overflow-scrolling: touch; }
 
 @media (min-width: 1000px) {
   .modal-link {
@@ -2530,11 +2527,11 @@ body.modal-active {
   margin-top: 120px; }
 
 .modal-title h3 {
-  font-size: 18px;
-  line-height: 1em;
+  font-size: 14px;
+  line-height: 16px;
   color: #fff;
   text-transform: uppercase;
-  margin: 0 0 30px; }
+  margin: 0; }
 
 .modal-close span {
   float: right;
@@ -2565,12 +2562,14 @@ body.modal-active {
   .header-container.modal-active .header .primary-nav {
     display: inline-block;
     margin-bottom: 40px;
+    font-size: 32px;
+    line-height: 0.8em;
     width: 83.05085%;
     float: left;
     margin-right: 1.69492%; }
     .header-container.modal-active .header .primary-nav ul li {
       display: block;
-      margin: 20px 0; }
+      margin: 18px 0; }
       .header-container.modal-active .header .primary-nav ul li:first-of-type {
         margin-top: 0; }
       .header-container.modal-active .header .primary-nav ul li:last-of-type {
@@ -2581,9 +2580,11 @@ body.modal-active {
     float: right;
     margin-right: 0; }
   .header-container.modal-active .header .secondary-nav {
+    font-size: 18px;
+    line-height: 0.8em;
     margin-bottom: 40px; }
     .header-container.modal-active .header .secondary-nav ul li {
-      margin: 12px 0; }
+      margin: 18px 0; }
       .header-container.modal-active .header .secondary-nav ul li:first-of-type {
         margin-top: 0; }
       .header-container.modal-active .header .secondary-nav ul li:last-of-type {

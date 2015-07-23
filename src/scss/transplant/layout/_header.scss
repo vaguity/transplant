@@ -122,8 +122,6 @@
 		}
 	}
 	.primary-nav {
-		font-size: 32pt;
-		line-height: 0.8em;
 		@include breakpoint($breakpoint-desktop-small) {
 			font-size: 18px;
 			line-height: 1em;
@@ -134,8 +132,6 @@
 		}
 	}
 	.secondary-nav {
-		font-size: 18pt;
-		line-height: 1em;
 		@include breakpoint($breakpoint-desktop-small) {
 			font-size: 13px;
 			line-height: 1em;
