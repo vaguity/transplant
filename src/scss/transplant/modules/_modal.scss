@@ -67,7 +67,7 @@ body.modal-active {
 }
 
 .header-container.modal-active .header {
-	display: inline-block;
+	display: block;
 	padding: 20px 20px 80px 20px;
 	.logo {
 		display: none;
@@ -113,6 +113,7 @@ body.modal-active {
 		line-height: 0.8em;
 		margin-bottom: 40px;
 		ul li {
+			display: block;
 			margin: 18px 0;
 			&:first-of-type {
 				margin-top: 0;
