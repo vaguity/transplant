@@ -46,10 +46,5 @@
     "susy": {
       "main": "sass/**"
     }
-  },
-  "dependencies": {
-    "compass-breakpoint": "~2.6.1",
-    "html5-boilerplate": "~5.2.0",
-    "jquery": "~2.1.4"
   }
 }
