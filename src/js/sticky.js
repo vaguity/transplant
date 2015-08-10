@@ -4,7 +4,6 @@ var stickySections
 var stickySection
 var stickySectionNew
 var stickyLinkSelector
-var stickyMobile = false
 var scrollOffset
 
 function stickySetup () {
@@ -24,21 +23,30 @@ function stickySetup () {
     else {
         stickyLinkSelector = '.sub-nav a'
     }
+}
+
+function stickyMobileCheck () {
     if ($('.sticky-mobile').length) {
-        stickyMobile = true
+        return true
     }
+    return false
 }
 
 function stickyEnquire () {
     // Enquire call to enable or disable the function depending on screen size
-    enquire.register('screen and (min-width: 1000px)', {
-        match: function () {
-            stickyNav(true)
-        },
-        unmatch: function () {
-            stickyNav(stickyMobile)
-        },
-    })
+    if (stickyMobileCheck()) {
+        stickyNav(true)
+    }
+    else {
+        enquire.register('screen and (min-width: 1000px)', {
+            match: function () {
+                stickyNav(true)
+            },
+            unmatch: function () {
+                stickyNav(false)
+            },
+        })
+    }
 }
 
 function stickyCalc () {
