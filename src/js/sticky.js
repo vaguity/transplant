@@ -4,6 +4,7 @@ var stickySections
 var stickySection
 var stickySectionNew
 var stickyLinkSelector
+var stickyMobile = false
 var scrollOffset
 
 function stickySetup () {
@@ -23,6 +24,9 @@ function stickySetup () {
     else {
         stickyLinkSelector = '.sub-nav a'
     }
+    if ($('.sticky-mobile').length) {
+        stickyMobile = true
+    }
 }
 
 function stickyEnquire () {
@@ -32,7 +36,7 @@ function stickyEnquire () {
             stickyNav(true)
         },
         unmatch: function () {
-            stickyNav(false)
+            stickyNav(stickyMobile)
         },
     })
 }
