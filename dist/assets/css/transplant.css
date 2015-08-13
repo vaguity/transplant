@@ -2093,7 +2093,7 @@ form label {
   display: none; }
 
 .hero .form input, .hero .form select, .demo-form input, .demo-form select {
-  border: 0; }
+  border-width: 0; }
 
 .hero .form {
   margin-bottom: 20px;
