@@ -16,12 +16,13 @@ function modalClose (e) {
 
 function modalToggle ($modalEl) {
     $modalEl.toggleClass('modal-active')
-    if ($('.modal-active-body').length) {
-        $('.modal-active-body').contents().unwrap()
-    }
-    else {
-        $('<div class="modal-active-body">').append($('body').contents()).appendTo($('body'))
-    }
+    $('body').toggleClass('modal-active-body')
+    // if ($('.modal-active-body').length) {
+    //     $('.modal-active-body').contents().unwrap()
+    // }
+    // else {
+    //     $('<div class="modal-active-body">').append($('body').contents()).appendTo($('body'))
+    // }
 }
 
 $(document).ready(function () {
