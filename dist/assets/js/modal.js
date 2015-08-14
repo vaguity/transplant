@@ -5,6 +5,7 @@ function modalHandler (e) {
         var $modalEl = $(modalClass)
         modalToggle($modalEl)
     }
+    return false
 }
 
 function modalClose (e) {
@@ -15,7 +16,12 @@ function modalClose (e) {
 
 function modalToggle ($modalEl) {
     $modalEl.toggleClass('modal-active')
-    $('body').toggleClass('modal-active')
+    if ($('.modal-active-body').length) {
+        $('.modal-active-body').contents().unwrap()
+    }
+    else {
+        $('<div class="modal-active-body">').append($('body').contents()).appendTo($('body'))
+    }
 }
 
 $(document).ready(function () {

@@ -2471,7 +2471,7 @@ form label {
     color: #0a506c;
     border-color: #0a506c; }
 
-body.modal-active {
+.modal-active-body {
   overflow: hidden; }
 
 .modal-container {
