@@ -2513,10 +2513,10 @@ form label {
   -webkit-overflow-scrolling: touch; }
 
 @media (min-width: 1000px) {
-  .modal-link {
+  .modal-link.hide {
     display: none; } }
 
-.no-mediaqueries .modal-link {
+.no-mediaqueries .modal-link.hide {
   display: none; }
 
 .modal-content {

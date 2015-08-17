@@ -40,7 +40,9 @@
 
 .modal-link {
 	@include breakpoint($breakpoint-desktop-small) {
-		display: none;
+		&.hide {
+			display: none;
+		}
 	}
 }
 
