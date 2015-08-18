@@ -2474,23 +2474,34 @@ form label {
 .modal-active-body {
   overflow: hidden; }
 
-.modal-container {
-  display: none; }
+.modal-container .modal-close {
+  padding: 0;
+  border: none;
+  color: #fff;
+  background: transparent;
+  font-size: 0;
+  line-height: 32px;
+  outline: 0;
+  width: 15.25424%;
+  float: right;
+  margin-right: 0; }
+
+.modal-container .modal-title {
+  width: 83.05085%;
+  float: left;
+  margin-right: 1.69492%; }
+
+@media (min-width: 1000px) {
+  .modal-container.hide {
+    display: none; }
   .modal-container .modal-close {
-    padding: 0;
-    border: none;
-    color: #fff;
-    background: transparent;
-    font-size: 0;
-    line-height: 32px;
-    outline: 0;
-    width: 15.25424%;
-    float: right;
-    margin-right: 0; }
-  .modal-container .modal-title {
-    width: 83.05085%;
-    float: left;
-    margin-right: 1.69492%; }
+    display: none; } }
+
+.no-mediaqueries .modal-container.hide {
+  display: none; }
+
+.no-mediaqueries .modal-container .modal-close {
+  display: none; }
 
 .modal {
   padding: 20px; }
