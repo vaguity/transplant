@@ -3,6 +3,7 @@
 }
 
 .modal-container {
+	display: none;
 	.modal-close {
 		padding: 0;
 		border: none;
@@ -17,8 +18,8 @@
 		@include span(10 of 12);
 	}
 	@include breakpoint($breakpoint-desktop-small) {
-		&.hide {
-			display: none;
+		&.desktop-show {
+			display: block;
 		}
 		.modal-close {
 			display: none;
