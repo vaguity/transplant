@@ -29,6 +29,7 @@ $(document).ready(function () {
             $('.modal-link').unbind('click', modalHandler)
             $('.modal-close').unbind('click', modalClose)
             $('.modal-active').removeClass('modal-active')
+            $('.modal-active-body').removeClass('modal-active-body')
         },
     })
 })
