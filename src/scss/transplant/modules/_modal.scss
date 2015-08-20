@@ -1,5 +1,8 @@
 .modal-active-body {
 	overflow: hidden;
+	@include breakpoint($breakpoint-desktop-small) {
+		overflow: auto;
+	}
 }
 
 .modal-container {

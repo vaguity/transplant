@@ -2473,6 +2473,11 @@ form label {
 
 .modal-active-body {
   overflow: hidden; }
+  @media (min-width: 1000px) {
+    .modal-active-body {
+      overflow: auto; } }
+  .no-mediaqueries .modal-active-body {
+    overflow: auto; }
 
 .modal-container {
   display: none; }
