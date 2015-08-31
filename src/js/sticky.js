@@ -136,8 +136,7 @@ $(document).ready(function () {
                 $('html, body').animate({
                     scrollTop: scrollOffset,
                 }, 750)
-                hashUpdate(newHash, newHref)
-                setTimeout(hashUpdate, 751)
+                setTimeout(function () { hashUpdate(newHash, newHref) }, 751)
 
                 return false
             }
