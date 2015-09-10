@@ -9,15 +9,15 @@ This is a bower package to include in marketing projects as a dependency.
 Transplant should be included in a project with a package manager and task runner (e.g., Bower and Gulp).
 
 - Includes the following CSS/Sass dependencies for consistent use across applications:
-	- Susy
-	- Breakpoint
-	- Normalize
-	- HTML5 Boilerplate
+    - Susy
+    - Breakpoint
+    - Normalize
+    - HTML5 Boilerplate
 - Requires the following JavaScript dependencies to be loaded for use:
-	- Modernizr
-	- jQuery
-	- enquire.js (and a strongly suggested shim for enquire)
-	- jQuery throttle / debounce
+    - Modernizr
+    - jQuery
+    - enquire.js (and a strongly suggested shim for enquire)
+    - jQuery throttle / debounce
 
 ## Contents
 
@@ -32,6 +32,7 @@ Transplant should be included in a project with a package manager and task runne
 ### The JavaScript
 
 `dist/assets/js/transplant.js` includes a shim for the use of enquire and jQuery and enquire calls to set up the header navigation menu for tablet and mobile. It requires Modernizr, jQuery and enquire to have been loaded first.
+
 
 ## Development
 
@@ -53,6 +54,6 @@ Bump the version using a git version tag if changes are made to the CSS, Sass or
 
 The `/dist` directory is also uploaded to the Marketing Prototype S3 Bucket at [http://prototype.marketing.prclt.com/transplant](http://prototype.marketing.prclt.com/transplant). The HTML files in `/dist` should include thorough examples of what the library contains.
 
-```
+```bash
 aws s3 sync dist s3://prototype.marketing.prclt.com/transplant --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers --exclude "*.git/*"
 ```
