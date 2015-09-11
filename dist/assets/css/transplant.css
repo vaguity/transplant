@@ -2560,6 +2560,14 @@ form label {
   float: right;
   margin: 0; }
 
+.modal-desktop {
+  display: none; }
+  @media (min-width: 1000px) {
+    .modal-desktop {
+      display: block; } }
+  .no-mediaqueries .modal-desktop {
+    display: block; }
+
 .header-container.modal-active {
   padding: 0; }
 

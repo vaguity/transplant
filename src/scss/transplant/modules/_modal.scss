@@ -77,6 +77,14 @@
 	margin: 0;
 }
 
+.modal-desktop {
+    display: none;
+    @include breakpoint($breakpoint-desktop-small) {
+        display: block;
+    }
+}
+
+// Modal header
 .header-container.modal-active {
 	padding: 0;
 }
