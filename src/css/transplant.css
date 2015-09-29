@@ -2549,10 +2549,10 @@ form label {
   -webkit-overflow-scrolling: touch; }
 
 @media (min-width: 1000px) {
-  .modal-link.hide {
+  .modal-link-container.desktop-hide {
     display: none; } }
 
-.no-mediaqueries .modal-link.hide {
+.no-mediaqueries .modal-link-container.desktop-hide {
   display: none; }
 
 .modal-content {

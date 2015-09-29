@@ -67,12 +67,10 @@
 	-webkit-overflow-scrolling: touch;
 }
 
-.modal-link {
-	@include breakpoint($breakpoint-desktop-small) {
-		&.hide {
-			display: none;
-		}
-	}
+.modal-link-container.desktop-hide {
+    @include breakpoint($breakpoint-desktop-small) {
+        display: none;
+    }
 }
 
 .modal-content {
