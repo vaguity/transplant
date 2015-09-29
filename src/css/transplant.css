@@ -2503,17 +2503,28 @@ form label {
     width: 83.05085%;
     float: left;
     margin-right: 1.69492%; }
-  @media (min-width: 1000px) {
-    .modal-container.desktop-show {
-      display: block; }
-    .modal-container .modal-close {
-      display: none; } }
-  .no-mediaqueries .modal-container.desktop-show {
-    display: block; }
-  .no-mediaqueries .modal-container .modal-close {
-    display: none; }
   .modal-container .modal-content {
     text-align: left; }
+  @media (min-width: 1000px) {
+    .modal-container .modal-close, .modal-container .modal-title {
+      display: none; }
+    .modal-container .modal-content.center {
+      text-align: center; } }
+  .no-mediaqueries .modal-container .modal-close, .no-mediaqueries .modal-container .modal-title {
+    display: none; }
+  .no-mediaqueries .modal-container .modal-content.center {
+    text-align: center; }
+
+@media (min-width: 1000px) {
+  .modal-container.desktop-show {
+    display: block; }
+    .modal-container.desktop-show .desktop-hide {
+      display: none; } }
+
+.no-mediaqueries .modal-container.desktop-show {
+  display: block; }
+  .no-mediaqueries .modal-container.desktop-show .desktop-hide {
+    display: none; }
 
 .modal {
   padding: 20px; }
@@ -2550,6 +2561,11 @@ form label {
   margin-left: 0;
   margin-right: 0;
   margin-top: 120px; }
+  @media (min-width: 1000px) {
+    .modal-content {
+      margin-top: 0; } }
+  .no-mediaqueries .modal-content {
+    margin-top: 0; }
 
 .modal-title h3 {
   font-size: 14px;
@@ -2662,13 +2678,6 @@ form label {
       .header-container.modal-active .header a.active:active {
         color: #fff;
         border-color: #fff; }
-
-@media (min-width: 1000px) {
-  .modal-link-container {
-    display: none; } }
-
-.no-mediaqueries .modal-link-container {
-  display: none; }
 
 .modal-content form input[type="search"], .modal-content form input[type="text"], .modal-content form input[type="tel"], .modal-content form input[type="email"], .modal-content form select {
   box-sizing: border-box;

@@ -21,15 +21,28 @@
 		@include span(10 of 12);
 	}
 	@include breakpoint($breakpoint-desktop-small) {
-		&.desktop-show {
-			display: block;
-		}
-		.modal-close {
-			display: none;
-		}
+
 	}
     .modal-content {
         text-align: left;
+    }
+    @include breakpoint($breakpoint-desktop-small) {
+        .modal-close, .modal-title {
+            display: none;
+        }
+        .modal-content.center {
+            text-align: center;
+        }
+    }
+}
+
+.modal-container.desktop-show {
+    @include breakpoint($breakpoint-desktop-small) {
+        display: block;
+        .desktop-hide {
+            display: none;
+        }
+
     }
 }
 
@@ -65,6 +78,9 @@
 .modal-content {
 	@include span(full);
 	margin-top: 120px;
+    @include breakpoint($breakpoint-desktop-small) {
+        margin-top: 0;
+    }
 }
 
 .modal-title h3 {
@@ -165,12 +181,6 @@
 			@include link($indigo, $white);
 		}
 	}
-}
-
-.modal-link-container {
-    @include breakpoint($breakpoint-desktop-small) {
-        display: none;
-    }
 }
 
 .modal-content form {
