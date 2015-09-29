@@ -28,6 +28,9 @@
 			display: none;
 		}
 	}
+    .modal-content {
+        text-align: left;
+    }
 }
 
 .modal {
@@ -70,6 +73,7 @@
 	color: $white;
 	text-transform: uppercase;
 	margin: 0;
+    text-align: left;
 }
 
 .modal-close span {
@@ -161,4 +165,53 @@
 			@include link($indigo, $white);
 		}
 	}
+}
+
+.modal-link-container {
+    @include breakpoint($breakpoint-desktop-small) {
+        display: none;
+    }
+}
+
+.modal-content form {
+    input[type="search"], input[type="text"], input[type="tel"], input[type="email"], select {
+        box-sizing: border-box;
+        color: $white;
+        background-color: $orange;
+        background-image: none;
+        border: 1px solid $darkorange;
+        border-width: 1px 0 0 0;
+        border-color: $darkorange;
+        padding: .75em 0;
+        font-size: 16px;
+        line-height: 18px;
+        margin: 0;
+        @include placeholder($white);
+    }
+    input:last-of-type {
+        border-width: 1px 0 0;
+    }
+    // Job function is always the last field in a form and should include a bottom border
+    select:last-of-type {
+        border-width: 1px 0;
+    }
+    button {
+        margin: 20px 0;
+        @include link($white, $blue);
+    }
+    @include breakpoint($breakpoint-desktop-small) {
+        input[type="search"], input[type="text"], input[type="tel"], input[type="email"], select {
+            color: $lightgray-dark;
+            background-color: $white;
+            border: 1px solid $lightgray;
+            padding: .75em;
+            margin: .25em;
+            font-size: 14px;
+            line-height: 16px;
+            @include placeholder;
+        }
+        select {
+            background-image: url('../images/icon-down.png');
+        }
+    }
 }
