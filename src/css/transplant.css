@@ -601,35 +601,167 @@ i {
   height: 32px;
   font-size: 32px; }
 
-.icon-ambassador:before {
-  content: ""; }
+.icon-arrow-down:before {
+  content: ""; }
 
-.icon-snapchat:before {
+.icon-arrow-left:before {
+  content: ""; }
+
+.icon-arrow-right:before {
+  content: ""; }
+
+.icon-arrow-up:before {
+  content: ""; }
+
+.icon-circle-gplus:before {
+  content: ""; }
+
+.icon-dash:before {
+  content: ""; }
+
+.icon-gplus:before {
+  content: ""; }
+
+.icon-hamburger:before {
+  content: ""; }
+
+.icon-lightbulb-o:before {
+  content: ""; }
+
+.icon-saved-response:before {
+  content: ""; }
+
+.icon-vertical-dots:before {
+  content: ""; }
+
+.icon-exclamation-point-outline:before {
+  content: ""; }
+
+.icon-archive-solid:before {
+  content: ""; }
+
+.icon-circle-avatar-solid:before {
+  content: ""; }
+
+.icon-check-solid:before {
+  content: ""; }
+
+.icon-comments-solid:before {
+  content: ""; }
+
+.icon-twitter-favorites-solid:before {
+  content: ""; }
+
+.icon-heart-solid:before {
+  content: ""; }
+
+.icon-pinned-solid:before {
+  content: ""; }
+
+.icon-replies-solid:before {
+  content: ""; }
+
+.icon-retweet-solid:before {
   content: ""; }
 
-.icon-circle-snapchat:before {
+.icon-tag-solid:before {
   content: ""; }
 
+.icon-facebook-likes-solid:before {
+  content: ""; }
+
+.icon-archive-outline:before {
+  content: ""; }
+
+.icon-check-outline:before {
+  content: ""; }
+
+.icon-pinned-outline:before {
+  content: ""; }
+
+.icon-tag:before {
+  content: ""; }
+
+.icon-text-paragraph:before {
+  content: ""; }
+
+.icon-radios:before {
+  content: ""; }
+
+.icon-text-single:before {
+  content: ""; }
+
+.icon-filter-full:before {
+  content: ""; }
+
+.icon-filter-empty:before {
+  content: ""; }
+
+.icon-emoji:before {
+  content: ""; }
+
+.icon-back-arrow-android:before {
+  content: ""; }
+
+.icon-right-arrow:before {
+  content: ""; }
+
+.icon-add-folder:before {
+  content: ""; }
+
+.icon-image-editor:before {
+  content: ""; }
+
+.icon-move-to:before {
+  content: ""; }
+
+.icon-open-folder:before {
+  content: ""; }
+
+.icon-filter:before {
+  content: ""; }
+
+.icon-pdf:before {
+  content: ""; }
+
+.icon-presentation:before {
+  content: ""; }
+
+.icon-table:before {
+  content: ""; }
+
+.icon-license-group:before {
+  content: ""; }
+
+.icon-one-password:before {
+  content: ""; }
+
+.icon-ambassador:before {
+  content: ""; }
+
 .icon-marketo:before {
-  content: ""; }
+  content: ""; }
 
 .icon-circle-marketo:before {
   content: ""; }
 
-.icon-convert:before {
-  content: ""; }
+.icon-snapchat:before {
+  content: ""; }
 
-.icon-distribute:before {
-  content: ""; }
+.icon-circle-snapchat:before {
+  content: ""; }
+
+.icon-convert:before {
+  content: ""; }
+
+.icon-marketing-distribute:before {
+  content: ""; }
 
 .icon-circle-weibo:before {
-  content: ""; }
+  content: ""; }
 
 .icon-weibo:before {
-  content: ""; }
-
-.icon-pdf:before {
-  content: ""; }
+  content: ""; }
 
 .icon-circle-facebook:before {
   content: ""; }
@@ -649,9 +781,6 @@ i {
 .icon-circle-tumblr:before {
   content: ""; }
 
-.icon-circle-gplus:before {
-  content: ""; }
-
 .icon-circle-bitly:before {
   content: ""; }
 
@@ -660,9 +789,6 @@ i {
 
 .icon-twitter:before {
   content: ""; }
-
-.icon-gplus:before {
-  content: ""; }
 
 .icon-tumblr:before {
   content: ""; }
@@ -829,7 +955,7 @@ i {
 .icon-twitter-photo:before {
   content: ""; }
 
-.icon-tag:before {
+.icon-tag-horizontal:before {
   content: ""; }
 
 .icon-rss:before {
@@ -918,6 +1044,9 @@ i {
 
 .icon-brief:before {
   content: ""; }
+
+.icon-distribute:before {
+  content: ""; }
 
 .icon-company:before {
   content: ""; }
@@ -1223,22 +1352,22 @@ i {
   content: ""; }
 
 .icon-mute:before {
-  content: ""; }
-
-.icon-play-solid:before {
   content: ""; }
 
+.icon-play-solid:before {
+  content: ""; }
+
 .icon-play:before {
-  content: ""; }
+  content: ""; }
 
 .icon-volume:before {
-  content: ""; }
+  content: ""; }
 
 .icon-video-solid:before {
-  content: ""; }
+  content: ""; }
 
 .icon-click:before {
-  content: ""; }
+  content: ""; }
 
 .header-container {
   max-width: 100%;
