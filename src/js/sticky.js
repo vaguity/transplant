@@ -122,6 +122,9 @@ $(window).resize($.debounce(300, function () {
 
 $(document).ready(function () {
     $('.sub-nav a, a.scroll-to').click(function (e) {
+        if ($(this).hasClass('no-scroll')) {
+            return false
+        }
         if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
             e.preventDefault()
             var newHash = this.hash
