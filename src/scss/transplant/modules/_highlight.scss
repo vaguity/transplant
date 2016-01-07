@@ -3,7 +3,7 @@
 		margin: 1em 0;
 	}
 	.copy {
-		margin: $spacing-medium 0;
+		margin: 40px 0;
 		color: $darkgray;
 		font-family: $type-serif;
         font-weight: 100;
@@ -23,7 +23,7 @@
         }
 
 		@include breakpoint($breakpoint-desktop) {
-			margin: $spacing-large 0;
+			margin: 60px 0;
 		}
 	}
 	@include breakpoint($breakpoint-desktop) {
@@ -35,7 +35,7 @@
 		}
 	}
 	.image {
-		margin: $spacing-small 0;
+		margin: 20px 0;
 	}
 }
 

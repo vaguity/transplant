@@ -17,7 +17,7 @@
 			}
 			nav {
 				@include container(4);
-				padding: $spacing-small 5%;
+				padding: 20px 5%;
 			}
 			&.bleed {
 				section {
@@ -30,7 +30,7 @@
 				}
 				nav {
 					@include container(4);
-					padding: $spacing-small 5%;
+					padding: 20px 5%;
 					&.primary-nav, &.secondary-nav {
 						padding: 0;
 					}
@@ -68,17 +68,17 @@
 					@include container(1100px);
 					padding: 0;
 					&.pad {
-						padding: $spacing-medium;
+						padding: 40px;
 					}
 					&.margin {
-						margin: $spacing-small auto;
+						margin: 20px auto;
 					}
 				}
 				&.pad {
-					padding: $spacing-medium;
+					padding: 40px;
 				}
 				&.margin {
-					margin: $spacing-large;
+					margin: 60px;
 				}
 				&.bleed {
 					section, nav {
@@ -99,8 +99,8 @@
 }
 
 .container {
-	margin: $spacing-medium 0 0;
+	margin: 40px 0 0;
 	@include breakpoint($breakpoint-desktop) {
-		margin: $spacing-large 0 0;
+		margin: 60px 0 0;
 	}
 }

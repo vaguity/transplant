@@ -2607,6 +2607,10 @@ form label {
     color: #0a506c;
     border-color: #0a506c; }
 
+.sticky-section {
+  display: inline-block;
+  max-width: 100%; }
+
 .modal-active-body {
   overflow: hidden; }
   @media (min-width: 1000px) {

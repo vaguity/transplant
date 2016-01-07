@@ -1,5 +1,5 @@
 .body .copy {
-	margin-bottom: $spacing-medium;
+	margin-bottom: 40px;
 	.full {
 		width: 100%;
 		height: auto;
@@ -50,7 +50,7 @@
 		color: $orange;
 	}
 	h3 {
-		margin: $spacing-xmedium 0;
+		margin: 30px 0;
 	}
 	.title {
 		text-align: left;
@@ -71,7 +71,7 @@
 		color: $midgray-light;
 		text-align: center;
 		text-transform: none;
-		margin: $spacing-small 0;
+		margin: 20px 0;
 		font-weight: normal;
 	}
 	.flush {

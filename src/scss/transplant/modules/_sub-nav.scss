@@ -1,6 +1,6 @@
 .content .container.full.sub-nav-container {
 	@include breakpoint($breakpoint-desktop) {
-		padding: $spacing-small 0;
+		padding: 20px 0;
 	}
 }
 
@@ -16,7 +16,7 @@
 
 .sub-nav-placeholder.sticky-begin.enabled {
 	height: 2em;
-	padding: $spacing-small 0;
+	padding: 20px 0;
 }
 
 .sub-nav {
@@ -38,4 +38,9 @@
 	a.active {
 		@include link($orange);
 	}
+}
+
+.sticky-section {
+    display: inline-block;
+    max-width: 100%;
 }
