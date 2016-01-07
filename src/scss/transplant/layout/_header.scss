@@ -65,7 +65,7 @@
 		margin: 0;
 		@include breakpoint($breakpoint-desktop-small) {
 			line-height: 35px;
-			margin: 25px 0 0 0;
+			margin: 24px 0 0 0;
 		}
 	}
 
@@ -102,7 +102,7 @@
 		background: transparent;
 		font-size: 0;
 		margin: 30px 0;
-		height: 25px;
+		height: 24px;
 		outline: 0;
 	}
 	.nav-icon-bar {

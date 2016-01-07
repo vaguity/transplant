@@ -1504,10 +1504,10 @@ i {
   @media (min-width: 1000px) {
     .header ul {
       line-height: 35px;
-      margin: 25px 0 0 0; } }
+      margin: 24px 0 0 0; } }
   .no-mediaqueries .header ul {
     line-height: 35px;
-    margin: 25px 0 0 0; }
+    margin: 24px 0 0 0; }
 
 .header a.active {
   color: #f16421;
@@ -1558,7 +1558,7 @@ i {
   background: transparent;
   font-size: 0;
   margin: 30px 0;
-  height: 25px;
+  height: 24px;
   outline: 0; }
 
 .header .nav-icon-bar {
@@ -2310,7 +2310,7 @@ form label {
 
 .hero {
   display: table;
-  min-height: 240px;
+  height: 240px;
   color: #fff; }
   .hero > div {
     display: table-cell;
