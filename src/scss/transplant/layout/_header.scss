@@ -87,8 +87,10 @@
 	}
 
 	.logo img {
-		height: 25px;
+        width: 160px;
+        height: 24px;
 		@include breakpoint($breakpoint-desktop-small) {
+            width: auto;
 			height: auto;
 		}
 	}

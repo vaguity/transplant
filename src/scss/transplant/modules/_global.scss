@@ -1,89 +1,89 @@
 body {
-	background: $white;
-	color: $darkgray;
+    background: $white;
+    color: $darkgray;
 }
 
 .container {
-	color: $midgray;
-	font-size: 16px;
-	font-family: $type-base;
-	line-height: 1.5em;
+    color: $midgray;
+    font-size: 16px;
+    font-family: $type-base;
+    line-height: 1.5em;
 }
 
 a {
-	@include link($orange);
-	&.secondary {
-		@include link($blue);
-	}
+    @include link($orange);
+    &.secondary {
+        @include link($blue);
+    }
 }
 
 .button {
-	@include button;
+    @include button;
 }
 
 // TODO: Audit this; does this get used anywhere other than heroes?
 // _hero module currently owns h1 used in heroes
 h1 {
-	margin: 0;
-	color: $white;
-	font-weight: 100;
-	font-size: 48px;
-	font-family: $type-serif;
-	line-height: 1.2em;
+    margin: 0;
+    color: $white;
+    font-weight: 100;
+    font-size: 48px;
+    font-family: $type-serif;
+    line-height: 1.2em;
     @include breakpoint($breakpoint-tablet) {
         font-size: 60px;
     }
 }
 
 h2 {
-	margin: 40px 0;
-	color: $orange;
-	text-align: center;
-	text-transform: uppercase;
-	font-size: 20px;
-	font-family: $type-sans;
-	line-height: 1.4em;
-	@include breakpoint($breakpoint-desktop) {
-		margin: 60px 0;
-	}
+    margin: 40px 0;
+    color: $orange;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-family: $type-sans;
+    line-height: 1.4em;
+    @include breakpoint($breakpoint-desktop) {
+        margin: 60px 0;
+    }
 }
 
 h3 {
-	margin: 40px 0;
-	color: $darkgray;
-	font-size: 20px;
-	font-family: $type-sans;
-	line-height: 1.4em;
+    margin: 40px 0;
+    color: $darkgray;
+    font-size: 20px;
+    font-family: $type-sans;
+    line-height: 1.4em;
 }
 
 hr {
-	@include break;
-	margin: 40px 0;
-	height: 0;
-	border: 1px solid $lightgray;
-	border-width: 1px 0 0 0;
-	color: $lightgray;
-	@include breakpoint($breakpoint-desktop) {
-		margin: 60px 0;
-	}
+    @include break;
+    margin: 40px 0 0;
+    height: 0;
+    border: 1px solid $lightgray;
+    border-width: 1px 0 0;
+    color: $lightgray;
+    @include breakpoint($breakpoint-desktop) {
+        margin: 60px 0 0;
+    }
 }
 
 nav a, a.secondary {
-	@include link($blue);
+    @include link($blue);
 }
 
 img.border {
-	border: 1px solid $lightgray;
-	margin: -1px;
+    border: 1px solid $lightgray;
+    margin: -1px;
 }
 
 .break-word {
-	-ms-word-break: break-all;
-	word-break: break-all;
-	word-break: break-word;
-	-webkit-hyphens: auto;
-	-moz-hyphens: auto;
-	hyphens: auto;
+    -ms-word-break: break-all;
+    word-break: break-all;
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
 }
 
 ::-moz-selection {
