@@ -12,12 +12,6 @@ var modernizrConfig = require('../modernizr.config.json')
 var fs = require('fs')
 
 
-gulp.task('dependencies:modernizr', function () {
-    modernizr.build(modernizrConfig, function (result) {
-        fs.writeFile(config.npm.dest.jsLib + '/modernizr.js', result)
-    })
-})
-
 gulp.task('clean:dependencies', function (callback) {
     del([config.bower.src], {force: true}, callback)
 })
@@ -53,4 +47,10 @@ gulp.task('process:dependencies', ['rebuild:dependencies'], function () {
     config.bower.packages.forEach(processDependency)
 })
 
-gulp.task('dependencies', ['process:dependencies'])
+gulp.task('npm:dependencies', ['process:dependencies'], function () {
+    modernizr.build(modernizrConfig, function (result) {
+        fs.writeFile(config.npm.dest.jsLib + '/modernizr.js', result)
+    })
+})
+
+gulp.task('dependencies', ['npm:dependencies'])
