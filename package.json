@@ -24,6 +24,7 @@
     "jquery": "^1.11.3",
     "main-bower-files": "^2.8.2",
     "merge-stream": "^0.1.7",
+    "modernizr": "^3.3.1",
     "require-dir": "^0.3.0",
     "style-loader": "^0.12.3",
     "url-loader": "^0.5.6",

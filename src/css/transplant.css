@@ -368,7 +368,7 @@ td,
 th {
   padding: 0; }
 
-/*! HTML5 Boilerplate v5.2.0 | MIT License | https://html5boilerplate.com/ */
+/*! HTML5 Boilerplate v5.3.0 | MIT License | https://html5boilerplate.com/ */
 /*
  * What follows is the result of much research on cross-browser styling.
  * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
@@ -451,7 +451,7 @@ textarea {
    Helper classes
    ========================================================================== */
 /*
- * Hide visually and from screen readers:
+ * Hide visually and from screen readers
  */
 .hidden {
   display: none !important; }
@@ -524,7 +524,9 @@ textarea {
 @media print {
   *,
   *:before,
-  *:after {
+  *:after,
+  *:first-letter,
+  *:first-line {
     background: transparent !important;
     color: #000 !important;
     /* Black prints faster:
