@@ -12,8 +12,8 @@ var modernizrConfig = require('../modernizr.config.json')
 var fs = require('fs')
 
 
-gulp.task('clean:dependencies', function (callback) {
-    del([config.bower.src], {force: true}, callback)
+gulp.task('clean:dependencies', function () {
+    return del([config.bower.src], { force: true })
 })
 
 gulp.task('rebuild:dependencies', ['clean:dependencies'], function () {
@@ -22,9 +22,7 @@ gulp.task('rebuild:dependencies', ['clean:dependencies'], function () {
 })
 
 gulp.task('process:dependencies', ['rebuild:dependencies'], function () {
-
     var processDependency = function (dependency) {
-
         var dependencyRenameCheck = typeof dependency.rename !== 'undefined'
         var dependencySource = config.bower.src + '/' + dependency.name
 
@@ -33,8 +31,7 @@ gulp.task('process:dependencies', ['rebuild:dependencies'], function () {
         }
         if (typeof components.overrides[dependency.name] !== 'undefined') {
             dependencySource += '/' + components.overrides[dependency.name].main
-        }
-        else {
+        } else {
             dependencySource += '/**'
         }
 

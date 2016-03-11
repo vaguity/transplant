@@ -1,12 +1,12 @@
 {
-	"globals": {
-		"Modernizr": true,
-		"isWatching": true,
-		"jQuery": true,
-		"$": true,
-		"enquire": true,
-		"wistiaVideoHero": false,
-		"setFullFrame": true,
-	},
-	"extends": "./node_modules/eslint-config-percolate/.eslintrc",
+    "globals": {
+        "Modernizr": true,
+        "isWatching": true,
+        "jQuery": true,
+        "$": true,
+        "enquire": true,
+        "wistiaVideoHero": false,
+        "setFullFrame": true,
+    },
+    "extends": "./node_modules/eslint-config-percolate/.eslintrc",
 }
