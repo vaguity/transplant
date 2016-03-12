@@ -253,7 +253,8 @@ select {
  *  Known issue: inner spacing remains in IE 6.
  */
 button,
-html input[type="button"], input[type="reset"],
+html input[type="button"],
+input[type="reset"],
 input[type="submit"] {
   -webkit-appearance: button;
   /* 2 */
@@ -586,7 +587,7 @@ i {
   display: inline-block;
   font-family: "Percocons";
   font-weight: 400;
-  margin: 0 0.25em 0 0; }
+  margin: 0 .25em 0 0; }
 
 .icon-16 {
   width: 16px;
@@ -2480,7 +2481,7 @@ form label {
     border-color: #fff;
     text-decoration: none;
     display: inline-block;
-    padding: 0.5em 1em; }
+    padding: .5em 1em; }
     .promo .btn:link {
       color: #fff;
       border-color: #fff; }

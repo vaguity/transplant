@@ -17,50 +17,55 @@ var config = {
         src: src + '/js/**/*.js',
         dist: dist + '/assets/js',
     },
-    bower: {
+    staticDependencies: {
         src: src + '/lib',
         packages: [
             {
                 name: 'breakpoint-sass',
+                path: '/stylesheets/**',
                 dest: packageType.cssLib,
             },
             {
-                name: 'enquire',
-                path: '/dist',
+                name: 'enquire.js',
+                path: '/dist/enquire.min.js',
+                rename: 'enquire.js',
                 dest: packageType.jsLib,
             },
             {
                 name: 'html5-boilerplate',
+                path: '/dist/css/main.css',
                 rename: '_html5bp.scss',
                 dest: packageType.cssPartial,
             },
             {
                 name: 'jquery',
-                path: '/dist',
-                dest: packageType.jsLib,
-            },
-            {
-                name: 'modernizr',
+                path: '/dist/jquery.min.js',
+                rename: 'jquery.js',
                 dest: packageType.jsLib,
             },
             {
                 name: 'normalize-scss',
+                path: '/sass/normalize/**',
                 dest: packageType.cssPartial,
             },
             {
                 name: 'susy',
+                path: '/sass/**',
                 dest: packageType.cssLib,
             },
             {
                 name: 'underscore',
+                path: '/underscore-min.js',
+                rename: '/underscore.js',
                 dest: packageType.jsLib,
             },
         ],
     },
-    npm: {
+    buildDependencies: {
         src: src + '/lib',
-        dest: {
-            jsLib: packageType.jsLib,
+        modernizr: {
+            name: 'modernizr',
+            dest: packageType.jsLib,
         },
     },
 }

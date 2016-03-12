@@ -1,5 +1,5 @@
 require('js/lib/modernizr')
 require('js/enquire-shim')
 global.enquire = require('js/lib/enquire')
-global.$ = global.jQuery = require('jquery')
+global.$ = global.jQuery = require('js/lib/jquery')
 require('js/lib/underscore')
