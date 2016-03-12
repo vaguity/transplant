@@ -1,30 +1,19 @@
+var config = require('../config')
 var gulp = require('gulp')
 var gulpif = require('gulp-if')
-var livereload = require('gulp-livereload')
-var merge = require('merge-stream')
 var gulpWebpack = require('webpack-stream')
-var webpack = require('webpack')
 var handleErrors = require('../util/handleErrors')
+var livereload = require('gulp-livereload')
+var webpack = require('webpack')
 
-var config = require('../config')
 
-
-gulp.task('build', ['sass'], function () {
-
+gulp.task('build', function () {
     var watchCheck = isWatching
     var webpackConfig = require('../webpack.config.js')
 
-    var webpackBundle = gulp.src(config.src + '/main.js')
+    return gulp.src(config.src + '/main.js')
         .pipe(gulpWebpack(webpackConfig, webpack))
+        .on('error', handleErrors)
         .pipe(gulp.dest(webpackConfig.output.path))
         .pipe(gulpif(watchCheck, livereload()))
-
-    var styles = gulp.src(config.sass.dest + '/*.css')
-        .pipe(gulp.dest(config.sass.dist))
-
-    var scripts = gulp.src(config.js.src)
-        .on('error', handleErrors)
-        .pipe(gulp.dest(config.js.dist))
-
-    return merge(webpackBundle, styles, scripts)
 })

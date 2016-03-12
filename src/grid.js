@@ -1,4 +1,4 @@
-/*eslint no-unused-vars:0*/
+/* eslint no-unused-vars:0 */
 var common = require('./common')
 
-require('css/grid.css')
+require('scss/grid.scss')
