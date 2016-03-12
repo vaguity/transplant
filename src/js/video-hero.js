@@ -43,15 +43,15 @@ $(window).load(function () {
             if (typeof wistiaVideoHero !== 'undefined') {
                 wistiaVideoHero.play()
             }
-            $(window).on('resize', $.debounce(300, function () {
+            $(window).on('resize', _.debounce(function () {
                 videoHero(true)
-            }))
+            }, 300))
         },
         unmatch: function () {
             videoHero(false)
-            $(window).on('resize', $.debounce(300, function () {
+            $(window).on('resize', _.debounce(function () {
                 videoHero(false)
-            }))
+            }, 300))
         },
     })
 })

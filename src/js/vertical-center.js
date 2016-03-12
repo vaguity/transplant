@@ -3,7 +3,6 @@ var i
 var offsetValue
 
 function setVerticalCenter (selectors, reset) {
-
     var vertCenterLength = selectors.length
     var vertCenterPad = 0
 
@@ -24,8 +23,7 @@ function setVerticalCenter (selectors, reset) {
         if (typeof selectors[i] === 'object') {
             if (isNaN(selectors[i].offset) === true) {
                 offsetValue = $(selectors[i].offset).outerHeight()
-            }
-            else {
+            } else {
                 offsetValue = selectors[i].offset
             }
             vertCenterPad = parseInt((windowHeight - $(selectors[i].selector).height() - offsetValue) / 2, 10)
@@ -35,8 +33,7 @@ function setVerticalCenter (selectors, reset) {
                     'padding-top': '',
                     'padding-bottom': '',
                 })
-            }
-            else {
+            } else {
                 $(selectors[i].selector).css({
                     'padding-top': vertCenterPad + 'px',
                     'padding-bottom': vertCenterPad + 'px',
@@ -67,9 +64,9 @@ $(window).load(function () {
         deferSetup: true,
         setup: function () {
             setVerticalCenter(vertCenterSelectors)
-            $(window).resize($.throttle(150, function () {
+            $(window).resize(_.throttle(function () {
                 setVerticalCenter(vertCenterSelectors)
-            }))
+            }, 150))
         },
         match: function () {
             setVerticalCenter(vertCenterSelectors)

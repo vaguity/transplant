@@ -92,13 +92,13 @@ function stickyCalc () {
 function stickyNav (set) {
     if (set === true) {
         stickyCalc()
-        $(window).bind('scroll', $.throttle(100, function () {
+        $(window).bind('scroll', _.throttle(function () {
             if ($('.sticky').length === 0) {
                 $(window).unbind('scroll')
             }
 
             stickyCalc()
-        }))
+        }, 100))
     }
     else {
         $(window).unbind('scroll')
@@ -115,10 +115,10 @@ function hashUpdate (hash, href) {
     history.pushState({}, '', href)
 }
 
-$(window).resize($.debounce(300, function () {
+$(window).resize(_.debounce(function () {
     stickySetup()
     stickyEnquire()
-}))
+}, 300))
 
 $(document).ready(function () {
     $('.sub-nav a, a.scroll-to').click(function (e) {
