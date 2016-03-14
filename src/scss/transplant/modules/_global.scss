@@ -17,9 +17,9 @@ a {
     }
 }
 
-.button {
-    @include button;
-}
+// .button {
+//     @include button;
+// }
 
 // TODO: Audit this; does this get used anywhere other than heroes?
 // _hero module currently owns h1 used in heroes
@@ -97,8 +97,5 @@ img.border {
 }
 
 .btn {
-    font-family: $type-sans;
-    text-transform: uppercase;
-    border: 1px solid transparent;
-    padding: 6px 12px;
+    @include button;
 }

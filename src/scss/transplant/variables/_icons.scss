@@ -2,25 +2,29 @@
 	display: inline-block;
 	font-family: $type-icons;
 	font-weight: 400;
-	margin: 0 .25em 0 0;
+    position: relative;
+    top: 2px;
 }
 
 .icon-16 {
 	width: 16px;
 	height: 16px;
 	font-size: 16px;
+    line-height: 16px;
 }
 
 .icon-24 {
 	width: 24px;
 	height: 24px;
 	font-size: 24px;
+    line-height: 24px;
 }
 
 .icon-32 {
 	width: 32px;
 	height: 32px;
 	font-size: 32px;
+    line-height: 32px;
 }
 
 // Icon variables

@@ -9,7 +9,7 @@
 }
 
 .promo-container .mask {
-	background: $indigo-transparent-half;
+    @include mask($indigo, .6);
 }
 
 .promo {

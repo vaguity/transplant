@@ -1,0 +1,24 @@
+.learn-more-container {
+    border: 1px solid $lightgray;
+    border-width: 1px 0;
+    margin: 80px 0;
+}
+
+.learn-more {
+    text-align: center;
+    padding: 60px 0;
+    .learn-more-title {
+        color: $indigo;
+        font-family: $type-serif;
+        font-size: 50px;
+        line-height: 50px;
+        margin: 0 0 40px;
+    }
+    .learn-more-jump {
+        display: inline-block;
+        @include link($white, $offwhite, false);
+        @include button;
+        @include button-background($white, $offwhite, $orange, $darkorange);
+        padding: 14px 24px;
+    }
+}

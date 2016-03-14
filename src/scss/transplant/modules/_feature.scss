@@ -1,0 +1,33 @@
+.feature-container.alt {
+    background: $offwhite;
+}
+
+.feature {
+    text-align: center;
+    .copy {
+        padding: 60px 0 100px;
+    }
+    h2 {
+        font-family: $type-serif;
+        color: $darkgray;
+        font-size: 50px;
+        line-height: 1em;
+        margin: 0 0 40px;
+        text-transform: none;
+        font-weight: normal;
+    }
+    .feature-title {
+        text-transform: uppercase;
+        color: $orange;
+        font-size: 20px;
+        font-family: $type-sans;
+        line-height: 20px;
+        margin: 48px 0 18px;
+    }
+    .feature-description {
+        font-family: $type-serif;
+        font-size: 24px;
+        line-height: 32px;
+        color: $darkgray;
+    }
+}

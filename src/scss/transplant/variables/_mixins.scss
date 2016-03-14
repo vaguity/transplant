@@ -3,41 +3,49 @@
     line-height: 1.4em;
 }
 
-@mixin link($primary-color: $orange, $secondary-color: $blue) {
+@mixin link($primary-color: $orange, $secondary-color: $blue, $border: true) {
     color: $primary-color;
-    border-color: $primary-color;
     text-decoration: none;
+    @if $border {
+        border-color: $primary-color;
+        $border-primary-color: $primary-color;
+        $border-secondary-color: $secondary-color;
+    }
+    @else {
+        $border-primary-color: transparent;
+        $border-secondary-color: transparent;
+    }
     @if $primary-color == $blue and $secondary-color == $blue {
         $secondary-color: $orange;
     }
     &:link {
         color: $primary-color;
-        border-color: $primary-color;
+        border-color: $border-primary-color;
     }
     &:visited {
         color: $primary-color;
-        border-color: $primary-color;
+        border-color: $border-primary-color;
     }
     &:hover {
         color: $secondary-color;
-        border-color: $secondary-color;
+        border-color: $border-secondary-color;
     }
     &:active {
         color: $secondary-color;
-        border-color: $secondary-color;
+        border-color: $border-secondary-color;
     }
 }
 
 @mixin button() {
     text-align: center;
-    border-width: 1px;
-    border-style: solid;
+    border: 1px solid transparent;
     font-family: $type-sans;
     text-transform: uppercase;
-    padding: 4px;
+    padding: 6px 12px;
+    background-color: transparent;
 }
 
-@mixin button-background() {
+@mixin button-background($text-primary-color: $white, $text-secondary-color: $offwhite, $background-primary-color: $orange, $background-secondary-color: $darkorange) {
     color: $white;
     background-color: $orange;
     &:hover, &:active {
@@ -62,4 +70,8 @@
     &:-ms-input-placeholder {
        color: $color;
     }
+}
+
+@mixin mask($color: $indigo, $alpha: .6) {
+    background-color: rgba($color, $alpha);
 }

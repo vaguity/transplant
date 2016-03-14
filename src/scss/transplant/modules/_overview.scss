@@ -1,0 +1,20 @@
+.overview {
+    text-align: center;
+    .copy {
+        margin: 48px 0 52px;
+    }
+    .overview-title {
+        margin: 48px 0 24px;
+        font-size: 20px;
+        font-family: $type-sans;
+        line-height: 1em;
+        text-transform: uppercase;
+        color: $orange;
+    }
+    p {
+        font-family: $type-serif;
+        font-size: 24px;
+        line-height: 32px;
+        color: $darkgray;
+    }
+}
