@@ -16,7 +16,7 @@ var uglifyOptions = {
 }
 
 var entries = {
-    main: srcDir + '/main.js',
+    transplant: srcDir + '/transplant.js',
     guide: srcDir + '/guide.js',
     grid: srcDir + '/grid.js',
 }
@@ -58,7 +58,7 @@ var config = {
         new CommonsChunkPlugin({
             name: 'common',
             filename: 'common.js',
-            chunks: ['main', 'guide', 'grid'],
+            chunks: ['transplant', 'guide', 'grid'],
         }),
     ],
 }

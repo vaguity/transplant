@@ -4,82 +4,70 @@
     }
 }
 
-.content {
-    .container {
-        @include container(4);
-        padding: 0 5%;
-        &.full {
-            @include container(full);
-            padding: 0;
-            section {
-                @include container(4);
-                padding: 5%;
-            }
-            nav {
-                @include container(4);
-                padding: 20px 5%;
-            }
-            &.bleed {
-                section {
-                    @include container(4);
-                    padding: 0 5%;
-                    &.full {
-                        padding: 0;
-                        @include container(full);
-                    }
-                }
-                nav {
-                    @include container(4);
-                    padding: 20px 5%;
-                    &.primary-nav, &.secondary-nav {
-                        padding: 0;
-                    }
-                }
-            }
-        }
-        .clear {
-            @include break;
-        }
-    }
-
-    .row {
-        @include span(full break);
-    }
-}
-
-.content {
+.content .container {
+    @include container(4);
+    padding: 0 5%;
     @include breakpoint($breakpoint-desktop) {
-        .container {
-            padding: 0;
-            @include container(1100px);
-            &.full {
-                @include container(full);
-                section, nav {
-                    @include container(1100px);
-                    padding: 0;
-                    &.pad {
-                        padding: 40px;
-                    }
-                    &.margin {
-                        margin: 20px auto;
-                    }
-                }
+        padding: 0;
+        @include container(1100px);
+    }
+    &.full {
+        @include container(full);
+        padding: 0;
+        @include breakpoint($breakpoint-desktop) {
+            @include container(full);
+            section, nav {
+                @include container(1100px);
+                padding: 0;
                 &.pad {
                     padding: 40px;
                 }
                 &.margin {
-                    margin: 60px;
+                    margin: 20px auto;
                 }
-                &.bleed {
-                    section, nav {
-                        @include container(1100px);
-                        padding: 0;
-                        &.full {
-                            @include container(full);
-                        }
+            }
+            &.pad {
+                padding: 40px;
+            }
+            &.bleed {
+                section, nav {
+                    @include container(1100px);
+                    padding: 0;
+                    &.full {
+                        @include container(full);
                     }
                 }
             }
         }
+        section {
+            @include container(4);
+            padding: 5%;
+        }
+        nav {
+            @include container(4);
+            padding: 20px 5%;
+        }
+        &.bleed {
+            section {
+                padding: 0 5%;
+                &.full {
+                    padding: 0;
+                    @include container(full);
+                }
+            }
+            nav {
+                padding: 20px 5%;
+                &.primary-nav, &.secondary-nav {
+                    padding: 0;
+                }
+            }
+        }
     }
+    .clear {
+        @include break;
+    }
+}
+
+.content .row {
+    @include span(full break);
 }

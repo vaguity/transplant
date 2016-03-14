@@ -1,59 +1,65 @@
 @mixin font-reset() {
-	font-size: 16px;
-	line-height: 1.4em;
+    font-size: 16px;
+    line-height: 1.4em;
 }
 
 @mixin link($primary-color: $orange, $secondary-color: $blue) {
-	color: $primary-color;
-	border-color: $primary-color;
-	text-decoration: none;
-	@if $primary-color == $blue {
-		$secondary-color: $orange;
-	}
-	@else if $primary-color == $lightgray-dark {
-		$secondary-color: $orange;
-	}
-	&:link {
-		color: $primary-color;
-		border-color: $primary-color;
-	}
-	&:visited {
-		color: $primary-color;
-		border-color: $primary-color;
-	}
-	&:hover {
-		color: $secondary-color;
-		border-color: $secondary-color;
-	}
-	&:active {
-		color: $secondary-color;
-		border-color: $secondary-color;
-	}
+    color: $primary-color;
+    border-color: $primary-color;
+    text-decoration: none;
+    @if $primary-color == $blue and $secondary-color == $blue {
+        $secondary-color: $orange;
+    }
+    &:link {
+        color: $primary-color;
+        border-color: $primary-color;
+    }
+    &:visited {
+        color: $primary-color;
+        border-color: $primary-color;
+    }
+    &:hover {
+        color: $secondary-color;
+        border-color: $secondary-color;
+    }
+    &:active {
+        color: $secondary-color;
+        border-color: $secondary-color;
+    }
 }
 
 @mixin button() {
-	text-align: center;
-	border-width: 1px;
-	border-style: solid;
-	font-family: $type-sans;
-	text-transform: uppercase;
-	padding: 4px;
+    text-align: center;
+    border-width: 1px;
+    border-style: solid;
+    font-family: $type-sans;
+    text-transform: uppercase;
+    padding: 4px;
+}
+
+@mixin button-background() {
+    color: $white;
+    background-color: $orange;
+    &:hover, &:active {
+        color: $offwhite;
+        background-color: $darkorange;
+    }
 }
 
 @mixin placeholder($color: $lightgray-dark) {
-	&::-webkit-input-placeholder {
-	   color: $color;
-	}
+    &::-webkit-input-placeholder {
+       color: $color;
+    }
 
-	&:-moz-placeholder {
-	   color: $color;
-	}
+    &:-moz-placeholder {
+       color: $color;
+    }
 
-	&::-moz-placeholder {
-	   color: $color;
-	}
+    &::-moz-placeholder {
+       color: $color;
+    }
 
-	&:-ms-input-placeholder {
-	   color: $color;
-	}
+    &:-ms-input-placeholder {
+       color: $color;
+    }
 }
