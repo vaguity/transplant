@@ -46,11 +46,11 @@
 }
 
 @mixin button-background($text-primary-color: $white, $text-secondary-color: $offwhite, $background-primary-color: $orange, $background-secondary-color: $darkorange) {
-    color: $white;
-    background-color: $orange;
+    color: $text-primary-color;
+    background-color: $background-primary-color;
     &:hover, &:active {
-        color: $offwhite;
-        background-color: $darkorange;
+        color: $text-secondary-color;
+        background-color: $background-secondary-color;
     }
 }
 
