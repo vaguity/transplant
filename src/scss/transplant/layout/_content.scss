@@ -17,9 +17,6 @@
         .segment, section {
             @include container(4);
             padding: 5%;
-            .copy {
-                display: block;
-            }
         }
         nav {
             @include container(4);
@@ -73,4 +70,10 @@
 
 .content .row {
     @include span(full break);
+}
+
+.segment, section {
+    .copy {
+        display: block;
+    }
 }

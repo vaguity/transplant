@@ -1,12 +1,15 @@
 .learn-more-container {
     border: 1px solid $lightgray;
     border-width: 1px 0;
-    margin: 80px 0;
+    margin: 60px 0;
 }
 
 .learn-more {
     text-align: center;
-    padding: 60px 0;
+    .copy {
+        display: inline-block;
+        margin: 60px 0;
+    }
     .learn-more-title {
         color: $indigo;
         font-family: $type-serif;

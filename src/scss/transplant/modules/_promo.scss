@@ -1,69 +1,102 @@
 .promo-container {
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-size: cover;
-    margin: 40px 0 0;
-    @include breakpoint($breakpoint-desktop-small) {
-        margin: 60px 0 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    .mask {
+        @include mask($indigo, .6);
     }
-}
-
-.promo-container .mask {
-    @include mask($indigo, .6);
 }
 
 .promo {
-	color: $white;
-	text-align: center;
-	h3 {
-		color: $white;
-		text-transform: uppercase;
-		margin: 20px 0;
-		line-height: 28px;
-	}
+    text-align: center;
     a {
-        @include link($white, $orange);
+        @include link($white, $offwhite);
     }
-	p {
-		font-family: $type-serif;
-		font-size: 24px;
-		margin: 20px 0;
-		font-size: 20px;
-		line-height: 28px;
-	}
-	.callout {
-		font-size: 36px;
-		line-height: 1em;
-	}
-	.jump {
-		margin: 28px 0 20px;
-	}
-	.btn {
-		@include link($white, $orange);
-		display: inline-block;
-		padding: .5em 1em;
-	}
-	@include breakpoint($breakpoint-desktop-small) {
-		h3 {
-			margin: 20px 0 60px;
-		}
-		p {
-			font-size: 24px;
-			line-height: 32px;
-			margin: 60px 0;
-		}
-		.callout {
-			font-size: 80px;
-		}
-		.jump {
-			margin: 60px 0 20px;
-		}
-	}
+    .copy {
+        display: inline-block;
+        margin: 60px 0;
+    }
+    .promo-title {
+        font-family: $type-sans;
+        text-transform: uppercase;
+        font-size: 20px;
+        line-height: 20px;
+        margin: 0 0 40px;
+    }
+    .promo-description {
+        font-family: $type-serif;
+        font-size: 50px;
+        line-height: 50px;
+        margin: 40px 0 0;
+    }
 }
 
-.promo.next .jump a {
-	@include link($white, $white);
-	&:hover {
-		border-bottom: 1px solid $white;
-	}
-}
+// .promo-container {
+// 	background-position: center center;
+// 	background-repeat: no-repeat;
+// 	background-size: cover;
+//     margin: 40px 0 0;
+//     @include breakpoint($breakpoint-desktop-small) {
+//         margin: 60px 0 0;
+//     }
+// }
+
+// .promo-container .mask {
+//     @include mask($indigo, .6);
+// }
+
+// .promo {
+// 	color: $white;
+// 	text-align: center;
+// 	h3 {
+// 		color: $white;
+// 		text-transform: uppercase;
+// 		margin: 20px 0;
+// 		line-height: 28px;
+// 	}
+//     a {
+//         @include link($white, $orange);
+//     }
+// 	p {
+// 		font-family: $type-serif;
+// 		font-size: 24px;
+// 		margin: 20px 0;
+// 		font-size: 20px;
+// 		line-height: 28px;
+// 	}
+// 	.callout {
+// 		font-size: 36px;
+// 		line-height: 1em;
+// 	}
+// 	.jump {
+// 		margin: 28px 0 20px;
+// 	}
+// 	.btn {
+// 		@include link($white, $orange);
+// 		display: inline-block;
+// 		padding: .5em 1em;
+// 	}
+// 	@include breakpoint($breakpoint-desktop-small) {
+// 		h3 {
+// 			margin: 20px 0 60px;
+// 		}
+// 		p {
+// 			font-size: 24px;
+// 			line-height: 32px;
+// 			margin: 60px 0;
+// 		}
+// 		.callout {
+// 			font-size: 80px;
+// 		}
+// 		.jump {
+// 			margin: 60px 0 20px;
+// 		}
+// 	}
+// }
+
+// .promo.next .jump a {
+// 	@include link($white, $white);
+// 	&:hover {
+// 		border-bottom: 1px solid $white;
+// 	}
+// }

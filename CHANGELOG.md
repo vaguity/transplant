@@ -8,4 +8,5 @@
 - Removed purple palette alias
 - Removed transparent palette colors
 - Added mask mixin
-- Added .segment class when `<section>` isn't semantically appropriate
+- Added .segment class for when `<section>` isn't semantically appropriate
+- Rebuilt promo section

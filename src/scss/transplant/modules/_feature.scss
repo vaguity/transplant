@@ -5,7 +5,8 @@
 .feature {
     text-align: center;
     .copy {
-        padding: 60px 0 100px;
+        display: inline-block;
+        margin: 60px 0;
     }
     h2 {
         font-family: $type-serif;
@@ -22,12 +23,17 @@
         font-size: 20px;
         font-family: $type-sans;
         line-height: 20px;
-        margin: 48px 0 18px;
+        margin: 60px 0 40px;
     }
     .feature-description {
         font-family: $type-serif;
         font-size: 24px;
         line-height: 32px;
         color: $darkgray;
+        margin: 40px 0 0;
+    }
+    .feature-jump {
+        display: inline-block;
+        margin: 40px 0 0;
     }
 }
