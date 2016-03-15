@@ -11,3 +11,6 @@
 - Added .segment class for when `<section>` isn't semantically appropriate
 - Rebuilt promo section
 - Updated footer structure
+- Changed how vertical margins interact
+- Changed how `.copy` containers work
+- Updated blue in the palette

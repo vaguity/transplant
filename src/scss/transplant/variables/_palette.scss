@@ -28,13 +28,14 @@ $offwhite-light: $grayF9;
 // Primary colors
 $orange: #f16421;
 $blue: #0a506c;
+// $newblue: #0a4f6c; // TODO: New blue?
 $darkorange: #b6400f;
 $lightorange: #fbd0bc;
 
 // Secondary colors
 $indigo: #1f093c;
 $maroon: #a42c50;
-$blue2: #2b5b91;
+$blue2: #2b5b91; // TODO: Ditch this?
 
 // Alert colors
 $lightred: #fdebe9;
@@ -44,15 +45,3 @@ $red: #eb3e31;
 $lightgreen: #f9ffe4;
 $green: #efffba;
 $darkgreen: #9fcb00;
-
-// Transparent colors
-// $white-transparent: rgba($white, .8);
-// $white-transparent-95: rgba($white, .95);
-
-// $offwhite-transparent: rgba($offwhite, .8);
-// $orange-transparent: rgba($orange, .8);
-// $blue2-transparent: rgba(10, 79, 108, .8); // TODO: This is not $blue2, needs audit
-
-// $indigo-transparent: rgba($indigo, .8);
-// $indigo-transparent-60: rgba($indigo, .6);
-// $indigo-transparent-half: rgba($indigo, .4);

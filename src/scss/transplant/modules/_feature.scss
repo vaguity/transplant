@@ -5,7 +5,7 @@
 .feature {
     text-align: center;
     .copy {
-        display: inline-block;
+        width: 100%;
         margin: 60px 0;
     }
     h2 {
@@ -13,7 +13,7 @@
         color: $darkgray;
         font-size: 50px;
         line-height: 1em;
-        margin: 0 0 40px;
+        margin: 0 0 60px;
         text-transform: none;
         font-weight: normal;
     }
@@ -35,5 +35,32 @@
     .feature-jump {
         display: inline-block;
         margin: 40px 0 0;
+    }
+}
+
+.feature.full {
+    @include breakpoint($breakpoint-desktop) {
+        h2, .feature-title, .feature-description, .feature-jump {
+            @include container(1100px);
+        }
+    }
+}
+
+.feature .validation {
+    border: 1px solid $lightgray;
+    border-width: 1px 0;
+    .validation-logo {
+        margin: 30px 0 0;
+    }
+    p {
+        color: $blue;
+        font-family: $type-serif;
+        font-size: 50px;
+        line-height: 54px;
+        margin: 60px 0 0;
+    }
+    .validation-jump {
+        display: inline-block;
+        margin: 60px 0;
     }
 }

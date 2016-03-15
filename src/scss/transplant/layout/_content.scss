@@ -8,8 +8,8 @@
     @include container(4);
     padding: 0 5%;
     @include breakpoint($breakpoint-desktop) {
-        padding: 0;
         @include container(1100px);
+        padding: 0;
     }
     &.full {
         @include container(full);
@@ -26,8 +26,8 @@
             .segment, section {
                 padding: 0 5%;
                 &.full {
-                    padding: 0;
                     @include container(full);
+                    padding: 0;
                 }
             }
             nav {
@@ -42,12 +42,6 @@
             .segment, section, nav {
                 @include container(1100px);
                 padding: 0;
-                &.pad {
-                    padding: 40px;
-                }
-                // &.margin {
-                //     margin: 20px auto;
-                // }
             }
             &.pad {
                 padding: 40px;
@@ -74,6 +68,15 @@
 
 .segment, section {
     .copy {
-        display: block;
+        display: inline-block;
+        &.flush {
+            margin: 0;
+        }
+        &.flush-top {
+            margin-top: 0;
+        }
+        &.flush-bottom {
+            margin-bottom: 0;
+        }
     }
 }
