@@ -1,94 +1,107 @@
 .footer-container {
-	@include container(4);
-	padding: 0 5%;
-	@include breakpoint($breakpoint-desktop) {
-		@include container(full);
-	}
+    @include container(4);
+    padding: 0 5%;
+    @include breakpoint($breakpoint-desktop) {
+        padding: 0;
+    }
 }
 
 .footer {
-	.site-nav {
-		display: none;
-	}
-	@include breakpoint($breakpoint-desktop) {
-		@include container(1100px);
-		.site-section {
-			@include span(1 of 6);
-			&:last-of-type {
-				@include span(1 of 6 last);
-			}
-		}
-		.site-nav {
-			display: block;
-			@include container;
-		}
-		.footer-logo {
-			@include span(3 of 12);
-		}
-		.footer-nav {
-			@include span(9 of 12 last);
-		}
-	}
+    @include breakpoint($breakpoint-desktop) {
+        @include container(1100px);
+        .site-section {
+            @include span(2 of 12);
+            &:last-of-type {
+                @include span(2 of 12 last);
+            }
+        }
+        .footer-logo {
+            @include span(3 of 12);
+        }
+        .footer-nav {
+            @include span(9 of 12 last);
+        }
+    }
 }
 
-.footer-container {
-	background: $orange;
+.footer .site-nav {
+    display: none;
+    @include breakpoint($breakpoint-desktop) {
+        display: block;
+    }
 }
 
-.footer {
-	color: $white;
-	padding: 20px 0;
-	a {
-		margin: 30px 0;
-		@include link($white);
-	}
-}
-
-.footer-logo a {
-	display: block;
-	width: 200px;
-	height: 30px;
-}
-
-.site-nav {
-	font-size: 13px;
-	padding-bottom: 40px;
-	border-bottom: 1px solid $darkorange;
-	h4 {
-		font-size: 16px;
-		margin: 1em 0;
-	}
-	ul li {
-		display: block;
-		margin: .75em 0;
-	}
+.footer .primary-nav {
+    display: none;
+    @include span(full);
+    margin: 60px 0;
+    @include breakpoint($breakpoint-desktop) {
+        display: block;
+    }
 }
 
 .footer .secondary-nav {
-	margin-top: 10px;
+    @include span(full);
+    @include breakpoint($breakpoint-desktop) {
+        border-top: 1px solid $darkorange;
+    }
+}
+
+.footer-container {
+    background: $orange;
+}
+
+.footer {
+    color: $white;
+    a {
+        @include link($white);
+    }
+}
+
+.footer-logo a {
+    display: block;
+    width: 200px;
+    height: 30px;
+    margin: 40px 0;
+}
+
+.site-nav {
+    font-size: 13px;
+    h2 {
+        font-family: $type-base;
+        text-transform: none;
+        text-align: left;
+        font-size: 16px;
+        margin: 0 0 30px;
+        color: $white;
+    }
+    ul {
+        margin: 0;
+        li {
+            display: block;
+            margin: 16px 0 0;
+        }
+    }
 }
 
 .footer-nav {
-	font-size: 13px;
-	ul {
-		margin: 1em 0 0;
-		li {
-			margin: 1em 2em 0 0;
-		}
-	}
-	.copyright {
-		color: $darkorange;
-	}
-	.made-in a {
-		color: $darkorange;
-	}
-	@include breakpoint($breakpoint-desktop) {
-		text-align: right;
-		ul {
-			margin: 30px 0;
-			li {
-				margin: 12px 2em 0 0;
-			}
-		}
-	}
+    font-size: 13px;
+    ul {
+        margin: 12px 0;
+        li {
+            margin: 12px 24px 0 0;
+            &:last-of-type {
+                margin: 12px 0 0;
+            }
+        }
+    }
+    .copyright {
+        color: $darkorange;
+    }
+    @include breakpoint($breakpoint-desktop) {
+        text-align: right;
+        ul {
+            margin: 40px 0;
+        }
+    }
 }

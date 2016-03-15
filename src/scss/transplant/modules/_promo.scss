@@ -11,6 +11,9 @@
     text-align: center;
     a {
         @include link($white, $offwhite);
+        &.full {
+            display: block;
+        }
     }
     .copy {
         display: inline-block;

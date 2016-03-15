@@ -10,3 +10,4 @@
 - Added mask mixin
 - Added .segment class for when `<section>` isn't semantically appropriate
 - Rebuilt promo section
+- Updated footer structure
