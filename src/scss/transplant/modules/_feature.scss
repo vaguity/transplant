@@ -57,7 +57,11 @@
     border: 1px solid $lightgray;
     border-width: 1px 0;
     .validation-logo {
-        margin: 30px 0 0;
+        margin: 40px 0 60px;
+        img {
+            display: inline;
+            margin: 0;
+        }
     }
     p {
         color: $blue;
