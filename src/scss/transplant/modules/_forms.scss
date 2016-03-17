@@ -1,196 +1,106 @@
 input, select, textarea {
-	display: inline-block;
-	font-size: 14px;
-	border: 1px solid $lightgray;
-	margin: .5em 0;
-	border-radius: 0;
-	width: 100%;
-	padding: .75em;
-	overflow: hidden;
-	line-height: 1.2em;
-	color: $lightgray-dark;
-	box-sizing: border-box;
-	&:focus {
-		outline: none;
-	}
-	@include breakpoint($breakpoint-tablet) {
-		width: 70%;
-		margin: .25em;
-	}
-	@include breakpoint($breakpoint-desktop-small) {
-		vertical-align: bottom;
-	}
+    display: inline-block;
+    font-family: $type-sans;
+    text-transform: none;
+    font-size: 14px;
+    margin: 10px 0;
+    border-radius: 0;
+    border: none;
+    width: 100%;
+    padding: .75em;
+    overflow: hidden;
+    line-height: 1.2em;
+    color: $orange;
+    box-sizing: border-box;
+    &:focus {
+        outline: none;
+    }
+    @include breakpoint($breakpoint-tablet) {
+        // TODO: Figure this out
+        width: 70%;
+        margin: 12px;
+        padding: 24px;
+    }
+    @include breakpoint($breakpoint-desktop-small) {
+        vertical-align: bottom;
+    }
+}
+
+.borders {
+    input, select, textarea {
+        border: 1px solid $lightgray;
+    }
 }
 
 input, select {
-	@include breakpoint($breakpoint-desktop-small) {
-		height: 44px;
-		width: 200px;
-	}
+    @include breakpoint($breakpoint-desktop-small) {
+        @include span(342px);
+        margin: 12px;
+    }
 }
 
 input, textarea {
-	@include placeholder;
+    @include placeholder($orange);
 }
 
 select {
-	background-color: $white;
-	background-repeat: no-repeat;
-	background-image: url('../images/icon-down.png');
-	background-position: 95% center;
-	text-overflow: ellipsis;
-	-webkit-appearance: button;
-	-moz-appearance: none;
-	@include breakpoint($breakpoint-tablet) {
-		background-position: 98% center;
-	}
-	@include breakpoint($breakpoint-desktop-small) {
-		background-position: 95% center;
-		padding-right: 2em;
-	}
+    background-color: $white;
+    background-repeat: no-repeat;
+    background-image: url('../images/icon-down.png');
+    background-position: 95% center;
+    text-overflow: ellipsis;
+    -webkit-appearance: button;
+    -moz-appearance: none;
+    @include breakpoint($breakpoint-desktop-small) {
+        padding-right: 2em;
+    }
 }
 
 textarea {
-	resize: none;
-	@include breakpoint($breakpoint-desktop-small) {
-		width: 50%;
-	}
+    resize: none;
+    @include breakpoint($breakpoint-desktop-small) {
+        width: 50%;
+    }
 }
 
 button {
-	display: inline-block;
-	width: auto;
-	font-family: $type-sans;
-	color: $maroon;
-	padding: .75em;
-	line-height: 1em;
-	margin: 1em auto;
-	background: transparent;
-	box-sizing: border-box;
-	text-transform: uppercase;
-	border: 1px solid $maroon;
-	margin: 2em auto;
-	&:focus {
-		outline: none;
-	}
-	&:hover {
-		color: $orange;
-		border-color: $orange;
-	}
+    display: inline-block;
+    width: auto;
+    box-sizing: border-box;
+    min-width: 160px;
+    font-family: $type-sans;
+    font-size: 16px;
+    line-height: 1em;
+    color: $white;
+    background-color: $orange;
+    padding: 14px 24px;
+    text-transform: uppercase;
+    border: 1px solid $white;
+    border-width: 0;
+    margin: 12px auto 0;
+    &:focus {
+        outline: none;
+    }
+    &:hover {
+        color: $offwhite;
+        background-color: $darkorange;
+        border-color: $offwhite;
+    }
 }
 
 form label {
-	display: none;
-}
-
-.hero .form, .demo-form {
-	input, select {
-		border-width: 0;
-	}
-}
-
-.hero .form {
-	margin-bottom: 20px;
-	min-height: 75px;
-	button {
-		margin: 1em auto;
-		color: $white;
-		border-color: $white;
-		&:hover {
-			color: $lightgray;
-			border-color: $lightgray;
-		}
-	}
-}
-
-.demo-form-container {
-	background: $offwhite-light;
-	&.alternate {
-		background: $white;
-	}
-}
-
-.demo-form {
-	color: $maroon;
-	text-align: center;
-	font-size: 24px;
-	form {
-	    margin: 0 auto;
-	}
-	h3 {
-		color: $maroon;
-		text-transform: uppercase;
-		margin: 32px 0;
-	}
-	p {
-		font-family: $type-serif;
-		margin: 32px 0;
-	}
-	input, select {
-		font-size: 16px;
-		border: none;
-	}
-	button {
-		margin: 1em auto;
-		font-size: 16px;
-		line-height: 1em;
-	}
-	&.alternate {
-	    input, select {
-	        border: 1px solid $lightgray;
-	    }
-	}
-}
-
-.contact-form-container {
-	background: $white;
-}
-
-.contact-form {
-	text-align: center;
-	form {
-		text-align: center;
-		margin: 20px 0 60px;
-		@include breakpoint($breakpoint-desktop-small) {
-			margin: 20px 0;
-		}
-	}
-	button {
-		display: inline-block;
-		margin: 1em auto;
-		&[type="submit"] {
-			color: $white;
-			background: $orange;
-			border-color: $orange;
-			margin: .5em 0;
-			&:hover {
-				color: $white;
-				border-color: $darkorange;
-				background: $darkorange;
-			}
-		}
-	}
-	textarea, select {
-		@include breakpoint($breakpoint-desktop-small) {
-			width: 821px;
-		}
-	}
-	select {
-		@include breakpoint($breakpoint-desktop-small) {
-			background-position: 98% center;
-		}
-	}
+    display: none;
 }
 
 .mktoCustomError {
-	font-size: 14px;
-	color: $red;
-	border-bottom: 1px solid $midred;
-	background: $lightred;
-	line-height: 2em;
-	margin: 2em 0;
+    font-size: 14px;
+    color: $red;
+    border-bottom: 1px solid $midred;
+    background: $lightred;
+    line-height: 2em;
+    margin: 2em 0;
 }
 
 .mktoError {
-	display: none !important;
+    display: none !important;
 }

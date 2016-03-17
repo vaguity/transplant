@@ -70,6 +70,23 @@
     &:-ms-input-placeholder {
        color: $color;
     }
+    &:focus {
+        &::-webkit-input-placeholder {
+           color: $midgray-light;
+        }
+
+        &:-moz-placeholder {
+           color: $midgray-light;
+        }
+
+        &::-moz-placeholder {
+           color: $midgray-light;
+        }
+
+        &:-ms-input-placeholder {
+           color: $midgray-light;
+        }
+    }
 }
 
 @mixin mask($color: $indigo, $alpha: .6) {

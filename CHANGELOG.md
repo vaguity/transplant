@@ -16,3 +16,5 @@
 - Updated blue in the palette
 - Removed `.pad` and `.margin` helpers for sections and segments
 - Standardized `.copy` as inline-block with flush helpr classes
+- Change form styling
+- Remove hero-, demo-, and contact form-specific styling

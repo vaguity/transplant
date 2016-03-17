@@ -1,57 +1,87 @@
 .modal-active-body {
-	overflow: hidden;
-	@include breakpoint($breakpoint-desktop-small) {
-		overflow: auto;
-	}
+    overflow: hidden;
+    @include breakpoint($breakpoint-desktop-small) {
+        overflow: auto;
+    }
+}
+
+.modal-mask {
+    // display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    height: 100vh;
+    width: 100vw;
+    @include mask($white, .6);
+    &.active {
+        display: block;
+    }
 }
 
 .modal-container {
-	display: none;
-	.modal-close {
-		padding: 0;
-		border: none;
-		color: $white;
-		background: transparent;
-		font-size: 0;
-		line-height: 32px;
-		outline: 0;
-		@include span(2 of 12 last);
-	}
-	.modal-title {
-		@include span(10 of 12);
-	}
-	@include breakpoint($breakpoint-desktop-small) {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $orange;
+    @include span(full);
+    .modal-close {
+        padding: 0;
+        border: none;
+        color: $white;
+        background: transparent;
+        font-size: 0;
+        line-height: 32px;
+        outline: 0;
+        @include span(2 of 12 last);
+    }
+    .modal-title {
+        @include span(10 of 12);
+    }
+    @include breakpoint($breakpoint-desktop-small) {
+        background-color: transparent;
 
-	}
+    }
     .modal-content {
         text-align: left;
     }
-    @include breakpoint($breakpoint-desktop-small) {
-        .modal-close, .modal-title {
-            display: none;
-        }
-        .modal-content.center {
-            text-align: center;
-        }
-    }
+    // @include breakpoint($breakpoint-desktop-small) {
+    //     .modal-close, .modal-title {
+    //         display: none;
+    //     }
+    //     .modal-content.center {
+    //         text-align: center;
+    //     }
+    // }
 }
 
-.modal-container.desktop-show {
-    @include breakpoint($breakpoint-desktop-small) {
-        display: block;
-        .desktop-hide {
-            display: none;
-        }
-
-    }
+.modal-container.active {
+    display: block;
 }
+
+.request-demo-modal {
+    display: inline-block;
+    background-color: $orange;
+}
+
+// .modal-container.desktop-show {
+//     @include breakpoint($breakpoint-desktop-small) {
+//         display: block;
+//         .desktop-hide {
+//             display: none;
+//         }
+
+//     }
+// }
 
 .modal {
-	padding: 20px;
+    padding: 20px;
 }
 
 .modal-active {
-	display: block;
+    display: block;
     top: 0;
     bottom: 0;
     left: 0;
@@ -59,12 +89,12 @@
     position: fixed;
     overflow-y: scroll;
     overflow-x: hidden;
-	background: $orange;
-	min-height: 100vh;
-	z-index: 20;
-	color: $white;
-	@include span(full);
-	-webkit-overflow-scrolling: touch;
+    background: $orange;
+    min-height: 100vh;
+    z-index: 20;
+    color: $white;
+    @include span(full);
+    -webkit-overflow-scrolling: touch;
 }
 
 .modal-link-container.desktop-hide {
@@ -74,25 +104,25 @@
 }
 
 .modal-content {
-	@include span(full);
-	margin-top: 120px;
+    @include span(full);
+    margin-top: 120px;
     @include breakpoint($breakpoint-desktop-small) {
         margin-top: 0;
     }
 }
 
 .modal-title h3 {
-	font-size: 14px;
-	line-height: 16px;
-	color: $white;
-	text-transform: uppercase;
-	margin: 0;
+    font-size: 14px;
+    line-height: 16px;
+    color: $white;
+    text-transform: uppercase;
+    margin: 0;
     text-align: left;
 }
 
 .modal-close span {
-	float: right;
-	margin: 0;
+    float: right;
+    margin: 0;
 }
 
 .modal-desktop {
@@ -101,88 +131,8 @@
         display: block;
     }
 }
-
-// Modal header
-.header-container.modal-active {
-	padding: 0;
-}
-
-.header-container.modal-active .header {
-	display: block;
-	padding: 20px 20px 80px 20px;
-	.logo {
-		display: none;
-	}
-	.nav-icon {
-		margin: 0;
-		@include span(2 of 12 last);
-		min-height: 32px;
-		.nav-icon-bar {
-			display: none;
-		}
-		.icon {
-			display: block;
-			float: right;
-			color: $white;
-			line-height: 1em;
-			margin: 0;
-		}
-	}
-	.primary-nav {
-		display: inline-block;
-		margin-bottom: 40px;
-		font-size: 32px;
-		line-height: 0.8em;
-		@include span(10 of 12);
-		ul li {
-			display: block;
-			margin: 18px 0;
-			&:first-of-type {
-				margin-top: 0;
-			}
-			&:last-of-type {
-				margin-bottom: 0;
-			}
-		}
-	}
-	.secondary-nav, .footer-nav {
-		display: block;
-		@include span(full last);
-	}
-	.secondary-nav {
-		font-size: 18px;
-		line-height: 0.8em;
-		margin-bottom: 40px;
-		ul li {
-			display: block;
-			margin: 18px 0;
-			&:first-of-type {
-				margin-top: 0;
-			}
-			&:last-of-type {
-				margin-bottom: 0;
-			}
-		}
-	}
-	.footer-nav {
-		ul {
-			margin-top: 0;
-			li {
-				margin: 0 2em 12px 0;
-			}
-		}
-		margin-bottom: 20px;
-	}
-	a {
-		@include link($white, $indigo);
-		&.active {
-			@include link($indigo, $white);
-		}
-	}
-}
-
 .modal-content form {
-    input[type="search"], input[type="text"], input[type="tel"], input[type="email"], select {
+    input, select, textarea {
         box-sizing: border-box;
         color: $white;
         background-color: $orange;
@@ -208,18 +158,98 @@
         @include link($white, $blue);
     }
     @include breakpoint($breakpoint-desktop-small) {
-        input[type="search"], input[type="text"], input[type="tel"], input[type="email"], select {
-            color: $lightgray-dark;
-            background-color: $white;
-            border: 1px solid $lightgray;
-            padding: .75em;
-            margin: .25em;
-            font-size: 14px;
-            line-height: 16px;
-            @include placeholder;
-        }
+        // input[type="search"], input[type="text"], input[type="tel"], input[type="email"], select {
+        //     color: $lightgray-dark;
+        //     background-color: $white;
+        //     border: 1px solid $lightgray;
+        //     padding: .75em;
+        //     margin: .25em;
+        //     font-size: 14px;
+        //     line-height: 16px;
+        //     @include placeholder;
+        // }
         select {
             background-image: url('../images/icon-down.png');
+        }
+    }
+}
+
+
+// Modal header
+.header-container.modal-active {
+    padding: 0;
+}
+
+.header-container.modal-active .header {
+    display: block;
+    padding: 20px 20px 80px 20px;
+    .logo {
+        display: none;
+    }
+    .nav-icon {
+        margin: 0;
+        @include span(2 of 12 last);
+        min-height: 32px;
+        .nav-icon-bar {
+            display: none;
+        }
+        .icon {
+            display: block;
+            float: right;
+            color: $white;
+            line-height: 1em;
+            margin: 0;
+        }
+    }
+    .primary-nav {
+        display: inline-block;
+        margin-bottom: 40px;
+        font-size: 32px;
+        line-height: 0.8em;
+        @include span(10 of 12);
+        ul li {
+            display: block;
+            margin: 18px 0;
+            &:first-of-type {
+                margin-top: 0;
+            }
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+    }
+    .secondary-nav, .footer-nav {
+        display: block;
+        @include span(full last);
+    }
+    .secondary-nav {
+        font-size: 18px;
+        line-height: 0.8em;
+        margin-bottom: 40px;
+        ul li {
+            display: block;
+            margin: 18px 0;
+            &:first-of-type {
+                margin-top: 0;
+            }
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+    }
+    .footer-nav {
+        ul {
+            margin-top: 0;
+            li {
+                margin: 0 2em 12px 0;
+            }
+        }
+        margin-bottom: 20px;
+    }
+    a {
+        @include link($white, $indigo);
+        &.active {
+            @include link($indigo, $white);
         }
     }
 }

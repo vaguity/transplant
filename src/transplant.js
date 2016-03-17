@@ -2,4 +2,4 @@
 var common = require('./common')
 
 require('scss/transplant.scss')
-// require('js/transplant')
+require('js/transplant')

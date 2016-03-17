@@ -41,7 +41,7 @@
                 padding: 40px;
             }
             &.bleed {
-                section, nav {
+                .segment, section, nav {
                     @include container(1100px);
                     padding: 0;
                     &.full {

@@ -1,18 +1,26 @@
 .request-demo-container {
-    background-color: $orange;
+    background-color: $offwhite-light;
 }
 
 .request-demo {
-    color: $white;
+    color: $orange;
     text-align: center;
     .copy {
         margin: 60px 0;
     }
     .request-demo-title {
-        font-family: $type-serif;
-        font-size: 50px;
-        line-height: 50px;
+        font-family: $type-sans;
+        font-size: 20px;
+        line-height: 20px;
         margin: 0 0 40px;
+        text-transform: uppercase;
+    }
+    .request-demo-description {
+        font-family: $type-serif;
+        font-size: 24px;
+        line-height: 24px;
+        color: $darkgray;
+        margin: 40px 0;
     }
     .request-demo-button {
         display: inline-block;
