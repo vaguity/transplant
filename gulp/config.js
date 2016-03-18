@@ -49,6 +49,12 @@ var config = {
                 dest: packageType.cssPartial,
             },
             {
+                name: 'picturefill',
+                path: '/dist/picturefill.min.js',
+                rename: 'picturefill.js',
+                dest: packageType.jsLib,
+            },
+            {
                 name: 'susy',
                 path: '/sass/**',
                 dest: packageType.cssLib,
