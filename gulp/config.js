@@ -74,6 +74,9 @@ var config = {
             dest: packageType.jsLib,
         },
     },
+    watch: {
+        bundles: src + '/*.js',
+    },
 }
 
 module.exports = config

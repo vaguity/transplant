@@ -14,4 +14,5 @@ gulp.task('watch', ['watch:set', 'watch:build'], function () {
     livereload.listen()
     gulp.watch(config.sass.src, ['build'])
     gulp.watch(config.js.src, ['build'])
+    gulp.watch(config.watch.bundles, ['build'])
 })
