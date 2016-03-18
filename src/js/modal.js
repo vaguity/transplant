@@ -58,7 +58,6 @@ $(document).ready(function () {
     $(document).keydown(function (e) {
         // Esc key
         var keycode = (e.keyCode ? e.keyCode : e.which)
-        console.log(keycode)
         if (keycode === 27) {
             if (keypressDown[27] == null) {
                 modalDisable($('.modal-active'))

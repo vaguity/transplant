@@ -18,3 +18,4 @@
 - Standardized `.copy` as inline-block with flush helpr classes
 - Change form styling
 - Remove hero-, demo-, and contact form-specific styling
+- Changed how modal functions work
