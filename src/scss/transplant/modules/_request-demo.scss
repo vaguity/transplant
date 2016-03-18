@@ -29,9 +29,20 @@
     }
 }
 
+.request-demo-modal-container {
+    max-width: 1200px;
+    // margin: 0 auto;
+    &.modal-active {
+        margin: 0 auto;
+    }
+}
+
 .request-demo-modal {
-    margin: 40px;
+    margin: 5%;
     background-color: $orange;
+    @include breakpoint($breakpoint-desktop-small) {
+        margin: 40px;
+    }
     .copy {
         display: inline-block;
         width: 100%;

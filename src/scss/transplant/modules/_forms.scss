@@ -1,17 +1,17 @@
 input, select, textarea {
     display: inline-block;
+    box-sizing: border-box;
     font-family: $type-sans;
     text-transform: none;
-    font-size: 14px;
-    margin: 10px 0;
+    font-size: 16px;
+    margin: 12px;
     border-radius: 0;
     border: none;
     width: 100%;
-    padding: .75em;
+    padding: 12px 0;
     overflow: hidden;
-    line-height: 1.2em;
+    line-height: 20px;
     color: $orange;
-    box-sizing: border-box;
     &:focus {
         outline: none;
     }
