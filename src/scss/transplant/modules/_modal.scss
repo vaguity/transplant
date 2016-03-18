@@ -1,13 +1,10 @@
 .modal-active-body {
     overflow: hidden;
-    @include breakpoint($breakpoint-desktop-small) {
-        overflow: auto;
-    }
 }
 
 .modal-mask {
-    // display: none;
-    position: absolute;
+    display: none;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -40,31 +37,30 @@
     .modal-title {
         @include span(10 of 12);
     }
-    @include breakpoint($breakpoint-desktop-small) {
-        background-color: transparent;
-
-    }
     .modal-content {
         text-align: left;
     }
-    // @include breakpoint($breakpoint-desktop-small) {
-    //     .modal-close, .modal-title {
-    //         display: none;
-    //     }
-    //     .modal-content.center {
-    //         text-align: center;
-    //     }
-    // }
+    @include breakpoint($breakpoint-desktop-small) {
+        .modal-close {
+            @include span(full break);
+            position: absolute;
+            right: 40px;
+            min-width: 0;
+            width: 24px;
+            float: right;
+            margin: 0;
+        }
+        .modal-title {
+            @include span(full break);
+            margin: 0 0 40px;
+        }
+        // .modal-content.center {
+        //     text-align: center;
+        // }
+    }
 }
 
-.modal-container.active {
-    display: block;
-}
 
-.request-demo-modal {
-    display: inline-block;
-    background-color: $orange;
-}
 
 // .modal-container.desktop-show {
 //     @include breakpoint($breakpoint-desktop-small) {
@@ -95,6 +91,16 @@
     color: $white;
     @include span(full);
     -webkit-overflow-scrolling: touch;
+    @include breakpoint($breakpoint-desktop-small) {
+        top: 10%;
+        bottom: auto;
+        left: 10%;
+        right: 10%;
+        height: auto;
+        width: 80%;
+        min-height: 0;
+
+    }
 }
 
 .modal-link-container.desktop-hide {
@@ -105,19 +111,37 @@
 
 .modal-content {
     @include span(full);
-    margin-top: 120px;
+    margin: 40px 0;
     @include breakpoint($breakpoint-desktop-small) {
         margin-top: 0;
     }
 }
 
-.modal-title h3 {
+.modal-title {
     font-size: 14px;
+    font-family: $type-sans;
     line-height: 16px;
     color: $white;
     text-transform: uppercase;
     margin: 0;
     text-align: left;
+    @include breakpoint($breakpoint-desktop-small) {
+        text-align: center;
+        font-size: 20px;
+        line-height: 32px;
+    }
+}
+
+.modal-description {
+    display: none;
+    font-family: $type-serif;
+    font-size: 24px;
+    line-height: 24px;
+    text-align: center;
+    margin: 40px 0;
+    @include breakpoint($breakpoint-desktop-small) {
+        display: block;
+    }
 }
 
 .modal-close span {
@@ -125,12 +149,13 @@
     margin: 0;
 }
 
-.modal-desktop {
-    display: none;
-    @include breakpoint($breakpoint-desktop-small) {
-        display: block;
-    }
-}
+// .modal-desktop {
+//     display: none;
+//     @include breakpoint($breakpoint-desktop-small) {
+//         display: block;
+//     }
+// }
+
 .modal-content form {
     input, select, textarea {
         box-sizing: border-box;
@@ -140,24 +165,33 @@
         border: 1px solid $darkorange;
         border-width: 1px 0 0 0;
         border-color: $darkorange;
-        padding: .75em 0;
+        padding: 12px 0;
         font-size: 16px;
         line-height: 18px;
         margin: 0;
         @include placeholder($white);
-    }
-    input:last-of-type {
-        border-width: 1px 0 0;
-    }
-    // Job function is always the last field in a form and should include a bottom border
-    select:last-of-type {
-        border-width: 1px 0;
+        @include breakpoint($breakpoint-desktop-small) {
+            @include span(200px);
+            color: $orange;
+            border-width: 0;
+            background-color: $white;
+            margin: 12px;
+            padding: 24px;
+            @include placeholder($orange);
+        }
+        @include breakpoint($breakpoint-desktop) {
+            @include span(264px);
+        }
     }
     button {
-        margin: 20px 0;
-        @include link($white, $blue);
+        margin: 12px 0;
+        @include button;
+        @include link($white, $indigo);
+        @include button-background($white, $offwhite, $indigo, $indigo);
+        border-width: 0;
     }
     @include breakpoint($breakpoint-desktop-small) {
+        text-align: center;
         // input[type="search"], input[type="text"], input[type="tel"], input[type="email"], select {
         //     color: $lightgray-dark;
         //     background-color: $white;
@@ -170,6 +204,9 @@
         // }
         select {
             background-image: url('../images/icon-down.png');
+        }
+        button {
+            padding: 14px 24px;
         }
     }
 }

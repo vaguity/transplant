@@ -28,3 +28,12 @@
         @include button-background($orange, $darkorange, $white, $offwhite);
     }
 }
+
+.request-demo-modal {
+    margin: 40px;
+    background-color: $orange;
+    .copy {
+        display: inline-block;
+        width: 100%;
+    }
+}
