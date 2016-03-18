@@ -37,6 +37,9 @@
             font-size: 60px;
             line-height: 1.1em;
         }
+        .request-demo {
+            margin: 60px 0 0;
+        }
     }
     @include breakpoint($breakpoint-desktop) {
         position: relative;
@@ -56,17 +59,14 @@
             font-size: 20px;
             padding: 20px 0;
         }
-        .request-demo {
-            margin: 60px 0 0;
-            a {
-                @include link($white, $offwhite, false);
-                @include button;
-                @include button-background($white, $offwhite, $orange, $darkorange);
-                font-size: 16px;
-                line-height: 1em;
-                padding: 14px 24px;
-                width: auto;
-            }
+        .request-demo a {
+            @include link($white, $offwhite, false);
+            @include button;
+            @include button-background($white, $offwhite, $orange, $darkorange);
+            font-size: 16px;
+            line-height: 1em;
+            padding: 14px 24px;
+            width: auto;
         }
     }
 }
