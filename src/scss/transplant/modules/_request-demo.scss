@@ -25,21 +25,20 @@
     .request-demo-button {
         display: inline-block;
         @include button;
-        @include button-background($orange, $darkorange, $white, $offwhite);
+        @include link($white, $offwhite, false);
+        @include button-background($white, $offwhite, $orange, $darkorange);
     }
 }
 
-.request-demo-modal-container {
+.request-demo-hero-modal-container {
+    @include container(1200px);
     max-width: 1200px;
-    // margin: 0 auto;
     &.modal-active {
         margin: 0 auto;
     }
 }
 
-.request-demo-modal {
-    margin: 5%;
-    background-color: $orange;
+.request-demo-hero-modal {
     @include breakpoint($breakpoint-desktop-small) {
         margin: 40px;
     }

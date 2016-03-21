@@ -28,9 +28,13 @@
     }
     .promo-description {
         font-family: $type-serif;
-        font-size: 50px;
-        line-height: 50px;
+        font-size: 42px;
+        line-height: 42px;
         margin: 40px 0;
+        @include breakpoint($breakpoint-desktop-small) {
+            font-size: 50px;
+            line-height: 50px;
+        }
     }
     .promo-jump {
         margin: 40px 0 0;

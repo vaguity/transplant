@@ -36,7 +36,7 @@ Transplant should be included in a project with a package manager and task runne
 
 ## Development
 
-HTML files for the header, footer and a sample page with both the header and footer are included in `/dist`. Serve those files from that directory locally (for example, with `python -m SimpleHTTPServer 8000`).
+HTML files for the header, footer and a sample page with both the header and footer are included in `/dist`. Serve those files from that directory locally with `npm run up`.
 
 Run the following in the root directory before making changes:
 

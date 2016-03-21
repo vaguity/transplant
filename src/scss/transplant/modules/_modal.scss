@@ -40,6 +40,8 @@
         @include span(10 of 12);
     }
     .modal-content {
+        @include span(full);
+        margin: 40px 0 0;
         text-align: left;
     }
     @include breakpoint($breakpoint-desktop-small) {
@@ -50,11 +52,13 @@
             min-width: 0;
             width: 24px;
             float: right;
-            // margin: 0;
         }
         .modal-title {
             @include span(full break);
             margin: 0 0 40px;
+        }
+        .modal-content {
+            margin: 0;
         }
     }
 }
@@ -94,11 +98,6 @@
     @include breakpoint($breakpoint-desktop-small) {
         display: none;
     }
-}
-
-.modal-content {
-    @include span(full);
-    margin: 40px 0 0;
 }
 
 .modal-title {
@@ -143,6 +142,7 @@
         border-width: 1px 0 0 0;
         border-color: $darkorange;
         margin: 0;
+        padding: 12px 0;
         @include placeholder($white);
         @include breakpoint($breakpoint-desktop-small) {
             @include span(200px);
@@ -150,6 +150,7 @@
             border-width: 0;
             background-color: $white;
             margin: 12px;
+            padding: 12px;
             @include placeholder($orange);
         }
         @include breakpoint($breakpoint-desktop) {
@@ -182,7 +183,7 @@
 
 .header-container.modal-active .header {
     display: block;
-    padding: 20px 20px 80px 20px;
+    padding: 20px 20px 0;
     .logo {
         display: none;
     }

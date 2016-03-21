@@ -20,3 +20,4 @@
 - Remove hero-, demo-, and contact form-specific styling
 - Changed how modal functions work
 - Changed hero height
+- Changed modal structure

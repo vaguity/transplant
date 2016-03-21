@@ -98,4 +98,5 @@ img.border {
 
 .btn {
     @include button;
+    @include button-background($white, $offwhite, $orange, $darkorange);
 }
