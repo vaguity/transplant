@@ -97,7 +97,7 @@
 }
 
 .modal-content {
-    width: 100%;
+    @include span(full);
     margin: 40px 0 0;
 }
 

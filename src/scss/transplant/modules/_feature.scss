@@ -11,11 +11,15 @@
     h2 {
         font-family: $type-serif;
         color: $darkgray;
-        font-size: 50px;
-        line-height: 1em;
+        font-size: 36px;
+        line-height: 36px;
         margin: 0 0 60px;
         text-transform: none;
         font-weight: normal;
+        @include breakpoint($breakpoint-desktop-small) {
+            font-size: 50px;
+            line-height: 50px;
+        }
     }
     img {
         display: block;
@@ -23,17 +27,29 @@
     .feature-image {
         margin: 60px 0;
         &.two img {
-            display: inline-block;
-            @include span(2 of 4);
-            &:last-of-type {
-                @include span(2 of 4 last);
+            display: none;
+            &.mobile {
+                display: inline-block;
+            }
+            @include breakpoint($breakpoint-desktop-small) {
+                display: inline-block;
+                @include span(2 of 4);
+                &:last-of-type {
+                    @include span(2 of 4 last);
+                }
             }
         }
         &.three img {
-            display: inline-block;
-            @include span(2 of 6);
-            &:last-of-type {
-                @include span (2 of 6 last);
+            display: none;
+            &.mobile {
+                display: inline-block;
+            }
+            @include breakpoint($breakpoint-desktop-small) {
+                display: inline-block;
+                @include span(2 of 6);
+                &:last-of-type {
+                    @include span (2 of 6 last);
+                }
             }
         }
     }
@@ -48,7 +64,7 @@
     .feature-description {
         font-family: $type-serif;
         font-size: 24px;
-        line-height: 36px;
+        line-height: 32px;
         color: $darkgray;
         margin: 40px 0 0;
     }
@@ -59,8 +75,20 @@
 }
 
 .feature.full .copy {
+    &> * {
+        @include container(4);
+        padding: 0 5%;
+    }
+    .feature-image, .full {
+        @include container;
+        padding: 0;
+    }
     @include breakpoint($breakpoint-desktop) {
         &> * {
+            @include container(1100px);
+            padding: 0;
+        }
+        .feature-image {
             @include container(1100px);
         }
         .full {
@@ -74,6 +102,10 @@
 }
 
 .feature .validation {
+    display: none;
+    @include breakpoint($breakpoint-desktop-small) {
+        display: block;
+    }
     border: 1px solid $lightgray;
     border-width: 1px 0;
     .validation-logo {
