@@ -6,3 +6,50 @@ $type-base: $helvetica;
 $type-serif: $sentinel;
 $type-sans: $futura;
 $type-icons: $percocons;
+
+@function type-calculate-rem($size) {
+    $remSize: $size / 16px;
+    @return $remSize * 1rem;
+}
+
+@mixin type-style($font-size, $line-height-size) {
+    font-size: $size;
+    font-size: font-calculate-rem($size);
+    line-height: $line-height-size;
+    line-height: font-calculate-rem($line-height-size);
+}
+
+@mixin type-style-sans-large() {
+    font-family: $type-sans;
+    @include type-style(70px, 88px);
+}
+
+@mixin type-style-serif-large() {
+    font-family: $type-serif;
+    @include type-style(50px, 60px);
+}
+
+@mixin type-style-sans-medium() {
+    font-family: $type-sans;
+    @include type-style(20px, 26px);
+}
+
+@mixin type-style-serif-medium() {
+    font-family: $type-serif;
+    @include type-style(24px, 36px);
+}
+
+@mixin type-style-base-base() {
+    font-family: $type-base;
+    @include type-style(16px, 16px);
+}
+
+@mixin type-style-sans-base() {
+    font-family: $type-sans;
+    @include type-style(16px, 16px);
+}
+
+@mixin type-style-base-small() {
+    font-family: $type-base;
+    @include type-style(13px, 18px);
+}

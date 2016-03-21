@@ -102,10 +102,6 @@
 }
 
 .feature .validation {
-    display: none;
-    @include breakpoint($breakpoint-desktop-small) {
-        display: block;
-    }
     border: 1px solid $lightgray;
     border-width: 1px 0;
     .validation-logo {

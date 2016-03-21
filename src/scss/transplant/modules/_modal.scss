@@ -11,7 +11,7 @@
     height: 100%;
     height: 100vh;
     width: 100vw;
-    @include mask($white, .6);
+    @include mask($white, .9);
     &.active {
         display: block;
     }

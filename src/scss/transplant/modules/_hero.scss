@@ -24,8 +24,8 @@
     }
     h1 {
         font-family: $type-sans;
-        font-size: 42px;
-        line-height: 44px;
+        font-size: 36px;
+        line-height: 38px;
         @include breakpoint($breakpoint-tablet) {
             font-size: 60px;
             line-height: 66px;
