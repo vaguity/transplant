@@ -51,7 +51,7 @@
     }
 }
 
-@mixin placeholder($color: $lightgray-dark, $focus-color: $midgray-light) {
+@mixin placeholder($color: $orange, $focus-color: $indigo) {
     &::-webkit-input-placeholder {
        color: $color;
     }

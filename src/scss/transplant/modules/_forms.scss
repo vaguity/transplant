@@ -18,11 +18,11 @@ input, select, textarea {
     @include breakpoint($breakpoint-tablet) {
         // TODO: Figure this out
         width: 70%;
-        margin: 12px;
-        padding: 24px;
     }
     @include breakpoint($breakpoint-desktop-small) {
         vertical-align: bottom;
+        margin: 12px;
+        padding: 24px;
     }
 }
 

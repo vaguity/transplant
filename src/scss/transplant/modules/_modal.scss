@@ -97,7 +97,7 @@
     @include span(full);
     -webkit-overflow-scrolling: touch;
     @include breakpoint($breakpoint-desktop-small) {
-        top: 10%;
+        top: 20%;
         bottom: auto;
         left: 10%;
         right: 10%;
@@ -138,34 +138,19 @@
 .modal-content form {
     input, select, textarea {
         box-sizing: border-box;
-        color: $white;
-        background-color: $orange;
-        background-image: none;
-        border: 1px solid $darkorange;
-        border-width: 1px 0 0 0;
-        border-color: $darkorange;
-        margin: 0;
-        padding: 12px 0;
-        @include placeholder($white, $lightgray-light);
         @include breakpoint($breakpoint-desktop-small) {
             @include span(200px);
-            color: $orange;
-            border-width: 0;
-            background-color: $white;
-            margin: 12px;
-            padding: 12px;
             @include placeholder($orange);
         }
         @include breakpoint($breakpoint-desktop) {
             @include span(264px);
-            margin: 12px;
         }
     }
     button {
         margin: 12px 0 0;
         @include button;
         @include link($white, $indigo);
-        @include button-background($white, $offwhite, $indigo, $indigo);
+        @include button-background($white, $offwhite, $indigo, $darkorange);
         border-width: 0;
     }
     @include breakpoint($breakpoint-desktop-small) {

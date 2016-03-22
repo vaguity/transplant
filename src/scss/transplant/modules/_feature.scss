@@ -1,5 +1,5 @@
 .feature-container.alt {
-    background: $offwhite;
+    background: $offwhite-light;
 }
 
 .feature {
@@ -101,7 +101,7 @@
 .feature .learn-more {
     border: 1px solid $lightgray;
     border-width: 1px 0 0;
-    margin: 60px 0 0;
+    // margin: 60px 0 0;
 }
 
 .learn-more {
@@ -131,7 +131,10 @@
     }
     .learn-more-jump {
         display: block;
-        margin: 60px 0 0;
+        margin: 40px 0 0;
+        @include breakpoint($breakpoint-desktop-small) {
+            margin: 60px 0 0;
+        }
     }
     .learn-more-jump .btn {
         display: inline-block;
