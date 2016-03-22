@@ -21,3 +21,4 @@
 - Changed how modal functions work
 - Changed hero height
 - Changed modal structure
+- Added typography mixins with breakpoints

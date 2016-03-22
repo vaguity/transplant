@@ -17,11 +17,14 @@
             padding: 20px 5%;
         }
         &.bleed {
-            &> .segment, &> section {
+            .segment, section {
                 padding: 0 5%;
                 &.full {
                     @include container(full);
                     padding: 0;
+                }
+                &.pad {
+                    padding: 5%;
                 }
             }
             nav {
@@ -46,6 +49,9 @@
                     padding: 0;
                     &.full {
                         @include container(full);
+                    }
+                    &.pad {
+                        padding: 0;
                     }
                 }
             }

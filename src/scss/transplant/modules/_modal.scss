@@ -19,11 +19,11 @@
 
 .modal-container {
     display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
     background-color: $orange;
     @include span(full);
+    .segment {
+        padding: 5%;
+    }
     .modal-close {
         min-width: 0;
         padding: 0;
@@ -45,6 +45,10 @@
         text-align: left;
     }
     @include breakpoint($breakpoint-desktop-small) {
+        .copy {
+            width: 100%;
+            margin: 40px auto;
+        }
         .modal-close {
             @include span(full break);
             position: absolute;
@@ -90,28 +94,17 @@
         height: auto;
         width: 80%;
         min-height: 0;
-
-    }
-}
-
-.modal-link-container.desktop-hide {
-    @include breakpoint($breakpoint-desktop-small) {
-        display: none;
     }
 }
 
 .modal-title {
-    font-size: 14px;
-    font-family: $type-sans;
-    line-height: 16px;
     color: $white;
     text-transform: uppercase;
     margin: 0;
     text-align: left;
+    @include type-style-sans-medium;
     @include breakpoint($breakpoint-desktop-small) {
         text-align: center;
-        font-size: 20px;
-        line-height: 32px;
     }
 }
 
