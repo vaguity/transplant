@@ -93,12 +93,13 @@ form label {
 }
 
 .mktoCustomError {
-    font-size: 14px;
-    color: $red;
-    border-bottom: 1px solid $midred;
-    background: $lightred;
-    line-height: 2em;
-    margin: 2em 0;
+    display: none;
+    margin: 0 0 40px;
+    @include type-style-base-base;
+    text-align: center;
+    &.active {
+        display: block;
+    }
 }
 
 .mktoError {

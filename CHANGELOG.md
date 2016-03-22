@@ -22,3 +22,4 @@
 - Changed hero height
 - Changed modal structure
 - Added typography mixins with breakpoints
+- Added hide script

@@ -9,16 +9,12 @@
         margin: 60px 0;
     }
     .request-demo-title {
-        font-family: $type-sans;
-        font-size: 20px;
-        line-height: 20px;
+        @include type-style-sans-medium;
         margin: 0 0 40px;
         text-transform: uppercase;
     }
     .request-demo-description {
-        font-family: $type-serif;
-        font-size: 24px;
-        line-height: 24px;
+        @include type-style-serif-medium;
         color: $darkgray;
         margin: 40px 0;
     }
@@ -30,7 +26,7 @@
     }
 }
 
-.request-demo-hero-modal-container {
+.request-demo-hero-modal-container, .request-demo-modal-container {
     @include container(1200px);
     max-width: 1200px;
     &.modal-active {
@@ -38,10 +34,7 @@
     }
 }
 
-.request-demo-hero-modal {
-    @include breakpoint($breakpoint-desktop-small) {
-        margin: 40px;
-    }
+.request-demo-hero-modal, .request-demo-modal {
     .copy {
         display: inline-block;
         width: 100%;

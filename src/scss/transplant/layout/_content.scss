@@ -23,9 +23,6 @@
                     @include container(full);
                     padding: 0;
                 }
-                &.pad {
-                    padding: 5%;
-                }
             }
             nav {
                 padding: 20px 5%;
@@ -40,18 +37,12 @@
                 @include container(1100px);
                 padding: 0;
             }
-            &.pad {
-                padding: 40px;
-            }
             &.bleed {
                 .segment, section, nav {
                     @include container(1100px);
                     padding: 0;
                     &.full {
                         @include container(full);
-                    }
-                    &.pad {
-                        padding: 0;
                     }
                 }
             }

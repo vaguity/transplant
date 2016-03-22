@@ -51,7 +51,7 @@
     }
 }
 
-@mixin placeholder($color: $lightgray-dark) {
+@mixin placeholder($color: $lightgray-dark, $focus-color: $midgray-light) {
     &::-webkit-input-placeholder {
        color: $color;
     }
@@ -69,19 +69,19 @@
     }
     &:focus {
         &::-webkit-input-placeholder {
-           color: $midgray-light;
+           color: $focus-color;
         }
 
         &:-moz-placeholder {
-           color: $midgray-light;
+           color: $focus-color;
         }
 
         &::-moz-placeholder {
-           color: $midgray-light;
+           color: $focus-color;
         }
 
         &:-ms-input-placeholder {
-           color: $midgray-light;
+           color: $focus-color;
         }
     }
 }

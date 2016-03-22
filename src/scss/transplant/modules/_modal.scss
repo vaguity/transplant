@@ -1,3 +1,10 @@
+.content .modal-container .segment {
+    padding: 5%;
+    @include breakpoint($breakpoint-desktop-small) {
+        padding: 0;
+    }
+}
+
 .modal-active-body {
     overflow: hidden;
 }
@@ -45,6 +52,9 @@
         text-align: left;
     }
     @include breakpoint($breakpoint-desktop-small) {
+        .segment {
+            padding: 0;
+        }
         .copy {
             width: 100%;
             margin: 40px auto;
@@ -136,7 +146,7 @@
         border-color: $darkorange;
         margin: 0;
         padding: 12px 0;
-        @include placeholder($white);
+        @include placeholder($white, $lightgray-light);
         @include breakpoint($breakpoint-desktop-small) {
             @include span(200px);
             color: $orange;
@@ -152,7 +162,7 @@
         }
     }
     button {
-        margin: 12px 0;
+        margin: 12px 0 0;
         @include button;
         @include link($white, $indigo);
         @include button-background($white, $offwhite, $indigo, $indigo);
@@ -166,6 +176,13 @@
         button {
             padding: 14px 24px;
         }
+    }
+}
+
+.modal-content .mktoCustomError {
+    text-align: left;
+    @include breakpoint($breakpoint-desktop-small) {
+        text-align: center;
     }
 }
 
