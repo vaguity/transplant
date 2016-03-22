@@ -57,8 +57,7 @@
         <div class="mask">
         <div class="segment hero">
             <div>
-                <h1>Get everyone on<br>
-                the same page</h1>
+                <h1>The leader in social and content marketing software</h1>
                 <div class="request-demo">
                     <a href="#" class="btn modal-link request-demo-hero-modal-link" data-modal-class="request-demo-hero-modal-container">Request a demo</a>
                 </div>
@@ -67,161 +66,18 @@
         </div>
     </div>
 
-    <div class="modal-mask"></div>
-
-    <div class="modal-container request-demo-hero-modal-container">
-        <div class="segment request-demo-hero-modal">
-            <div class="copy">
-                <button class="modal-close"><span class="icon icon-24 icon-close"></span></button>
-                <div class="modal-title">See Percolate in action</div>
-                <div class="modal-description">See how Percolate can help you grow revenue and deliver better customer experiences.</div>
-                <div class="modal-content">
-                    <div class="form">
-                        <script>
-                        if (typeof MktoForms2 === 'undefined') {
-                            document.write("\x3Cscript src=\"//app-sj02.marketo.com/js/forms2/js/forms2.min.js\">\x3C/script>");
-                        }
-                        </script>
-
-                        <div class="mktoCustomError mktoCustomError_1278"></div>
-
-                        <form id="mktoForm_1278" style="visibility: hidden;" class="marketo-form" data-id="1278" data-redirect-url="https://percolate.com/request-demo?success=1" data-field-display="inline-block"></form>
-
-                        <script>
-                        if (typeof marketoForm === 'undefined') {
-                            var marketoForm = {};
-                        }
-                        var marketoFormID = 1278;
-                        var marketoFormSelector = '#mktoForm_' + marketoFormID;
-                        marketoForm[marketoFormID] = {
-                            'selector': '#mktoForm_' + marketoFormID,
-                            'redirect-url': $(marketoFormSelector).data('redirect-url'),
-                            'display': typeof $(marketoFormSelector).data('field-display') !== 'undefined' ? $(marketoFormSelector).data('field-display') : 'inline',
-                            'marketoLoadForm': function() {},
-                        };
-
-                        marketoForm[1278]['marketoLoadForm'] = function() {
-                            $(marketoForm[1278]['selector']).empty();
-                            MktoForms2.loadForm("//app-sj02.marketo.com", "306-EXV-607", 1278, function(form) {
-                                form.onSuccess(function(values, followUpUrl) {
-                                    var redirectUrl = marketoForm[marketoFormID]['redirect-url'];
-                                    if ('Job_Function__c' in values) {
-                                        if (values['Job_Function__c'] == 'Agency or Consultant') {
-                                            redirectUrl = 'https://percolate.com/request-demo?success=2';
-                                        }
-                                    }
-                                    location.href = redirectUrl;
-                                    return false;
-                                });
-                                form.onValidate(function(callback) {
-                                    var submittable = true;
-                                    $(marketoForm[1278]['selector']  + ' .mktoRequired').each(function() {
-                                        if ($(this).val() == '') {
-                                            submittable = false;
-                                            $('.mktoCustomError_1278').html('Please fill out all the fields.').addClass('active');
-                                        }
-                                    });
-                                    var emailVal = $(marketoForm[1278]['selector'] + ' input#Email').val();
-                                    var emailDomain = emailVal.replace(/.+@([^.]+).+/, '\$1');
-                                    var i = 0;
-                                    var personalDomains = ['gmail', 'hotmail', 'yahoo'];
-                                    for (i in personalDomains) {
-                                        if (emailDomain == personalDomains[i]) {
-                                            submittable = false;
-                                            $('.mktoCustomError_1278').html('Please enter your company email address.').addClass('active');
-                                        }
-                                    }
-                                    form.submittable(submittable);
-                                });
-                            });
-
-                            MktoForms2.whenReady(function(form) {
-                                $('#mktoForms2BaseStyle, #mktoForms2ThemeStyle').remove();
-                                $(marketoForm[1278]['selector'] + ' style').remove();
-                                $(marketoForm[1278]['selector'] + ', ' + marketoForm[1278]['selector'] + ' .mktoFormRow, ' + marketoForm[1278]['selector'] + ' .mktoFieldDescriptor, ' + marketoForm[1278]['selector'] + ' .mktoField, ' + marketoForm[1278]['selector'] + ' .mktoHasWidth, ' + marketoForm[1278]['selector'] + ' .mktoButtonWrap').removeAttr('style');
-                                $('.mktoAsterix, .mktoOffset, .mktoClear, .mktoLabel, .mktoGutter, .mktoError').remove();
-                                enquire.register("screen and (min-width: 1000px)", {
-                                    match: function() {
-                                        $(marketoForm[1278]['selector']).find('.mktoFieldDescriptor, .mktoFieldWrap').css('display', marketoForm[1278]['display']);
-                                        $(marketoForm[1278]['selector'] + ' textarea').closest('.mktoFormRow').css('display', 'block');
-                                    },
-                                    unmatch: function() {
-                                        $(marketoForm[1278]['selector']).find('.mktoFormRow, .mktoFieldDescriptor, .mktoButtonRow, .mktoFieldWrap').css('display', '');
-                                    }
-                                });
-                                $(marketoForm[1278]['selector']).css('visibility', 'visible');
-
-                                stickySetup();
-                            });
-                        }
-
-                        marketoForm[1278]['marketoLoadForm']();
-
-                        enquire.register("screen and (max-width: 1000px)", {
-                            unmatch: function() {
-                                marketoForm[1278]['marketoLoadForm']();
-                            }
-                        });
-                        </script>
-                    </div>
-                </div>
-            </div>
+    <div class="product-overview-container container">
+        <div class="segment product-overview">
 
         </div>
     </div>
 
-    <div class="overview-container container">
-        <div class="segment overview">
+    <div class="body-container container">
+        <div class="segment body">
             <div class="copy">
-                <div class="overview-title">Campaign Planning &amp; Alignment</div>
-
-                <p>Say goodbye to plans buried in disconnected spreadsheets or emails. It’s time to bring multi-channel campaign planning into a single place. Percolate is the only system that gives you visibility into every activity, from the biggest global initiative down to each individual tweet.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="feature-container container full bleed alt">
-        <div class="segment feature">
-            <div class="copy">
-                <h2>Coordinate all your marketing activities</h2>
-
-                <img srcset="assets/img/v2/plan_coordinate.jpg 1x, assets/img/v2/plan_coordinate_2x.png 2x" alt="" class="border">
-
-                <img srcset="" alt="">
-
-                <div class="feature-title">Planner</div>
-
-                <p class="feature-description">Plan all your marketing campaigns and activities on a single calendar. Get an at-a-glance view of all your scheduled creative across every channel and region.</p>
-
-                <a href="#" class="feature-jump">Learn more <span class="icon icon-16 icon-right"></span></a>
-            </div>
-        </div>
-    </div>
-
-    <div class="feature-container container full bleed">
-        <div class="segment feature">
-            <div class="copy">
-                <h2>Turn your ideas into action</h2>
-
-                <img srcset="assets/img/v2/plan_ideas.jpg 1x, assets/img/v2/plan_ideas_2x.png 2x" alt="" class="border">
-
-                <div class="feature-title">Briefs</div>
-
-                <p class="feature-description">Clearly communicate your campaign and content ideas with briefs. Briefs and brief templates let you describe your campaign, event, or content idea with your team or agency. No more word docs, never ending email threads, and scope creep.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="feature-container container full bleed alt">
-        <div class="segment feature">
-            <div class="copy">
-                <h2>Deliver on-time, on-brand campaigns</h2>
-
-                <img srcset="assets/img/v2/plan_campaigns.jpg 1x, assets/img/v2/plan_campaigns_2x.png 2x" alt="" class="border">
-
-                <div class="feature-title">Campaigns</div>
-
-                <p class="feature-description">Campaigns is a centralized place for your team and agency partners to collaborate on your initiatives. Percolate combines workspaces, activity streams, files, and tasks in one place. See the status of all your campaigns without status update meetings.</p>
+                <div class="body-title">Percolate Powers the World’s Best Brands</div>
+                <div class="body-description">Over 800 brands trust Percolate to save time, elevate their content, and improve marketing ROI</div>
+                <div class="body-logos"></div>
             </div>
         </div>
     </div>
@@ -232,9 +88,7 @@
                 <div class="request-demo-title">Better Marketing Starts Today</div>
                 <div class="request-demo-description">See how Percolate makes it easier to turn storytelling into sales growth</div>
 
-                <div class="request-demo-link"><a href="#" class="btn hide-link" data-hide-class="request-demo-form">See Percolate</a></div>
-
-                <div class="form request-demo-form borders hide hide-element">
+                <div class="form request-demo-form borders">
                     <script>
                     if (typeof MktoForms2 === 'undefined') {
                         document.write("\x3Cscript src=\"//app-sj02.marketo.com/js/forms2/js/forms2.min.js\">\x3C/script>");
@@ -323,29 +177,6 @@
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="learn-more-container container">
-        <div class="segment learn-more">
-            <div class="copy">
-                <div class="learn-more-title">Learn more about Percolate</div>
-                <div class="learn-more-jump"><a href="#" class="btn">Download the datasheet</a></div>
-            </div>
-        </div>
-    </div>
-
-    <div class="promo-container container full bleed" style="background-image: url('http://percolate-dotcom-preview.appspot.com/static/images/brand/hero.jpg');">
-        <a href="#" class="full">
-        <div class="mask">
-            <div class="segment promo next">
-                <div class="copy">
-                    <div class="promo-title">Create</div>
-                    <div class="promo-description">Content Marketing &amp; Asset Management</div>
-                    <div class="promo-jump">Learn more <span class="icon icon-16 icon-right"></span></div>
-                </div>
-            </div>
-        </div>
-        </a>
     </div>
 
     </div>
