@@ -12,31 +12,46 @@ $type-icons: $percocons;
     @return $remSize * 1rem;
 }
 
-@mixin type-style($font-size, $line-height-size) {
-    font-size: $size;
-    font-size: font-calculate-rem($size);
+@mixin type-style($font-size: 16px, $line-height-size: 16px) {
+    font-size: $font-size;
+    font-size: type-calculate-rem($font-size);
     line-height: $line-height-size;
-    line-height: font-calculate-rem($line-height-size);
+    line-height: type-calculate-rem($line-height-size);
 }
 
 @mixin type-style-sans-large() {
     font-family: $type-sans;
-    @include type-style(70px, 88px);
+    @include type-style(36px, 40px);
+    @include breakpoint($breakpoint-tablet) {
+        @include type-style(60px, 68px);
+    }
+    @include breakpoint($breakpoint-desktop-small) {
+        @include type-style(70px, 88px);
+    }
 }
 
 @mixin type-style-serif-large() {
     font-family: $type-serif;
-    @include type-style(50px, 60px);
+    @include type-style(36px, 40px);
+    @include breakpoint($breakpoint-desktop-small) {
+        @include type-style(50px, 60px);
+    }
 }
 
 @mixin type-style-sans-medium() {
     font-family: $type-sans;
-    @include type-style(20px, 26px);
+    @include type-style(16px, 24px);
+    @include breakpoint($breakpoint-desktop-small) {
+        @include type-style(20px, 26px);
+    }
 }
 
 @mixin type-style-serif-medium() {
     font-family: $type-serif;
-    @include type-style(24px, 36px);
+    @include type-style(20px, 28px);
+    @include breakpoint($breakpoint-desktop-small) {
+        @include type-style(24px, 36px);
+    }
 }
 
 @mixin type-style-base-base() {

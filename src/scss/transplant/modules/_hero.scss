@@ -23,17 +23,7 @@
         vertical-align: middle;
     }
     h1 {
-        font-family: $type-sans;
-        font-size: 36px;
-        line-height: 38px;
-        @include breakpoint($breakpoint-tablet) {
-            font-size: 60px;
-            line-height: 66px;
-        }
-        @include breakpoint($breakpoint-desktop) {
-            font-size: 70px;
-            line-height: 74px;
-        }
+        @include type-style-sans-large;
         br {
             display: none;
             @include breakpoint($breakpoint-desktop) {
