@@ -1,0 +1,111 @@
+.product-overview-hero-container {
+    background-color: $orange;
+}
+
+.product-overview-hero {
+    .product-overview-hero-headline {
+        display: block;
+        padding: 0 5%;
+        margin: 60px 0;
+    }
+    .product-overview-hero-image {
+        display: block;
+        padding: 0 5%;
+    }
+    @include breakpoint($breakpoint-desktop) {
+        height: 480px;
+        h1 {
+            @include type-style(60px, 68px);
+        }
+        .product-overview-hero-headline {
+            display: table-cell;
+            text-align: left;
+            @include span(12 of 24);
+            padding: 0 10px 0 span(1 of 24);
+            margin: 0;
+            float: none;
+        }
+        .product-overview-hero-image {
+            display: table-cell;
+            @include span(12 of 24 last);
+            vertical-align: bottom;
+            margin: 0;
+            padding: 0 span(1 of 24) 0 0;
+            float: none;
+        }
+    }
+    @include breakpoint($breakpoint-desktop-large) {
+        height: 600px;
+        h1 {
+            @include type-style-sans-large;
+        }
+    }
+}
+
+.product-overview .copy {
+    @include span(full);
+    margin: 60px 0;
+}
+
+.product-overview nav {
+    display: inline-block;
+    @include span(full);
+    border: 1px solid $lightgray;
+    border-width: 1px 1px 0;
+}
+
+.product-overview nav ul {
+    margin: 0;
+    li {
+        display: block;
+        @include span(25% no-gutters);
+        background-color: $offwhite-light;
+        a {
+            display: block;
+            vertical-align: middle;
+            padding: 20px 0;
+            @include type-style-sans-base;
+            @include link($indigo, $orange);
+            border: 1px solid $lightgray;
+            border-width: 0 1px 0 0;
+            text-align: center;
+            &.active {
+                @include link($orange, $orange);
+            }
+            &:link, &:visited, &:hover, &:active {
+                border-color: $lightgray;
+            }
+        }
+        &:last-of-type {
+            a {
+                border-width: 0;
+            }
+        }
+        .icon {
+            display: block;
+            margin: 0 auto 10px;
+        }
+    }
+}
+
+.product-overview .slide {
+    display: inline-block;
+    @include span(full);
+    border: 1px solid $lightgray;
+    h2 {
+        @include type-style-serif-medium;
+        color: $darkgray;
+        text-align: left;
+        text-transform: none;
+        font-weight: normal;
+    }
+}
+
+.product-overview {
+    .product-overview-summary {
+        @include span(4 of 12);
+    }
+    .product-overview-image {
+        @include span(8 of 12 last);
+    }
+}

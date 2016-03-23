@@ -89,3 +89,10 @@
 @mixin mask($color: $indigo, $alpha: .6) {
     background-color: rgba($color, $alpha);
 }
+
+@mixin icon($size: 16px) {
+    width: $size;
+    height: $size;
+    font-size: $size;
+    line-height: $size;
+}

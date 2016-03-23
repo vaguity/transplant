@@ -34,6 +34,10 @@ input, select, textarea {
 
 input, select {
     @include breakpoint($breakpoint-desktop-small) {
+        @include span(274px);
+        margin: 12px;
+    }
+    @include breakpoint($breakpoint-desktop) {
         @include span(342px);
         margin: 12px;
     }
