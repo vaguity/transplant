@@ -80,13 +80,12 @@
         @include span(25% no-gutters);
         a {
             display: block;
-            vertical-align: middle;
+            // vertical-align: middle;
             padding: 20px 0;
             min-height: 74px;
-            @include type-style-sans-base;
             border: 1px solid $lightgray;
             border-width: 0 1px 0 0;
-            text-align: center;
+            // text-align: center;
             font-size: 0;
             line-height: 0;
             color: transparent;
