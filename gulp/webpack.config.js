@@ -19,7 +19,6 @@ var entries = {
     transplant: srcDir + '/transplant.js',
     guide: srcDir + '/guide.js',
     grid: srcDir + '/grid.js',
-    product: srcDir + '/product.js',
 }
 
 var config = {
@@ -59,7 +58,7 @@ var config = {
         new CommonsChunkPlugin({
             name: 'common',
             filename: 'common.js',
-            chunks: ['transplant', 'guide', 'grid', 'product'],
+            chunks: ['transplant', 'guide', 'grid'],
         }),
     ],
 }

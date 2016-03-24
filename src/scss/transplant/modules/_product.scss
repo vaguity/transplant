@@ -42,16 +42,35 @@
     }
 }
 
+.product-overview-container {
+    @include breakpoint($breakpoint-desktop-small) {
+        background-color: $offwhite-light;
+    }
+}
+
+.content .container.full.bleed .segment.product-overview.full {
+    @include breakpoint($breakpoint-desktop-small) {
+        @include container(1100px);
+        padding: 0;
+    }
+}
+
 .product-overview .copy {
     @include span(full);
-    margin: 60px 0;
+    @include breakpoint($breakpoint-desktop-small) {
+        margin: 60px 0;
+    }
 }
 
 .product-overview nav {
-    display: inline-block;
+    display: none;
+    box-sizing: border-box;
     @include span(full);
     border: 1px solid $lightgray;
     border-width: 1px 1px 0;
+    @include breakpoint($breakpoint-desktop-small) {
+        display: inline-block;
+    }
 }
 
 .product-overview nav ul {
@@ -59,21 +78,37 @@
     li {
         display: block;
         @include span(25% no-gutters);
-        background-color: $offwhite-light;
         a {
             display: block;
             vertical-align: middle;
             padding: 20px 0;
+            min-height: 74px;
             @include type-style-sans-base;
-            @include link($indigo, $orange);
             border: 1px solid $lightgray;
             border-width: 0 1px 0 0;
             text-align: center;
-            &.active {
-                @include link($orange, $orange);
+            font-size: 0;
+            line-height: 0;
+            color: transparent;
+            background-color: $offwhite-light;
+            background-size: contain;
+            background-position: center center;
+            background-repeat: no-repeat;
+            &.create {
+                background-image: url('/assets/img/v2/product_overview/icons/create.png');
+                &.activate-active, &:hover, &:active {
+                    background-image: url('/assets/img/v2/product_overview/icons/create_hover.png');
+                }
             }
-            &:link, &:visited, &:hover, &:active {
-                border-color: $lightgray;
+            &.execute {
+                background-image: url('/assets/img/v2/product_overview/icons/execute.png');
+                background-size: contain;
+                &.activate-active, &:hover, &:active {
+                    background-image: url('/assets/img/v2/product_overview/icons/execute_hover.png');
+                }
+            }
+            &.activate-active {
+                background-color: $white;
             }
         }
         &:last-of-type {
@@ -90,22 +125,78 @@
 
 .product-overview .slide {
     display: inline-block;
+    box-sizing: border-box;
     @include span(full);
     border: 1px solid $lightgray;
+    border-width: 0 0 1px;
+    text-align: center;
+    background-color: $white;
     h2 {
+        margin: 60px 0 40px;
         @include type-style-serif-medium;
         color: $darkgray;
-        text-align: left;
         text-transform: none;
         font-weight: normal;
+    }
+    .product-overview-icon {
+        margin: 40px 0;
+    }
+    .product-overview-description {
+        margin: 40px 0;
+    }
+    .product-overview-jump {
+        margin: 40px 0;
+        @include breakpoint($breakpoint-desktop-small) {
+            margin: 40px 0 0;
+            a {
+                display: inline-block;
+                @include button;
+                @include link($white, $orange);
+                @include button-background($white, $offwhite, $orange, $darkorange);
+                border-width: 0;
+            }
+            .icon {
+                display: none;
+            }
+        }
+    }
+    @include breakpoint($breakpoint-desktop-small) {
+        border: 1px solid $lightgray;
+        border-width: 1px;
+        padding: 50px;
+        text-align: left;
+        display: none;
+        &.activate-active {
+            display: inline-block;
+        }
+        h2 {
+            text-align: left;
+        }
+        .product-overview-icon {
+            display: none;
+        }
     }
 }
 
 .product-overview {
-    .product-overview-summary {
-        @include span(4 of 12);
-    }
     .product-overview-image {
-        @include span(8 of 12 last);
+        display: none;
+    }
+    .product-overview-summary .product-overview-image {
+        display: block;
+        border: 1px solid $lightgray;
+        border-width: 1px 0;
+    }
+    @include breakpoint($breakpoint-desktop-small) {
+        .product-overview-summary {
+            .product-overview-image {
+                display: none;
+            }
+            @include span(4 of 12);
+        }
+        .product-overview-image {
+            display: block;
+            @include span(8 of 12 last);
+        }
     }
 }

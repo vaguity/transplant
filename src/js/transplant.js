@@ -1,5 +1,6 @@
 require('./main')
 require('./hide')
+require('./activate')
 require('./modal')
 require('./sticky')
 // require('./vertical-center')
