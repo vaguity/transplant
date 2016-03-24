@@ -101,7 +101,6 @@
 .feature .learn-more {
     border: 1px solid $lightgray;
     border-width: 1px 0 0;
-    // margin: 60px 0 0;
 }
 
 .learn-more {
@@ -112,7 +111,7 @@
     }
     .learn-more-title {
         color: $darkgray;
-        margin: 0 0 40px;
+        margin: 60px 0 40px;
         @include type-style-serif-large;
     }
     .learn-more-logo {

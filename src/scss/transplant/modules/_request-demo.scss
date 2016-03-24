@@ -40,3 +40,34 @@
         width: 100%;
     }
 }
+
+.request-demo-container.desktop-show {
+    @include breakpoint($breakpoint-desktop-small) {
+        .copy {
+            margin: 60px 0 0;
+        }
+        .request-demo-link {
+            display: none;
+        }
+    }
+}
+
+.request-demo-modal-container.desktop-show {
+    @include breakpoint($breakpoint-desktop-small) {
+        display: block;
+        @include container(full);
+        background-color: $offwhite-light;
+        .copy {
+            margin: 0 auto 40px
+        }
+        .modal-close {
+            display: none;
+        }
+        .modal-title {
+            display: none;
+        }
+        .modal-content {
+            display: block
+        }
+    }
+}

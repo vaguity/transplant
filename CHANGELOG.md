@@ -23,3 +23,4 @@
 - Changed modal structure
 - Added typography mixins with breakpoints
 - Added hide script
+- Added activate script
