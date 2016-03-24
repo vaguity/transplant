@@ -141,6 +141,7 @@
         @include breakpoint($breakpoint-desktop-small) {
             @include span(200px);
             @include placeholder($orange);
+            margin: 12px 24px;
         }
         @include breakpoint($breakpoint-desktop) {
             @include span(264px);
