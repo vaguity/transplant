@@ -1,4 +1,3 @@
-var dist = './dist'
 var src = './src'
 
 var packageType = {
@@ -11,11 +10,9 @@ var config = {
     sass: {
         src: src + '/scss/**/*.scss',
         dest: src + '/css',
-        dist: dist + '/assets/css',
     },
     js: {
         src: src + '/js/**/*.js',
-        dist: dist + '/assets/js',
     },
     staticDependencies: {
         src: src + '/lib',
