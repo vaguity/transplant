@@ -42,6 +42,9 @@
         outline: 0;
         @include span(2 of 12 last);
         margin: 0;
+        &:hover, &:active {
+            color: $darkorange;
+        }
     }
     .modal-title {
         @include span(10 of 12);
