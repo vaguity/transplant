@@ -67,7 +67,10 @@
             display: none;
         }
         .modal-content {
-            display: block
+            display: block;
+            form button {
+                @include button-background($white, $offwhite, $orange, $darkorange);
+            }
         }
     }
 }
