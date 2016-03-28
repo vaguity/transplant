@@ -81,13 +81,26 @@
     }
 }
 
+.feature .copy {
+    .feature-image, .full {
+        @include container;
+    }
+    @include breakpoint($breakpoint-desktop) {
+        .feature-image {
+            @include container(1100px);
+        }
+        .full {
+            @include container;
+        }
+    }
+}
+
 .feature.full .copy {
     &> * {
         @include container(4);
         padding: 0 5%;
     }
     .feature-image, .full {
-        @include container;
         padding: 0;
     }
     @include breakpoint($breakpoint-desktop) {
@@ -95,11 +108,7 @@
             @include container(1100px);
             padding: 0;
         }
-        .feature-image {
-            @include container(1100px);
-        }
         .full {
-            @include container;
             &.two, &.three {
                 margin-left: 5%;
                 margin-right: 5%;
