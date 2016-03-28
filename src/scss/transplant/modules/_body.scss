@@ -10,6 +10,7 @@
         margin: 40px 0;
         @include type-style-serif-medium;
         text-align: center;
+        color: $darkgray;
     }
     .body-logos {
         display: inline-block;
