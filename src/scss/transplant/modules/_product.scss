@@ -5,7 +5,7 @@
 .product-overview-hero {
     .product-overview-hero-headline {
         display: block;
-        padding: 0 5%;
+        padding: 0 2%;
         margin: 60px 0;
     }
     .product-overview-hero-image {
@@ -158,17 +158,35 @@
     text-align: center;
     background-color: $white;
     h2 {
-        margin: 60px 0 40px;
-        @include type-style-serif-medium;
+        margin: 40px 0 24px;
+        font-family: $type-serif;
+        @include type-style(36px, 40px);
         color: $darkgray;
         text-transform: none;
         font-weight: normal;
+        @include breakpoint($breakpoint-desktop) {
+            @include type-style(24px, 36px);
+            text-align: left;
+            margin: 60px 0 40px;
+        }
     }
     .product-overview-icon {
         margin: 40px 0;
+        @include breakpoint($breakpoint-desktop) {
+            display: none;
+        }
     }
     .product-overview-description {
-        margin: 40px 0;
+        margin: 24px 0;
+        br {
+            display: none;
+        }
+        @include breakpoint($breakpoint-desktop) {
+            margin: 40px 0;
+            br {
+                display: block;
+            }
+        }
     }
     .product-overview-jump {
         margin: 40px 0;
@@ -194,12 +212,6 @@
         display: none;
         &.activate-active {
             display: inline-block;
-        }
-        h2 {
-            text-align: left;
-        }
-        .product-overview-icon {
-            display: none;
         }
     }
 }

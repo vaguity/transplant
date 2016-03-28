@@ -8,7 +8,7 @@
         width: 100%;
         margin: 60px 0;
     }
-    h2 {
+    .feature-headline {
         font-family: $type-serif;
         color: $darkgray;
         margin: 0 0 60px;
@@ -20,7 +20,8 @@
         display: block;
     }
     .feature-image {
-        margin: 60px 0;
+        margin: 60px 0 40px;
+        line-height: 0;
         .image {
             display: inline-block;
             margin: 0 auto;
@@ -66,7 +67,7 @@
         @include type-style-sans-medium;
         margin: 40px 0 20px;
         @include breakpoint($breakpoint-desktop-small) {
-            margin: 60px 0 40px;
+            margin: 40px 0 24px;
         }
     }
     .feature-description {
@@ -74,12 +75,12 @@
         color: $darkgray;
         margin: 20px 0 0;
         @include breakpoint($breakpoint-desktop-small) {
-            margin: 40px 0 0;
+            margin: 24px 0 0;
         }
     }
     .feature-jump {
         display: inline-block;
-        margin: 40px 0 0;
+        margin: 24px 0 0;
     }
 }
 

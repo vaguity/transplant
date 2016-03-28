@@ -11,9 +11,9 @@ body {
 }
 
 a {
-    @include link($orange);
+    @include link($orange, $indigo);
     &.secondary {
-        @include link($blue);
+        @include link($indigo, $orange);
     }
 }
 
