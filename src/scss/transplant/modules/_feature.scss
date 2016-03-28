@@ -24,6 +24,12 @@
         .image {
             display: inline-block;
             margin: 0 auto;
+            img {
+                margin: 0 auto;
+                &.push-down {
+                    margin: 60px auto 0;
+                }
+            }
         }
         &.two .image {
             display: none;
