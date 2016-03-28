@@ -157,6 +157,12 @@
     border-width: 0 0 1px;
     text-align: center;
     background-color: $white;
+    br {
+        display: none;
+        @include breakpoint($breakpoint-desktop) {
+            display: block;
+        }
+    }
     h2 {
         margin: 40px 0 24px;
         font-family: $type-serif;
@@ -178,14 +184,8 @@
     }
     .product-overview-description {
         margin: 24px 0;
-        br {
-            display: none;
-        }
         @include breakpoint($breakpoint-desktop) {
             margin: 40px 0;
-            br {
-                display: block;
-            }
         }
     }
     .product-overview-jump {
