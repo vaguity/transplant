@@ -21,7 +21,10 @@
     }
     .feature-image {
         margin: 60px 0;
-        &.two img {
+        .image {
+            margin: 0 auto;
+        }
+        &.two .image {
             display: none;
             &.mobile {
                 display: inline-block;
@@ -34,7 +37,7 @@
                 }
             }
         }
-        &.three img {
+        &.three .image {
             display: none;
             &.mobile {
                 display: inline-block;
