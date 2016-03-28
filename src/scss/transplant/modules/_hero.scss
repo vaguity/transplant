@@ -22,7 +22,8 @@
         display: table-cell;
         vertical-align: middle;
     }
-    h1 {
+    h1, .hero-title {
+        color: $white;
         @include type-style-sans-large;
         br {
             display: none;
