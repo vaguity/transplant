@@ -6,9 +6,17 @@
         @include mask($indigo, .6);
     }
     a {
-        @include link($white, $offwhite);
+        @include link($white, $white);
         &.full {
             display: block;
+        }
+        &:hover, &:active {
+            .promo-description {
+                color: $orange;
+            }
+            .promo-jump {
+                color: $orange;
+            }
         }
     }
 }
