@@ -59,8 +59,8 @@
                 <h1>The leader in social and content marketing software</h1>
             </div>
             <div class="product-overview-hero-image">
-                <img srcset="assets/img/v2/product_overview_hero.png 1x, assets/img/v2/product_overview_hero_2x.png 2x" alt="">
-                <img src="assets/img/v2/product_overview_hero_cropped.png" alt="" class="cropped">
+                <img srcset="http://percolate-dotcom-preview.appspot.com/static/images/v3/product/overview/product_overview_hero.png 1x, http://percolate-dotcom-preview.appspot.com/static/images/v3/product/overview/product_overview_hero_2x.png 2x" alt="">
+                <img srcset="http://percolate-dotcom-preview.appspot.com/static/images/v3/product/overview/product_overview_hero_cropped.png 1x, http://percolate-dotcom-preview.appspot.com/static/images/v3/product/overview/product_overview_hero_2x.png 2x" alt="" class="cropped">
             </div>
         </div>
     </div>
@@ -70,57 +70,78 @@
             <div class="copy">
                 <nav>
                     <ul>
-                        <li><a href="#plan" class="slide-nav activate activate-active plan" data-activate="slide-1" data-activate-base="slide" data-activate-menu="plan" data-activate-menu-base="slide-nav">Plan</a></li>
-                        <li><a href="#create" class="slide-nav activate create" data-activate="slide-2" data-activate-base="slide" data-activate-menu="create" data-activate-menu-base="slide-nav">Create</a></li>
-                        <li><a href="#execute" class="slide-nav activate execute" data-activate="slide-3" data-activate-base="slide" data-activate-menu="execute" data-activate-menu-base="slide-nav">Execute</a></li>
-                        <li><a href="#learn" class="slide-nav activate learn" data-activate="slide-4" data-activate-base="slide" data-activate-menu="learn" data-activate-menu-base="slide-nav">Learn</a></li>
+                        <li><a href="#plan" class="slide-nav activate activate-active plan" data-activate="slide-1" data-activate-base="slide" data-activate-menu="plan" data-activate-menu-base="slide-nav">Plan<span class="icon"></span></a></li>
+                        <li><a href="#create" class="slide-nav activate create" data-activate="slide-2" data-activate-base="slide" data-activate-menu="create" data-activate-menu-base="slide-nav">Create<span class="icon"></span></a></li>
+                        <li><a href="#execute" class="slide-nav activate execute" data-activate="slide-3" data-activate-base="slide" data-activate-menu="execute" data-activate-menu-base="slide-nav">Execute<span class="icon"></span></a></li>
+                        <li><a href="#learn" class="slide-nav activate learn" data-activate="slide-4" data-activate-base="slide" data-activate-menu="learn" data-activate-menu-base="slide-nav">Learn<span class="icon"></span></a></li>
                     </ul>
                 </nav>
 
                 <div class="slide slide-1 activate-active">
+                    <div class="product-overview-icon">
+                        <img src="http://localhost:8080/static/images/v3/product/overview/icons/plan_2x.png" alt="">
+                    </div>
                     <div class="product-overview-summary">
-                        <h2>Planning & Campaign Management</h2>
-                        <div class="product-overview-image"><img src="assets/img/v2/product_overview/create_carousel.png" alt=""></div>
+                        <h2>Planning and Campaign Management</h2>
+                        <div class="product-overview-image">
+                            <img src="http://percolate-dotcom-preview.appspot.com/static/images/v3/product/overview/carousel/plan_carousel_2x.png" alt="">
+                        </div>
                         <div class="product-overview-description">Coordinate your marketing across<br> every channel, market, and team</div>
-                        <div class="product-overview-jump"><a href="#">Learn more <span class="icon icon-16 icon-right"></span></a></div>
+                        <div class="product-overview-jump"><a href="{{ url_for('plan') }}">Learn more <span class="icon icon-16 icon-right"></span></a></div>
                     </div>
                     <div class="product-overview-image">
-                        <img src="assets/img/v2/product_overview/create_carousel.png" alt="" class="border">
+                        <a href="{{ url_for('plan') }}"><img srcset="http://percolate-dotcom-preview.appspot.com/static/images/v3/product/overview/carousel/plan_carousel.jpg 1x, http://percolate-dotcom-preview.appspot.com/static/images/v3/product/overview/carousel/plan_carousel_2x.png 2x" alt="" class="border"></a>
                     </div>
                 </div>
 
                 <div class="slide slide-2">
-                    <div class="product-overview-icon"><img src="assets/img/v2/product_overview/icons/create.png" alt=""></div>
+                    <div class="product-overview-icon">
+                        <img src="http://percolate-dotcom-preview.appspot.com/static/images/v3/product/overview/icons/create.png" alt="">
+                    </div>
                     <div class="product-overview-summary">
-                        <h2>Planning & Campaign Management</h2>
-                        <div class="product-overview-description">Coordinate your marketing across every channel, market, and team</div>
-                        <div class="product-overview-jump"><a href="#" class="btn">Learn more</a></div>
+                        <h2>Content Marketing<br> and Asset Management</h2>
+                        <div class="product-overview-image">
+                            <img src="http://percolate-dotcom-preview.appspot.com/static/images/v3/product/overview/carousel/create_carousel_2x.png" alt="">
+                        </div>
+                        <div class="product-overview-description">Build on-brand creative and content,<br> faster than ever</div>
+                        <div class="product-overview-jump"><a href="{{ url_for('create') }}">Learn more <span class="icon icon-16 icon-right"></a></div>
                     </div>
                     <div class="product-overview-image">
-                        <img src="" alt="">
+                        <a href="{{ url_for('create') }}"><img srcset="http://percolate-dotcom-preview.appspot.com/static/images/v3/product/overview/carousel/create_carousel.jpg 1x, http://percolate-dotcom-preview.appspot.com/static/images/v3/product/overview/carousel/create_carousel_2x.png 2x" alt="" class="border"></a>
                     </div>
                 </div>
 
                 <div class="slide slide-3">
-                    <div class="product-overview-icon"><img src="" alt=""></div>
+                    <div class="product-overview-icon">
+                        <img src="http://percolate-dotcom-preview.appspot.com/static/images/v3/product/overview/icons/execute.png" alt="">
+                    </div>
                     <div class="product-overview-summary">
-                        <h2>Planning & Campaign Management</h2>
-                        <div class="product-overview-description">Coordinate your marketing across every channel, market, and team</div>
-                        <div class="product-overview-jump"><a href="#" class="btn">Learn more</a></div>
+                        <h2>Publishing and Social Relationship Management</h2>
+                        <div class="product-overview-image">
+                            <img src="http://percolate-dotcom-preview.appspot.com/static/images/v3/product/overview/carousel/execute_carousel_2x.png" alt="">
+                        </div>
+                        <div class="product-overview-description">Publish content to digital, social,<br> and traditional marketing channels from a single hub</div>
+                        <div class="product-overview-jump"><a href="{{ url_for('execute') }}">Learn more <span class="icon icon-16 icon-right"></a></div>
                     </div>
                     <div class="product-overview-image">
-                        <img src="" alt="">
+                        <a href="{{ url_for('execute') }}"><img srcset="http://percolate-dotcom-preview.appspot.com/static/images/v3/product/overview/carousel/execute_carousel.jpg 1x, http://percolate-dotcom-preview.appspot.com/static/images/v3/product/overview/carousel/execute_carousel_2x.png 2x" alt="" class="border"></a>
                     </div>
                 </div>
 
                 <div class="slide slide-4">
+                    <div class="product-overview-icon">
+                        <img src="http://percolate-dotcom-preview.appspot.com/static/images/v3/product/overview/icons/learn.png" alt="">
+                    </div>
                     <div class="product-overview-summary">
-                        <h2>Planning & Campaign Management</h2>
-                        <div class="product-overview-description">Coordinate your marketing across every channel, market, and team</div>
-                        <div class="product-overview-jump"><a href="#" class="btn">Learn more</a></div>
+                        <h2>Marketing Analytics</h2>
+                        <div class="product-overview-image">
+                            <img src="http://percolate-dotcom-preview.appspot.com/static/images/v3/product/overview/carousel/learn_carousel_2x.png" alt="">
+                        </div>
+                        <div class="product-overview-description">Get insight into marketing operations<br> and campaign performance</div>
+                        <div class="product-overview-jump"><a href="{{ url_for('learn') }}">Learn more <span class="icon icon-16 icon-right"></a></div>
                     </div>
                     <div class="product-overview-image">
-                        <img src="" alt="">
+                        <a href="{{ url_for('learn') }}"><img srcset="http://percolate-dotcom-preview.appspot.com/static/images/v3/product/overview/carousel/learn_carousel.jpg 1x, http://percolate-dotcom-preview.appspot.com/static/images/v3/product/overview/carousel/learn_carousel_2x.png 2x" alt="" class="border"></a>
                     </div>
                 </div>
             </div>
@@ -135,114 +156,17 @@
                 <div class="body-description">Over 800 brands trust Percolate to save time, elevate their content, and improve marketing ROI</div>
                 <div class="body-logos">
                     <div class="row">
-                        <img src="assets/img/v2/product_overview/logos/converse.png" alt="">
-                        <img src="assets/img/v2/product_overview/logos/ibm.png" alt="">
-                        <img src="assets/img/v2/product_overview/logos/mastercard.png" alt="">
-                        <img src="assets/img/v2/product_overview/logos/squarespace.png" alt="">
+                        <img src="http://percolate-dotcom-preview.appspot.com/static/images/v3/product/overview/logos/converse.png" alt="">
+                        <img src="http://percolate-dotcom-preview.appspot.com/static/images/v3/product/overview/logos/ibm.png" alt="">
+                        <img src="http://percolate-dotcom-preview.appspot.com/static/images/v3/product/overview/logos/mastercard.png" alt="">
+                        <img src="http://percolate-dotcom-preview.appspot.com/static/images/v3/product/overview/logos/squarespace.png" alt="">
                     </div>
                     <div class="row">
-                        <img src="assets/img/v2/product_overview/logos/ge.png" alt="">
-                        <img src="assets/img/v2/product_overview/logos/kickstarter.png" alt="">
-                        <img src="assets/img/v2/product_overview/logos/wework.png" alt="">
-                        <img src="assets/img/v2/product_overview/logos/lyft.png" alt="">
+                        <img src="http://percolate-dotcom-preview.appspot.com/static/images/v3/product/overview/logos/ge.png" alt="">
+                        <img src="http://percolate-dotcom-preview.appspot.com/static/images/v3/product/overview/logos/kickstarter.png" alt="">
+                        <img src="http://percolate-dotcom-preview.appspot.com/static/images/v3/product/overview/logos/wework.png" alt="">
+                        <img src="http://percolate-dotcom-preview.appspot.com/static/images/v3/product/overview/logos/lyft.png" alt="">
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="request-demo-container container full bleed">
-        <div class="segment modal request-demo">
-            <div class="copy">
-                <div class="request-demo-title">Better Marketing Starts Today</div>
-                <div class="request-demo-description">See how Percolate makes it easier to turn storytelling into sales growth</div>
-
-                <div class="form request-demo-form borders">
-                    <script>
-                    if (typeof MktoForms2 === 'undefined') {
-                        document.write("\x3Cscript src=\"//app-sj02.marketo.com/js/forms2/js/forms2.min.js\">\x3C/script>");
-                    }
-                    </script>
-                    <div class="mktoCustomError mktoCustomError_1083"></div>
-
-                    <form id="mktoForm_1083" style="visibility: hidden;" class="marketo-form" data-id="1083" data-redirect-url="https://percolate.com/request-demo?success=1" data-field-display="inline-block"></form>
-
-                    <script>
-                    if (typeof marketoForm === 'undefined') {
-                        var marketoForm = {};
-                    }
-                    var marketoFormID = 1083;
-                    var marketoFormSelector = '#mktoForm_' + marketoFormID;
-                    marketoForm[marketoFormID] = {
-                        'selector': '#mktoForm_' + marketoFormID,
-                        'redirect-url': $(marketoFormSelector).data('redirect-url'),
-                        'display': typeof $(marketoFormSelector).data('field-display') !== 'undefined' ? $(marketoFormSelector).data('field-display') : 'inline',
-                        'marketoLoadForm': function() {},
-                    };
-
-                    marketoForm[1083]['marketoLoadForm'] = function() {
-                        $(marketoForm[1083]['selector']).empty();
-                        MktoForms2.loadForm("//app-sj02.marketo.com", "306-EXV-607", 1083, function(form) {
-                            form.onSuccess(function(values, followUpUrl) {
-                                var redirectUrl = marketoForm[marketoFormID]['redirect-url'];
-                                if ('Job_Function__c' in values) {
-                                    if (values['Job_Function__c'] == 'Agency or Consultant') {
-                                        redirectUrl = 'https://percolate.com/request-demo?success=2';
-                                    }
-                                }
-                                location.href = redirectUrl;
-                                return false;
-                            });
-                            form.onValidate(function(callback) {
-                                var submittable = true;
-                                $(marketoForm[1083]['selector']  + ' .mktoRequired').each(function() {
-                                    if ($(this).val() == '') {
-                                        submittable = false;
-                                        $('.mktoCustomError_1083').html('Please fill out all the fields.').addClass('active');
-                                    }
-                                });
-                                var emailVal = $(marketoForm[1083]['selector'] + ' input#Email').val();
-                                var emailDomain = emailVal.replace(/.+@([^.]+).+/, '\$1');
-                                var i = 0;
-                                var personalDomains = ['gmail', 'hotmail', 'yahoo'];
-                                for (i in personalDomains) {
-                                    if (emailDomain == personalDomains[i]) {
-                                        submittable = false;
-                                        $('.mktoCustomError_1083').html('Please enter your company email address.').addClass('active');
-                                    }
-                                }
-                                form.submittable(submittable);
-                            });
-                        });
-
-                        MktoForms2.whenReady(function(form) {
-                            $('#mktoForms2BaseStyle, #mktoForms2ThemeStyle').remove();
-                            $(marketoForm[1083]['selector'] + ' style').remove();
-                            $(marketoForm[1083]['selector'] + ', ' + marketoForm[1083]['selector'] + ' .mktoFormRow, ' + marketoForm[1083]['selector'] + ' .mktoFieldDescriptor, ' + marketoForm[1083]['selector'] + ' .mktoField, ' + marketoForm[1083]['selector'] + ' .mktoHasWidth, ' + marketoForm[1083]['selector'] + ' .mktoButtonWrap').removeAttr('style');
-                            $('.mktoAsterix, .mktoOffset, .mktoClear, .mktoLabel, .mktoGutter, .mktoError').remove();
-                            enquire.register("screen and (min-width: 1000px)", {
-                                match: function() {
-                                    $(marketoForm[1083]['selector']).find('.mktoFieldDescriptor, .mktoFieldWrap').css('display', marketoForm[1083]['display']);
-                                    $(marketoForm[1083]['selector'] + ' textarea').closest('.mktoFormRow').css('display', 'block');
-                                },
-                                unmatch: function() {
-                                    $(marketoForm[1083]['selector']).find('.mktoFormRow, .mktoFieldDescriptor, .mktoButtonRow, .mktoFieldWrap').css('display', '');
-                                }
-                            });
-                            $(marketoForm[1083]['selector']).css('visibility', 'visible');
-
-                            stickySetup();
-                        });
-                    }
-
-                    marketoForm[1083]['marketoLoadForm']();
-
-                    enquire.register("screen and (max-width: 1000px)", {
-                        unmatch: function() {
-                            marketoForm[1083]['marketoLoadForm']();
-                        }
-                    });
-                    </script>
                 </div>
             </div>
         </div>
