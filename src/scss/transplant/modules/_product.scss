@@ -164,14 +164,14 @@
         }
     }
     h2 {
-        margin: 40px 0 24px;
+        margin: 24px 0 36px;
         font-family: $type-serif;
-        @include type-style(36px, 40px);
+        @include type-style(28px, 36px);
         color: $darkgray;
         text-transform: none;
         font-weight: normal;
         @include breakpoint($breakpoint-tablet){
-            @include type-style(50px, 60px);
+            @include type-style(44px, 52px);
         }
         @include breakpoint($breakpoint-desktop) {
             @include type-style(24px, 36px);
@@ -180,10 +180,13 @@
         }
     }
     .product-overview-icon {
-        margin: 40px auto;
+        margin: 40px auto 24px;
         img {
-            max-width: 100px;
-            max-height: 100px;
+            height: 70px;
+            width: auto;
+            @include breakpoint($breakpoint-tablet) {
+                height: 80px;
+            }
         }
         @include breakpoint($breakpoint-desktop) {
             display: none;

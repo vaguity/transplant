@@ -24,3 +24,8 @@
 - Added typography mixins with breakpoints
 - Added hide script
 - Added activate script
+
+## 2.0.1
+
+- Fixed `img.border` handling at smaller layouts to prevent horizontal scroll
+- Updated product overview layout
