@@ -17,7 +17,7 @@
     }
     @include breakpoint($breakpoint-desktop-small) {
         height: 480px;
-        h1 {
+        .hero-title {
             @include type-style(54px, 60px);
         }
         .product-overview-hero-headline {
@@ -45,7 +45,7 @@
         }
     }
     @include breakpoint($breakpoint-desktop) {
-        h1 {
+        .hero-title {
             @include type-style(60px, 68px);
         }
 
