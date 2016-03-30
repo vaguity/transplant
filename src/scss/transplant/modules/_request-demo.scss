@@ -53,6 +53,14 @@
 }
 
 .request-demo-modal-container.desktop-show {
+    .borders {
+        input, select, textarea {
+            border-width: 0;
+            @include breakpoint($breakpoint-desktop-small) {
+                border-width: 1px;
+            }
+        }
+    }
     @include breakpoint($breakpoint-desktop-small) {
         display: block;
         @include container(full);

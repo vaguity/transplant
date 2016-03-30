@@ -22,6 +22,10 @@
         display: table-cell;
         vertical-align: middle;
     }
+    // TODO: h1 style is legacy
+    h1 {
+        color: $white;
+    }
     .hero-title {
         color: $white;
         margin: 0 0 24px;

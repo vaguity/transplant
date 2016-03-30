@@ -30,3 +30,4 @@
 - Fixed `img.border` handling at smaller layouts to prevent horizontal scroll
 - Updated product overview layout
 - Added semantic subhed handling to heroes
+- Removed borders on `.desktop-show` demo form
