@@ -7,18 +7,28 @@ var srcDir = path.resolve(rootDir, 'src')
 var distDir = path.resolve(rootDir, 'dist/assets')
 var nodeModulesDir = path.resolve(rootDir, 'node_modules')
 
-var uglifyOptions = {
-    compress: {
-        warnings: false,
+var uglifyEnvOptions = {
+    production: {
+        compress: {
+            warnings: false,
+        },
+        comments: false,
+        sourceMap: false,
     },
-    comments: false,
-    sourceMap: false,
+    development: {
+        compress: false,
+        mangle: false,
+        beautify: true,
+        comments: true,
+        sourceMap: false,
+    },
 }
+
+var uglifyOptions = typeof isProduction !== 'undefined' ? uglifyEnvOptions.production : uglifyEnvOptions.development
 
 var entries = {
     transplant: srcDir + '/transplant.js',
     guide: srcDir + '/guide.js',
-    grid: srcDir + '/grid.js',
 }
 
 var config = {
@@ -55,11 +65,7 @@ var config = {
         }),
         new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.optimize.UglifyJsPlugin(uglifyOptions),
-        new CommonsChunkPlugin({
-            name: 'common',
-            filename: 'common.js',
-            chunks: ['transplant', 'guide', 'grid'],
-        }),
+        new CommonsChunkPlugin('common.js', ['transplant', 'guide']),
     ],
 }
 

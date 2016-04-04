@@ -8,8 +8,10 @@ var webpack = require('webpack')
 
 
 gulp.task('build', function () {
-    var watchCheck = isWatching
+    global.isProduction = typeof global.isProduction !== 'undefined' ? global.isProduction : undefined
+
     var webpackConfig = require('../webpack.config.js')
+    var watchCheck = typeof isWatching !== 'undefined'
 
     return gulp.src(config.src + '/main.js')
         .pipe(gulpWebpack(webpackConfig, webpack))

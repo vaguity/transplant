@@ -8,128 +8,126 @@
 // Palette
 
 .swatch {
-	@include span(1 of 12);
-	&:nth-of-type(12n) {
-		@include span(1 of 12 last);
-	}
+    @include span(1 of 12);
+    &:nth-of-type(12n) {
+        @include span(1 of 12 last);
+    }
 
-	p {
-		color: $midgray-light;
-		font-size: 12px;
-		line-height: 1.2em;
-	}
-	.color {
-		width: 100%;
-		height: 40px;
-	}
-	.name {
-		color: $midgray;
-	}
+    p {
+        color: $midgray-light;
+        font-size: 12px;
+        line-height: 1.2em;
+    }
+    .color {
+        width: 100%;
+        height: 40px;
+    }
+    .name {
+        color: $midgray;
+    }
 
-	.color.orange {
-		background: $orange;
-	}
-	.color.darkorange {
-		background: $darkorange;
-	}
-	.color.lightorange {
-		background: $lightorange;
-	}
-	.color.blue {
-		background: $blue;
-	}
-	.color.indigo {
-		background: $indigo;
-	}
-	.color.maroon {
-		background: $maroon;
-	}
-	.color.blue2 {
-		background: $blue2;
-	}
-	.color.black {
-		background: $black;
-	}
-	.color.darkgray {
-		background: $gray2;
-	}
-	.color.midgray-dark {
-		background: $gray3;
-	}
-	.color.midgray {
-		background: $gray6;
-	}
-	.color.midgray-light {
-		background: $gray7;
-	}
-	.color.lightgray-dark {
-		background: $gray9;
-	}
-	.color.lightgray {
-		background: $grayE;
-	}
+    .color.orange {
+        background: $orange;
+    }
+    .color.darkorange {
+        background: $darkorange;
+    }
+    .color.lightorange {
+        background: $lightorange;
+    }
+    .color.blue {
+        background: $blue;
+    }
+    .color.indigo {
+        background: $indigo;
+    }
+    .color.maroon {
+        background: $maroon;
+    }
+    .color.blue2 {
+        background: $blue2;
+    }
+    .color.black {
+        background: $black;
+    }
+    .color.darkgray {
+        background: $gray2;
+    }
+    .color.midgray-dark {
+        background: $gray3;
+    }
+    .color.midgray {
+        background: $gray6;
+    }
+    .color.midgray-light {
+        background: $gray7;
+    }
+    .color.lightgray-dark {
+        background: $gray9;
+    }
+    .color.lightgray {
+        background: $grayE;
+    }
     .color.lightgray-light {
         background: $grayEB;
     }
-	.color.offwhite {
-		background: $grayF5;
-	}
-	.color.offwhite-light {
-		background: $grayF9;
-	}
-	.color.white {
-		background: $white;
-	}
+    .color.offwhite {
+        background: $grayF5;
+    }
+    .color.offwhite-light {
+        background: $grayF9;
+    }
+    .color.white {
+        background: $white;
+    }
 }
 
 .left .swatch, .right .swatch {
-	@include span(1 of 6);
-	&:nth-of-type(6n) {
-		@include span(1 of 6 last);
-	}
+    @include span(1 of 6);
+    &:nth-of-type(6n) {
+        @include span(1 of 6 last);
+    }
 }
 
 
 // Typography guide
 
 .typography-sample {
-	@include breakpoint($breakpoint-desktop) {
-		h1 {
-			color: $black;
-			text-align: center;
-			font-size: 100px;
-			line-height: 1.1em;
-			margin: 80px 0;
-		}
-		h1.alt {
-			color: $orange;
-			text-align: left;
-			font-size: 60px;
-			font-weight: 100;
-		}
-		p {
-			margin: 80px 0;
-		}
-		p.highlight {
-			font-size: 24px;
-			line-height: 1.33em;
-			color: $darkgray;
-			font-family: $type-serif;
-			font-weight: 100;
-		}
-		p.quote {
-			font-family: $type-serif;
-			font-size: 32px;
-			line-height: 1.25em;
-			color: $darkgray;
-			font-style: italic;
-			font-weight: 100;
-		}
-	}
+    @include breakpoint($breakpoint-desktop) {
+        h1 {
+            color: $black;
+            text-align: center;
+            font-size: 100px;
+            line-height: 1.1em;
+            margin: 80px 0;
+        }
+        h1.alt {
+            color: $orange;
+            text-align: left;
+            font-size: 60px;
+            font-weight: 100;
+        }
+        p {
+            margin: 80px 0;
+        }
+        p.highlight {
+            font-size: 24px;
+            line-height: 1.33em;
+            color: $darkgray;
+            font-family: $type-serif;
+            font-weight: 100;
+        }
+        p.quote {
+            font-family: $type-serif;
+            font-size: 32px;
+            line-height: 1.25em;
+            color: $darkgray;
+            font-style: italic;
+            font-weight: 100;
+        }
+    }
 }
 
 .full-frame-test-container {
-	background: $offwhite;
+    background: $offwhite;
 }
-
-@import 'prototype/base';

@@ -20,7 +20,8 @@ gulp.task('process:dependencies', ['clean:dependencies'], function () {
 
         if (typeof dependency.path !== 'undefined') {
             dependencySource += dependency.path
-        } else {
+        }
+        else {
             dependencySource += '/**'
         }
 

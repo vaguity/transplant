@@ -1,173 +1,173 @@
 .header-container {
-	@include container(4);
-	padding: 0 5%;
-	@include breakpoint($breakpoint-desktop-small) {
-		@include container(full);
-		padding: 0;
-	}
-	@include breakpoint($breakpoint-desktop) {
-		@include container(full);
-	}
+    @include container(4);
+    padding: 0 5%;
+    @include breakpoint($breakpoint-desktop-small) {
+        @include container(full);
+        padding: 0;
+    }
+    @include breakpoint($breakpoint-desktop) {
+        @include container(full);
+    }
 }
 
 .header {
-	.logo {
-		@include span(10 of 12);
-	}
-	.nav-icon {
-		min-width: 0;
-		line-height: 0;
+    .logo {
+        @include span(10 of 12);
+    }
+    .nav-icon {
+        min-width: 0;
+        line-height: 0;
         @include span(2 of 12 last);
-		.icon {
-			display: none;
-		}
-	}
-	.primary-nav, .secondary-nav, .footer-nav {
-		display: none;
-	}
-	@include breakpoint($breakpoint-desktop-small) {
-		@include container(full);
+        .icon {
+            display: none;
+        }
+    }
+    .primary-nav, .secondary-nav, .footer-nav {
+        display: none;
+    }
+    @include breakpoint($breakpoint-desktop-small) {
+        @include container(full);
 
-		.logo {
-			@include span(12 of 48);
-		}
-		.nav-icon {
-			display: none;
-		}
-		.primary-nav {
-			display: block;
-			@include span(22 of 48);
-		}
-		.secondary-nav {
-			display: block;
-			@include span(14 of 48 last);
-		}
-	}
-	@include breakpoint($breakpoint-desktop) {
-		@include container(1100px);
-		.logo {
-			@include span(5 of 24);
-		}
-		.nav-icon {
-			display: none;
-		}
-		.primary-nav {
-			display: block;
-			@include span(12 of 24);
-		}
-		.secondary-nav {
-			display: block;
-			@include span(7 of 24 last);
-		}
-	}
+        .logo {
+            @include span(12 of 48);
+        }
+        .nav-icon {
+            display: none;
+        }
+        .primary-nav {
+            display: block;
+            @include span(22 of 48);
+        }
+        .secondary-nav {
+            display: block;
+            @include span(14 of 48 last);
+        }
+    }
+    @include breakpoint($breakpoint-desktop) {
+        @include container(1100px);
+        .logo {
+            @include span(5 of 24);
+        }
+        .nav-icon {
+            display: none;
+        }
+        .primary-nav {
+            display: block;
+            @include span(12 of 24);
+        }
+        .secondary-nav {
+            display: block;
+            @include span(7 of 24 last);
+        }
+    }
 }
 
 .header {
-	ul {
-		margin: 0;
-		@include breakpoint($breakpoint-desktop-small) {
-			line-height: 35px;
-			margin: 24px 0 0 0;
-		}
-	}
+    ul {
+        margin: 0;
+        @include breakpoint($breakpoint-desktop-small) {
+            line-height: 35px;
+            margin: 24px 0 0 0;
+        }
+    }
 
-	a.active {
-		@include link($orange, $blue);
-	}
+    a.active {
+        @include link($orange, $blue);
+    }
 
-	.logo a {
-		display: block;
-		margin: 30px 0;
-		width: 200px;
-		height: 30px;
-		@include breakpoint($breakpoint-desktop-small) {
-			margin-left: 30px;
-		}
-		@include breakpoint($breakpoint-desktop) {
-			margin-left: 0;
-		}
-	}
+    .logo a {
+        display: block;
+        margin: 30px 0;
+        width: 200px;
+        height: 30px;
+        @include breakpoint($breakpoint-desktop-small) {
+            margin-left: 30px;
+        }
+        @include breakpoint($breakpoint-desktop) {
+            margin-left: 0;
+        }
+    }
 
-	.logo img {
+    .logo img {
         width: 160px;
         height: 24px;
-		@include breakpoint($breakpoint-desktop-small) {
+        @include breakpoint($breakpoint-desktop-small) {
             width: auto;
-			height: auto;
-		}
-	}
+            height: auto;
+        }
+    }
 
-	.nav-icon {
-		padding: 0;
-		border: none;
-		color: transparent;
-		background: transparent;
-		font-size: 0;
-		margin: 30px 0;
-		height: 24px;
-		outline: 0;
-	}
-	.nav-icon-bar {
-		display: block;
-		background: $blue;
-		width: 20px;
-		height: 2px;
-		margin: 4px 0 4px auto;
-		text-align: right;
-	}
-	.primary-nav, .secondary-nav {
-		font-family: $type-serif;
-		ul li {
-			display: block;
-			@include breakpoint($breakpoint-tablet) {
-				display: inline-block;
-				margin: 5px 16px 0 0;
-			}
-			@include breakpoint($breakpoint-desktop) {
-				margin: 5px 20px 0 0;
-			}
-		}
-	}
-	.primary-nav {
-		@include breakpoint($breakpoint-desktop-small) {
-			font-size: 18px;
-			line-height: 1em;
-			margin-bottom: 0;
-		}
-		ul li:last-child {
-			margin-right: 0;
-		}
-	}
-	.secondary-nav {
-		@include breakpoint($breakpoint-desktop-small) {
-			font-size: 13px;
-			line-height: 1em;
-			font-family: $type-base;
-			margin-bottom: 0;
-			text-align: right;
-			.request-demo, .highlight {
-				display: inline-block;
-				margin-top: 0;
-				text-transform: uppercase;
-				font-size: 13px;
-				font-family: $type-sans;
-				line-height: 13px;
-			}
-			.request-demo a, .highlight a {
-				display: block;
-				padding: 10px;
-				border: 1px solid $blue;
-				&:hover, &:active {
-					border-color: $orange;
-				}
-			}
-		}
-		@include breakpoint($breakpoint-desktop) {
-			ul li:last-child {
-				margin-right: 0;
-			}
-		}
-	}
+    .nav-icon {
+        padding: 0;
+        border: none;
+        color: transparent;
+        background: transparent;
+        font-size: 0;
+        margin: 30px 0;
+        height: 24px;
+        outline: 0;
+    }
+    .nav-icon-bar {
+        display: block;
+        background: $blue;
+        width: 20px;
+        height: 2px;
+        margin: 4px 0 4px auto;
+        text-align: right;
+    }
+    .primary-nav, .secondary-nav {
+        font-family: $type-serif;
+        ul li {
+            display: block;
+            @include breakpoint($breakpoint-tablet) {
+                display: inline-block;
+                margin: 5px 16px 0 0;
+            }
+            @include breakpoint($breakpoint-desktop) {
+                margin: 5px 20px 0 0;
+            }
+        }
+    }
+    .primary-nav {
+        @include breakpoint($breakpoint-desktop-small) {
+            font-size: 18px;
+            line-height: 1em;
+            margin-bottom: 0;
+        }
+        ul li:last-child {
+            margin-right: 0;
+        }
+    }
+    .secondary-nav {
+        @include breakpoint($breakpoint-desktop-small) {
+            font-size: 13px;
+            line-height: 1em;
+            font-family: $type-base;
+            margin-bottom: 0;
+            text-align: right;
+            .request-demo, .highlight {
+                display: inline-block;
+                margin-top: 0;
+                text-transform: uppercase;
+                font-size: 13px;
+                font-family: $type-sans;
+                line-height: 13px;
+            }
+            .request-demo a, .highlight a {
+                display: block;
+                padding: 10px;
+                border: 1px solid $blue;
+                &:hover, &:active {
+                    border-color: $orange;
+                }
+            }
+        }
+        @include breakpoint($breakpoint-desktop) {
+            ul li:last-child {
+                margin-right: 0;
+            }
+        }
+    }
     .request-demo {
         text-align: left;
     }
