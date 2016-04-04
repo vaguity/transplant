@@ -11,14 +11,11 @@
 }
 
 .header {
-    .logo {
-        @include span(10 of 12);
-    }
     .nav-icon {
         min-width: 0;
         line-height: 0;
         @include span(2 of 12 last);
-        .icon {
+        .modal-close .icon {
             display: none;
         }
     }
@@ -27,64 +24,119 @@
     }
     @include breakpoint($breakpoint-desktop-small) {
         @include container(full);
-
-        .logo {
-            @include span(12 of 48);
-        }
         .nav-icon {
             display: none;
         }
         .primary-nav {
             display: block;
-            @include span(22 of 48);
+            @include span(75%);
+            margin: 0;
         }
         .secondary-nav {
             display: block;
-            @include span(14 of 48 last);
+            @include span(25% last);
+            margin: 0;
         }
     }
-    @include breakpoint($breakpoint-desktop) {
-        @include container(1100px);
-        .logo {
-            @include span(5 of 24);
-        }
-        .nav-icon {
-            display: none;
-        }
-        .primary-nav {
-            display: block;
-            @include span(12 of 24);
-        }
-        .secondary-nav {
-            display: block;
-            @include span(7 of 24 last);
+    // @include breakpoint($breakpoint-desktop) {
+    //     .primary-nav {
+    //         display: block;
+    //         @include span(12 of 24);
+    //     }
+    //     .secondary-nav {
+    //         display: block;
+    //         @include span(7 of 24 last);
+    //     }
+    // }
+}
+
+.header .primary-nav {
+    .logo {
+        @include span(200px);
+        margin: 20px 50px;
+    }
+    ul {
+        margin: 20px 0;
+        float: left;
+        li {
+            @include breakpoint($breakpoint-desktop-small) {
+                display: inline-block;
+                font-family: $type-serif;
+                @include type-style(20px, 20px);
+                margin: 8px 30px 2px 0;
+            }
         }
     }
 }
+
+.header .secondary-nav {
+    ul {
+        margin: 20px 50px 20px 0;
+        li {
+            margin: 0 30px 0 0;
+            &:last-child {
+                margin: 0;
+            }
+        }
+    }
+    .request-demo a {
+        display: block;
+        @include link($white, $offwhite);
+        @include button;
+        @include button-background($white, $offwhite, $orange, $darkorange);
+        @include type-style(13px, 13px);
+        padding: 13px;
+    }
+}
+
+// .header .primary-nav ul {
+//     li {
+//         @include breakpoint($breakpoint-desktop-small) {
+//             display: inline-block;
+//             font-family: $type-serif;
+//             vertical-align: bottom;
+//             @include type-style(20px, 20px);
+//             margin: 0 20px 0 0;
+//             a {
+//                 display: inline-block;
+//                 height: 20px;
+//                 margin: 5px 0;
+//             }
+//             &.logo {
+//                 margin: 0 50px 0 0;
+//                 a {
+//                     height: auto;
+//                     margin: 0;
+//                     padding: 0;
+//                 }
+//             }
+//             &:last-child {
+//                 margin: 0;
+//             }
+//         }
+//     }
+// }
 
 .header {
     ul {
         margin: 0;
         @include breakpoint($breakpoint-desktop-small) {
-            line-height: 35px;
-            margin: 24px 0 0 0;
+            margin: 36px 0 0 0;
         }
     }
 
     a.active {
-        @include link($orange, $blue);
+        @include link($orange, $indigo);
     }
 
-    .logo a {
+    .logo {
         display: block;
-        margin: 30px 0;
         width: 200px;
         height: 30px;
+        font-size: 0;
+        color: transparent;
         @include breakpoint($breakpoint-desktop-small) {
-            margin-left: 30px;
-        }
-        @include breakpoint($breakpoint-desktop) {
-            margin-left: 0;
+            margin: 0 50px 0 0;
         }
     }
 
@@ -106,27 +158,20 @@
         margin: 30px 0;
         height: 24px;
         outline: 0;
-    }
-    .nav-icon-bar {
-        display: block;
-        background: $blue;
-        width: 20px;
-        height: 2px;
-        margin: 4px 0 4px auto;
-        text-align: right;
+        color: $indigo;
     }
     .primary-nav, .secondary-nav {
-        font-family: $type-serif;
-        ul li {
-            display: block;
-            @include breakpoint($breakpoint-tablet) {
-                display: inline-block;
-                margin: 5px 16px 0 0;
-            }
-            @include breakpoint($breakpoint-desktop) {
-                margin: 5px 20px 0 0;
-            }
-        }
+        // font-family: $type-serif;
+        // ul li {
+        //     display: block;
+        //     @include breakpoint($breakpoint-tablet) {
+        //         display: inline-block;
+        //         margin: 5px 16px 0 0;
+        //     }
+        //     @include breakpoint($breakpoint-desktop) {
+        //         margin: 5px 20px 0 0;
+        //     }
+        // }
     }
     .primary-nav {
         @include breakpoint($breakpoint-desktop-small) {
@@ -140,8 +185,7 @@
     }
     .secondary-nav {
         @include breakpoint($breakpoint-desktop-small) {
-            font-size: 13px;
-            line-height: 1em;
+            @include type-style(13px, 13px);
             font-family: $type-base;
             margin-bottom: 0;
             text-align: right;
@@ -149,17 +193,11 @@
                 display: inline-block;
                 margin-top: 0;
                 text-transform: uppercase;
-                font-size: 13px;
                 font-family: $type-sans;
-                line-height: 13px;
+                @include type-style(13px, 13px);
             }
             .request-demo a, .highlight a {
-                display: block;
-                padding: 10px;
-                border: 1px solid $blue;
-                &:hover, &:active {
-                    border-color: $orange;
-                }
+
             }
         }
         @include breakpoint($breakpoint-desktop) {

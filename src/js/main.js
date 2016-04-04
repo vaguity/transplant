@@ -10,15 +10,6 @@ $(document).ready(function () {
             }
         })
     })
-
-    enquire.register('screen and (min-width: 1000px) and (max-width: 1100px)', {
-        match: function () {
-            $('.header .secondary-nav .jobs-link').text('Jobs')
-        },
-        unmatch: function () {
-            $('.header .secondary-nav .jobs-link').text('We’re Hiring')
-        },
-    })
 })
 
 $(window).load(function () {

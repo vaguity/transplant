@@ -64,7 +64,7 @@ hr {
 }
 
 nav a, a.secondary {
-    @include link($blue);
+    @include link($indigo, $orange);
 }
 
 img.border {

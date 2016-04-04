@@ -59,10 +59,6 @@ var config = {
         root: nodeModulesDir,
     },
     plugins: [
-        new webpack.ProvidePlugin({
-            $: 'jquery',
-            jQuery: 'jquery',
-        }),
         new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.optimize.UglifyJsPlugin(uglifyOptions),
         new CommonsChunkPlugin('common.js', ['transplant', 'guide']),
