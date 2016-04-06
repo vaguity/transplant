@@ -119,7 +119,7 @@
 }
 
 .header .nav-icon {
-    padding: 20px 20px 0 0;
+    padding: 24px 24px 0 0;
     border: none;
     color: transparent;
     background: transparent;
@@ -174,9 +174,6 @@
 }
 
 // Modal header
-.header-container.modal-active .primary-nav ul {
-    display: block;
-}
 
 .header-container.modal-active {
     padding: 0;
@@ -191,6 +188,7 @@
             display: none;
         }
         ul {
+            display: block;
             margin: 24px 0 0 24px;
             li {
                 display: block;
