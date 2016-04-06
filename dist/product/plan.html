@@ -6,10 +6,10 @@
     <title>Percolate Transplant</title>
 
     <link rel="stylesheet" href="//percolate.com/cdn/font/6e37601f430c814f9437a0be910097ad/all.css">
-    <link rel="stylesheet" href="assets/css/sentinel.css">
+    <link rel="stylesheet" href="../assets/css/sentinel.css">
 
-    <script type="text/javascript" src="assets/common.js"></script>
-    <script type="text/javascript" src="assets/transplant.js"></script>
+    <script type="text/javascript" src="../assets/common.js"></script>
+    <script type="text/javascript" src="../assets/transplant.js"></script>
 </head>
 
 <body>
@@ -53,12 +53,24 @@
 <div class="content-container">
     <div id="content" class="content">
 
-    <div class="hero-container container full media-library" style="background-image: url('https://percolate.com/static/images/v3/product/features/asset_manager/asset_manager_hero.jpg');">
+    <div class="sub-nav-container container full">
+        <nav class="sub-nav">
+            <ul>
+                <li><a href="#our-business">Overview</a></li>
+                <li><a href="#our-brand" class="active">Plan</a></li>
+                <li><a href="#how-we-work">Create</a></li>
+                <li><a href="#our-culture">Execute</a></li>
+                <li><a href="#">Learn</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="hero-container container full media-library" style="background-image: url('http://percolate-dotcom-preview.appspot.com/static/images/brand/hero.jpg');">
         <div class="mask">
         <div class="segment hero">
             <div>
-                <div class="hero-title">Connect your asset manager to your creative workflow</div>
-                <h1 class="hero-subhed">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates odio facilis est</h1>
+                <h1 class="hero-title">Get everyone on<br>
+                the same page</h1>
                 <div class="request-demo">
                     <a href="#" class="btn modal-link request-demo-hero-modal-link" data-modal-class="request-demo-hero-modal-container">Request a demo</a>
                 </div>
@@ -70,10 +82,10 @@
     <div class="modal-mask"></div>
 
     <div class="modal-container request-demo-hero-modal-container">
-        <div class="segment modal request-demo-hero-modal">
+        <div class="segment request-demo-hero-modal">
             <div class="copy">
                 <button class="modal-close"><span class="icon icon-24 icon-close"></span></button>
-                <div class="modal-title">See Percolate in Action</div>
+                <div class="modal-title">See Percolate in action</div>
                 <div class="modal-description">See how Percolate can help you grow revenue and deliver better customer experiences.</div>
                 <div class="modal-content">
                     <div class="form">
@@ -82,7 +94,8 @@
                             document.write("\x3Cscript src=\"//app-sj02.marketo.com/js/forms2/js/forms2.min.js\">\x3C/script>");
                         }
                         </script>
-                        <div class="mktoCustomError mktoCustomError_1278" style="display: none;"></div>
+
+                        <div class="mktoCustomError mktoCustomError_1278"></div>
 
                         <form id="mktoForm_1278" style="visibility: hidden;" class="marketo-form" data-id="1278" data-redirect-url="https://percolate.com/request-demo?success=1" data-field-display="inline-block"></form>
 
@@ -172,9 +185,43 @@
     <div class="overview-container container">
         <div class="segment overview">
             <div class="copy">
-                <div class="overview-title">Asset Manager</div>
+                <div class="overview-title">Campaign Planning &amp; Alignment</div>
 
-                <p>The Percolate Asset Manager is the first content repository build directly into your marketing workflow. No more navigating rogue file storage tools to download, transfer, and upload files before you can start working. Now, you can store, share, and access your assets, workflows, campaigns and collaboration all in one place. </p>
+                <p>Say goodbye to plans buried in disconnected spreadsheets or emails. It’s time to bring multi-channel campaign planning into a single place. Percolate is the only system that gives you visibility into every activity, from the biggest global initiative down to each individual tweet.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="feature-container container full bleed alt">
+        <div class="segment feature">
+            <div class="copy">
+                <div class="feature-headline">Coordinate all your marketing activities</div>
+
+                <div class="feature-image">
+                    <div class="image"><img srcset="assets/img/v2/plan_coordinate.jpg 1x, assets/img/v2/plan_coordinate_2x.png 2x" alt="" class="border"></div>
+                </div>
+
+                <h2 class="feature-title">Planner</h2>
+
+                <p class="feature-description">Plan all your marketing campaigns and activities on a single calendar. Get an at-a-glance view of all your scheduled creative across every channel and region.</p>
+
+                <a href="#" class="feature-jump">Learn more <span class="icon icon-16 icon-right"></span></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="feature-container container full bleed">
+        <div class="segment feature full">
+            <div class="copy">
+                <h2>Turn your ideas into action</h2>
+
+                <div class="feature-image">
+                    <div class="image"><img srcset="assets/img/v2/plan_ideas.jpg 1x, assets/img/v2/plan_ideas_2x.png 2x" alt="" class="border"></div>
+                </div>
+
+                <div class="feature-title">Briefs</div>
+
+                <p class="feature-description">Clearly communicate your campaign and content ideas with briefs. Briefs and brief templates let you describe your campaign, event, or content idea with your team or agency. No more word docs, never ending email threads, and scope creep.</p>
             </div>
         </div>
     </div>
@@ -182,89 +229,24 @@
     <div class="feature-container container full bleed alt">
         <div class="segment feature full">
             <div class="copy">
-                <h2 class="feature-headline">Global search and tagging</h2>
-
-                <div class="feature-image">
-                    <img src="http://placehold.it/1100x620" alt="" class="border">
-                </div>
-
-                <p class="feature-description">Quickly find assets using Percolate's global search and faceted navigation. Smart Collections dynamically identify similar assets and combine them into a single folder for simpler discovery.</p>
-            </div>
-            <div class="copy flush-top">
-                <div class="learn-more">
-                    <div class="learn-more-logo"><img src="http://placehold.it/60x60" alt="GE"></div>
-                    <p class="learn-more-description">GE removed the barriers to collaboration across all geographies and business lines.</p>
-                    <div class="learn-more-jump"><a href="#">Learn more <span class="icon icon-16 icon-right"></span></a></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="feature-container container full bleed">
-        <div class="segment full feature">
-            <div class="copy">
-                <h2>Versioning and Asset History</h2>
-
-                <div class="feature-image full three">
-                    <div class="image"><img src="http://placehold.it/600x600" alt="" class="mobile"></div>
-                    <div class="image"><img src="http://placehold.it/600x600" alt=""></div>
-                    <div class="image"><img src="http://placehold.it/600x600" alt=""></div>
-                </div>
-
-                <p class="feature-description">At each stage of the asset lifecycle — from planning to creation, collaboration, modification and publication — Percolate automatically saves and updates assets into the Asset Manager.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="feature-container container full alt">
-        <div class="segment full feature">
-            <div class="copy">
-                <h2>Versioning and Asset History</h2>
-
-                <div class="feature-image three">
-                    <div class="image"><img src="http://placehold.it/600x600" alt="" class="mobile"></div>
-                    <div class="image"><img src="http://placehold.it/600x600" alt=""></div>
-                    <div class="image"><img src="http://placehold.it/600x600" alt=""></div>
-                </div>
-
-                <p class="feature-description">At each stage of the asset lifecycle — from planning to creation, collaboration, modification and publication — Percolate automatically saves and updates assets into the Asset Manager.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="feature-container container full bleed">
-        <div class="segment full feature">
-            <div class="copy">
-                <h2>Versioning and Asset History</h2>
-
-                <div class="feature-image full three">
-                    <img src="http://placehold.it/600x600" alt="" class="mobile">
-                    <img src="http://placehold.it/600x600" alt="">
-                    <img src="http://placehold.it/600x600" alt="">
-                </div>
-
-                <p class="feature-description">At each stage of the asset lifecycle — from planning to creation, collaboration, modification and publication — Percolate automatically saves and updates assets into the Asset Manager.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="feature-container container full bleed">
-        <div class="segment feature full">
-            <div class="copy">
                 <h2>Deliver on-time, on-brand campaigns</h2>
 
-                <div class="feature-image">
-                    <img src="http://placehold.it/1100x620" alt="" class="border">
-                </div>
+                <img srcset="assets/img/v2/plan_campaigns.jpg 1x, assets/img/v2/plan_campaigns_2x.png 2x" alt="" class="border">
 
                 <div class="feature-title">Campaigns</div>
 
                 <p class="feature-description">Campaigns is a centralized place for your team and agency partners to collaborate on your initiatives. Percolate combines workspaces, activity streams, files, and tasks in one place. See the status of all your campaigns without status update meetings.</p>
             </div>
+            <div class="copy flush-top">
+                <div class="learn-more">
+                    <div class="learn-more-title">Learn more about Percolate</div>
+                    <div class="learn-more-jump"><a href="#" class="btn">Download the datasheet</a></div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <div class="request-demo-container container full bleed">
+    <div class="request-demo-container container full bleed desktop-show">
         <div class="segment modal request-demo">
             <div class="copy">
                 <div class="request-demo-title">Better Marketing Starts Today</div>
@@ -275,8 +257,8 @@
         </div>
     </div>
 
-    <div class="modal-container request-demo-modal-container">
-        <div class="segment request-demo-modal">
+    <div class="modal-container request-demo-modal-container desktop-show">
+        <div class="segment request-demo-modal desktop-show">
             <div class="copy">
                 <button class="modal-close"><span class="icon icon-24 icon-close"></span></button>
                 <div class="modal-title">See Percolate in Action</div>
@@ -371,6 +353,20 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="promo-container container full bleed" style="background-image: url('http://percolate-dotcom-preview.appspot.com/static/images/brand/hero.jpg');">
+        <a href="#" class="full">
+        <div class="mask">
+            <div class="segment promo next">
+                <div class="copy">
+                    <div class="promo-title">Create</div>
+                    <div class="promo-description">Content Marketing &amp; Asset Management</div>
+                    <div class="promo-jump">Learn more <span class="icon icon-16 icon-right"></span></div>
+                </div>
+            </div>
+        </div>
+        </a>
     </div>
 
     </div>

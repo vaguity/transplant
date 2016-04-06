@@ -168,6 +168,15 @@
     }
 }
 
+.modal-active .borders {
+    input, select, textarea {
+        border: 0;
+        @include breakpoint($breakpoint-desktop-small) {
+            border: 1px solid $lightgray;
+        }
+    }
+}
+
 .modal-content .mktoCustomError {
     text-align: left;
     @include breakpoint($breakpoint-desktop-small) {
