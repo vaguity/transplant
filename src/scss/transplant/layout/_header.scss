@@ -1,25 +1,26 @@
 .header-container {
-    @include container(4);
-    padding: 0 5%;
-    @include breakpoint($breakpoint-desktop-small) {
-        @include container(full);
-        padding: 0;
-    }
-    @include breakpoint($breakpoint-desktop) {
-        @include container(full);
-    }
+    @include container(full);
+    padding: 0;
 }
 
 .header {
+    .primary-nav {
+        @include span(80%);
+        margin: 0;
+        ul {
+            display: none;
+        }
+    }
     .nav-icon {
         min-width: 0;
         line-height: 0;
-        @include span(2 of 12 last);
+        @include span(20% last);
+        margin: 0;
         .modal-close .icon {
             display: none;
         }
     }
-    .primary-nav, .secondary-nav, .footer-nav {
+    .secondary-nav, .footer-nav {
         display: none;
     }
     @include breakpoint($breakpoint-desktop-small) {
@@ -28,94 +29,116 @@
             display: none;
         }
         .primary-nav {
-            display: block;
-            @include span(75%);
+            @include span(64%);
             margin: 0;
+            ul {
+                display: block;
+            }
         }
         .secondary-nav {
             display: block;
-            @include span(25% last);
+            @include span(36% last);
             margin: 0;
         }
     }
-    // @include breakpoint($breakpoint-desktop) {
-    //     .primary-nav {
-    //         display: block;
-    //         @include span(12 of 24);
-    //     }
-    //     .secondary-nav {
-    //         display: block;
-    //         @include span(7 of 24 last);
-    //     }
-    // }
 }
 
 .header .primary-nav {
     .logo {
-        @include span(200px);
-        margin: 20px 50px;
+        @include span(160px);
+        margin: 24px;
     }
-    ul {
-        margin: 20px 0;
-        float: left;
-        li {
-            @include breakpoint($breakpoint-desktop-small) {
+    ul li {
+        font-family: $type-serif;
+    }
+    @include breakpoint($breakpoint-desktop-small) {
+        .logo {
+            @include span(200px);
+            margin: 30px;
+        }
+        ul {
+            margin: 30px 0;
+            float: left;
+            li {
                 display: inline-block;
                 font-family: $type-serif;
-                @include type-style(20px, 20px);
-                margin: 8px 30px 2px 0;
+                @include type-style(18px, 18px);
+                margin: 10px 18px 2px 0;
+                &:last-child {
+                    margin: 10px 0 2px;
+                }
             }
+        }
+    }
+    @include breakpoint($breakpoint-desktop) {
+        .logo {
+            margin: 30px 50px;
+        }
+        ul li {
+            @include type-style(20px, 20px);
+            margin: 8px 30px 2px 0;
         }
     }
 }
 
 .header .secondary-nav {
-    ul {
-        margin: 20px 50px 20px 0;
-        li {
-            margin: 0 30px 0 0;
-            &:last-child {
-                margin: 0;
+    ul li {
+        font-family: $type-serif;
+        @include type-style(18px, 18px);
+    }
+    @include breakpoint($breakpoint-desktop-small) {
+        ul {
+            margin: 30px 30px 30px 0;
+            text-align: right;
+            li {
+                margin: 0 20px 0 0;
+                font-family: $type-base;
+                @include type-style(13px, 13px);
+                &:last-child {
+                    margin: 0;
+                }
+            }
+        }
+        .highlight a {
+            display: block;
+            @include link($white, $offwhite);
+            @include button;
+            @include button-background($white, $offwhite, $orange, $darkorange);
+            @include type-style(13px, 13px);
+            padding: 13px;
+        }
+    }
+    @include breakpoint($breakpoint-desktop) {
+        ul {
+            margin: 30px 50px 30px 0;
+            li {
+                margin: 0 30px 0 0;
             }
         }
     }
-    .request-demo a {
+}
+
+.header .nav-icon {
+    padding: 20px 20px 0 0;
+    border: none;
+    color: transparent;
+    background: transparent;
+    font-size: 0;
+    outline: 0;
+    color: $indigo;
+    .nav-icon-bar {
         display: block;
-        @include link($white, $offwhite);
-        @include button;
-        @include button-background($white, $offwhite, $orange, $darkorange);
-        @include type-style(13px, 13px);
-        padding: 13px;
+        background: $indigo;
+        width: 24px;
+        height: 2px;
+        margin: 4px 0 4px auto;
+        text-align: right;
     }
 }
 
-// .header .primary-nav ul {
-//     li {
-//         @include breakpoint($breakpoint-desktop-small) {
-//             display: inline-block;
-//             font-family: $type-serif;
-//             vertical-align: bottom;
-//             @include type-style(20px, 20px);
-//             margin: 0 20px 0 0;
-//             a {
-//                 display: inline-block;
-//                 height: 20px;
-//                 margin: 5px 0;
-//             }
-//             &.logo {
-//                 margin: 0 50px 0 0;
-//                 a {
-//                     height: auto;
-//                     margin: 0;
-//                     padding: 0;
-//                 }
-//             }
-//             &:last-child {
-//                 margin: 0;
-//             }
-//         }
-//     }
-// }
+.header .footer-nav ul li {
+    display: block;
+}
 
 .header {
     ul {
@@ -148,65 +171,94 @@
             height: auto;
         }
     }
+}
+
+// Modal header
+.header-container.modal-active .primary-nav ul {
+    display: block;
+}
+
+.header-container.modal-active {
+    padding: 0;
+}
+
+.header-container.modal-active .header {
+    .primary-nav {
+        display: inline-block;
+        margin: 0 0 20px;
+        @include type-style(32px, 32px);
+        .logo {
+            display: none;
+        }
+        ul {
+            margin: 24px 0 0 24px;
+            li {
+                display: block;
+                margin: 12px 0;
+                &:first-of-type {
+                    margin: 0 0 12px;
+                }
+                &:last-of-type {
+                    margin: 12px 0 0;
+                }
+            }
+        }
+    }
 
     .nav-icon {
-        padding: 0;
-        border: none;
-        color: transparent;
-        background: transparent;
-        font-size: 0;
-        margin: 30px 0;
-        height: 24px;
-        outline: 0;
-        color: $indigo;
-    }
-    .primary-nav, .secondary-nav {
-        // font-family: $type-serif;
-        // ul li {
-        //     display: block;
-        //     @include breakpoint($breakpoint-tablet) {
-        //         display: inline-block;
-        //         margin: 5px 16px 0 0;
-        //     }
-        //     @include breakpoint($breakpoint-desktop) {
-        //         margin: 5px 20px 0 0;
-        //     }
-        // }
-    }
-    .primary-nav {
-        @include breakpoint($breakpoint-desktop-small) {
-            font-size: 18px;
-            line-height: 1em;
-            margin-bottom: 0;
+        margin: 0;
+        .nav-icon-bar {
+            display: none;
         }
-        ul li:last-child {
-            margin-right: 0;
+        .icon {
+            display: block;
+            margin: 0;
+            color: $white;
         }
     }
-    .secondary-nav {
-        @include breakpoint($breakpoint-desktop-small) {
-            @include type-style(13px, 13px);
-            font-family: $type-base;
-            margin-bottom: 0;
-            text-align: right;
-            .request-demo, .highlight {
-                display: inline-block;
-                margin-top: 0;
-                text-transform: uppercase;
-                font-family: $type-sans;
-                @include type-style(13px, 13px);
-            }
-            .request-demo a, .highlight a {
 
-            }
-        }
-        @include breakpoint($breakpoint-desktop) {
-            ul li:last-child {
-                margin-right: 0;
+    .secondary-nav, .footer-nav {
+        display: block;
+        @include span(full last);
+    }
+
+    .secondary-nav {
+        margin: 20px 0;
+        @include type-style(18px, 18px);
+        ul {
+            margin: 0 0 0 24px;
+            li {
+                display: block;
+                margin: 12px 0;
+                &:first-of-type {
+                    margin: 0 0 12px;
+                }
+                &:last-of-type {
+                    margin: 12px 0 0;
+                }
             }
         }
     }
-    .request-demo {
-        text-align: left;
+    .footer-nav {
+        margin: 20px 0 0;
+        ul {
+            margin: 0 0 0 24px;
+            li {
+                display: block;
+                margin: 6px 0;
+                &:first-of-type {
+                    margin: 0 0 6px;
+                }
+                &:last-of-type {
+                    margin: 6px 0 0;
+                }
+            }
+        }
+    }
+    a {
+        @include link($white, $indigo);
+        &.active {
+            @include link($indigo, $white);
+        }
     }
 }
