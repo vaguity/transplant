@@ -1,5 +1,7 @@
 @import 'lib/susy';
 @import 'lib/breakpoint';
 
-@import 'lib/reset';
+@import 'lib/reset/normalize';
+@import 'lib/reset/html5bp';
+
 @import 'transplant/base';

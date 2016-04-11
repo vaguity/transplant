@@ -1,12 +1,18 @@
 var src = './src'
+var dist = './dist'
 
 var packageType = {
-    cssPartial: src + '/scss/lib/reset',
     cssLib: src + '/scss/lib',
     jsLib: src + '/js/lib',
+    cssPartial: src + '/scss/lib/reset',
 }
 
 var config = {
+    clean: [
+        packageType.cssLib,
+        packageType.jsLib,
+        packageType.cssPartial,
+    ],
     sass: {
         src: src + '/scss/**/*.scss',
         dest: src + '/css',
@@ -41,8 +47,9 @@ var config = {
                 dest: packageType.jsLib,
             },
             {
-                name: 'normalize-scss',
-                path: '/sass/normalize/**',
+                name: 'normalize.css',
+                path: '/normalize.css',
+                rename: '_normalize.scss',
                 dest: packageType.cssPartial,
             },
             {
@@ -73,6 +80,7 @@ var config = {
     },
     watch: {
         bundles: src + '/*.js',
+        templates: dist + '/**/*.html',
     },
 }
 

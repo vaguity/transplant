@@ -10,7 +10,12 @@ var rename = require('gulp-rename')
 
 
 gulp.task('clean:dependencies', function () {
-    return del([config.staticDependencies.src], { force: true })
+    var cleanDependency = function (dependency) {
+        del.sync([dependency + '/**'], { force: true })
+        fs.mkdir(dependency)
+    }
+
+    config.clean.forEach(cleanDependency)
 })
 
 gulp.task('process:dependencies', ['clean:dependencies'], function () {
