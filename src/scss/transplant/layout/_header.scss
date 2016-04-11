@@ -41,6 +41,16 @@
             margin: 0;
         }
     }
+    @include breakpoint($breakpoint-desktop) {
+        .primary-nav {
+            @include span(70%);
+            margin: 0;
+        }
+        .secondary-nav {
+            @include span(30% last);
+            margin: 0;
+        }
+    }
 }
 
 .header .primary-nav {
@@ -71,9 +81,9 @@
         }
     }
     @include breakpoint($breakpoint-desktop) {
-        .logo {
-            margin: 30px 50px;
-        }
+        // .logo {
+        //     margin: 30px 50px;
+        // }
         ul li {
             @include type-style(20px, 20px);
             margin: 8px 30px 2px 0;
@@ -110,7 +120,6 @@
     }
     @include breakpoint($breakpoint-desktop) {
         ul {
-            margin: 30px 50px 30px 0;
             li {
                 margin: 0 30px 0 0;
             }
