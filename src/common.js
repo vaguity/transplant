@@ -1,6 +1,6 @@
 require('js/lib/modernizr')
+global.$ = require('js/lib/jquery')
 require('js/enquire-shim')
 global.enquire = require('js/lib/enquire')
-global.$ = require('js/lib/jquery')
 global._ = require('js/lib/underscore')
 require('js/lib/picturefill')

@@ -1,6 +1,6 @@
 var mediaQueryCheck = Modernizr.mq('only all')
 if (!mediaQueryCheck) {
-    jQuery('html').addClass('no-mediaqueries')
+    $('html').addClass('no-mediaqueries')
     window.matchMedia = window.matchMedia || function () {
         return {
             matches: false,

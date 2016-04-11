@@ -420,12 +420,12 @@ function(module, exports, __webpack_require__) {
 function(module, exports, __webpack_require__) {
     /* WEBPACK VAR INJECTION */
     (function(global) {
-        __webpack_require__(9);
-        __webpack_require__(13);
-        global.enquire = __webpack_require__(15);
-        global.$ = __webpack_require__(16);
-        global._ = __webpack_require__(18);
-        __webpack_require__(17);
+        __webpack_require__(10);
+        global.$ = __webpack_require__(17);
+        __webpack_require__(14);
+        global.enquire = __webpack_require__(16);
+        global._ = __webpack_require__(19);
+        __webpack_require__(18);
     }).call(exports, function() {
         return this;
     }());
@@ -433,6 +433,7 @@ function(module, exports, __webpack_require__) {
 , /* 7 */
 , /* 8 */
 , /* 9 */
+, /* 10 */
 /***/
 function(module, exports) {
     /*** IMPORTS FROM imports-loader ***/
@@ -525,15 +526,15 @@ function(module, exports) {
         /*** EXPORTS FROM exports-loader ***/
         module.exports = window.Modernizr;
     }).call(window);
-}, /* 10 */
-, /* 11 */
+}, /* 11 */
 , /* 12 */
 , /* 13 */
+, /* 14 */
 /***/
 function(module, exports) {
     var mediaQueryCheck = Modernizr.mq("only all");
     if (!mediaQueryCheck) {
-        jQuery("html").addClass("no-mediaqueries");
+        $("html").addClass("no-mediaqueries");
         window.matchMedia = window.matchMedia || function() {
             return {
                 matches: false,
@@ -542,8 +543,8 @@ function(module, exports) {
             };
         };
     }
-}, /* 14 */
-, /* 15 */
+}, /* 15 */
+, /* 16 */
 /***/
 function(module, exports, __webpack_require__) {
     var __WEBPACK_AMD_DEFINE_RESULT__;
@@ -641,7 +642,7 @@ function(module, exports, __webpack_require__) {
             }
         }, new g();
     });
-}, /* 16 */
+}, /* 17 */
 /***/
 function(module, exports, __webpack_require__) {
     var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
@@ -3783,7 +3784,7 @@ function(module, exports, __webpack_require__) {
             return a.$ === n && (a.$ = oc), b && a.jQuery === n && (a.jQuery = nc), n;
         }, b || (a.jQuery = a.$ = n), n;
     });
-}, /* 17 */
+}, /* 18 */
 /***/
 function(module, exports, __webpack_require__) {
     var __WEBPACK_AMD_DEFINE_RESULT__;
@@ -4140,7 +4141,7 @@ function(module, exports, __webpack_require__) {
         }.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)), 
         s.supPicture || (A["image/webp"] = e("image/webp", "data:image/webp;base64,UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAABBxAR/Q9ERP8DAABWUDggGAAAADABAJ0BKgEAAQADADQlpAADcAD++/1QAA=="));
     }(window, document);
-}, /* 18 */
+}, /* 19 */
 /***/
 function(module, exports, __webpack_require__) {
     var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
