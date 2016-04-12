@@ -31,3 +31,10 @@
 - Updated product overview layout
 - Added semantic subhed handling to heroes
 - Removed borders on `.desktop-show` demo form
+
+## 2.0.2
+
+- Set up full-width header
+- Set up sub-nav
+- Fixed modal form border handling
+- Re-added video hero handling
