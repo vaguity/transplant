@@ -1,5 +1,5 @@
 .content .container {
-    @include container(4);
+    @include container(full);
     padding: 0 5%;
     @include breakpoint($breakpoint-desktop) {
         @include container(1100px);
@@ -9,11 +9,11 @@
         @include container(full);
         padding: 0;
         .segment, section {
-            @include container(4);
+            @include container(full);
             padding: 5%;
         }
         nav {
-            @include container(4);
+            @include container(full);
             padding: 20px 5%;
         }
         &.bleed {

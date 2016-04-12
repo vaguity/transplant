@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Percolate Transplant</title>
+
+    <link rel="stylesheet" href="//percolate.com/cdn/font/6e37601f430c814f9437a0be910097ad/all.css">
+    <link rel="stylesheet" href="assets/css/sentinel.css">
+
+    <script type="text/javascript" src="assets/common.js"></script>
+    <script type="text/javascript" src="assets/transplant.js"></script>
+</head>
+
+<body>
+
+<div class="header-container">
+    <header id="header" class="header">
+
+        <nav class="primary-nav">
+            <div class="logo">
+                <a href="#"><img src="https://percolate.com/static/images/logo.png" alt="Percolate"></a>
+            </div>
+            <ul>
+                <li><a href="https://percolate.com/product" class="active">Product</a></li>
+                <li><a href="https://percolate.com/services">Services</a></li>
+                <li><a href="https://percolate.com/clients/">Clients</a></li>
+                <li><a href="https://percolate.com/story">Company</a></li>
+                <li><a href="https://learn.percolate.com/">Insights</a></li>
+                <li><a href="https://blog.percolate.com/">Blog</a></li>
+            </ul>
+        </nav>
+
+        <button type="button" class="nav-icon">
+            Navigation
+            <i class="nav-icon-bar"></i>
+            <i class="nav-icon-bar"></i>
+            <i class="nav-icon-bar"></i>
+            <div class="modal-close"><span class="icon icon-24 icon-close"></span></div>
+        </button>
+
+        <nav class="secondary-nav">
+            <ul>
+                <li><a href="https://percolate.com/careers/">We’re Hiring</a></li>
+                <li><a href="https://percolate.com/app/login">Login</a></li>
+                <li class="highlight"><a href="https://percolate.com/request-demo">Request a Demo</a></li>
+            </ul>
+        </nav>
+
+        <nav class="footer-nav">
+            <ul>
+                <li><a href="https://percolate.com/terms">Terms of Service</a></li>
+                <li><a href="https://percolate.com/privacy">Privacy</a></li>
+            </ul>
+        </nav>
+    </header>
+</div>
+
+<div class="content-container">
+    <div id="content" class="content">
+
+    <div class="sub-nav-container container full bleed">
+        <nav class="sub-nav full">
+            <ul>
+                <li><a href="{{ url_for('product') }}"{% if page == "/product" %} class="active"{% endif %}>Overview</a></li>
+                <li><a href="{{ url_for('plan') }}"{% if page == "/plan" %} class="active"{% endif %}>Plan</a></li>
+                <li><a href="{{ url_for('create') }}"{% if page == "/create" %} class="active"{% endif %}>Create</a></li>
+                <li><a href="{{ url_for('execute') }}"{% if page == "/execute" %} class="active"{% endif %}>Execute</a></li>
+                <li><a href="{{ url_for('learn') }}"{% if page == "/learn" %} class="active"{% endif %}>Learn</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="hero-container container full" style="background-image: url('http://percolate-dotcom-preview.appspot.com/static/images/platform/asset_manager/hero.jpg');">
+        <div class="mask">
+        <div class="segment hero">
+            <div>
+                <h1 class="hero-title">Complete visibility across all your marketing</h1>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    </div>
+</div>
+
+</body>
+</html>
