@@ -62,9 +62,9 @@
     <div class="sub-nav-container container full bleed">
         <nav class="sub-nav full">
             <ul>
-                <li><a href="{{ url_for('product') }}"{% if page == "/product" %} class="active"{% endif %}>Overview</a></li>
-                <li><a href="{{ url_for('plan') }}"{% if page == "/plan" %} class="active"{% endif %}>Plan</a></li>
-                <li><a href="{{ url_for('create') }}"{% if page == "/create" %} class="active"{% endif %}>Create</a></li>
+                <li><a href="{{ url_for('product') }}" class="active">Overview</a></li>
+                <li><a href="{{ url_for('plan') }}">Plan</a></li>
+                <li><a href="{{ url_for('create') }}">Create</a></li>
                 <li><a href="{{ url_for('execute') }}"{% if page == "/execute" %} class="active"{% endif %}>Execute</a></li>
                 <li><a href="{{ url_for('learn') }}"{% if page == "/learn" %} class="active"{% endif %}>Learn</a></li>
             </ul>
