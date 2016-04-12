@@ -38,3 +38,4 @@
 - Set up sub-nav
 - Fixed modal form border handling
 - Re-added video hero handling
+- Upgraded normalize and fixed placeholder opacity
