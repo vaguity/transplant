@@ -83,7 +83,7 @@
     @include breakpoint($breakpoint-desktop) {
         ul li {
             @include type-style(20px, 20px);
-            margin: 8px 30px 2px 0;
+            margin: 8px 28px 2px 0;
         }
     }
 }
