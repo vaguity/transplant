@@ -39,4 +39,5 @@
 - Fixed modal form border handling
 - Re-added video hero handling
 - Upgraded normalize and fixed placeholder opacity
-- Edited header nav spacing
+- Edited header primary-nav list item horizontal margin
+- Fixed header navs vertical margins
