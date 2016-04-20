@@ -41,3 +41,4 @@
 - Upgraded normalize and fixed placeholder opacity
 - Edited header primary-nav list item horizontal margin
 - Fixed header navs vertical margins
+- Added button cursor reset originally covered by Normalize

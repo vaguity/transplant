@@ -12,3 +12,11 @@ nav ul {
 i {
     font-style: normal;
 }
+
+button, [type="button"], [type="reset"], [type="submit"] {
+    cursor: pointer;
+}
+
+[disabled] {
+    cursor: default;
+}
