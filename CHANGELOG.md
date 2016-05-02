@@ -42,3 +42,8 @@
 - Edited header primary-nav list item horizontal margin
 - Fixed header navs vertical margins
 - Added button cursor reset originally covered by Normalize
+
+## 2.1.0
+
+- Made `.copy` full-width
+- Changed padding on `.container.full.bleed .segment.full` so behavior is explicit with `.container.full.bleed .segment.full.bleed`
