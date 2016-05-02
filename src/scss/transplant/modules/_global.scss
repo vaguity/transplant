@@ -101,18 +101,3 @@ img.border {
 .hide {
     display: none;
 }
-
-sub {
-    &.sans-large {
-        @include type-style(10px, 0px);
-    }
-    &.serif-large {
-        @include type-style(14px, 0px);
-    }
-    &.sans-medium, &.serif-medium {
-        @include type-style(8px, 0px);
-    }
-    &.base-base {
-        @include type-style(6px, 0px);
-    }
-}
