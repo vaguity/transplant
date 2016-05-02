@@ -45,10 +45,6 @@
                     padding: 0;
                     &.full {
                         @include container(full);
-                        padding: 0 5%;
-                        &.bleed {
-                            padding: 0;
-                        }
                     }
                 }
             }
