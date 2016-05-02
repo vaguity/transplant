@@ -47,3 +47,4 @@
 
 - Made `.copy` full-width
 - Changed padding on `.container.full.bleed .segment.full` so behavior is explicit with `.container.full.bleed .segment.full.bleed`
+- Add type-specific styling for subscript elements
