@@ -1,14 +1,12 @@
 @mixin link($primary-color: $orange, $secondary-color: $indigo, $border: true) {
     color: $primary-color;
     text-decoration: none;
+    $border-primary-color: transparent;
+    $border-secondary-color: transparent;
     @if $border {
         border-color: $primary-color;
         $border-primary-color: $primary-color;
         $border-secondary-color: $secondary-color;
-    }
-    @else {
-        $border-primary-color: transparent;
-        $border-secondary-color: transparent;
     }
     @if $primary-color == $indigo and $secondary-color == $indigo {
         $secondary-color: $orange;

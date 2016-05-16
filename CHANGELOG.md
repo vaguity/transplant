@@ -52,3 +52,7 @@
 
 - Updated `.hero a` to explicit element states
 - Updated link mixin defaults
+
+## 2.1.2
+
+- Fixed link mixin variable scope
