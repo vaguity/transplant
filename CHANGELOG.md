@@ -47,3 +47,8 @@
 
 - Made `.copy` full-width
 - Changed padding on `.container.full.bleed .segment.full` so behavior is explicit with `.container.full.bleed .segment.full.bleed`
+
+## 2.1.1
+
+- Updated `.hero a` to explicit element states
+- Updated link mixin defaults
