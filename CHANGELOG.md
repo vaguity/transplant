@@ -56,3 +56,7 @@
 ## 2.1.2
 
 - Fixed link mixin variable scope
+
+## 2.1.3
+
+- Changed desktop form field sizes and margins
