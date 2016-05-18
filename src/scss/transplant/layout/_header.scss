@@ -111,11 +111,12 @@
         }
         .highlight a {
             display: block;
-            @include link($white, $offwhite);
+            @include link($white, $offwhite, false);
             @include button;
             @include button-background($white, $offwhite, $orange, $darkorange);
             @include type-style(13px, 13px);
             padding: 13px;
+            border-width: 0;
         }
     }
     @include breakpoint($breakpoint-desktop) {

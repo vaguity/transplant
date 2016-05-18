@@ -60,3 +60,8 @@
 ## 2.1.3
 
 - Changed desktop form field sizes and margins
+
+## 2.1.4
+
+- Updated Node modules
+- Removed transparent border around highlighted button in header
