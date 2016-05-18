@@ -65,3 +65,4 @@
 
 - Updated Node modules
 - Removed transparent border around highlighted button in header
+- Add webfonts to project

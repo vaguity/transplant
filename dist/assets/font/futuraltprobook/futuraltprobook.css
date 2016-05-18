@@ -1,0 +1,10 @@
+@font-face {
+	font-family: 'FuturaLTPro-Book';
+	src: url('futuraltprobook.eot');
+	src: url('futuraltprobook.eot?#iefix') format('embedded-opentype'),
+	     url('futuraltprobook.woff2') format('woff2'),
+	     url('futuraltprobook.woff') format('woff'),
+	     url('futuraltprobook.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
