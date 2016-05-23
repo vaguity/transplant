@@ -66,3 +66,7 @@
 - Updated Node modules
 - Removed transparent border around highlighted button in header
 - Add webfonts to project
+
+## 2.2.0
+
+- Restart basic sticky nav implementation
