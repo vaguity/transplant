@@ -2,7 +2,7 @@
 
 Staging: [prototype.marketing.prclt.com/transplant](http://prototype.marketing.prclt.com/transplant)
 
-This is a bower package to include in marketing projects as a dependency.
+This is an NPM package to include in marketing projects as a dependency.
 
 ## Use
 
@@ -17,7 +17,7 @@ Transplant should be included in a project with a package manager and task runne
     - Modernizr
     - jQuery
     - enquire.js (and a strongly suggested shim for enquire)
-    - jQuery throttle / debounce
+    - Underscore
 
 ## Contents
 
@@ -41,7 +41,6 @@ HTML files for the header, footer and a sample page with both the header and foo
 Run the following in the root directory before making changes:
 
 `npm install`  
-`bower install`  
 `gulp dependencies`  
 `gulp`  
 
