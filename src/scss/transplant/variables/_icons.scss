@@ -6,8 +6,11 @@
 }
 
 .icon-16 {
-    top: 2px;
+    top: 2px; // TODO: Should this be applied to .icon?
     @include icon(16px);
+    &.icon-align-0 {
+        top: 0;
+    }
 }
 
 .icon-24 {

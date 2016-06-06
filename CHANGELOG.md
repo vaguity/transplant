@@ -70,3 +70,7 @@
 ## 2.2.0
 
 - Restart basic sticky nav implementation
+
+## 2.2.1
+
+- Add 16px icon alignment class
