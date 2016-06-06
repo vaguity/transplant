@@ -74,3 +74,4 @@
 ## 2.2.1
 
 - Change icon alignment handling
+- Change `.modal-container` full-width so it's not floated out of the document flow

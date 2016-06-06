@@ -26,8 +26,8 @@
 
 .modal-container {
     display: none;
+    width: 100%;
     background-color: $orange;
-    @include span(full);
     .segment {
         padding: 5%;
     }
