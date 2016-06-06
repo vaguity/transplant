@@ -73,4 +73,4 @@
 
 ## 2.2.1
 
-- Add 16px icon alignment class
+- Change icon alignment handling
