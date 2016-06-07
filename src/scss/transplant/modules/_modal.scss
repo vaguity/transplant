@@ -26,8 +26,8 @@
 
 .modal-container {
     display: none;
+    width: 100%;
     background-color: $orange;
-    @include span(full);
     .segment {
         padding: 5%;
     }
@@ -142,12 +142,9 @@
     input, select, textarea {
         box-sizing: border-box;
         @include breakpoint($breakpoint-desktop-small) {
-            @include span(200px);
-            @include placeholder($orange);
-            margin: 12px 24px;
-        }
-        @include breakpoint($breakpoint-desktop) {
             @include span(264px);
+            @include placeholder($orange);
+            margin: 12px;
         }
     }
     button {

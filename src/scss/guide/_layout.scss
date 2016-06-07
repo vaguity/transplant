@@ -1,0 +1,42 @@
+.content.transplant-grid .container.module-3-container {
+    margin: gutter(6) 0;
+}
+
+.content.transplant-grid .container.module-4-container {
+    margin: gutter(6) 0;
+    background-color: $lightgray;
+}
+
+.content.transplant-grid .container.module-3-container .module-3 {
+    .copy {
+        background-color: transparent;
+        color: $black;
+        text-align: left;
+        @include breakpoint($breakpoint-desktop-small) {
+            @include span(6 of 12);
+            @include post(6 of 12);
+        }
+        @include breakpoint($breakpoint-desktop-large) {
+            @include span(4 of 12);
+            @include post(8 of 12);
+        }
+    }
+    .label {
+        margin: 0 0 40px;
+        font-family: $type-sans;
+        font-weight: bold;
+        @include type-style(13px, 13px);
+        text-transform: uppercase;
+    }
+    h3 {
+        margin: 40px 0;
+        font-family: $type-serif;
+        font-weight: normal;
+        @include type-style(32px, 32px);
+    }
+    p {
+        margin: 40px 0;
+        font-family: $type-base;
+        @include type-style(16px, 24px);
+    }
+}

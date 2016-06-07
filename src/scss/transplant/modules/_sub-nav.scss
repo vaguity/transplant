@@ -8,6 +8,8 @@
 }
 
 .sub-nav {
+    display: inline-block;
+    width: 100%;
     ul {
         margin: 20px 0;
     }
@@ -24,4 +26,20 @@
     .active {
         @include link($orange, $indigo);
     }
+}
+
+.sub-nav-container.sticky {
+    border-width: 0 0 1px;
+    &.enabled {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: $white;
+        z-index: 20;
+    }
+}
+
+.sub-nav-placeholder.enabled {
+    display: block;
+    height: 64px;
 }

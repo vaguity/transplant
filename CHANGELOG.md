@@ -42,3 +42,36 @@
 - Edited header primary-nav list item horizontal margin
 - Fixed header navs vertical margins
 - Added button cursor reset originally covered by Normalize
+
+## 2.1.0
+
+- Made `.copy` full-width
+- Changed padding on `.container.full.bleed .segment.full` so behavior is explicit with `.container.full.bleed .segment.full.bleed`
+
+## 2.1.1
+
+- Updated `.hero a` to explicit element states
+- Updated link mixin defaults
+
+## 2.1.2
+
+- Fixed link mixin variable scope
+
+## 2.1.3
+
+- Changed desktop form field sizes and margins
+
+## 2.1.4
+
+- Updated Node modules
+- Removed transparent border around highlighted button in header
+- Add webfonts to project
+
+## 2.2.0
+
+- Restart basic sticky nav implementation
+
+## 2.2.1
+
+- Change icon alignment handling
+- Change `.modal-container` full-width so it's not floated out of the document flow

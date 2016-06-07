@@ -21,7 +21,9 @@
                 padding: 0 5%;
                 &.full {
                     @include container(full);
-                    padding: 0;
+                    &.bleed {
+                        padding: 0;
+                    }
                 }
             }
             nav {
@@ -60,6 +62,8 @@
 .segment, section {
     .copy {
         display: inline-block;
+        width: 100%;
+        // TODO: .flush classes should be deprecated
         &.flush {
             margin: 0;
         }
