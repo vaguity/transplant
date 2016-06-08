@@ -1,12 +1,88 @@
-.module-4-container {
-    background-color: $lightgray;
+.module-1 {
+    .copy {
+        margin: 9% 0;
+    }
+    h2 {
+        margin: 0;
+        color: $darkgray;
+        font-family: $type-serif;
+        font-weight: normal;
+        @include type-style(50px, 50px);
+        text-transform: none;
+    }
+}
+
+.module-2 {
+    margin: 10% 0;
+    .copy {
+        @include span(full);
+        color: $darkgray;
+        .label {
+            font-family: $type-sans;
+            font-weight: bold;
+            @include type-style(13px, 13px);
+            text-transform: uppercase;
+        }
+        h3 {
+            font-family: $type-serif;
+            font-weight: normal;
+            @include type-style(32px, 32px);
+        }
+        p {
+            font-family: $type-base;
+            @include type-style(16px, 28px);
+        }
+    }
+    .image {
+        @include span(full last);
+    }
+    @include breakpoint($breakpoint-desktop-small) {
+        display: flex;
+        .copy {
+            align-self: center;
+            vertical-align: middle;
+            color: $darkgray;
+            @include span(5 of 12);
+            margin: 0;
+            float: none;
+            .label {
+                margin: 0 0 40px;
+            }
+            h3 {
+                margin: 40px 0;
+
+            }
+            p {
+                margin: 40px 0;
+            }
+        }
+        .image {
+            display: table-cell;
+            vertical-align: middle;
+            @include span(7 of 12);
+            margin: 0;
+            float: none;
+        }
+        &.left .copy {
+            padding: 0 gutter(12) 0 0;
+        }
+        &.right {
+            .copy {
+                padding: 0 0 0 gutter(12);
+                order: 2;
+            }
+            .image {
+                order: 1;
+            }
+        }
+    }
 }
 
 .module-3 {
     .copy {
         margin: gutter(6) 0 0;
         background-color: transparent;
-        color: $black;
+        color: $darkgray;
         text-align: left;
         @include breakpoint($breakpoint-desktop-small) {
             @include span(6 of 12);
@@ -33,6 +109,10 @@
     p {
         margin: 40px 0;
         font-family: $type-base;
-        @include type-style(16px, 24px);
+        @include type-style(16px, 28px);
     }
+}
+
+.module-4-container {
+    background-color: $lightgray;
 }
