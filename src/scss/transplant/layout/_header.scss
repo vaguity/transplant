@@ -29,7 +29,7 @@
             display: none;
         }
         .primary-nav {
-            @include span(68%);
+            @include span(75%);
             margin: 0;
             ul {
                 display: block;
@@ -37,8 +37,17 @@
         }
         .secondary-nav {
             display: block;
-            @include span(32% last);
+            @include span(25% last);
             margin: 0;
+        }
+    }
+    @include breakpoint(1080px) {
+        .primary-nav {
+            @include span(70%);
+            margin: 0;
+        }
+        .secondary-nav {
+            @include span(30% last);
         }
     }
     @include breakpoint($breakpoint-desktop) {
@@ -107,6 +116,9 @@
                 &:last-child {
                     margin: 0;
                 }
+                &.hiring {
+                    display: none;
+                }
             }
         }
         .highlight a {
@@ -119,11 +131,19 @@
             border-width: 0;
         }
     }
+    @include breakpoint(1080px) {
+        ul li.hiring {
+            display: inline-block;
+        }
+    }
     @include breakpoint($breakpoint-desktop) {
         ul li {
             margin: 0 20px 0 0;
             &:first-child {
                 margin: 0 20px 0 20px;
+            }
+            &.hiring {
+                display: inline-block;
             }
         }
     }

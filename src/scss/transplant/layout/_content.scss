@@ -1,3 +1,41 @@
+.content.update .container {
+    @include container(full);
+    padding: 0 24px;
+    @include breakpoint($breakpoint-desktop-small) {
+        padding: 0 30px;
+    }
+    &.bleed {
+        padding: 0;
+        .segment, section, nav {
+            @include container(full);
+            padding: 0 24px;
+            @include breakpoint($breakpoint-desktop-small) {
+                padding: 0 30px;
+            }
+            &.bleed {
+                padding: 0;
+            }
+        }
+    }
+}
+
+.segment, section, nav {
+    .copy {
+        display: inline-block;
+        width: 100%;
+    }
+}
+
+.segment.full img.border {
+    border-width: 1px 0;
+    margin: 0 auto;
+    @include breakpoint($breakpoint-desktop) {
+        border-width: 1px;
+        margin: -1px;
+    }
+}
+
+/*
 .content .container {
     @include container(full);
     padding: 0 5%;
@@ -84,3 +122,4 @@
         margin: -1px;
     }
 }
+*/

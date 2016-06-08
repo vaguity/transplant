@@ -1,14 +1,10 @@
-.content.transplant-grid .container.module-3-container {
-    margin: gutter(6) 0;
-}
-
-.content.transplant-grid .container.module-4-container {
-    margin: gutter(6) 0;
+.module-4-container {
     background-color: $lightgray;
 }
 
-.content.transplant-grid .container.module-3-container .module-3 {
+.module-3 {
     .copy {
+        margin: gutter(6) 0 0;
         background-color: transparent;
         color: $black;
         text-align: left;
