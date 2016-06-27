@@ -10,5 +10,6 @@
     "extends": "./node_modules/eslint-config-percolate/.eslintrc",
     "rules": {
         "brace-style": [2, "stroustrup", { "allowSingleLine": true }],
+        "dot-notation": 0,
     },
 }
