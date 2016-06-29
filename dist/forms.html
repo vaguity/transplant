@@ -70,42 +70,25 @@
                                 });
                                 form.onValidate(function(callback) {
                                     var submittable = true;
-                                    $(marketoForm[1083]['selector']  + ' .mktoRequired').each(function() {
-                                        if ($(this).val() == '') {
+                                    var marketoValidationCheck = []
+
+                                    marketoValidationCheck.push(formsValidateRequired($(marketoForm[1083]['selector']  + ' .mktoRequired'), marketoFormID));
+
+                                    marketoValidationCheck.push(formsValidateEmail($(marketoForm[1083]['selector'] + ' input#Email').val()));
+
+                                    for (var i = marketoValidationCheck.length - 1; i >= 0; i--) {
+                                        if (marketoValidationCheck[i] === false) {
                                             submittable = false;
-                                            $('.mktoCustomError_1083').html('<strong>Uh oh.</strong> Please fill out all the fields.').css('display', 'block');
-                                        }
-                                    });
-                                    var emailVal = $(marketoForm[1083]['selector'] + ' input#Email').val();
-                                    var emailDomain = emailVal.replace(/.+@([^.]+).+/, '\$1');
-                                    var i = 0;
-                                    var personalDomains = ['gmail', 'hotmail', 'yahoo'];
-                                    for (i in personalDomains) {
-                                        if (emailDomain == personalDomains[i]) {
-                                            submittable = false;
-                                            $('.mktoCustomError_1083').html('<strong>Uh oh.</strong> Please enter your company email address.').css('display', 'block');
+                                            return false;
                                         }
                                     }
+
                                     form.submittable(submittable);
                                 });
                             });
 
                             MktoForms2.whenReady(function(form) {
-                                $('#mktoForms2BaseStyle, #mktoForms2ThemeStyle').remove();
-                                $(marketoForm[1083]['selector'] + ' style').remove();
-                                $(marketoForm[1083]['selector'] + ', ' + marketoForm[1083]['selector'] + ' .mktoFormRow, ' + marketoForm[1083]['selector'] + ' .mktoFieldDescriptor, ' + marketoForm[1083]['selector'] + ' .mktoField, ' + marketoForm[1083]['selector'] + ' .mktoHasWidth, ' + marketoForm[1083]['selector'] + ' .mktoButtonWrap').removeAttr('style');
-                                $('.mktoAsterix, .mktoOffset, .mktoClear, .mktoLabel, .mktoGutter, .mktoError').remove();
-                                enquire.register("screen and (min-width: 1000px)", {
-                                    match: function() {
-                                        $(marketoForm[1083]['selector']).find('.mktoFieldDescriptor, .mktoFieldWrap').css('display', marketoForm[1083]['display']);
-                                        $(marketoForm[1083]['selector'] + ' textarea').closest('.mktoFormRow').css('display', 'block');
-                                    },
-                                    unmatch: function() {
-                                        $(marketoForm[1083]['selector']).find('.mktoFormRow, .mktoFieldDescriptor, .mktoButtonRow, .mktoFieldWrap').css('display', '');
-                                    }
-                                });
-                                $(marketoForm[1083]['selector']).css('visibility', 'visible');
-
+                                formsStyleReset(marketoForm[1083]['selector'], marketoForm[1083]['display']);
                                 stickySetup();
                             });
                         }
