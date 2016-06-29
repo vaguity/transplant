@@ -75,3 +75,12 @@
 
 - Change icon alignment handling
 - Change `.modal-container` full-width so it's not floated out of the document flow
+
+## 2.3.0
+
+- Remove full-frame and vertical-center functions
+- Move Marketo form functions into Transplant
+
+## 2.3.1
+
+- Add agency redirect function
