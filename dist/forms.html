@@ -17,26 +17,28 @@
 <div class="content-container">
     <div id="content" class="content">
 
-    <!-- Always-on desktop, modal mobile -->
+    <!-- Modal desktop, modal mobile -->
 
-    <div class="request-demo-container container full bleed desktop-show">
+    <div class="request-demo-container container full bleed">
         <div class="segment modal request-demo">
             <div class="copy">
                 <div class="request-demo-title">Better Marketing Starts Today</div>
                 <div class="request-demo-description">See how Percolate makes it easier to turn storytelling into sales growth</div>
 
-                <div class="request-demo-link"><a href="#" class="btn modal-link request-demo-button request-demo-modal-link" data-modal-class="request-demo-modal-container-2">See Percolate</a></div>
+                <div class="request-demo-link"><a href="#" class="btn modal-link request-demo-button request-demo-modal-link" data-modal-class="request-demo-modal-container-1">See Percolate</a></div>
             </div>
         </div>
     </div>
 
-    <div class="modal-container request-demo-modal-container request-demo-modal-container-2 desktop-show">
-        <div class="segment request-demo-modal desktop-show">
+    <div class="modal-mask"></div>
+
+    <div class="modal-container request-demo-modal-container request-demo-modal-container-1">
+        <div class="segment request-demo-modal">
             <div class="copy">
                 <button class="modal-close"><span class="icon icon-24 icon-close"></span></button>
                 <div class="modal-title">See Percolate in Action</div>
                 <div class="modal-content">
-                    <div class="form borders">
+                    <div class="form">
                         <script>
                         if (typeof MktoForms2 === 'undefined') {
                             document.write("\x3Cscript src=\"//app-sj02.marketo.com/js/forms2/js/forms2.min.js\">\x3C/script>");
@@ -63,30 +65,53 @@
                             $(marketoForm[1083]['selector']).empty();
                             MktoForms2.loadForm("//app-sj02.marketo.com", "306-EXV-607", 1083, function(form) {
                                 form.onSuccess(function(values, followUpUrl) {
-                                    formsRedirect(values, marketoForm[marketoFormID]['redirect-url']);
+                                    var redirectUrl = marketoForm[marketoFormID]['redirect-url'];
+                                    if ('Job_Function__c' in values) {
+                                        if (values['Job_Function__c'] == 'Agency or Consultant') {
+                                            redirectUrl = 'https://percolate.com/request-demo?success=2';
+                                        }
+                                    }
+                                    location.href = redirectUrl;
                                     return false;
                                 });
                                 form.onValidate(function(callback) {
                                     var submittable = true;
-                                    var marketoValidationCheck = []
-
-                                    marketoValidationCheck.push(formsValidateRequired($(marketoForm[1083]['selector']  + ' .mktoRequired'), marketoFormID));
-
-                                    marketoValidationCheck.push(formsValidateEmail($(marketoForm[1083]['selector'] + ' input#Email').val()));
-
-                                    for (var i = marketoValidationCheck.length - 1; i >= 0; i--) {
-                                        if (marketoValidationCheck[i] === false) {
+                                    $(marketoForm[1083]['selector']  + ' .mktoRequired').each(function() {
+                                        if ($(this).val() == '') {
                                             submittable = false;
-                                            return false;
+                                            $('.mktoCustomError_1083').html('<strong>Uh oh.</strong> Please fill out all the fields.').css('display', 'block');
+                                        }
+                                    });
+                                    var emailVal = $(marketoForm[1083]['selector'] + ' input#Email').val();
+                                    var emailDomain = emailVal.replace(/.+@([^.]+).+/, '\$1');
+                                    var i = 0;
+                                    var personalDomains = ['gmail', 'hotmail', 'yahoo'];
+                                    for (i in personalDomains) {
+                                        if (emailDomain == personalDomains[i]) {
+                                            submittable = false;
+                                            $('.mktoCustomError_1083').html('<strong>Uh oh.</strong> Please enter your company email address.').css('display', 'block');
                                         }
                                     }
-
                                     form.submittable(submittable);
                                 });
                             });
 
                             MktoForms2.whenReady(function(form) {
-                                formsStyleReset(marketoForm[1083]['selector'], marketoForm[1083]['display']);
+                                $('#mktoForms2BaseStyle, #mktoForms2ThemeStyle').remove();
+                                $(marketoForm[1083]['selector'] + ' style').remove();
+                                $(marketoForm[1083]['selector'] + ', ' + marketoForm[1083]['selector'] + ' .mktoFormRow, ' + marketoForm[1083]['selector'] + ' .mktoFieldDescriptor, ' + marketoForm[1083]['selector'] + ' .mktoField, ' + marketoForm[1083]['selector'] + ' .mktoHasWidth, ' + marketoForm[1083]['selector'] + ' .mktoButtonWrap').removeAttr('style');
+                                $('.mktoAsterix, .mktoOffset, .mktoClear, .mktoLabel, .mktoGutter, .mktoError').remove();
+                                enquire.register("screen and (min-width: 1000px)", {
+                                    match: function() {
+                                        $(marketoForm[1083]['selector']).find('.mktoFieldDescriptor, .mktoFieldWrap').css('display', marketoForm[1083]['display']);
+                                        $(marketoForm[1083]['selector'] + ' textarea').closest('.mktoFormRow').css('display', 'block');
+                                    },
+                                    unmatch: function() {
+                                        $(marketoForm[1083]['selector']).find('.mktoFormRow, .mktoFieldDescriptor, .mktoButtonRow, .mktoFieldWrap').css('display', '');
+                                    }
+                                });
+                                $(marketoForm[1083]['selector']).css('visibility', 'visible');
+
                                 stickySetup();
                             });
                         }
@@ -158,9 +183,9 @@
                                     var submittable = true;
                                     var marketoValidationCheck = []
 
-                                    marketoValidationCheck.push(formsValidateRequired($(marketoForm[1083]['selector']  + ' .mktoRequired'), marketoFormID));
+                                    marketoValidationCheck.push(formsValidateRequired($(marketoForm[1278]['selector']  + ' .mktoRequired'), marketoFormID));
 
-                                    marketoValidationCheck.push(formsValidateEmail($(marketoForm[1083]['selector'] + ' input#Email').val()));
+                                    marketoValidationCheck.push(formsValidateEmail($(marketoForm[1278]['selector'] + ' input#Email').val()));
 
                                     for (var i = marketoValidationCheck.length - 1; i >= 0; i--) {
                                         if (marketoValidationCheck[i] === false) {
@@ -174,7 +199,7 @@
                             });
 
                             MktoForms2.whenReady(function(form) {
-                                formsStyleReset(marketoForm[1083]['selector'], marketoForm[1083]['display']);
+                                formsStyleReset(marketoForm[1278]['selector'], marketoForm[1278]['display']);
                                 stickySetup();
                             });
                         }
