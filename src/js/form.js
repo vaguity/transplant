@@ -1,4 +1,8 @@
 function formsRedirect (values, url) {
+    location.href = url
+}
+
+function formsAgencyRedirect (values, url) {
     if ('Job_Function__c' in values) {
         if (values['Job_Function__c'] === 'Agency or Consultant') {
             url = 'https://percolate.com/request-demo?success=2'
@@ -61,6 +65,7 @@ function formsStyleReset (formSelector, formDisplay) {
 }
 
 module.exports.formsRedirect = formsRedirect
+module.exports.formsAgencyRedirect = formsAgencyRedirect
 module.exports.formsValidateRequired = formsValidateRequired
 module.exports.formsValidateEmail = formsValidateEmail
 module.exports.formsStyleReset = formsStyleReset

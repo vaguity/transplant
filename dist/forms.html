@@ -65,13 +65,7 @@
                             $(marketoForm[1083]['selector']).empty();
                             MktoForms2.loadForm("//app-sj02.marketo.com", "306-EXV-607", 1083, function(form) {
                                 form.onSuccess(function(values, followUpUrl) {
-                                    var redirectUrl = marketoForm[marketoFormID]['redirect-url'];
-                                    if ('Job_Function__c' in values) {
-                                        if (values['Job_Function__c'] == 'Agency or Consultant') {
-                                            redirectUrl = 'https://percolate.com/request-demo?success=2';
-                                        }
-                                    }
-                                    location.href = redirectUrl;
+                                    formsAgencyRedirect(values, marketoForm[marketoFormID]['redirect-url']);
                                     return false;
                                 });
                                 form.onValidate(function(callback) {

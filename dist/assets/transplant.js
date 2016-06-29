@@ -9,6 +9,9 @@ function(module, exports, __webpack_require__) {
 /***/
 function(module, exports) {
     function formsRedirect(values, url) {
+        location.href = url;
+    }
+    function formsAgencyRedirect(values, url) {
         if ("Job_Function__c" in values) {
             if (values["Job_Function__c"] === "Agency or Consultant") {
                 url = "https://percolate.com/request-demo?success=2";
@@ -64,6 +67,7 @@ function(module, exports) {
         $(formSelector).css("visibility", "visible");
     }
     module.exports.formsRedirect = formsRedirect;
+    module.exports.formsAgencyRedirect = formsAgencyRedirect;
     module.exports.formsValidateRequired = formsValidateRequired;
     module.exports.formsValidateEmail = formsValidateEmail;
     module.exports.formsStyleReset = formsStyleReset;
@@ -463,6 +467,7 @@ function(module, exports, __webpack_require__) {
         global.stickySetup = __webpack_require__(7).stickySetup;
         global.videoHero = __webpack_require__(8).videoHero;
         global.formsRedirect = __webpack_require__(1).formsRedirect;
+        global.formsAgencyRedirect = __webpack_require__(1).formsAgencyRedirect;
         global.formsValidateRequired = __webpack_require__(1).formsValidateRequired;
         global.formsValidateEmail = __webpack_require__(1).formsValidateEmail;
         global.formsStyleReset = __webpack_require__(1).formsStyleReset;
