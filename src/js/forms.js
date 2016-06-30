@@ -59,6 +59,11 @@ function formsStyleReset (formSelector, formDisplay) {
     $(formSelector + ', ' + formSelector + ' .mktoFormRow, ' + formSelector + ' .mktoFieldDescriptor, ' + formSelector + ' .mktoField, ' + formSelector + ' .mktoHasWidth, ' + formSelector + ' .mktoButtonWrap').removeAttr('style')
     $('.mktoAsterix, .mktoOffset, .mktoClear, .mktoLabel, .mktoGutter, .mktoError').remove()
 
+    if ($(formSelector + ' .mktoLogicalField').length) {
+        var formCheckboxLabel = $(formSelector + ' .mktoLogicalField').attr('title')
+        $(formSelector + ' .mktoLogicalField label').text(formCheckboxLabel)
+    }
+
     enquire.register('screen and (min-width: 1000px)', {
         match: function () {
             $(formSelector).find('.mktoFieldDescriptor, .mktoFieldWrap').css('display', formDisplay)

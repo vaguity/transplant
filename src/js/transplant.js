@@ -1,5 +1,5 @@
 require('./main')
-require('./form')
+require('./forms')
 require('./hide')
 require('./activate')
 require('./modal')
@@ -8,8 +8,8 @@ require('./video-hero')
 
 global.stickySetup = require('./sticky').stickySetup
 global.videoHero = require('./video-hero').videoHero
-global.formsRedirect = require('./form').formsRedirect
-global.formsAgencyRedirect = require('./form').formsAgencyRedirect
-global.formsValidateRequired = require('./form').formsValidateRequired
-global.formsValidateEmail = require('./form').formsValidateEmail
-global.formsStyleReset = require('./form').formsStyleReset
+global.formsRedirect = require('./forms').formsRedirect
+global.formsAgencyRedirect = require('./forms').formsAgencyRedirect
+global.formsValidateRequired = require('./forms').formsValidateRequired
+global.formsValidateEmail = require('./forms').formsValidateEmail
+global.formsStyleReset = require('./forms').formsStyleReset
