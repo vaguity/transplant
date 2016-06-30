@@ -1,8 +1,16 @@
-function formsRedirect (values, url) {
+/* global ga:true */
+
+function formsRedirect (values, url, formID) {
+    if (typeof ga !== 'undefined') {
+        ga('send', 'event', 'Marketo Form', 'Submit', formID)
+    }
     location.href = url
 }
 
-function formsAgencyRedirect (values, url) {
+function formsAgencyRedirect (values, url, formID) {
+    if (typeof ga !== 'undefined') {
+        ga('send', 'event', 'Marketo Form', 'Submit', formID)
+    }
     if ('Job_Function__c' in values) {
         if (values['Job_Function__c'] === 'Agency or Consultant') {
             url = 'https://percolate.com/request-demo?success=2'
