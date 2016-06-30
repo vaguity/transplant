@@ -84,3 +84,8 @@
 ## 2.3.1
 
 - Add agency redirect function
+
+## 2.3.2
+
+- Add event tracking to redirect functions
+
