@@ -74,7 +74,7 @@
 
                                     marketoValidationCheck.push(formsValidateRequired($(marketoForm[1083]['selector']  + ' .mktoRequired'), marketoFormID));
 
-                                    marketoValidationCheck.push(formsValidateEmail($(marketoForm[1083]['selector'] + ' input#Email').val()));
+                                    marketoValidationCheck.push(formsValidateEmail($(marketoForm[1083]['selector'] + ' input#Email').val(), marketoFormID));
 
                                     for (var i = marketoValidationCheck.length - 1; i >= 0; i--) {
                                         if (marketoValidationCheck[i] === false) {
@@ -162,7 +162,7 @@
 
                                     marketoValidationCheck.push(formsValidateRequired($(marketoForm[1278]['selector']  + ' .mktoRequired'), marketoFormID));
 
-                                    marketoValidationCheck.push(formsValidateEmail($(marketoForm[1278]['selector'] + ' input#Email').val()));
+                                    marketoValidationCheck.push(formsValidateEmail($(marketoForm[1278]['selector'] + ' input#Email').val(), marketoFormID));
 
                                     for (var i = marketoValidationCheck.length - 1; i >= 0; i--) {
                                         if (marketoValidationCheck[i] === false) {
@@ -250,7 +250,7 @@
 
                                     marketoValidationCheck.push(formsValidateRequired($(marketoForm[2356]['selector']  + ' .mktoRequired'), marketoFormID));
 
-                                    marketoValidationCheck.push(formsValidateEmail($(marketoForm[2356]['selector'] + ' input#Email').val()));
+                                    marketoValidationCheck.push(formsValidateEmail($(marketoForm[2356]['selector'] + ' input#Email').val(), marketoFormID));
 
                                     for (var i = marketoValidationCheck.length - 1; i >= 0; i--) {
                                         if (marketoValidationCheck[i] === false) {
