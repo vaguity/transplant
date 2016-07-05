@@ -88,4 +88,4 @@
 ## 2.3.2
 
 - Add event tracking to redirect functions
-
+- Change form checkbox label to inline-block

@@ -101,7 +101,8 @@ form, .modal-content form {
             margin: 6px 6px 6px 0;
         }
         label {
-            display: block;
+            display: inline-block;
+            margin: 6px 0;
             text-align: left;
             @include type-style(14px, 16px);
         }
