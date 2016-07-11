@@ -89,3 +89,7 @@
 
 - Add event tracking to redirect functions
 - Change form checkbox label to inline-block
+
+## 2.3.3
+
+- Fix header nav spacing with new links
