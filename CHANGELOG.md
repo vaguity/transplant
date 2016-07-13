@@ -93,3 +93,8 @@
 ## 2.3.3
 
 - Fix header nav spacing with new links
+
+## 2.3.4
+
+- Set delay before redirect in the case of logging GA events
+- Add additional tracking tag function handling

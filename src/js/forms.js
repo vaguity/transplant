@@ -4,27 +4,59 @@ function formsRedirect (url) {
     location.href = url
 }
 
-function formsStandardRedirect (values, url, formID) {
+/**
+ * After a form is filled out, runs any trackers and redirects the user.
+ * @param  {array} values - Values passed from the form
+ * @param  {string} url - URL of the redirect
+ * @param  {number} formID - Marketo form ID
+ * @param  {array|function} [tracking] - Tracking function or array of tracking functions
+ */
+function formsStandardRedirect (values, url, formID, tracking) {
     var delay = false
     if (typeof ga !== 'undefined') {
         ga('send', 'event', 'Marketo Form', 'Submit', formID)
         delay = true
     }
-    location.href = url
+    if (typeof tracking !== 'undefined') {
+        if (typeof tracking === 'object') {
+            for (var i = tracking.length - 1; i >= 0; i--) {
+                tracking[i]()
+            }
+        }
+        else if (typeof tracking === 'function') {
+            tracking()
+        }
+    }
     if (delay) {
-        setTimeout(formsRedirect(url), 10000)
+        setTimeout(function () { formsRedirect(url) }, 400)
     }
     else {
         formsRedirect(url)
     }
 }
 
-// Handles redirect to agency webinar
-function formsAgencyRedirect (values, url, formID) {
+/**
+ * After a form is filled out, runs any trackers and redirects the user. Includes agency redirect.
+ * @param  {array} values - Values passed from the form
+ * @param  {string} url - URL of the redirect
+ * @param  {number} formID - Marketo form ID
+ * @param  {array|function} [tracking] - Tracking function or array of tracking functions
+ */
+function formsAgencyRedirect (values, url, formID, tracking) {
     var delay = false
     if (typeof ga !== 'undefined') {
         ga('send', 'event', 'Marketo Form', 'Submit', formID)
         delay = true
+    }
+    if (typeof tracking !== 'undefined') {
+        if (typeof tracking === 'object') {
+            for (var i = tracking.length - 1; i >= 0; i--) {
+                tracking[i]()
+            }
+        }
+        else if (typeof tracking === 'function') {
+            tracking()
+        }
     }
     if ('Job_Function__c' in values) {
         if (values['Job_Function__c'] === 'Agency or Consultant') {
@@ -32,14 +64,18 @@ function formsAgencyRedirect (values, url, formID) {
         }
     }
     if (delay) {
-        setTimeout(formsRedirect(url), 10000)
+        setTimeout(function () { formsRedirect(url) }, 400)
     }
     else {
         formsRedirect(url)
     }
 }
 
-// Returns true or false depending on the status of fields
+/**
+ * @param  {object} $fields
+ * @param  {number} formID
+ * @returns {boolean} Status of validation
+ */
 function formsValidateRequired ($fields, formID) {
     var validationStatus = true
     $fields.each(function () {
@@ -59,6 +95,11 @@ function formsValidateRequired ($fields, formID) {
     return validationStatus
 }
 
+/**
+ * @param  {string} email
+ * @param  {number} formID
+ * @returns {boolean} Status of validation
+ */
 function formsValidateEmail (email, formID) {
     var validationStatus = true
     var emailDomain = email.replace(/.+@(.+)/, '\$1')
@@ -97,7 +138,6 @@ function formsStyleReset (formSelector, formDisplay) {
     $(formSelector).css('visibility', 'visible')
 }
 
-// module.exports.formsRedirect = formsRedirect
 module.exports.formsStandardRedirect = formsStandardRedirect
 module.exports.formsAgencyRedirect = formsAgencyRedirect
 module.exports.formsValidateRequired = formsValidateRequired
