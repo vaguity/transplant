@@ -82,7 +82,7 @@
                 display: inline-block;
                 font-family: $type-serif;
                 @include type-style(18px, 18px);
-                margin: 10px 7px 2px 0;
+                margin: 10px 4px 2px 0;
                 &:last-child {
                     margin: 10px 0 2px;
                 }
@@ -92,7 +92,7 @@
     @include breakpoint($breakpoint-desktop) {
         ul li {
             @include type-style(20px, 20px);
-            margin: 8px 28px 2px 0;
+            margin: 8px 22px 2px 0;
         }
     }
 }

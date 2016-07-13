@@ -75,3 +75,26 @@
 
 - Change icon alignment handling
 - Change `.modal-container` full-width so it's not floated out of the document flow
+
+## 2.3.0
+
+- Remove full-frame and vertical-center functions
+- Move Marketo form functions into Transplant
+
+## 2.3.1
+
+- Add agency redirect function
+
+## 2.3.2
+
+- Add event tracking to redirect functions
+- Change form checkbox label to inline-block
+
+## 2.3.3
+
+- Fix header nav spacing with new links
+
+## 2.3.4
+
+- Set delay before redirect in the case of logging GA events
+- Add additional tracking tag function handling

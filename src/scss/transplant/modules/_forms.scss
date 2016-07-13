@@ -93,6 +93,22 @@ form label {
     display: none;
 }
 
+form, .modal-content form {
+    .mktoLogicalField {
+        input {
+            display: inline;
+            width: auto;
+            margin: 6px 6px 6px 0;
+        }
+        label {
+            display: inline-block;
+            margin: 6px 0;
+            text-align: left;
+            @include type-style(14px, 16px);
+        }
+    }
+}
+
 .mktoCustomError {
     display: none;
     margin: 0 0 40px;

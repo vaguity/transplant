@@ -1,14 +1,15 @@
 require('./main')
+require('./forms')
 require('./hide')
 require('./activate')
 require('./modal')
 require('./sticky')
 require('./video-hero')
-// require('./vertical-center')
-// require('./full-frame')
 
 global.stickySetup = require('./sticky').stickySetup
 global.videoHero = require('./video-hero').videoHero
-// global.setVerticalCenter = require('./vertical-center').setVerticalCenter
-// global.setFullFrame = require('./full-frame').setFullFrame
-
+global.formsRedirect = require('./forms').formsRedirect
+global.formsAgencyRedirect = require('./forms').formsAgencyRedirect
+global.formsValidateRequired = require('./forms').formsValidateRequired
+global.formsValidateEmail = require('./forms').formsValidateEmail
+global.formsStyleReset = require('./forms').formsStyleReset
