@@ -1,22 +1,42 @@
 /* global ga:true */
 
-function formsRedirect (values, url, formID) {
-    if (typeof ga !== 'undefined') {
-        ga('send', 'event', 'Marketo Form', 'Submit', formID)
-    }
+function formsRedirect (url) {
     location.href = url
 }
 
-function formsAgencyRedirect (values, url, formID) {
+function formsStandardRedirect (values, url, formID) {
+    var delay = false
     if (typeof ga !== 'undefined') {
         ga('send', 'event', 'Marketo Form', 'Submit', formID)
+        delay = true
+    }
+    location.href = url
+    if (delay) {
+        setTimeout(formsRedirect(url), 10000)
+    }
+    else {
+        formsRedirect(url)
+    }
+}
+
+// Handles redirect to agency webinar
+function formsAgencyRedirect (values, url, formID) {
+    var delay = false
+    if (typeof ga !== 'undefined') {
+        ga('send', 'event', 'Marketo Form', 'Submit', formID)
+        delay = true
     }
     if ('Job_Function__c' in values) {
         if (values['Job_Function__c'] === 'Agency or Consultant') {
             url = 'https://percolate.com/request-demo?success=2'
         }
     }
-    location.href = url
+    if (delay) {
+        setTimeout(formsRedirect(url), 10000)
+    }
+    else {
+        formsRedirect(url)
+    }
 }
 
 // Returns true or false depending on the status of fields
@@ -77,7 +97,8 @@ function formsStyleReset (formSelector, formDisplay) {
     $(formSelector).css('visibility', 'visible')
 }
 
-module.exports.formsRedirect = formsRedirect
+// module.exports.formsRedirect = formsRedirect
+module.exports.formsStandardRedirect = formsStandardRedirect
 module.exports.formsAgencyRedirect = formsAgencyRedirect
 module.exports.formsValidateRequired = formsValidateRequired
 module.exports.formsValidateEmail = formsValidateEmail

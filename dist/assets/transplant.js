@@ -9,22 +9,39 @@ function(module, exports, __webpack_require__) {
 /***/
 function(module, exports) {
     /* global ga:true */
-    function formsRedirect(values, url, formID) {
-        if (typeof ga !== "undefined") {
-            ga("send", "event", "Marketo Form", "Submit", formID);
-        }
+    function formsRedirect(url) {
         location.href = url;
     }
-    function formsAgencyRedirect(values, url, formID) {
+    function formsStandardRedirect(values, url, formID) {
+        var delay = false;
         if (typeof ga !== "undefined") {
             ga("send", "event", "Marketo Form", "Submit", formID);
+            delay = true;
+        }
+        location.href = url;
+        if (delay) {
+            setTimeout(formsRedirect(url), 1e4);
+        } else {
+            formsRedirect(url);
+        }
+    }
+    // Handles redirect to agency webinar
+    function formsAgencyRedirect(values, url, formID) {
+        var delay = false;
+        if (typeof ga !== "undefined") {
+            ga("send", "event", "Marketo Form", "Submit", formID);
+            delay = true;
         }
         if ("Job_Function__c" in values) {
             if (values["Job_Function__c"] === "Agency or Consultant") {
                 url = "https://percolate.com/request-demo?success=2";
             }
         }
-        location.href = url;
+        if (delay) {
+            setTimeout(formsRedirect(url), 1e4);
+        } else {
+            formsRedirect(url);
+        }
     }
     // Returns true or false depending on the status of fields
     function formsValidateRequired($fields, formID) {
@@ -77,7 +94,8 @@ function(module, exports) {
         });
         $(formSelector).css("visibility", "visible");
     }
-    module.exports.formsRedirect = formsRedirect;
+    // module.exports.formsRedirect = formsRedirect
+    module.exports.formsStandardRedirect = formsStandardRedirect;
     module.exports.formsAgencyRedirect = formsAgencyRedirect;
     module.exports.formsValidateRequired = formsValidateRequired;
     module.exports.formsValidateEmail = formsValidateEmail;
@@ -477,7 +495,7 @@ function(module, exports, __webpack_require__) {
         __webpack_require__(8);
         global.stickySetup = __webpack_require__(7).stickySetup;
         global.videoHero = __webpack_require__(8).videoHero;
-        global.formsRedirect = __webpack_require__(1).formsRedirect;
+        global.formsStandardRedirect = __webpack_require__(1).formsStandardRedirect;
         global.formsAgencyRedirect = __webpack_require__(1).formsAgencyRedirect;
         global.formsValidateRequired = __webpack_require__(1).formsValidateRequired;
         global.formsValidateEmail = __webpack_require__(1).formsValidateEmail;

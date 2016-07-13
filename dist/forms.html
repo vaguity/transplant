@@ -152,7 +152,7 @@
                             $(marketoForm[1278]['selector']).empty();
                             MktoForms2.loadForm("//app-sj02.marketo.com", "306-EXV-607", 1278, function(form) {
                                 form.onSuccess(function(values, followUpUrl) {
-                                    formsRedirect(values, marketoForm[marketoFormID]['redirect-url'], marketoFormID);
+                                    formsStandardRedirect(values, marketoForm[marketoFormID]['redirect-url'], marketoFormID);
                                     return false;
                                 });
                                 form.onValidate(function(callback) {
@@ -239,7 +239,7 @@
                             $(marketoForm[2356]['selector']).empty();
                             MktoForms2.loadForm("//app-sj02.marketo.com", "306-EXV-607", 2356, function(form) {
                                 form.onSuccess(function(values, followUpUrl) {
-                                    formsRedirect(values, marketoForm[marketoFormID]['redirect-url'], marketoFormID);
+                                    formsStandardRedirect(values, marketoForm[marketoFormID]['redirect-url'], marketoFormID);
                                     return false;
                                 });
                                 form.onValidate(function(callback) {
