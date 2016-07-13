@@ -1,9 +1,5 @@
 /* global ga:true */
 
-function formsRedirect (url) {
-    location.href = url
-}
-
 /**
  * After a form is filled out, runs any trackers and redirects the user.
  * @param  {array} values - Values passed from the form
@@ -11,7 +7,7 @@ function formsRedirect (url) {
  * @param  {number} formID - Marketo form ID
  * @param  {array|function} [tracking] - Tracking function or array of tracking functions
  */
-function formsStandardRedirect (values, url, formID, tracking) {
+function formsRedirect (values, url, formID, tracking) {
     var delay = false
     if (typeof ga !== 'undefined') {
         ga('send', 'event', 'Marketo Form', 'Submit', formID)
@@ -28,10 +24,10 @@ function formsStandardRedirect (values, url, formID, tracking) {
         }
     }
     if (delay) {
-        setTimeout(function () { formsRedirect(url) }, 400)
+        setTimeout(function () { location.href = url }, 400)
     }
     else {
-        formsRedirect(url)
+        location.href = url
     }
 }
 
@@ -64,10 +60,10 @@ function formsAgencyRedirect (values, url, formID, tracking) {
         }
     }
     if (delay) {
-        setTimeout(function () { formsRedirect(url) }, 400)
+        setTimeout(function () { location.href = url }, 400)
     }
     else {
-        formsRedirect(url)
+        location.href = url
     }
 }
 
@@ -138,7 +134,7 @@ function formsStyleReset (formSelector, formDisplay) {
     $(formSelector).css('visibility', 'visible')
 }
 
-module.exports.formsStandardRedirect = formsStandardRedirect
+module.exports.formsRedirect = formsRedirect
 module.exports.formsAgencyRedirect = formsAgencyRedirect
 module.exports.formsValidateRequired = formsValidateRequired
 module.exports.formsValidateEmail = formsValidateEmail

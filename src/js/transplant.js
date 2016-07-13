@@ -8,7 +8,7 @@ require('./video-hero')
 
 global.stickySetup = require('./sticky').stickySetup
 global.videoHero = require('./video-hero').videoHero
-global.formsStandardRedirect = require('./forms').formsStandardRedirect
+global.formsRedirect = require('./forms').formsRedirect
 global.formsAgencyRedirect = require('./forms').formsAgencyRedirect
 global.formsValidateRequired = require('./forms').formsValidateRequired
 global.formsValidateEmail = require('./forms').formsValidateEmail
