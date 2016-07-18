@@ -210,7 +210,7 @@
                 }
             }
         }
-        .image-container {
+        .image-container, .image-container.pad-mobile {
             display: inline-block;
             @include span(5 of 12 last);
             vertical-align: middle;
