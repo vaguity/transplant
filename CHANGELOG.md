@@ -98,3 +98,9 @@
 
 - Set delay before redirect in the case of logging GA events
 - Add additional tracking tag function handling
+
+## 3.0.0
+
+- Update breakpoints
+- Update layout
+- Add modules

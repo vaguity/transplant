@@ -4,5 +4,9 @@
     "mq",
     "setClasses"
   ],
-  "feature-detects": []
+  "feature-detects": [
+    "test/css/flexbox",
+    "test/css/transforms",
+    "test/video"
+  ]
 }

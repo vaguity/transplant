@@ -1,8 +1,0 @@
-.test-container {
-    .test-left {
-        @include span(6 of 12);
-    }
-    .test-right {
-        @include span(6 of 12 last);
-    }
-}
