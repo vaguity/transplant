@@ -1,22 +1,14 @@
-.no-flexbox .segment .copy-container {
-    padding: 0;
-}
-
 .container.alt-background {
     background-color: $offwhite-light;
     .segment {
         margin: 0;
-        padding: 10% 0;
+        padding: 60px 0;
         // TODO: Likely need to set 24px as well for mobie, 30px for desktop
     }
 }
 
-.content.update .container.alt-background.bleed .segment.bleed-mobile.pad-mobile {
-    padding: 10% 0;
-}
-
 .orbit {
-    margin: 10% 0 0;
+    margin: 60px 0 0;
     h2 {
         margin: 0;
         color: $darkgray;
@@ -31,15 +23,10 @@
 }
 
 .uranus {
-    margin: 10% 0;
+    margin: 60px 0;
     .copy-container {
         text-align: center;
         display: inline-block;
-        padding: 0 24px;
-        &.pad-mobile {
-            width: auto;
-            padding: 0 24px;
-        }
     }
     .copy {
         @include span(full);
@@ -75,10 +62,10 @@
         margin: 0 0 24px;
     }
     @include breakpoint($breakpoint-desktop-small) {
+        // TODO: Figure out balance of having this fallback be 100% and having padding in the container
         width: 100%;
         display: inline-block;
         display: flex;
-        padding: 0 30px;
         .copy-container {
             display: inline-block;
             align-self: center;
@@ -102,9 +89,13 @@
             }
         }
         .image-container {
+            display: inline-block;
             vertical-align: middle;
-            @include span(7 of 12);
+            @include span(7 of 12 last);
             float: none;
+        }
+        .image {
+            margin: 0;
         }
         &.left {
             .copy-container {
@@ -128,19 +119,22 @@
 }
 
 .jupiter {
+    margin: 60px 0;
     .copy-container {
         margin: gutter(6) 0 0;
         background-color: transparent;
         color: $darkgray;
         text-align: left;
-        @include breakpoint($breakpoint-desktop-small) {
-            @include span(6 of 12);
-            @include post(6 of 12);
+    }
+    .copy {
+        &> * {
+            margin: 20px 0;
         }
-        @include breakpoint($breakpoint-desktop-large) {
-            .copy {
-                max-width: 800px;
-            }
+        &> .first {
+            margin: 0 0 20px;
+        }
+        &> .last {
+            margin: 20px 0 0;
         }
     }
     .image-container {
@@ -148,6 +142,9 @@
         img {
             max-height: 1200px;
         }
+    }
+    .image {
+        margin: 0 0 24px;
     }
     .label {
         margin: 0 0 40px;
@@ -167,10 +164,35 @@
         font-family: $type-base;
         @include type-style(16px, 28px);
     }
+    @include breakpoint($breakpoint-desktop-small) {
+        display: inline-block;
+        .copy-container {
+            @include span(6 of 12 last);
+            @include post(6 of 12);
+            float: none;
+        }
+        .copy {
+            max-width: 800px;
+            &> * {
+                margin: 40px 0;
+            }
+            &> .first {
+            margin: 0 0 40px;
+            }
+            &> .last {
+                margin: 40px 0 0;
+            }
+        }
+        .image-container {
+        }
+        .image {
+            margin: 0;
+        }
+    }
 }
 
 .neptune {
-    margin: 10% 0;
+    margin: 60px 0;
     .copy-container {
         padding: 0 24px;
     }
@@ -201,7 +223,11 @@
             padding: 0 24px;
         }
     }
+    .image {
+        margin: 0 0 24px;
+    }
     @include breakpoint($breakpoint-desktop-small) {
+        // TODO: Figure out balance of having this fallback be 100% and having padding in the container
         width: 100%;
         display: inline-block;
         display: flex;
@@ -216,13 +242,13 @@
             .copy {
                 text-align: left;
                 max-width: 800px;
-                > * {
+                &> * {
                     margin: 40px 0;
                 }
-                > .first {
+                &> .first {
                 margin: 0 0 40px;
                 }
-                > .last {
+                &> .last {
                     margin: 40px 0 0;
                 }
             }
@@ -250,5 +276,11 @@
                 padding: 0 0 0 gutter(12);
             }
         }
+    }
+}
+
+.no-flexbox .segment .copy-container {
+    @include breakpoint($breakpoint-desktop-small) {
+        padding: 0 gutter(12) 0 0;
     }
 }
