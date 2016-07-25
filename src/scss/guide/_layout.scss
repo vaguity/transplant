@@ -7,6 +7,7 @@
     .segment {
         margin: 0;
         padding: 10% 0;
+        // TODO: Likely need to set 24px as well for mobie, 30px for desktop
     }
 }
 
@@ -32,12 +33,27 @@
 .uranus {
     margin: 10% 0;
     .copy-container {
+        text-align: center;
         display: inline-block;
         padding: 0 24px;
+        &.pad-mobile {
+            width: auto;
+            padding: 0 24px;
+        }
     }
     .copy {
         @include span(full);
         color: $darkgray;
+        text-align: left;
+        &> * {
+            margin: 20px 0;
+        }
+        &> .first {
+            margin: 0 0 20px;
+        }
+        &> .last {
+            margin: 20px 0 0;
+        }
         .label {
             font-family: $type-sans;
             font-weight: bold;
@@ -59,6 +75,8 @@
         margin: 0 0 24px;
     }
     @include breakpoint($breakpoint-desktop-small) {
+        width: 100%;
+        display: inline-block;
         display: flex;
         padding: 0 30px;
         .copy-container {
@@ -73,13 +91,13 @@
         .copy {
             text-align: left;
             max-width: 800px;
-            > * {
+            &> * {
                 margin: 40px 0;
             }
-            > .first {
+            &> .first {
                 margin: 40px 0 0;
             }
-            > .last {
+            &> .last {
                 margin: 0 0 40px;
             }
         }
@@ -87,7 +105,6 @@
             vertical-align: middle;
             @include span(7 of 12);
             float: none;
-            // margin: 0;
         }
         &.left {
             .copy-container {
