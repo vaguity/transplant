@@ -8,7 +8,7 @@
 }
 
 .orbit {
-    margin: 60px 0 0;
+    margin: 60px 0;
     h2 {
         margin: 0;
         color: $darkgray;
@@ -23,7 +23,7 @@
 }
 
 .uranus {
-    margin: 60px 0;
+    margin: 24px 0;
     .copy-container {
         text-align: center;
         display: inline-block;
@@ -50,7 +50,7 @@
         h3 {
             font-family: $type-serif;
             font-weight: normal;
-            @include type-style(32px, 32px);
+            @include type-style(24px, 24px);
         }
         p {
             font-family: $type-base;
@@ -64,6 +64,7 @@
     @include breakpoint($breakpoint-desktop-small) {
         // TODO: Figure out balance of having this fallback be 100% and having padding in the container
         width: 100%;
+        margin: 60px 0;
         display: inline-block;
         display: flex;
         .copy-container {
@@ -86,6 +87,9 @@
             }
             &> .last {
                 margin: 0 0 40px;
+            }
+            h3 {
+                @include type-style(32px, 32px);
             }
         }
         .image-container {
@@ -194,7 +198,7 @@
 .neptune {
     margin: 60px 0;
     .copy-container {
-        padding: 0 24px;
+        display: inline-block;
     }
     .copy {
         @include span(full);
