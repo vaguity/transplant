@@ -47,7 +47,7 @@
             @include type-style(13px, 13px);
             text-transform: uppercase;
         }
-        h3 {
+        h2, h3 {
             font-family: $type-serif;
             font-weight: normal;
             @include type-style(24px, 24px);
@@ -88,7 +88,7 @@
             &> .last {
                 margin: 0 0 40px;
             }
-            h3 {
+            h2, h3 {
                 @include type-style(32px, 32px);
             }
         }
@@ -122,6 +122,164 @@
     }
 }
 
+.asterism {
+    margin: 60px 0;
+    .copy-container {
+        color: $darkgray;
+        margin: 0 0 24px;
+    }
+    .copy {
+        &> * {
+            margin: 20px 0;
+        }
+        &> .first {
+            margin: 0 0 20px;
+        }
+        &> .last {
+            margin: 20px 0 0;
+        }
+        .label {
+            font-family: $type-sans;
+            font-weight: bold;
+            @include type-style(13px, 13px);
+            text-transform: uppercase;
+        }
+        h2, h3 {
+            text-align: left;
+            text-transform: none;
+            font-family: $type-serif;
+            font-weight: normal;
+            @include type-style(24px, 24px);
+        }
+        p {
+            font-family: $type-base;
+            @include type-style(16px, 28px);
+        }
+    }
+    .images-container {
+        display: inline-block;
+    }
+    .images {
+        img {
+            @include span(3 of 6);
+            &:nth-child(2n) {
+                @include span(3 of 6 last);
+            }
+            &:nth-child(n+3) {
+                margin-top: gutter(6);
+            }
+            &:nth-child(n+5) {
+                display: none;
+            }
+        }
+    }
+    @include breakpoint($breakpoint-tablet) {
+        .images {
+            img {
+                @include span(3 of 12);
+                &:nth-child(2n) {
+                    @include span(3 of 12);
+                }
+                &:nth-child(4n) {
+                    @include span(3 of 12 last);
+                }
+                &:nth-child(n+3) {
+                    margin-top: 0;
+                }
+                &:nth-child(n+5) {
+                    display: block;
+                    margin-top: gutter(12);
+                }
+                &:nth-child(n+9) {
+                    display: none;
+                }
+            }
+        }
+    }
+    @include breakpoint($breakpoint-desktop-small) {
+        display: inline-block;
+        @include span(full last);
+        .copy-container {
+            @include span(6 of 12 last);
+            @include post(6 of 12);
+            float: none;
+        }
+        .copy {
+            max-width: 800px;
+            &> * {
+                margin: 40px 0;
+            }
+            &> .first {
+            margin: 0 0 40px;
+            }
+            &> .last {
+                margin: 40px 0 0;
+            }
+            h2, h3 {
+                @include type-style(32px, 32px);
+            }
+        }
+        .images {
+            img {
+                @include span(2 of 12);
+                &:nth-child(2n) {
+                    @include span(2 of 12);
+                }
+                &:nth-child(4n) {
+                    @include span(2 of 12);
+                }
+                &:nth-child(6n) {
+                    @include span(2 of 12 last);
+                }
+                &:nth-child(n+5) {
+                    margin-top: 0;
+                }
+                &:nth-child(n+7) {
+                    margin-top: gutter(12);
+                }
+                &:nth-child(n+9) {
+                    display: block;
+                }
+                &:nth-child(n+13) {
+                    display: none;
+                }
+            }
+        }
+    }
+    @include breakpoint($breakpoint-desktop-large) {
+        .images {
+            img {
+                @include span(1 of 12);
+                &:nth-child(2n) {
+                    @include span(1 of 12);
+                }
+                &:nth-child(4n) {
+                    @include span(1 of 12);
+                }
+                &:nth-child(6n) {
+                    @include span(1 of 12);
+                }
+                &:nth-child(12n) {
+                    @include span(1 of 12 last);
+                }
+                &:nth-child(n+7) {
+                    margin-top: 0;
+                }
+                &:nth-child(n+9) {
+                    display: block;
+                }
+                &:nth-child(n+13) {
+                    display: block;
+                    margin-top: gutter(12);
+                }
+                &:nth-child(n+25) {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
 .jupiter {
     margin: 60px 0;
     .copy-container {
@@ -140,6 +298,21 @@
         &> .last {
             margin: 20px 0 0;
         }
+        .label {
+            font-family: $type-sans;
+            font-weight: bold;
+            @include type-style(13px, 13px);
+            text-transform: uppercase;
+        }
+        h2, h3 {
+            font-family: $type-serif;
+            font-weight: normal;
+            @include type-style(24px, 24px);
+        }
+        p {
+            font-family: $type-base;
+            @include type-style(16px, 28px);
+        }
     }
     .image-container {
         margin: 0 0 gutter(6);
@@ -149,24 +322,6 @@
     }
     .image {
         margin: 0 0 24px;
-    }
-    .label {
-        margin: 0 0 40px;
-        font-family: $type-sans;
-        font-weight: bold;
-        @include type-style(13px, 13px);
-        text-transform: uppercase;
-    }
-    h3 {
-        margin: 40px 0;
-        font-family: $type-serif;
-        font-weight: normal;
-        @include type-style(32px, 32px);
-    }
-    p {
-        margin: 40px 0;
-        font-family: $type-base;
-        @include type-style(16px, 28px);
     }
     @include breakpoint($breakpoint-desktop-small) {
         display: inline-block;
@@ -185,6 +340,9 @@
             }
             &> .last {
                 margin: 40px 0 0;
+            }
+            h2, h3 {
+                @include type-style(32px, 32px);
             }
         }
         .image-container {
@@ -209,10 +367,10 @@
             @include type-style(13px, 13px);
             text-transform: uppercase;
         }
-        h3 {
+        h2, h3 {
             font-family: $type-serif;
             font-weight: normal;
-            @include type-style(32px, 32px);
+            @include type-style(24px, 24px);
         }
         p {
             font-family: $type-base;
@@ -243,18 +401,21 @@
             vertical-align: middle;
             text-align: center;
             color: $darkgray;
-            .copy {
-                text-align: left;
-                max-width: 800px;
-                &> * {
-                    margin: 40px 0;
-                }
-                &> .first {
-                margin: 0 0 40px;
-                }
-                &> .last {
-                    margin: 40px 0 0;
-                }
+        }
+        .copy {
+            text-align: left;
+            max-width: 800px;
+            &> * {
+                margin: 40px 0;
+            }
+            &> .first {
+            margin: 0 0 40px;
+            }
+            &> .last {
+                margin: 40px 0 0;
+            }
+            h2, h3 {
+                @include type-style(32px, 32px);
             }
         }
         .image-container, .image-container.pad-mobile {
