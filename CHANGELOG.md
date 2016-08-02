@@ -104,3 +104,4 @@
 - Update breakpoints
 - Update layout
 - Add modules
+- Remove default global styles for semantic tags
