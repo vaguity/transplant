@@ -472,6 +472,9 @@
         display: inline-block;
     }
     .images {
+        .image-pair {
+            &:nth-of-type(2n+1)
+        }
         img {
             @include span(3 of 6);
             &:nth-child(2n) {
