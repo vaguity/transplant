@@ -445,6 +445,117 @@
     }
 }
 
+.mars {
+    .copy-container {
+        display: inline-block;
+    }
+    .copy {
+        @include span(full);
+        color: $darkgray;
+        .label {
+            font-family: $type-sans;
+            font-weight: bold;
+            @include type-style(13px, 13px);
+            text-transform: uppercase;
+        }
+        h2, h3 {
+            font-family: $type-serif;
+            font-weight: normal;
+            @include type-style(24px, 24px);
+        }
+        p {
+            font-family: $type-base;
+            @include type-style(16px, 28px);
+        }
+    }
+    .images-container {
+        display: inline-block;
+    }
+    .images {
+        img {
+            @include span(3 of 6);
+            &:nth-child(2n) {
+                @include span(3 of 6 last);
+            }
+            &:nth-child(3n), &:nth-child(4n) {
+                display: none;
+            }
+            &:nth-child(n+3) {
+                margin-top: gutter(6);
+            }
+            &:nth-child(n+9) {
+                display: none;
+            }
+        }
+    }
+    @include breakpoint($breakpoint-desktop-small) {
+        width: 100%;
+        display: inline-block;
+        .copy-container {
+            @include span(6 of 12 last);
+            @include post(6 of 12);
+            float: none;
+        }
+        .copy {
+            text-align: left;
+            max-width: 800px;
+            &> * {
+                margin: 40px 0;
+            }
+            &> .first {
+            margin: 0 0 40px;
+            }
+            &> .last {
+                margin: 40px 0 0;
+            }
+            h2, h3 {
+                @include type-style(32px, 32px);
+            }
+        }
+        .images-container {
+            // display: inline-block;
+            // @include span(5 of 12 last);
+            // vertical-align: middle;
+            // text-align: center;
+            // img {
+            //     max-height: 600px;
+            // }
+        }
+        .images img {
+            @include span(3 of 12);
+            &:nth-child(2n) {
+                @include span(3 of 12);
+            }
+            &:nth-child(4n) {
+                @include span(3 of 12 last);
+            }
+            &:nth-child(3n), &:nth-child(4n) {
+                display: block;
+            }
+            &:nth-child(n+3) {
+                margin-top: 0;
+            }
+            &:nth-child(n+5) {
+                margin-top: gutter(12);
+            }
+        }
+        &.left {
+            .copy-container {
+                padding: 0 gutter(12) 0 0;
+                order: 1;
+            }
+            .image-container {
+                order: 2;
+            }
+        }
+        &.right {
+            .copy-container {
+                padding: 0 0 0 gutter(12);
+            }
+        }
+    }
+}
+
 .no-flexbox .segment .copy-container {
     @include breakpoint($breakpoint-desktop-small) {
         padding: 0 gutter(12) 0 0;
