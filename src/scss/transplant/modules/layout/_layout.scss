@@ -1,15 +1,24 @@
+.segment {
+    margin: 24px 0;
+    @include breakpoint($breakpoint-desktop-small) {
+        margin: 60px 0;
+    }
+}
+
 .container.alt-background {
     background-color: $offwhite-light;
     .segment {
         margin: 0;
-        padding: 60px 0;
-        // TODO: Likely need to set 24px as well for mobie, 30px for desktop
+        padding: 24px 0;
+        @include breakpoint($breakpoint-desktop-small) {
+            padding: 60px 0;
+        }
     }
 }
 
 .orbit {
     margin: 60px 0;
-    h2 {
+    h2, h3 {
         margin: 0;
         text-align: center;
         color: $darkgray;
@@ -24,7 +33,7 @@
 }
 
 .uranus {
-    margin: 24px 0;
+    // margin: 24px 0;
     .copy-container {
         text-align: center;
         display: inline-block;
@@ -65,7 +74,7 @@
     @include breakpoint($breakpoint-desktop-small) {
         // TODO: Figure out balance of having this fallback be 100% and having padding in the container
         width: 100%;
-        margin: 60px 0;
+        // margin: 60px 0;
         display: inline-block;
         display: flex;
         .copy-container {
@@ -124,7 +133,7 @@
 }
 
 .asterism {
-    margin: 60px 0;
+    // margin: 24px 0;
     .copy-container {
         color: $darkgray;
         margin: 0 0 24px;
@@ -199,6 +208,7 @@
     }
     @include breakpoint($breakpoint-desktop-small) {
         display: inline-block;
+        // margin: 60px 0;
         @include span(full last);
         .copy-container {
             @include span(6 of 12 last);
@@ -282,7 +292,7 @@
 }
 
 .jupiter {
-    margin: 60px 0;
+    // margin: 24px 0;
     .copy-container {
         margin: gutter(6) 0 0;
         background-color: transparent;
@@ -326,6 +336,7 @@
     }
     @include breakpoint($breakpoint-desktop-small) {
         display: inline-block;
+        // margin: 60px 0;
         .copy-container {
             @include span(6 of 12 last);
             @include post(6 of 12);
@@ -355,7 +366,7 @@
 }
 
 .neptune {
-    margin: 60px 0;
+    // margin: 24px 0;
     .copy-container {
         display: inline-block;
     }
@@ -390,6 +401,7 @@
         margin: 0 0 24px;
     }
     @include breakpoint($breakpoint-desktop-small) {
+        // margin: 60px 0;
         // TODO: Figure out balance of having this fallback be 100% and having padding in the container
         width: 100%;
         display: inline-block;
@@ -446,7 +458,7 @@
 }
 
 .earth {
-    margin: 60px 0;
+    // margin: 24px 0;
     .copy-container {
         display: inline-block;
     }
@@ -479,8 +491,9 @@
         }
     }
     @include breakpoint($breakpoint-desktop-small) {
-        width: 100%;
         display: inline-block;
+        width: 100%;
+        // margin: 60px 0;
         .copy-container {
             @include span(6 of 12 last);
             @include post(6 of 12);
@@ -493,7 +506,7 @@
                 margin: 40px 0;
             }
             &> .first {
-            margin: 0 0 40px;
+                margin: 0 0 40px;
             }
             &> .last {
                 margin: 40px 0 0;
@@ -517,7 +530,7 @@
 }
 
 .mars {
-    margin: 60px 0;
+    // margin: 24px 0;
     .copy-container {
         display: inline-block;
     }
@@ -562,8 +575,9 @@
         }
     }
     @include breakpoint($breakpoint-desktop-small) {
-        width: 100%;
         display: inline-block;
+        width: 100%;
+        // margin: 60px 0;
         .copy-container {
             @include span(6 of 12 last);
             @include post(6 of 12);
@@ -621,6 +635,199 @@
             .copy-container {
                 padding: 0 0 0 gutter(12);
             }
+        }
+    }
+}
+
+.venus {
+    // margin: 24px 0;
+    text-align: center;
+    .copy {
+        &> .first {
+            margin: 0 0 40px;
+        }
+        h2, h3 {
+            text-align: center;
+            font-family: $type-serif;
+            font-weight: normal;
+            @include type-style(40px, 40px);
+        }
+    }
+    .images-container {
+        display: inline-block;
+    }
+    .images {
+        img {
+            margin: 0 0 gutter(4);
+            @include span(2 of 4);
+            &:nth-child(2n) {
+                @include span(2 of 4 last);
+            }
+        }
+    }
+    @include breakpoint($breakpoint-desktop-small) {
+        // margin: 60px 0;
+        .copy {
+            &> .first {
+                margin: 0 0 60px;
+            }
+            h2, h3 {
+                @include type-style(50px, 50px);
+            }
+        }
+        .images-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .images {
+            max-width: 1400px;
+            img {
+                margin: 0 0 gutter(12);
+                @include span(3 of 12);
+                &:nth-child(2n) {
+                    @include span(3 of 12);
+                }
+                &:nth-child(4n) {
+                    @include span(3 of 12 last);
+                }
+            }
+        }
+    }
+}
+
+.saturn {
+    // margin: 24px 0;
+    .copy {
+        &> .last {
+            margin: 40px 0 0;
+        }
+        p {
+            text-align: center;
+            font-family: $type-serif;
+            @include type-style(24px, 32px);
+        }
+    }
+    @include breakpoint($breakpoint-desktop-small) {
+        // margin: 60px 0;
+        .image-container, .copy-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .copy {
+            &> .last {
+                margin: 60px 0 0;
+            }
+        }
+    }
+    @include breakpoint($breakpoint-desktop) {
+        .image-container, .copy-container {
+            max-width: 1000px;
+        }
+    }
+}
+
+.kuiper-belt {
+    // margin: 24px 0;
+    .copy {
+        margin: 0 0 24px;
+        &:last-child {
+            margin: 0;
+        }
+        &> .first {
+            margin: 0 0 20px;
+        }
+        &> .last {
+            margin: 20px 0 0;
+        }
+        h2, h3 {
+            font-family: $type-serif;
+            font-weight: normal;
+            @include type-style(32px, 40px);
+        }
+    }
+    @include breakpoint($breakpoint-desktop-small) {
+        // margin: 60px 0;
+        .copy-container {
+            margin: 0 auto;
+            max-width: 800px;
+        }
+        .copy {
+            margin: 0 0 60px;
+            @include span(6 of 12);
+            &:nth-child(2n) {
+                @include span(6 of 12 last);
+            }
+            &> .first {
+                margin: 0 0 40px;
+            }
+            &> .last {
+                margin: 40px 0 0;
+            }
+        }
+    }
+    @include breakpoint($breakpoint-desktop) {
+        .copy-container {
+            max-width: 1000px;
+        }
+    }
+}
+
+.pulsar {
+    .copy {
+        text-align: center;
+        &> *, &> .jump.last {
+            margin: 20px 0;
+        }
+        &> .first {
+            margin: 0 0 20px;
+        }
+        &> .last {
+            margin: 20px 0 0;
+        }
+        .label {
+            font-family: $type-sans;
+            color: $orange;
+            text-transform: uppercase;
+            @include type-style(16px, 24px);
+        }
+        p {
+            font-family: $type-serif;
+            @include type-style(24px, 32px);
+        }
+    }
+    @include breakpoint($breakpoint-desktop-small) {
+        .copy {
+            &> * {
+                margin: 40px 0;
+            }
+            &> .first {
+                margin: 0 0 40px;
+            }
+            &> .last {
+                margin: 40px 0 0;
+            }
+            .jump.last {
+                display: none;
+            }
+        }
+        .form {
+            margin: 28px 0 0;
+        }
+        .modal-container.desktop-show {
+            display: block;
+            background: transparent;
+            .modal-copy {
+                margin: 0 auto;
+            }
+        }
+        .modal-title {
+            display: none;
+        }
+        .modal-close {
+            display: none;
+        }
+        .modal-content .form button {
+            @include button-background($white, $offwhite, $orange, $darkorange);
         }
     }
 }
