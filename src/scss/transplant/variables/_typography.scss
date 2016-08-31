@@ -19,6 +19,7 @@ $type-icons: $percocons;
     line-height: type-calculate-rem($line-height-size);
 }
 
+// TODO: Deprecate these styles
 @mixin type-style-sans-large() {
     font-family: $type-sans;
     @include type-style(36px, 40px);

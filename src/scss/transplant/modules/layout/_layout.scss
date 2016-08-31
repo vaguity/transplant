@@ -760,10 +760,7 @@
                 margin: 0 auto;
             }
         }
-        .modal-title {
-            display: none;
-        }
-        .modal-close {
+        .modal-title, .modal-close {
             display: none;
         }
         .modal-content .form button {
