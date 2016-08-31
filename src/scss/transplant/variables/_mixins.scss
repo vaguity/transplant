@@ -98,3 +98,16 @@
     font-size: $size;
     line-height: $size;
 }
+
+// This mixin sets margins of all children consistently, with the first and last elements flush externally
+@mixin child-margins($margin: 20px) {
+    &> * {
+        margin: $margin 0;
+    }
+    &> .first {
+        margin: 0 0 $margin;
+    }
+    &> .last {
+        margin: $margin 0 0;
+    }
+}
