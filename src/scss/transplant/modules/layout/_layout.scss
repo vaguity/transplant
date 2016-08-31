@@ -116,15 +116,7 @@
         margin: 0 0 24px;
     }
     .copy {
-        &> * {
-            margin: 20px 0;
-        }
-        &> .first {
-            margin: 0 0 20px;
-        }
-        &> .last {
-            margin: 20px 0 0;
-        }
+        @include child-margins(20px);
         .label {
             font-family: $type-sans;
             font-weight: bold;
@@ -194,15 +186,7 @@
         }
         .copy {
             max-width: 800px;
-            &> * {
-                margin: 40px 0;
-            }
-            &> .first {
-            margin: 0 0 40px;
-            }
-            &> .last {
-                margin: 40px 0 0;
-            }
+            @include child-margins(40px);
             h2, h3 {
                 @include type-style(32px, 32px);
             }
@@ -277,15 +261,7 @@
         text-align: left;
     }
     .copy {
-        &> * {
-            margin: 20px 0;
-        }
-        &> .first {
-            margin: 0 0 20px;
-        }
-        &> .last {
-            margin: 20px 0 0;
-        }
+        @include child-margins(20px);
         .label {
             font-family: $type-sans;
             font-weight: bold;
@@ -321,15 +297,7 @@
         }
         .copy {
             max-width: 800px;
-            &> * {
-                margin: 40px 0;
-            }
-            &> .first {
-            margin: 0 0 40px;
-            }
-            &> .last {
-                margin: 40px 0 0;
-            }
+            @include child-margins(40px);
             h2, h3 {
                 @include type-style(32px, 32px);
             }
@@ -399,15 +367,7 @@
             margin: 0 auto;
             text-align: left;
             max-width: 800px;
-            &> * {
-                margin: 40px 0;
-            }
-            &> .first {
-            margin: 0 0 40px;
-            }
-            &> .last {
-                margin: 40px 0 0;
-            }
+            @include child-margins(40px);
             h2, h3 {
                 @include type-style(32px, 32px);
             }
@@ -460,6 +420,7 @@
     .copy {
         @include span(full);
         color: $darkgray;
+        @include child-margins(20px);
         .label {
             font-family: $type-sans;
             font-weight: bold;
@@ -497,15 +458,7 @@
         .copy {
             text-align: left;
             max-width: 800px;
-            &> * {
-                margin: 40px 0;
-            }
-            &> .first {
-                margin: 0 0 40px;
-            }
-            &> .last {
-                margin: 40px 0 0;
-            }
+            @include child-margins(40px);
             h2, h3 {
                 @include type-style(32px, 32px);
             }
@@ -581,15 +534,7 @@
         .copy {
             text-align: left;
             max-width: 800px;
-            &> * {
-                margin: 40px 0;
-            }
-            &> .first {
-            margin: 0 0 40px;
-            }
-            &> .last {
-                margin: 40px 0 0;
-            }
+            @include child-margins(40px);
             h2, h3 {
                 @include type-style(32px, 32px);
             }
@@ -768,15 +713,11 @@
 }
 
 .pulsar {
+    margin: 24px 0;
     .copy {
         text-align: center;
-        &> *, &> .jump.last {
-            margin: 20px 0;
-        }
-        &> .first {
-            margin: 0 0 20px;
-        }
-        &> .last {
+        @include child-margins(20px);
+        &> .jump.last {
             margin: 20px 0 0;
         }
         .label {
@@ -789,24 +730,28 @@
             font-family: $type-serif;
             @include type-style(24px, 32px);
         }
+        .modal-link {
+            display: inline-block;
+        }
+    }
+    .form-modal .pulsar-modal {
+        display: inline-block;
+        padding: 24px 24px 0;
     }
     @include breakpoint($breakpoint-desktop-small) {
+        margin: 60px 0;
         .copy {
-            &> * {
-                margin: 40px 0;
-            }
-            &> .first {
-                margin: 0 0 40px;
-            }
-            &> .last {
-                margin: 40px 0 0;
-            }
+            @include child-margins(40px);
             .jump.last {
                 display: none;
             }
         }
-        .form {
+        .form-modal {
             margin: 28px 0 0;
+            .pulsar-modal {
+                display: block;
+                padding: 0;
+            }
         }
         .modal-container.desktop-show {
             display: block;
