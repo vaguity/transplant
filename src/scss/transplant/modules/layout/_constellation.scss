@@ -1,0 +1,142 @@
+.constellation {
+    margin: 24px 0;
+    .copy-container {
+        color: $darkgray;
+        margin: 0 0 24px;
+    }
+    .copy {
+        @include child-margins(20px);
+        .label {
+            font-family: $type-sans;
+            font-weight: bold;
+            @include type-style(13px, 13px);
+            text-transform: uppercase;
+        }
+        h2, h3 {
+            text-align: left;
+            text-transform: none;
+            font-family: $type-serif;
+            font-weight: normal;
+            @include type-style(24px, 24px);
+        }
+        p {
+            font-family: $type-base;
+            @include type-style(16px, 28px);
+        }
+    }
+    .images-container {
+        display: inline-block;
+    }
+    .images {
+        img {
+            @include span(3 of 6);
+            &:nth-child(2n) {
+                @include span(3 of 6 last);
+            }
+            &:nth-child(n+3) {
+                margin-top: gutter(6);
+            }
+            &:nth-child(n+5) {
+                display: none;
+            }
+        }
+    }
+    @include breakpoint($breakpoint-tablet) {
+        .images {
+            img {
+                @include span(3 of 12);
+                &:nth-child(2n) {
+                    @include span(3 of 12);
+                }
+                &:nth-child(4n) {
+                    @include span(3 of 12 last);
+                }
+                &:nth-child(n+3) {
+                    margin-top: 0;
+                }
+                &:nth-child(n+5) {
+                    display: block;
+                    margin-top: gutter(12);
+                }
+                &:nth-child(n+9) {
+                    display: none;
+                }
+            }
+        }
+    }
+    @include breakpoint($breakpoint-desktop-small) {
+        display: inline-block;
+        margin: 60px 0;
+        @include span(full last);
+        .copy-container {
+            @include span(6 of 12 last);
+            @include post(6 of 12);
+            float: none;
+        }
+        .copy {
+            max-width: 800px;
+            @include child-margins(40px);
+            h2, h3 {
+                @include type-style(32px, 32px);
+            }
+        }
+        .images {
+            img {
+                @include span(2 of 12);
+                &:nth-child(2n) {
+                    @include span(2 of 12);
+                }
+                &:nth-child(4n) {
+                    @include span(2 of 12);
+                }
+                &:nth-child(6n) {
+                    @include span(2 of 12 last);
+                }
+                &:nth-child(n+5) {
+                    margin-top: 0;
+                }
+                &:nth-child(n+7) {
+                    margin-top: gutter(12);
+                }
+                &:nth-child(n+9) {
+                    display: block;
+                }
+                &:nth-child(n+13) {
+                    display: none;
+                }
+            }
+        }
+    }
+    @include breakpoint($breakpoint-desktop-large) {
+        .images {
+            img {
+                @include span(1 of 12);
+                &:nth-child(2n) {
+                    @include span(1 of 12);
+                }
+                &:nth-child(4n) {
+                    @include span(1 of 12);
+                }
+                &:nth-child(6n) {
+                    @include span(1 of 12);
+                }
+                &:nth-child(12n) {
+                    @include span(1 of 12 last);
+                }
+                &:nth-child(n+7) {
+                    margin-top: 0;
+                }
+                &:nth-child(n+9) {
+                    display: block;
+                }
+                &:nth-child(n+13) {
+                    display: block;
+                    margin-top: gutter(12);
+                }
+                &:nth-child(n+25) {
+                    display: none;
+                }
+            }
+        }
+    }
+}

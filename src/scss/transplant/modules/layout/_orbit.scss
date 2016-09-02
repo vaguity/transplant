@@ -1,0 +1,15 @@
+.orbit {
+    margin: 60px 0;
+    h2, h3 {
+        margin: 0;
+        text-align: center;
+        color: $darkgray;
+        font-family: $type-serif;
+        font-weight: normal;
+        @include type-style(40px, 40px);
+        text-transform: none;
+        @include breakpoint($breakpoint-desktop-small) {
+            @include type-style(50px, 50px);
+        }
+    }
+}

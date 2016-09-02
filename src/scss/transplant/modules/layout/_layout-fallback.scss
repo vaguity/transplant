@@ -1,0 +1,5 @@
+.no-flexbox .segment .copy-container {
+    @include breakpoint($breakpoint-desktop-small) {
+        padding: 0 gutter(12) 0 0;
+    }
+}

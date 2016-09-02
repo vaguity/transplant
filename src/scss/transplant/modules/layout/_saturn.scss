@@ -1,0 +1,30 @@
+.saturn {
+    margin: 24px 0;
+    .copy {
+        &> .last {
+            margin: 40px 0 0;
+        }
+        p {
+            text-align: center;
+            font-family: $type-serif;
+            @include type-style(24px, 32px);
+        }
+    }
+    @include breakpoint($breakpoint-desktop-small) {
+        margin: 60px 0;
+        .image-container, .copy-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .copy {
+            &> .last {
+                margin: 60px 0 0;
+            }
+        }
+    }
+    @include breakpoint($breakpoint-desktop) {
+        .image-container, .copy-container {
+            max-width: 1000px;
+        }
+    }
+}
