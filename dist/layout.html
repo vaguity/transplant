@@ -652,34 +652,11 @@
         <div class="primary-nav">
             <nav class="site-nav">
                 <div class="site-section">
-                    <h2>Solutions</h2>
-                    <ul>
-                        <li><a href="{{ url_for('enterprise_marketing') }}">Enterprise Marketing Management</a></li>
-                        <li><a href="{{ url_for('brand_consistency') }}">Global Brand Management</a></li>
-                        <li><a href="{{ url_for('social_media_management') }}">Social Media Management &amp; Customer&nbsp;Care</a></li>
-                        <li><a href="{{ url_for('best_enterprise_content') }}">Content Marketing</a></li>
-                        <li><a href="{{ url_for('ecommerce') }}">E-Commerce Marketing</a></li>
-                        <li><a href="{{ url_for('growth') }}">Growth Marketing</a></li>
-                    </ul>
-                </div>
-                <div class="site-section">
-                    <h2>Benefits</h2>
-                    <ul>
-                        <li><a href="{{ url_for('cmos') }}">CMOs and Marketing Leaders</a></li>
-                        <li><a href="{{ url_for('cios') }}">CIOs, Marketing Technology Leaders and&nbsp;IT</a></li>
-                        <li><a href="{{ url_for('consultants') }}">Consultants and Integrators</a></li>
-                    </ul>
-                </div>
-                <div class="site-section">
                     <h2><a href="{{ url_for('product') }}">Product</a></h2>
                     <ul>
                         <li><a href="{{ url_for('planner') }}">Marketing Calendar</a></li>
-                        <li><a href="{{ url_for('brief') }}">Campaign Briefs</a></li>
                         <li><a href="{{ url_for('asset_manager') }}">Asset Manager</a></li>
                         <li><a href="{{ url_for('content_marketplace') }}">Marketplace</a></li>
-                        <li><a href="{{ url_for('photographer') }}">Photographer</a></li>
-                        <li><a href="{{ url_for('paid_media') }}">Paid Media</a></li>
-                        <li><a href="{{ url_for('brand_management') }}">Brand Management</a></li>
                         <li><a href="{{ url_for('srp') }}">Monitoring</a></li>
                         <li><a href="{{ url_for('learn') }}">Analytics</a></li>
                         <li><a href="{{ url_for('integrations') }}">Integrations</a></li>
@@ -693,20 +670,44 @@
                         <li><a href="{{ url_for('implementation') }}">Implementation</a></li>
                         <li><a href="{{ url_for('customer_success_support') }}">Customer Success</a></li>
                         <li><a href="{{ url_for('integrations') }}">Integration Services</a></li>
+                        <li><a href="https://success.percolate.com/">Success Center</a></li>
                     </ul>
                 </div>
                 <div class="site-section">
-                    <h2><a href="{{ url_for('clients') }}">Case Studies</a></h2>
+                    <h2><a href="{{ url_for('clients') }}">Customer Stories</a></h2>
                     <ul>
-                        <li><a href="{{ url_for('clients') }}ge">GE</a></li>
-                        <li><a href="{{ url_for('clients') }}unilever">Unilever</a></li>
-                        <li><a href="{{ url_for('clients') }}chobani">Chobani</a></li>
-                        <li><a href="{{ url_for('clients') }}mastercard">MasterCard</a></li>
-                        <li><a href="{{ url_for('clients') }}amtrak">Amtrak</a></li>
-                        <li><a href="{{ url_for('clients') }}us-cellular">U.S. Cellular</a></li>
-                        <li><a href="{{ url_for('clients') }}freshpet">Freshpet</a></li>
-                        <li><a href="{{ url_for('clients') }}visa">Visa</a></li>
-                        <li><a href="{{ url_for('clients') }}western-digital">WD</a></li>
+                        <li><a href="{{ url_for('client', client_id='ge') }}">GE</a></li>
+                        <li><a href="{{ url_for('client', client_id='unilever') }}">Unilever</a></li>
+                        <li><a href="{{ url_for('client', client_id='chobani') }}">Chobani</a></li>
+                        <li><a href="{{ url_for('client', client_id='mastercard') }}">MasterCard</a></li>
+                        <li><a href="{{ url_for('client', client_id='amtrak') }}">Amtrak</a></li>
+                        <li><a href="{{ url_for('client', client_id='spark-networks') }}">Spark Networks</a></li>
+                        <li><a href="{{ url_for('client', client_id='arla-foods') }}">Arla Foods</a></li>
+                        <li><a href="{{ url_for('client', client_id='us-cellular') }}">U.S. Cellular</a></li>
+                        <li><a href="{{ url_for('client', client_id='freshpet') }}">Freshpet</a></li>
+                        <li><a href="{{ url_for('client', client_id='western-digital') }}">WD</a></li>
+
+                    </ul>
+                </div>
+                <div class="site-section">
+                    <ul class="no-heading">
+                        <li><a href="{{ url_for('made_with_client', client_id='kind') }}">KIND</a></li>
+                        <li><a href="{{ url_for('made_with_client', client_id='marriott') }}">Marriott</a></li>
+                        <li><a href="{{ url_for('made_with_client', client_id='timberland') }}">Timberland</a></li>
+                        <li><a href="{{ url_for('made_with_client', client_id='levis') }}">Levi’s</a></li>
+                        <li><a href="{{ url_for('made_with_client', client_id='wework') }}">WeWork</a></li>
+                        <li><a href="{{ url_for('made_with_client', client_id='loews') }}">Loews Hotels</a></li>
+                    </ul>
+                </div>
+                <div class="site-section">
+                    <h2>Solutions</h2>
+                    <ul>
+                        <li><a href="https://learn.percolate.com/enterprise-marketing-management-software/">Enterprise Marketing Management</a></li>
+                        <li><a href="https://learn.percolate.com/global-communications-brand-management-software/">Global Brand Management</a></li>
+                        <li><a href="https://learn.percolate.com/social-media-customer-care-software/">Social Media Management & Customer Care</a></li>
+                        <li><a href="https://learn.percolate.com/enterprise-content-marketing-software/">Content Marketing</a></li>
+                        <li><a href="https://learn.percolate.com/ecommerce/">E-Commerce Marketing</a></li>
+                        <li><a href="https://learn.percolate.com/growth-marketing-software/">Growth Marketing</a></li>
                     </ul>
                 </div>
                 <div class="site-section">
@@ -719,6 +720,7 @@
                         <li><a href="{{ url_for('brand_guidelines') }}">Brand</a></li>
                         <li><a href="{{ url_for('careers') }}">Careers</a></li>
                         <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                        <li><a href="{{ url_for('transition') }}">Transition</a></li>
                     </ul>
                 </div>
             </nav>
@@ -726,11 +728,12 @@
 
         <div class="secondary-nav">
             <div class="footer-logo">
-                <a href="#"><img src="https://percolate.com/static/images/logo_white.png"></a>
+                <a href="{{ url_for('home') }}"><img src="https://percolate.com/static/images/logo_white.png"></a>
             </div>
 
             <nav class="footer-nav">
                 <ul>
+                    <li><a href="tel:646-396-3136" class="request-demo-phone">Talk to Sales</a></li>
                     <li><a href="{{ url_for('terms') }}">Terms of Service</a></li>
                     <li><a href="{{ url_for('privacy') }}">Privacy</a></li>
                 </ul>
