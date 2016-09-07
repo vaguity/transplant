@@ -440,45 +440,110 @@ function(module, exports) {
     /*** IMPORTS FROM imports-loader ***/
     (function() {
         /*! modernizr 3.3.1 (Custom Build) | MIT *
-	 * http://modernizr.com/download/?-mq-setclasses !*/
+	 * http://modernizr.com/download/?-csstransforms-flexbox-video-mq-setclasses !*/
         !function(e, n, t) {
             function o(e, n) {
                 return typeof e === n;
             }
-            function a() {
-                var e, n, t, a, s, i, r;
-                for (var l in f) if (f.hasOwnProperty(l)) {
-                    if (e = [], n = f[l], n.name && (e.push(n.name.toLowerCase()), n.options && n.options.aliases && n.options.aliases.length)) for (t = 0; t < n.options.aliases.length; t++) e.push(n.options.aliases[t].toLowerCase());
-                    for (a = o(n.fn, "function") ? n.fn() : n.fn, s = 0; s < e.length; s++) i = e[s], 
-                    r = i.split("."), 1 === r.length ? Modernizr[r[0]] = a : (!Modernizr[r[0]] || Modernizr[r[0]] instanceof Boolean || (Modernizr[r[0]] = new Boolean(Modernizr[r[0]])), 
-                    Modernizr[r[0]][r[1]] = a), c.push((a ? "" : "no-") + r.join("-"));
+            function r() {
+                var e, n, t, r, s, i, a;
+                for (var l in g) if (g.hasOwnProperty(l)) {
+                    if (e = [], n = g[l], n.name && (e.push(n.name.toLowerCase()), n.options && n.options.aliases && n.options.aliases.length)) for (t = 0; t < n.options.aliases.length; t++) e.push(n.options.aliases[t].toLowerCase());
+                    for (r = o(n.fn, "function") ? n.fn() : n.fn, s = 0; s < e.length; s++) i = e[s], 
+                    a = i.split("."), 1 === a.length ? Modernizr[a[0]] = r : (!Modernizr[a[0]] || Modernizr[a[0]] instanceof Boolean || (Modernizr[a[0]] = new Boolean(Modernizr[a[0]])), 
+                    Modernizr[a[0]][a[1]] = r), w.push((r ? "" : "no-") + a.join("-"));
                 }
             }
             function s(e) {
-                var n = u.className, t = Modernizr._config.classPrefix || "";
-                if (p && (n = n.baseVal), Modernizr._config.enableJSClass) {
+                var n = x.className, t = Modernizr._config.classPrefix || "";
+                if (b && (n = n.baseVal), Modernizr._config.enableJSClass) {
                     var o = new RegExp("(^|\\s)" + t + "no-js(\\s|$)");
                     n = n.replace(o, "$1" + t + "js$2");
                 }
-                Modernizr._config.enableClasses && (n += " " + t + e.join(" " + t), p ? u.className.baseVal = n : u.className = n);
+                Modernizr._config.enableClasses && (n += " " + t + e.join(" " + t), b ? x.className.baseVal = n : x.className = n);
             }
             function i() {
-                return "function" != typeof n.createElement ? n.createElement(arguments[0]) : p ? n.createElementNS.call(n, "http://www.w3.org/2000/svg", arguments[0]) : n.createElement.apply(n, arguments);
+                return "function" != typeof n.createElement ? n.createElement(arguments[0]) : b ? n.createElementNS.call(n, "http://www.w3.org/2000/svg", arguments[0]) : n.createElement.apply(n, arguments);
             }
-            function r() {
+            function a() {
                 var e = n.body;
-                return e || (e = i(p ? "svg" : "body"), e.fake = !0), e;
+                return e || (e = i(b ? "svg" : "body"), e.fake = !0), e;
             }
-            function l(e, t, o, a) {
-                var s, l, f, d, c = "modernizr", p = i("div"), m = r();
-                if (parseInt(o, 10)) for (;o--; ) f = i("div"), f.id = a ? a[o] : c + (o + 1), p.appendChild(f);
-                return s = i("style"), s.type = "text/css", s.id = "s" + c, (m.fake ? m : p).appendChild(s), 
-                m.appendChild(p), s.styleSheet ? s.styleSheet.cssText = e : s.appendChild(n.createTextNode(e)), 
-                p.id = c, m.fake && (m.style.background = "", m.style.overflow = "hidden", d = u.style.overflow, 
-                u.style.overflow = "hidden", u.appendChild(m)), l = t(p, e), m.fake ? (m.parentNode.removeChild(m), 
-                u.style.overflow = d, u.offsetHeight) : p.parentNode.removeChild(p), !!l;
+            function l(e, t, o, r) {
+                var s, l, f, u, c = "modernizr", d = i("div"), p = a();
+                if (parseInt(o, 10)) for (;o--; ) f = i("div"), f.id = r ? r[o] : c + (o + 1), d.appendChild(f);
+                return s = i("style"), s.type = "text/css", s.id = "s" + c, (p.fake ? p : d).appendChild(s), 
+                p.appendChild(d), s.styleSheet ? s.styleSheet.cssText = e : s.appendChild(n.createTextNode(e)), 
+                d.id = c, p.fake && (p.style.background = "", p.style.overflow = "hidden", u = x.style.overflow, 
+                x.style.overflow = "hidden", x.appendChild(p)), l = t(d, e), p.fake ? (p.parentNode.removeChild(p), 
+                x.style.overflow = u, x.offsetHeight) : d.parentNode.removeChild(d), !!l;
             }
-            var f = [], d = {
+            function f(e, n) {
+                return !!~("" + e).indexOf(n);
+            }
+            function u(e) {
+                return e.replace(/([A-Z])/g, function(e, n) {
+                    return "-" + n.toLowerCase();
+                }).replace(/^ms-/, "-ms-");
+            }
+            function c(n, o) {
+                var r = n.length;
+                if ("CSS" in e && "supports" in e.CSS) {
+                    for (;r--; ) if (e.CSS.supports(u(n[r]), o)) return !0;
+                    return !1;
+                }
+                if ("CSSSupportsRule" in e) {
+                    for (var s = []; r--; ) s.push("(" + u(n[r]) + ":" + o + ")");
+                    return s = s.join(" or "), l("@supports (" + s + ") { #modernizr { position: absolute; } }", function(e) {
+                        return "absolute" == getComputedStyle(e, null).position;
+                    });
+                }
+                return t;
+            }
+            function d(e) {
+                return e.replace(/([a-z])-([a-z])/g, function(e, n, t) {
+                    return n + t.toUpperCase();
+                }).replace(/^-/, "");
+            }
+            function p(e, n, r, s) {
+                function a() {
+                    u && (delete E.style, delete E.modElem);
+                }
+                if (s = o(s, "undefined") ? !1 : s, !o(r, "undefined")) {
+                    var l = c(e, r);
+                    if (!o(l, "undefined")) return l;
+                }
+                for (var u, p, m, v, y, h = [ "modernizr", "tspan" ]; !E.style; ) u = !0, E.modElem = i(h.shift()), 
+                E.style = E.modElem.style;
+                for (m = e.length, p = 0; m > p; p++) if (v = e[p], y = E.style[v], f(v, "-") && (v = d(v)), 
+                E.style[v] !== t) {
+                    if (s || o(r, "undefined")) return a(), "pfx" == n ? v : !0;
+                    try {
+                        E.style[v] = r;
+                    } catch (g) {}
+                    if (E.style[v] != y) return a(), "pfx" == n ? v : !0;
+                }
+                return a(), !1;
+            }
+            function m(e, n) {
+                return function() {
+                    return e.apply(n, arguments);
+                };
+            }
+            function v(e, n, t) {
+                var r;
+                for (var s in e) if (e[s] in n) return t === !1 ? e[s] : (r = n[e[s]], o(r, "function") ? m(r, t || n) : r);
+                return !1;
+            }
+            function y(e, n, t, r, s) {
+                var i = e.charAt(0).toUpperCase() + e.slice(1), a = (e + " " + P.join(i + " ") + i).split(" ");
+                return o(n, "string") || o(n, "undefined") ? p(a, n, r, s) : (a = (e + " " + z.join(i + " ") + i).split(" "), 
+                v(a, n, t));
+            }
+            function h(e, n, o) {
+                return y(e, t, t, n, o);
+            }
+            var g = [], C = {
                 _version: "3.3.1",
                 _config: {
                     classPrefix: "",
@@ -494,21 +559,21 @@ function(module, exports) {
                     }, 0);
                 },
                 addTest: function(e, n, t) {
-                    f.push({
+                    g.push({
                         name: e,
                         fn: n,
                         options: t
                     });
                 },
                 addAsyncTest: function(e) {
-                    f.push({
+                    g.push({
                         name: null,
                         fn: e
                     });
                 }
             }, Modernizr = function() {};
-            Modernizr.prototype = d, Modernizr = new Modernizr();
-            var c = [], u = n.documentElement, p = "svg" === u.nodeName.toLowerCase(), m = function() {
+            Modernizr.prototype = C, Modernizr = new Modernizr();
+            var w = [], x = n.documentElement, b = "svg" === x.nodeName.toLowerCase(), S = function() {
                 var n = e.matchMedia || e.msMatchMedia;
                 return n ? function(e) {
                     var t = n(e);
@@ -520,8 +585,35 @@ function(module, exports) {
                     }), t;
                 };
             }();
-            d.mq = m, a(), s(c), delete d.addTest, delete d.addAsyncTest;
-            for (var h = 0; h < Modernizr._q.length; h++) Modernizr._q[h]();
+            C.mq = S;
+            var _ = "Moz O ms Webkit", P = C._config.usePrefixes ? _.split(" ") : [];
+            C._cssomPrefixes = P;
+            var T = {
+                elem: i("modernizr")
+            };
+            Modernizr._q.push(function() {
+                delete T.elem;
+            });
+            var E = {
+                style: T.elem.style
+            };
+            Modernizr._q.unshift(function() {
+                delete E.style;
+            });
+            var z = C._config.usePrefixes ? _.toLowerCase().split(" ") : [];
+            C._domPrefixes = z, C.testAllProps = y, C.testAllProps = h, Modernizr.addTest("flexbox", h("flexBasis", "1px", !0)), 
+            Modernizr.addTest("csstransforms", function() {
+                return -1 === navigator.userAgent.indexOf("Android 2.") && h("transform", "scale(1)", !0);
+            }), Modernizr.addTest("video", function() {
+                var e = i("video"), n = !1;
+                try {
+                    (n = !!e.canPlayType) && (n = new Boolean(n), n.ogg = e.canPlayType('video/ogg; codecs="theora"').replace(/^no$/, ""), 
+                    n.h264 = e.canPlayType('video/mp4; codecs="avc1.42E01E"').replace(/^no$/, ""), n.webm = e.canPlayType('video/webm; codecs="vp8, vorbis"').replace(/^no$/, ""), 
+                    n.vp9 = e.canPlayType('video/webm; codecs="vp9"').replace(/^no$/, ""), n.hls = e.canPlayType('application/x-mpegURL; codecs="avc1.42E01E"').replace(/^no$/, ""));
+                } catch (t) {}
+                return n;
+            }), r(), s(w), delete C.addTest, delete C.addAsyncTest;
+            for (var N = 0; N < Modernizr._q.length; N++) Modernizr._q[N]();
             e.Modernizr = Modernizr;
         }(window, document);
         /*** EXPORTS FROM exports-loader ***/
@@ -647,14 +739,14 @@ function(module, exports, __webpack_require__) {
 /***/
 function(module, exports, __webpack_require__) {
     var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
-    /*! jQuery v1.12.3 | (c) jQuery Foundation | jquery.org/license */
+    /*! jQuery v1.12.4 | (c) jQuery Foundation | jquery.org/license */
     !function(a, b) {
         "object" == typeof module && "object" == typeof module.exports ? module.exports = a.document ? b(a, !0) : function(a) {
             if (!a.document) throw new Error("jQuery requires a window with a document");
             return b(a);
         } : b(a);
     }("undefined" != typeof window ? window : this, function(a, b) {
-        var c = [], d = a.document, e = c.slice, f = c.concat, g = c.push, h = c.indexOf, i = {}, j = i.toString, k = i.hasOwnProperty, l = {}, m = "1.12.3", n = function(a, b) {
+        var c = [], d = a.document, e = c.slice, f = c.concat, g = c.push, h = c.indexOf, i = {}, j = i.toString, k = i.hasOwnProperty, l = {}, m = "1.12.4", n = function(a, b) {
             return new n.fn.init(a, b);
         }, o = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, p = /^-ms-/, q = /-([\da-z])/gi, r = function(a, b) {
             return b.toUpperCase();
@@ -2533,9 +2625,10 @@ function(module, exports, __webpack_require__) {
                     k.style.marginRight = k.style.width = "0", j.style.width = "1px", g = !parseFloat((a.getComputedStyle(k) || {}).marginRight), 
                     j.removeChild(k)), j.style.display = "none", f = 0 === j.getClientRects().length, 
                     f && (j.style.display = "", j.innerHTML = "<table><tr><td></td><td>t</td></tr></table>", 
-                    k = j.getElementsByTagName("td"), k[0].style.cssText = "margin:0;border:0;padding:0;display:none", 
-                    f = 0 === k[0].offsetHeight, f && (k[0].style.display = "", k[1].style.display = "none", 
-                    f = 0 === k[0].offsetHeight)), m.removeChild(i);
+                    j.childNodes[0].style.borderCollapse = "separate", k = j.getElementsByTagName("td"), 
+                    k[0].style.cssText = "margin:0;border:0;padding:0;display:none", f = 0 === k[0].offsetHeight, 
+                    f && (k[0].style.display = "", k[1].style.display = "none", f = 0 === k[0].offsetHeight)), 
+                    m.removeChild(i);
                 }
             }
         }();
@@ -2595,14 +2688,13 @@ function(module, exports, __webpack_require__) {
             "padding" !== c && (g += n.css(a, "border" + V[f] + "Width", !0, e)));
             return g;
         }
-        function fb(b, c, e) {
-            var f = !0, g = "width" === c ? b.offsetWidth : b.offsetHeight, h = Ra(b), i = l.boxSizing && "border-box" === n.css(b, "boxSizing", !1, h);
-            if (d.msFullscreenElement && a.top !== a && b.getClientRects().length && (g = Math.round(100 * b.getBoundingClientRect()[c])), 
-            0 >= g || null == g) {
-                if (g = Sa(b, c, h), (0 > g || null == g) && (g = b.style[c]), Oa.test(g)) return g;
-                f = i && (l.boxSizingReliable() || g === b.style[c]), g = parseFloat(g) || 0;
+        function fb(a, b, c) {
+            var d = !0, e = "width" === b ? a.offsetWidth : a.offsetHeight, f = Ra(a), g = l.boxSizing && "border-box" === n.css(a, "boxSizing", !1, f);
+            if (0 >= e || null == e) {
+                if (e = Sa(a, b, f), (0 > e || null == e) && (e = a.style[b]), Oa.test(e)) return e;
+                d = g && (l.boxSizingReliable() || e === a.style[b]), e = parseFloat(e) || 0;
             }
-            return g + eb(b, c, e || (i ? "border" : "content"), f, h) + "px";
+            return e + eb(a, b, c || (g ? "border" : "content"), d, f) + "px";
         }
         n.extend({
             cssHooks: {
@@ -3501,6 +3593,7 @@ function(module, exports, __webpack_require__) {
             return a.style && a.style.display || n.css(a, "display");
         }
         function Zb(a) {
+            if (!n.contains(a.ownerDocument || d, a)) return !0;
             while (a && 1 === a.nodeType) {
                 if ("none" === Yb(a) || "hidden" === a.type) return !0;
                 a = a.parentNode;
@@ -3820,7 +3913,7 @@ function(module, exports, __webpack_require__) {
     }(window), function(a, b, c) {
         "use strict";
         function d(a) {
-            return " " === a || "	" === a || "\n" === a || "\f" === a || "\r" === a;
+            return " " === a || "\t" === a || "\n" === a || "\f" === a || "\r" === a;
         }
         function e(b, c) {
             var d = new a.Image();
