@@ -6,7 +6,7 @@ This is an NPM package to include in marketing projects as a dependency.
 
 ## Use
 
-Transplant should be included in a project with a package manager and task runner (e.g., Bower and Gulp).
+Transplant should be included in a project's `package.json` and used with Gulp tasks.
 
 - Includes the following CSS/Sass dependencies for consistent use across applications:
     - Susy
@@ -16,37 +16,38 @@ Transplant should be included in a project with a package manager and task runne
 - Requires the following JavaScript dependencies to be loaded for use:
     - Modernizr
     - jQuery
-    - enquire.js (and a strongly suggested shim for enquire)
+    - enquire.js (and a shim for enquire)
     - Underscore
+    - Picturefill
 
 ## Contents
 
-### The CSS
+### src/js
 
-`dist/assets/css/transplant.css` is the minified, processed CSS built from `src/scss`. It includes reset libraries, layouts, the header and footer styles, and helper classes.
+Various JS modules and functions are included in separate files here. The relevant parts of external libraries are committed under `/lib`.
 
-### The Sass
+### src/scss
 
-`src/scss/transplant/variables/` should be imported into any project so the global variables are made available to any custom styles in a given project.
+Bundled styles are included here in directories, with modules in subdirectories. External libraries are committed under `/lib`.
 
-### The JavaScript
+### src/
 
-`dist/assets/js/transplant.js` includes a shim for the use of enquire and jQuery and enquire calls to set up the header navigation menu for tablet and mobile. It requires Modernizr, jQuery and enquire to have been loaded first.
+Webpack bundles are added here. This is mostly for local development -- JS and Sass should be loaded by the project separately and not load the full bundle.
 
 
 ## Development
 
-HTML files for the header, footer and a sample page with both the header and footer are included in `/dist`. Serve those files from that directory locally with `npm run up`.
+HTML files for various templates are included in `/dist`. Serve those files from that directory locally with `npm run up` in the root directory.
 
 Run the following in the root directory before making changes:
 
 `npm install`  
 `gulp dependencies`  
-`gulp`  
+`gulp build` or `gulp`  
 
-The tasks `gulp sass`, `gulp build` (which also processes Sass), and `gulp watch` are also available. The `gulp` command automatically builds and starts watching.
+The `gulp` command automatically builds and starts watching.
 
-Bump the version using a git version tag if changes are made to the CSS, Sass or Javascript. Strict versioning is necessary for the projects that use Transplant.
+Bump the version using a git version tag if changes are made to the CSS, Sass or JavaScript. Strict versioning is necessary for the projects that use Transplant.
 
 
 ## Deployment

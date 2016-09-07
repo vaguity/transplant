@@ -103,5 +103,5 @@
 
 - Update breakpoints
 - Update layout
-- Add modules
+- Add layout modules
 - Remove default global styles for semantic tags
