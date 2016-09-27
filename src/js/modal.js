@@ -27,8 +27,8 @@ function modalDisable ($modalEl) {
 }
 
 $(document).ready(function () {
-    $('.modal-link').bind('click', modalHandler)
-    $('.modal-close').bind('click', modalClose)
+    $('.modal-link').on('click', modalHandler)
+    $('.modal-close').on('click', modalClose)
 
     enquire
     .register('screen and (min-width: 1000px)', {

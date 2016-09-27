@@ -92,16 +92,16 @@ function stickyCalc () {
 function stickyNav (set) {
     if (set === true) {
         stickyCalc()
-        $(window).bind('scroll', _.throttle(function () {
+        $(window).on('scroll', _.throttle(function () {
             if ($('.sticky').length === 0) {
-                $(window).unbind('scroll')
+                $(window).off('scroll')
             }
 
             stickyCalc()
         }, 100))
     }
     else {
-        $(window).unbind('scroll')
+        $(window).off('scroll')
         var stickyNavFalse = function () {
             $('.sticky').removeClass('enabled')
             $('.sticky-begin').removeClass('enabled')
@@ -154,14 +154,14 @@ $(document).ready(function () {
     stickyEnquire()
 })
 
-$(window).bind('hashchange', function () {
+$(window).on('hashchange', function () {
     if (typeof scrollOffset === 'number') {
         document.body.scrollTop = scrollOffset
         scrollOffset = undefined
     }
 })
 
-$(window).load(function () {
+$(window).on('load', function () {
     stickyEnquire()
 })
 

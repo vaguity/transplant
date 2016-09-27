@@ -39,5 +39,5 @@ function activateToggle ($activateEl) {
 }
 
 $(document).ready(function () {
-    $('.activate').bind('click', activateHandler)
+    $('.activate').on('click', activateHandler)
 })

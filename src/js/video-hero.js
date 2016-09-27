@@ -33,7 +33,7 @@ function videoHero (set, height) {
     }
 }
 
-$(window).load(function () {
+$(window).on('load', function () {
     enquire.register('screen and (min-width: 1180px)', {
         setup: function () {
             videoHeroSetup()
