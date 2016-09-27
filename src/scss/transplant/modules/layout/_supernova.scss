@@ -1,0 +1,48 @@
+.supernova-container {
+    &.type-ii {
+        background: $orange;
+        .hero > div {
+            display: block;
+            padding: 60px 0;
+            @include breakpoint($breakpoint-desktop-small) {
+                padding: 150px 0;
+            }
+        }
+        h1 {
+            text-align: left;
+            @include breakpoint($breakpoint-tablet) {
+                max-width: 800px;
+                @include type-style(50px, 50px);
+            }
+        }
+        p {
+            font-family: $type-serif;
+            text-align: left;
+            @include type-style(20px, 28px);
+            @include breakpoint($breakpoint-tablet) {
+                max-width: 800px;
+                @include type-style(32px, 40px);
+            }
+        }
+        .first {
+            margin: 0 0 20px;
+            @include breakpoint($breakpoint-tablet) {
+                margin: 0 0 40px;
+            }
+        }
+        .last {
+            margin: 20px 0 0;
+            @include breakpoint($breakpoint-tablet) {
+                margin: 40px 0 0;
+            }
+        }
+    }
+}
+
+.content.update .supernova-container.bleed.type-ii .segment.hero {
+    display: block;
+    margin: 0;
+    margin-left: 0;
+    margin-right: 0;
+    height: auto;
+}
