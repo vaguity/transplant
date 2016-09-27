@@ -1,6 +1,6 @@
 {
   "name": "transplant",
-  "version": "2.3.3",
+  "version": "3.0.2",
   "engines": {
     "node": "0.10.x || 0.12.x"
   },

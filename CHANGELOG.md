@@ -113,3 +113,4 @@
 ## 3.0.2
 
 - Add gravity helper class for stacked alt-background elements
+- Add alternate hero style
