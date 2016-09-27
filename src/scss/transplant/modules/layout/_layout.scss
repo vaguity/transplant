@@ -7,4 +7,10 @@
             padding: 60px 0;
         }
     }
+    &.gravity .segment {
+        padding: 0 0 24px;
+        @include breakpoint($breakpoint-desktop-small) {
+            padding: 0 0 60px;
+        }
+    }
 }

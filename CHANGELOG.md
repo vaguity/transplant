@@ -105,3 +105,11 @@
 - Update layout
 - Add layout modules
 - Remove default global styles for semantic tags
+
+## 3.0.1
+
+- Update jQuery, handle breaking changes
+
+## 3.0.2
+
+- Add gravity helper class for stacked alt-background elements
