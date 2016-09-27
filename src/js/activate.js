@@ -1,10 +1,10 @@
 function activateHandler (e) {
     e.preventDefault()
     var activateClass = '.' + $(this).data('activate')
-    var activateBaseClass = '.' + $(this).data('activate-base')
-    var activateMenuClass = '.' + $(this).data('activate-menu')
-    var activateMenuBaseClass = '.' + $(this).data('activate-menu-base')
-    var activateToggleCheck = $(this).data('activate-toggle')
+    var activateBaseClass = '.' + $(this).data('activateBase')
+    var activateMenuClass = '.' + $(this).data('activateMenu')
+    var activateMenuBaseClass = '.' + $(this).data('activateMenuBase')
+    var activateToggleCheck = $(this).data('activateToggle')
 
     activateTrigger(activateClass, activateBaseClass, activateToggleCheck)
     activateTrigger(activateMenuClass, activateMenuBaseClass, activateToggleCheck)
