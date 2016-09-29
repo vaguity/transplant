@@ -115,3 +115,9 @@
 - Add gravity helper class for stacked alt-background elements
 - Add alternate hero style
 - Remove update class for base layouts
+
+## 3.0.3
+
+- Change structure of Jupiter
+- Clean up copy margins for modules
+- Don't use inline-block on module segments

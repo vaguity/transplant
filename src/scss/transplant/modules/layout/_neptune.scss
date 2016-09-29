@@ -6,6 +6,7 @@
     .copy {
         @include span(full);
         color: $darkgray;
+        @include child-margins(20px);
         .label {
             font-family: $type-sans;
             font-weight: bold;

@@ -65,7 +65,6 @@
         }
     }
     @include breakpoint($breakpoint-desktop-small) {
-        display: inline-block;
         margin: 60px 0;
         @include span(full last);
         .copy-container {
