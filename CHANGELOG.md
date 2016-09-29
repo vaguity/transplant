@@ -114,3 +114,4 @@
 
 - Add gravity helper class for stacked alt-background elements
 - Add alternate hero style
+- Remove update class for base layouts

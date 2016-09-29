@@ -1,4 +1,4 @@
-.content.update .container {
+.content .container {
     @include container(full);
     padding: 0 24px;
     @include breakpoint($breakpoint-desktop-small) {
