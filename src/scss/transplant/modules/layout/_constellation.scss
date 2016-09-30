@@ -34,7 +34,12 @@
                 @include span(3 of 6 last);
             }
             &:nth-child(n+3) {
+                margin-right: 0;
+                @include span(3 of 6 rtl);
                 margin-top: gutter(6);
+            }
+            &:nth-child(4) {
+                @include span(3 of 6 rtl last);
             }
             &:nth-child(n+5) {
                 display: none;
@@ -48,15 +53,23 @@
                 &:nth-child(2n) {
                     @include span(3 of 12);
                 }
-                &:nth-child(4n) {
-                    @include span(3 of 12 last);
-                }
                 &:nth-child(n+3) {
+                    margin-left: 0;
+                    @include span(3 of 12);
                     margin-top: 0;
+                }
+                &:nth-child(4) {
+                    margin-left: 0;
+                    @include span(3 of 12 last);
                 }
                 &:nth-child(n+5) {
                     display: block;
+                    margin-right: 0;
+                    @include span(3 of 12 rtl);
                     margin-top: gutter(12);
+                }
+                &:nth-child(8) {
+                    @include span(3 of 12 rtl last);
                 }
                 &:nth-child(n+9) {
                     display: none;
@@ -85,20 +98,34 @@
                 &:nth-child(2n) {
                     @include span(2 of 12);
                 }
-                &:nth-child(4n) {
+                &:nth-child(n+3) {
                     @include span(2 of 12);
                 }
-                &:nth-child(6n) {
-                    @include span(2 of 12 last);
+                &:nth-child(4) {
+                    margin-left: 0;
+                    @include span(2 of 12);
                 }
                 &:nth-child(n+5) {
+                    margin-left: 0;
+                    @include span(2 of 12);
                     margin-top: 0;
                 }
+                &:nth-child(6) {
+                    @include span(2 of 12 last);
+                }
                 &:nth-child(n+7) {
+                    margin-right: 0;
+                    @include span(2 of 12 rtl);
                     margin-top: gutter(12);
+                }
+                &:nth-child(8) {
+                    @include span(2 of 12 rtl);
                 }
                 &:nth-child(n+9) {
                     display: block;
+                }
+                &:nth-child(12) {
+                    @include span(2 of 12 rtl last);
                 }
                 &:nth-child(n+13) {
                     display: none;
@@ -113,24 +140,34 @@
                 &:nth-child(2n) {
                     @include span(1 of 12);
                 }
-                &:nth-child(4n) {
+                &:nth-child(n+3) {
                     @include span(1 of 12);
                 }
-                &:nth-child(6n) {
+                &:nth-child(4) {
                     @include span(1 of 12);
                 }
-                &:nth-child(12n) {
-                    @include span(1 of 12 last);
+                &:nth-child(n+5) {
+                    @include span(1 of 12);
+                }
+                &:nth-child(6) {
+                    @include span(1 of 12);
                 }
                 &:nth-child(n+7) {
+                    margin-left: 0;
+                    @include span(1 of 12);
                     margin-top: 0;
                 }
-                &:nth-child(n+9) {
-                    display: block;
+                &:nth-child(12) {
+                    @include span(1 of 12 last);
                 }
                 &:nth-child(n+13) {
                     display: block;
+                    margin-right: 0;
+                    @include span(1 of 12 rtl);
                     margin-top: gutter(12);
+                }
+                &:nth-child(24) {
+                    @include span(1 of 12 rtl last);
                 }
                 &:nth-child(n+25) {
                     display: none;
