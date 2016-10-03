@@ -122,3 +122,9 @@
 - Clean up copy margins for modules
 - Don't use inline-block on module segments
 - Alternate second row of Constellation
+- Support multiple image sets in Constellation
+
+## 3.0.4
+
+- Add gravity helper for all modules
+

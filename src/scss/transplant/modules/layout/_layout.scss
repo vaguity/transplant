@@ -8,10 +8,18 @@
         }
     }
     &.gravity .segment {
+        margin: 0;
         padding: 0 0 24px;
         @include breakpoint($breakpoint-desktop-small) {
+            margin: 0;
             padding: 0 0 60px;
         }
     }
 }
 
+.container.gravity .segment {
+    margin: 0 0 24px;
+    @include breakpoint($breakpoint-desktop-small) {
+        margin: 0 0 60px;
+    }
+}
