@@ -25,9 +25,9 @@
         }
         .copy {
             margin: 0 0 60px;
-            @include span(6 of 12);
+            @include span(3 of 6);
             &:nth-child(2n) {
-                @include span(6 of 12 last);
+                @include span(3 of 6 last);
             }
             &> .first {
                 margin: 0 0 40px;
