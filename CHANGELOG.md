@@ -129,3 +129,4 @@
 - Add gravity helper for all modules
 - Expand Kuiper Belt gutter
 - Add border-box sizing to Earth images
+- Fix Earth image containers

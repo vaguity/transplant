@@ -24,8 +24,12 @@
     }
     .images-container {
         display: inline-block;
+        width: 100%;
     }
     .images img {
+        display: block;
+        width: 100%;
+        height: auto;
         margin: 24px 0 0;
         box-sizing: border-box;
     }
@@ -44,9 +48,6 @@
             h2, h3 {
                 @include type-style(32px, 32px);
             }
-        }
-        .images-container {
-            display: inline-block;
         }
         .images {
             img {
