@@ -4,7 +4,6 @@
         display: inline-block;
     }
     .copy {
-        // @include span(full);
         color: $darkgray;
         @include child-margins(20px);
         .label {
@@ -28,7 +27,7 @@
     }
     .images img {
         margin: 24px 0 0;
-        // @include span(full);
+        box-sizing: border-box;
     }
     @include breakpoint($breakpoint-desktop-small) {
         width: 100%;
