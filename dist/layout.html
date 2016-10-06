@@ -59,6 +59,18 @@
 <div class="content-container">
     <div id="content" class="content update">
 
+        <div class="sub-nav-container container full bleed">
+            <nav class="sub-nav full">
+                <ul>
+                    <li><a href="{{ url_for('product') }}">Overview</a></li>
+                    <li><a href="{{ url_for('plan') }}">Plan</a></li>
+                    <li><a href="{{ url_for('create') }}" class="active">Create</a></li>
+                    <li><a href="{{ url_for('execute') }}" class="active">Execute</a></li>
+                    <li><a href="{{ url_for('learn') }}" class="active">Learn</a></li>
+                </ul>
+            </nav>
+        </div>
+
         <div class="hero-container supernova-container type-i container bleed" style="background-image: url('assets/img/style-guide/supernova-remnant-2000.jpg');">
             <div class="mask">
             <div class="segment hero supernova">
