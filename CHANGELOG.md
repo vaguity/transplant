@@ -134,3 +134,4 @@
 ## 3.0.5
 
 - Update Saturn to handle copy and adjust spacing
+- Center Saturn image
