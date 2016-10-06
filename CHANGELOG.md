@@ -130,3 +130,7 @@
 - Expand Kuiper Belt gutter
 - Add border-box sizing to Earth images
 - Fix Earth image containers
+
+## 3.0.5
+
+- Update Saturn to handle copy and adjust spacing
