@@ -38,7 +38,7 @@ function stickyEnquire () {
         stickyNav(true)
     }
     else {
-        enquire.register('screen and (min-width: 1000px)', {
+        enquire.register('screen and (min-width: 930px)', {
             match: function () {
                 stickyNav(true)
             },

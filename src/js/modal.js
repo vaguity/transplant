@@ -31,7 +31,7 @@ $(document).ready(function () {
     $('.modal-close').on('click', modalClose)
 
     enquire
-    .register('screen and (min-width: 1000px)', {
+    .register('screen and (min-width: 930px)', {
         deferSetup: true,
         setup: function () {
             $('.modal-active').removeClass('modal-active')

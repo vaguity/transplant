@@ -185,7 +185,7 @@ function(module, exports) {
         if (stickyMobileCheck()) {
             stickyNav(true);
         } else {
-            enquire.register("screen and (min-width: 1000px)", {
+            enquire.register("screen and (min-width: 930px)", {
                 match: function() {
                     stickyNav(true);
                 },
@@ -505,7 +505,7 @@ function(module, exports) {
     $(document).ready(function() {
         $(".modal-link").on("click", modalHandler);
         $(".modal-close").on("click", modalClose);
-        enquire.register("screen and (min-width: 1000px)", {
+        enquire.register("screen and (min-width: 930px)", {
             deferSetup: true,
             setup: function() {
                 $(".modal-active").removeClass("modal-active");

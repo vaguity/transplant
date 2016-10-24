@@ -144,3 +144,4 @@
 - Adjust header links
 - Allow sub-nav to appear below desktop breakpoint
 - Update forms styling reset breakpoint
+- Update sticky nav and modal enquire calls to 930px
