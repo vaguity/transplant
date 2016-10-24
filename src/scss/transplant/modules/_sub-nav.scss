@@ -2,7 +2,7 @@
     border: 1px solid $lightgray;
     border-width: 1px 0 0;
     display: none;
-    @include breakpoint($breakpoint-desktop) {
+    @include breakpoint($breakpoint-desktop-small) {
         display: block;
     }
 }

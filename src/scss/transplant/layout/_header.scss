@@ -110,9 +110,6 @@
                 margin: 0 10px 0 0;
                 font-family: $type-base;
                 @include type-style(13px, 13px);
-                &:first-child {
-                    margin: 0 10px 0 10px;
-                }
                 &:last-child {
                     margin: 0;
                 }

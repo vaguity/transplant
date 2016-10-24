@@ -141,3 +141,5 @@
 
 - Add typography variables for InterFace typeface
 - Add documentation on asset sizes
+- Adjust header links
+- Allow sub-nav to appear below desktop breakpoint

@@ -10,6 +10,16 @@ $(document).ready(function () {
             }
         })
     })
+
+    enquire
+    .register('screen and (min-width: 930px) and (max-width: 1080px)', {
+        match: function () {
+            $('.secondary-nav .careers').css('display', 'none')
+        },
+        unmatch: function () {
+            $('.secondary-nav .careers').css('display', 'inline-block')
+        },
+    })
 })
 
 $(window).on('load', function () {
