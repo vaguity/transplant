@@ -121,7 +121,7 @@ function formsStyleReset (formSelector, formDisplay) {
         $(formSelector + ' .mktoLogicalField label').text(formCheckboxLabel)
     }
 
-    enquire.register('screen and (min-width: 1000px)', {
+    enquire.register('screen and (min-width: 930px)', {
         match: function () {
             $(formSelector).find('.mktoFieldDescriptor, .mktoFieldWrap').css('display', formDisplay)
             $(formSelector + ' textarea').closest('.mktoFormRow').css('display', 'block')
