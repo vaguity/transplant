@@ -140,3 +140,4 @@
 ## 3.0.6
 
 - Add typography variables for InterFace typeface
+- Add documentation on asset sizes
