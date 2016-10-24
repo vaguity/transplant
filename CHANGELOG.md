@@ -136,3 +136,7 @@
 - Update Saturn to handle copy and adjust spacing
 - Center Saturn image
 - Don't expand width of sub-nav
+
+## 3.0.6
+
+- Add typography variables for InterFace typeface

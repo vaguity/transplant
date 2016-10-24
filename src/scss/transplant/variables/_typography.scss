@@ -1,10 +1,12 @@
 $helvetica: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $sentinel: 'Sentinel A', 'Sentinel B', Georgia, serif;
 $futura: 'Futura W01 Bold', Arial, sans-serif;
+$interface: 'InterFace', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $percocons: 'Percocons';
 $type-base: $helvetica;
 $type-serif: $sentinel;
 $type-sans: $futura;
+$type-interface: $interface;
 $type-icons: $percocons;
 
 @function type-calculate-rem($size) {
