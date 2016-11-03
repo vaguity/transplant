@@ -143,55 +143,49 @@
                     display: none;
                 }
             }
-            &:last-of-type img:nth-child(n+5) {
-                margin-bottom: 0;
-            }
         }
     }
     @include breakpoint($breakpoint-desktop-large) {
         .images {
             img {
-                @include span(1 of 12);
+                @include span(2 of 16);
                 &:nth-child(2n) {
-                    @include span(1 of 12);
+                    @include span(2 of 16);
                 }
                 &:nth-child(n+3) {
-                    @include span(1 of 12);
+                    @include span(2 of 16);
                 }
                 &:nth-child(4) {
-                    @include span(1 of 12);
+                    @include span(2 of 16);
                 }
                 &:nth-child(n+5) {
-                    @include span(1 of 12);
+                    @include span(2 of 16);
                 }
                 &:nth-child(6) {
-                    @include span(1 of 12);
+                    @include span(2 of 16);
                 }
                 &:nth-child(n+7) {
                     margin-left: 0;
-                    @include span(1 of 12);
+                    @include span(2 of 16);
                     margin-top: 0;
                     margin-bottom: 0;
                 }
-                &:nth-child(12) {
-                    @include span(1 of 12 last);
+                &:nth-child(8) {
+                    @include span(2 of 16 last);
                 }
-                &:nth-child(n+13) {
+                &:nth-child(n+9) {
                     display: block;
                     margin-right: 0;
-                    @include span(1 of 12 rtl);
-                    margin-top: gutter(12);
-                    margin-bottom: gutter(12);
+                    @include span(2 of 16 rtl);
+                    margin-top: gutter(16);
+                    margin-bottom: gutter(16);
                 }
-                &:nth-child(24) {
-                    @include span(1 of 12 rtl last);
+                &:nth-child(16) {
+                    @include span(2 of 16 rtl last);
                 }
-                &:nth-child(n+25) {
+                &:nth-child(n+17) {
                     display: none;
                 }
-            }
-            &:last-of-type img:nth-child(n+5) {
-                margin-bottom: 0;
             }
         }
     }

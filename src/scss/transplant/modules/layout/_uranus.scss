@@ -40,14 +40,14 @@
             align-self: center;
             vertical-align: middle;
             color: $darkgray;
-            @include span(5 of 12);
+            @include span(15 of 36);
             margin: 0;
             text-align: center;
         }
         .copy {
             text-align: left;
             max-width: 800px;
-            @include child-margins(40px);
+            @include child-margins(30px);
             h2, h3 {
                 @include type-style(32px, 32px);
             }
@@ -55,7 +55,7 @@
         .image-container {
             display: inline-block;
             vertical-align: middle;
-            @include span(7 of 12 last);
+            @include span(20 of 36 last);
             float: none;
         }
         .image {
@@ -63,7 +63,7 @@
         }
         &.left {
             .copy-container {
-                padding: 0 gutter(12) 0 0;
+                padding: 0 (span(1 of 36) + (gutter(36) * 2)) 0 0;
                 order: 1;
             }
             .image-container {
@@ -72,12 +72,22 @@
         }
         &.right {
             .copy-container {
-                padding: 0 0 0 gutter(12);
+                padding: 0 0 0 (span(1 of 36) + (gutter(36) * 2));
                 order: 2;
             }
             .image-container {
                 order: 1;
             }
+        }
+    }
+    @include breakpoint($breakpoint-desktop) {
+        .copy {
+            @include child-margins(40px);
+        }
+    }
+    @include breakpoint($breakpoint-desktop-large) {
+        .copy {
+            @include child-margins(60px);
         }
     }
 }

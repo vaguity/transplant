@@ -145,3 +145,9 @@
 - Allow sub-nav to appear below desktop breakpoint
 - Update forms styling reset breakpoint
 - Update sticky nav and modal enquire calls to 930px
+
+## 3.0.x
+
+- Limit Constellation to 8 images in a row
+- Adjust Uranus margins proportionally
++ Adjust Neptune margins proportionally
