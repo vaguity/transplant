@@ -26,10 +26,6 @@
     .image-container {
         @include span(full);
         margin: 0 0 24px;
-        &.pad-mobile {
-            width: auto;
-            padding: 0 24px;
-        }
     }
     .image {
         margin: 0 0 24px;
@@ -43,7 +39,7 @@
         .copy-container {
             display: inline-block;
             padding: 0;
-            @include span(7 of 12);
+            @include span(20 of 36);
             margin: 0;
             align-self: center;
             vertical-align: middle;
@@ -55,15 +51,15 @@
             margin: 0 auto;
             text-align: left;
             max-width: 800px;
-            @include child-margins(40px);
+            @include child-margins(30px);
             h2, h3 {
                 @include type-style(32px, 32px);
             }
         }
-        .image-container, .image-container.pad-mobile {
+        .image-container {
             margin: 0;
             display: inline-block;
-            @include span(5 of 12 last);
+            @include span(15 of 36 last);
             vertical-align: middle;
             text-align: center;
             img {
@@ -75,7 +71,7 @@
         }
         &.left {
             .copy-container {
-                padding: 0 gutter(12) 0 0;
+                padding: 0 (span(1 of 36) + (gutter(36) * 2)) 0 0;
                 order: 1;
             }
             .image-container {
@@ -84,13 +80,21 @@
         }
         &.right {
             .copy-container {
-                padding: 0 0 0 gutter(12);
+                padding: 0 0 0 (span(1 of 36) + (gutter(36) * 2));
             }
         }
     }
     @include breakpoint($breakpoint-desktop) {
         max-width: 1200px;
         margin: 60px auto;
+        .copy {
+            @include child-margins(40px);
+        }
+    }
+    @include breakpoint($breakpoint-desktop-large) {
+        .copy {
+            @include child-margins(60px);
+        }
     }
 }
 
