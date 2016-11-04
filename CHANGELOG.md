@@ -153,3 +153,4 @@
 - Widen Uranus and Neptune gutters
 - Adjust Uranus and Neptune copy margins proportionally
 - Deprecate .pad-mobile class included with Neptune
++ Expand Jupiter image to full width
