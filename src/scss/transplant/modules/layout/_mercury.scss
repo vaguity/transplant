@@ -1,0 +1,34 @@
+.mercury {
+    padding: 30px 0;
+    margin: 0 auto;
+    @include breakpoint($breakpoint-tablet) {
+        max-width: 860px;
+        padding: 60px 0;
+    }
+    @include breakpoint($breakpoint-desktop-large) {
+        max-width: 1200px;
+    }
+    img {
+        display: block;
+    }
+    hr {
+        margin-top: 60px;
+        padding-bottom: 60px;
+    }
+    .copy {
+        @include child-margins(20px);
+        .quote {
+            color: $darkgray;
+            font-weight: normal;
+            font-family: $type-serif;
+            @include type-style(24px, 32px);
+            @include breakpoint($breakpoint-desktop-large) {
+                @include type-style(32px, 40px);
+            }
+        }
+        .hanging-quote {
+            display: inline-block;
+            text-indent: -0.4em;
+        }
+    }
+}
