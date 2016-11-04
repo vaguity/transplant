@@ -148,6 +148,8 @@
 
 ## 3.0.x
 
+- Add Mercury module
 - Limit Constellation to 8 images in a row
-- Adjust Uranus margins proportionally
-+ Adjust Neptune margins proportionally
+- Widen Uranus and Neptune gutters
+- Adjust Uranus and Neptune copy margins proportionally
+- Deprecate .pad-mobile class included with Neptune
