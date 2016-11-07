@@ -154,3 +154,5 @@
 - Adjust Uranus and Neptune copy margins proportionally
 - Deprecate .pad-mobile class included with Neptune
 + Expand Jupiter image to full width
++ Neptune, Venus, Saturn, Kuiper Belt: These are our modules that have a set max width. Could we make a rule to cap them at the same width? Somewhere between 1200px and 1350px seems reasonable.
++ H3 (likely Sentinel heds): Could we adjust the line height to be 40px (whatever that becomes in em's)?
