@@ -155,4 +155,4 @@
 - Deprecate .pad-mobile class included with Neptune
 - Expand Jupiter image to full width
 - Adjust max width for Neptune, Venus, Saturn, Kuiper Belt, and Mercury (860px, 1280px)
-+ H3 (likely Sentinel heds): Could we adjust the line height to be 40px (whatever that becomes in em's)?
++ H3 (likely Sentinel heds): Could we adjust the line height to be 40px (whatever that becomes in em's)? (Check with Sofia -- will also change margins)
