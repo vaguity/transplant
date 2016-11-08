@@ -85,8 +85,8 @@
         }
     }
     @include breakpoint($breakpoint-desktop) {
-        max-width: 1200px;
         margin: 60px auto;
+        max-width: 1280px;
         .copy {
             @include child-margins(40px);
         }

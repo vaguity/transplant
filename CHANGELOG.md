@@ -146,7 +146,7 @@
 - Update forms styling reset breakpoint
 - Update sticky nav and modal enquire calls to 930px
 
-## 3.0.x
+## 3.1.x
 
 - Add Mercury module
 - Limit Constellation to 8 images in a row
@@ -154,5 +154,5 @@
 - Adjust Uranus and Neptune copy margins proportionally
 - Deprecate .pad-mobile class included with Neptune
 - Expand Jupiter image to full width
-+ Neptune, Venus, Saturn, Kuiper Belt: These are our modules that have a set max width. Could we make a rule to cap them at the same width? Somewhere between 1200px and 1350px seems reasonable.
+- Adjust max width for Neptune, Venus, Saturn, Kuiper Belt, and Mercury (860px, 1280px)
 + H3 (likely Sentinel heds): Could we adjust the line height to be 40px (whatever that becomes in em's)?
