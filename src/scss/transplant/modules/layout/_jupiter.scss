@@ -27,7 +27,8 @@
     .image-container {
         margin: gutter(6) 0 0;
         img {
-            max-height: 1200px;
+            width: 100%;
+            height: auto;
         }
     }
     @include breakpoint($breakpoint-desktop-small) {
