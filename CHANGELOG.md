@@ -146,7 +146,7 @@
 - Update forms styling reset breakpoint
 - Update sticky nav and modal enquire calls to 930px
 
-## 3.1.x
+## 3.1.0
 
 - Add Mercury module
 - Limit Constellation to 8 images in a row
@@ -155,4 +155,7 @@
 - Deprecate .pad-mobile class included with Neptune
 - Expand Jupiter image to full width
 - Adjust max width for Neptune, Venus, Saturn, Kuiper Belt, and Mercury (860px, 1280px)
-+ H3 (likely Sentinel heds): Could we adjust the line height to be 40px (whatever that becomes in em's)? (Check with Sofia -- will also change margins)
+
+## 3.1.x
+
++ Sentinel heds: Adjust line height to 40px (this will affect margins)
