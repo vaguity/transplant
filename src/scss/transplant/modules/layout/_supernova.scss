@@ -1,47 +1,228 @@
-.supernova-container {
-    &.type-ii {
-        background: $orange;
-        .segment.hero {
-            display: block;
-            margin: 0;
-            margin-left: 0;
-            margin-right: 0;
-            height: auto;
+.supernova-container.type-ii {
+    background: $orange;
+    .segment.hero {
+        display: block;
+        margin: 0;
+        margin-left: 0;
+        margin-right: 0;
+        height: auto;
+    }
+    .hero > div {
+        display: block;
+        padding: 60px 0;
+        @include breakpoint($breakpoint-desktop-small) {
+            padding: 150px 0;
         }
-        .hero > div {
-            display: block;
-            padding: 60px 0;
-            @include breakpoint($breakpoint-desktop-small) {
-                padding: 150px 0;
-            }
+    }
+    h1 {
+        text-align: left;
+        @include breakpoint($breakpoint-tablet) {
+            max-width: 800px;
+            @include type-style(50px, 50px);
+        }
+    }
+    p {
+        font-family: $type-serif;
+        text-align: left;
+        @include type-style(20px, 28px);
+        @include breakpoint($breakpoint-tablet) {
+            max-width: 800px;
+            @include type-style(32px, 40px);
+        }
+    }
+    .first {
+        margin: 0 0 20px;
+        @include breakpoint($breakpoint-tablet) {
+            margin: 0 0 40px;
+        }
+    }
+    .last {
+        margin: 20px 0 0;
+        @include breakpoint($breakpoint-tablet) {
+            margin: 40px 0 0;
+        }
+    }
+}
+
+.supernova-container.type-iii {
+    .supernova {
+        height: auto;
+        min-height: 420px;
+    }
+    .copy {
+        @include child-margins(20px);
+        &> .jump.last {
+            margin: 20px 0 0;
         }
         h1 {
             text-align: left;
-            @include breakpoint($breakpoint-tablet) {
-                max-width: 800px;
-                @include type-style(50px, 50px);
-            }
+            @include type-style(36px, 40px);
         }
         p {
             font-family: $type-serif;
             text-align: left;
             @include type-style(20px, 28px);
-            @include breakpoint($breakpoint-tablet) {
-                max-width: 800px;
+            color: $white;
+        }
+        .jump {
+            text-align: left;
+        }
+        .modal-link {
+            display: inline-block;
+        }
+        .btn {
+            @include link($white, $white);
+        }
+    }
+    .form-modal .supernova-type-iii-modal {
+        display: inline-block;
+        padding: 24px 24px 0;
+    }
+    @include breakpoint($breakpoint-tablet) {
+        .copy {
+            h1 {
+                @include type-style(50px, 50px);
+            }
+            p {
                 @include type-style(32px, 40px);
             }
         }
-        .first {
-            margin: 0 0 20px;
-            @include breakpoint($breakpoint-tablet) {
-                margin: 0 0 40px;
+    }
+    @include breakpoint($breakpoint-desktop-small) {
+        .supernova {
+            // TODO: Figure out balance of having this fallback be 100% and have padding in the container
+            width: 100%;
+            max-width: 1280px;
+            min-height: 600px;
+            display: inline-block;
+            display: flex;
+        }
+        .copy-container {
+            display: inline-block;
+            align-self: center;
+            vertical-align: middle;
+            color: $darkgray;
+            @include span(20 of 36);
+            margin: 0;
+            text-align: center;
+            order: 1;
+        }
+        .copy {
+            .modal-link {
+                display: none;
             }
         }
-        .last {
-            margin: 20px 0 0;
-            @include breakpoint($breakpoint-tablet) {
-                margin: 40px 0 0;
+        .form-container {
+            display: inline-block;
+            align-self: center;
+            vertical-align: middle;
+            @include span(15 of 36 last);
+            padding: 0 0 0 (span(1 of 36) + (gutter(36) * 2));
+            margin: 0;
+            float: none;
+            order: 2;
+            form {
+                width: 290px;
+                input, button {
+                    margin: 0 auto;
+                    width: 290px;
+                    margin: 0 0 13px;
+                    padding: 15px 24px;
+                    @include type-style(13px, 13px);
+                }
+                select {
+                    margin: 0 auto;
+                    width: 290px;
+                    margin: 0 0 13px;
+                    padding: 15px 2em 15px 24px;
+                    @include type-style(13px, 13px);
+                }
+                button {
+                    @include button-background($white, $white, $orange, $darkorange);
+                }
+                // TODO: Add checkbox field styling
             }
+        }
+        .modal-container.desktop-show {
+            display: block;
+            background: transparent;
+            .modal-copy {
+                margin: 0 auto;
+            }
+        }
+        .modal-title, .modal-close {
+            display: none;
         }
     }
 }
+
+.supernova-container.type-iii .segment.supernova {
+    max-width: 1280px;
+}
+
+// .supernova-container.type-iii {
+//     .segment.hero {
+//         display: block;
+//         margin: 0;
+//         margin-left: auto;
+//         margin-right: auto;
+//         height: auto;
+
+//         @include breakpoint($breakpoint-desktop) {
+//             max-width: 1200px;
+//         }
+//     }
+//     .hero > div {
+//         display: block;
+//         padding: 43px 0;
+//         @include susy-clearfix;
+//     }
+//     h1 {
+//         @include type-style(30px, 30px);
+//         @include breakpoint($breakpoint-mobile) {
+//             @include type-style(60px, 60px);
+//         }
+//         @include breakpoint($breakpoint-desktop) {
+//             max-width: 800px;
+//             @include type-style(70px, 70px);
+//         }
+//     }
+//     p {
+//         font-family: $type-serif;
+//         @include type-style(20px, 28px);
+//         @include breakpoint($breakpoint-tablet) {
+//             @include type-style(32px, 40px);
+//         }
+//     }
+//     .first {
+//         margin: 0 0 20px;
+//         @include breakpoint($breakpoint-tablet) {
+//             margin: 0 0 40px;
+//         }
+//     }
+//     .last {
+//         margin: 20px 0 0;
+//         @include breakpoint($breakpoint-tablet) {
+//             margin: 40px 0 0;
+//         }
+//     }
+
+//     .hero-copy {
+//         text-align: center;
+//         @include breakpoint($breakpoint-desktop) {
+//             text-align: left;
+//             padding: 125px 0;
+//             @include span(7 of 12);
+//             &.success {
+//                 width: 100%;
+//                 text-align: center;
+//                 h1 {
+//                     max-width: 100%;
+//                 }
+//             }
+//         }
+//         @include breakpoint($breakpoint-desktop-large) {
+//             padding: 205px 0;
+//         }
+//     }
+// }

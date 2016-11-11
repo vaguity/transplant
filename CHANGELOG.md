@@ -156,6 +156,10 @@
 - Expand Jupiter image to full width
 - Adjust max width for Neptune, Venus, Saturn, Kuiper Belt, and Mercury (860px, 1280px)
 
-## 3.1.x
+## 3.1.1 (Unreleased)
+
+- Add Supernova Type III to style guide
+
+## 3.1.x+
 
 + Sentinel heds: Adjust line height to 40px (this will affect margins)
