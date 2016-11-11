@@ -159,7 +159,8 @@
 ## 3.1.1 (Unreleased)
 
 - Add Supernova Type III to style guide
+- Style checkbox field in Supernova Type III form
 
-## 3.1.x+
+## 3.1.x+ (Future Work)
 
 + Sentinel heds: Adjust line height to 40px (this will affect margins)
