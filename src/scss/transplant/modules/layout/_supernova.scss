@@ -111,6 +111,9 @@
             .modal-link {
                 display: none;
             }
+            &> .jump.last {
+                display: none;
+            }
         }
         .form-container {
             display: inline-block;
