@@ -156,7 +156,7 @@
 - Expand Jupiter image to full width
 - Adjust max width for Neptune, Venus, Saturn, Kuiper Belt, and Mercury (860px, 1280px)
 
-## 3.1.1 (Unreleased)
+## 3.1.1
 
 - Add Supernova Type III to style guide
 - Style checkbox field in Supernova Type III form
