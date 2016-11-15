@@ -58,7 +58,7 @@
             text-align: left;
             @include type-style(36px, 40px);
         }
-        p {
+        p, .hero-subhed {
             font-family: $type-serif;
             text-align: left;
             @include type-style(20px, 28px);
