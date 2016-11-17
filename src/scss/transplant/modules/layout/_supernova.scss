@@ -83,7 +83,7 @@
             h1 {
                 @include type-style(50px, 50px);
             }
-            p {
+            p, .hero-subhed {
                 @include type-style(32px, 40px);
             }
         }
