@@ -160,7 +160,8 @@
 
 - Add Supernova Type III to style guide
 - Style checkbox field in Supernova Type III form
+- Style .hero-subhed class under Supernova
 
 ## 3.1.x+ (Future Work)
 
-+ Sentinel heds: Adjust line height to 40px (this will affect margins)
+- Sentinel heds: Adjust line height to 40px (this will affect margins)
