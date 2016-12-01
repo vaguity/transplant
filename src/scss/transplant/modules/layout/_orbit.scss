@@ -1,5 +1,5 @@
 .orbit {
-    margin: 60px 0;
+    margin: 60px auto;
     h2, h3 {
         margin: 0;
         text-align: center;
@@ -11,5 +11,8 @@
         @include breakpoint($breakpoint-desktop-small) {
             @include type-style(50px, 50px);
         }
+    }
+    @include breakpoint($breakpoint-desktop) {
+        max-width: 1280px;
     }
 }
