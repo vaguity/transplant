@@ -91,11 +91,6 @@
             @include child-margins(40px);
         }
     }
-    @include breakpoint($breakpoint-desktop-large) {
-        .copy {
-            @include child-margins(60px);
-        }
-    }
 }
 
 .neptune-container.alt-background .neptune {

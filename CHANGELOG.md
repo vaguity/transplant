@@ -162,6 +162,10 @@
 - Style checkbox field in Supernova Type III form
 - Style .hero-subhed class under Supernova
 
+## 3.1.2
+
+- Remove Neptune expanded child margins at large breakpoint
+
 ## 3.1.x+ (Future Work)
 
 - Sentinel heds: Adjust line height to 40px (this will affect margins)
