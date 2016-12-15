@@ -6,7 +6,13 @@ This is an NPM package to include in marketing projects as a dependency.
 
 ## Use
 
-Transplant should be included in a project's `package.json` and used with Gulp tasks.
+Transplant should be included in a project's `package.json` and used with Gulp tasks. You may need to include napa as a dependency before transplant.
+
+In your project's package.json:
+```
+"napa": "^2.3.0",
+"transplant": "git+ssh://git@github.com:percolate/transplant.git#3.1.2"
+```
 
 - Includes the following CSS/Sass dependencies for consistent use across applications:
     - Susy
