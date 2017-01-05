@@ -40,14 +40,14 @@ $(window).on('load', function () {
             $('.primary-nav-link-container a.has-children').on('click', function (e) {
                 e.preventDefault()
                 $(this).parents('li').siblings().toggleClass('subnav-open')
-                $(this).toggleClass('active')
+                $(this).toggleClass('nav-active')
                 navToggle = $(this).data('nav')
                 $('.primary-sub-nav.' + navToggle).toggleClass('active')
             })
         },
         unmatch: function () {
             $('.primary-nav-link-container a.has-children').unbind('click')
-            $('.primary-nav-link-container a.has-children').removeClass('active')
+            $('.primary-nav-link-container a.has-children').removeClass('nav-active')
             $('.primary-nav ul li').removeClass('subnav-open')
             $('.primary-sub-nav').removeClass('active')
 
