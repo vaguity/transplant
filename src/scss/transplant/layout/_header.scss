@@ -245,6 +245,9 @@
                 border-width: 0 0 1px;
                 &.subnav-open {
                     display: none;
+                    &.active {
+                        display: block;
+                    }
                 }
                 a {
                     &:after, &:before {
@@ -265,7 +268,7 @@
                             content: $icon-right;
                         }
                     }
-                    &.active {
+                    &.nav-active.has-children {
                         &:after {
                             content: '';
                         }
