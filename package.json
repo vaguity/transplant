@@ -11,7 +11,7 @@
   },
   "scripts": {
     "clean": "npm cache clear && rm -rf node_modules",
-    "up": "cd dist && open http://localhost:8001/; ipython -m SimpleHTTPServer 8001",
+    "up": "cd dist && open http://localhost:8001/; python -m SimpleHTTPServer 8001",
     "deploy": "aws s3 sync dist s3://prototype.marketing.prclt.com/transplant --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers --exclude \"*.git/*\"",
     "install": "napa"
   },

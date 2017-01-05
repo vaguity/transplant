@@ -30,4 +30,27 @@ $(window).on('load', function () {
             $('.footer-container').css('padding-bottom', footerPadding + 'px')
         }
     }
+
+    var navToggle
+
+    enquire
+    .register('screen and (max-width: 930px)', {
+        setup: function () {},
+        match: function () {
+            $('.primary-nav-link-container a.has-children').on('click', function (e) {
+                e.preventDefault()
+                $(this).parents('li').siblings().toggleClass('subnav-open')
+                $(this).toggleClass('active')
+                navToggle = $(this).data('nav')
+                $('.primary-sub-nav.' + navToggle).toggleClass('active')
+            })
+        },
+        unmatch: function () {
+            $('.primary-nav-link-container a.has-children').unbind('click')
+            $('.primary-nav-link-container a.has-children').removeClass('active')
+            $('.primary-nav ul li').removeClass('subnav-open')
+            $('.primary-sub-nav').removeClass('active')
+
+        },
+    })
 })
