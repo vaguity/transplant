@@ -283,8 +283,8 @@
                 display: none;
                 li {
                     font-family: $type-base;
-                    font-size: 18px;
                     padding-left: 40px;
+                    @include type-style(18px, 18px);
                 }
                 &.active {
                     display: block;
