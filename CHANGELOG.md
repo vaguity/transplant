@@ -171,6 +171,7 @@
 
 - Update style and add subnav functionality to modal mobile navigation
 
-## 3.1.x+ (Future Work)
+# Roadmap
 
 - Sentinel heds: Adjust line height to 40px (this will affect margins)
+- Update Futura
