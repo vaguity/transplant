@@ -167,6 +167,10 @@
 - Remove Neptune expanded child margins at large breakpoint
 - Lock Orbit at 1280px max-width
 
+## 3.1.3
+
+- Update style and add subnav functionality to modal mobile navigation
+
 ## 3.1.x+ (Future Work)
 
 - Sentinel heds: Adjust line height to 40px (this will affect margins)
