@@ -2,13 +2,6 @@ $(document).ready(function () {
     $('.nav-icon').click(function () {
         $('.header-container').toggleClass('modal-active')
         $('body').toggleClass('modal-active')
-        $('.header-container.modal-active a').on('click', function () {
-            if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
-                $('.header-container.modal-active a').off('click')
-                $('.header-container').toggleClass('modal-active')
-                $('body').toggleClass('modal-active')
-            }
-        })
     })
 
     enquire
