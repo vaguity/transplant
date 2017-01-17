@@ -5,7 +5,6 @@
         "$": true,
         "enquire": true,
         "_": true,
-        "setFullFrame": true,
     },
     "extends": "./node_modules/eslint-config-percolate/.eslintrc",
     "rules": {

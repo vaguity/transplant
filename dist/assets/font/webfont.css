@@ -11,6 +11,17 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'FuturaLTPro-Bold';
+    src: url('futuraltprobold/32A5BA_0_0.eot');
+    src: url('futuraltprobold/32A5BA_0_0.eot?#iefix') format('embedded-opentype'),
+        url('futuraltprobold/32A5BA_0_0.woff2') format('woff2'),
+        url('futuraltprobold/32A5BA_0_0.woff') format('woff'),
+        url('futuraltprobold/32A5BA_0_0.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
 @font-face{
     font-family: "Futura W01 Bold";
     src: url("futura/3b3d00eb-6d89-47ec-83ee-48276a47ad94.eot");
