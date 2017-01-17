@@ -1,0 +1,7 @@
+.sol {
+    margin: 24px 0;
+    @include breakpoint($breakpoint-desktop-small) {
+        max-width: 600px;
+        margin: 60px auto;
+    }
+}

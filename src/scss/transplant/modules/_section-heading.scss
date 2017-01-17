@@ -1,0 +1,21 @@
+.section-hed {
+    hr {
+        max-width: 100px;
+        border: 5px solid $orange;
+        border-width: 5px 0 0;
+        padding: 0;
+        margin: 0 0 30px;
+    }
+    h2, h3 {
+        font-family: $type-serif;
+        font-weight: normal;
+        @include type-style(24px, 24px);
+    }
+    @include breakpoint($breakpoint-desktop-small) {
+        h2, h3 {
+            font-family: $type-serif;
+            font-weight: normal;
+            @include type-style(32px, 32px);
+        }
+    }
+}
