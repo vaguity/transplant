@@ -176,3 +176,9 @@
 - Update dependencies
 - Update Futura webfont
 - Remove unused markup files
+- Add Sol module
+- Add body copy to Orbit
+- Remove copy from Jupiter, make Jupiter image full-width
+- Remove Uranus labels
+
+

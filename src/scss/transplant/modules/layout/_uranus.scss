@@ -9,16 +9,14 @@
         color: $darkgray;
         text-align: left;
         @include child-margins(20px);
+        // TODO: Remove label
         .label {
-            font-family: $type-sans;
-            font-weight: bold;
-            @include type-style(13px, 13px);
-            text-transform: uppercase;
+            display: none;
         }
         h2, h3 {
-            font-family: $type-serif;
+            font-family: $type-base;
             font-weight: normal;
-            @include type-style(24px, 24px);
+            @include type-style(24px, 32px);
         }
         p {
             font-family: $type-base;
@@ -49,7 +47,7 @@
             max-width: 800px;
             @include child-margins(30px);
             h2, h3 {
-                @include type-style(32px, 32px);
+                @include type-style(24px, 32px);
             }
         }
         .image-container {
