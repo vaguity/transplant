@@ -1,0 +1,12 @@
+.ceres {
+    margin: 24px 0;
+    .copy {
+        .hanging-quote {
+            display: inline-block;
+            text-indent: -0.4em;
+        }
+    }
+    @include breakpoint($breakpoint-desktop-small) {
+        margin: 60px 0;
+    }
+}

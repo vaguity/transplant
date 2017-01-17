@@ -180,5 +180,6 @@
 - Add body copy to Orbit
 - Remove copy from Jupiter, make Jupiter image full-width
 - Remove Uranus labels
-
+- Update Saturn typography
+- Add prospective names file
 
