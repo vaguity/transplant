@@ -5,14 +5,14 @@
         text-align: center;
     }
     .copy-container {
+        max-width: 600px;
         margin: 20px auto 0;
     }
     .copy {
-        text-align: center;
         @include child-margins(20px);
         p {
-            font-family: $type-serif;
-            @include type-style(24px, 32px);
+            font-family: $type-base;
+            @include type-style(16px, 28px);
         }
     }
     @include breakpoint($breakpoint-desktop-small) {
@@ -22,7 +22,6 @@
             margin: 0 auto 40px;
         }
         .copy-container {
-            max-width: 860px;
             margin: 40px auto 0;
         }
         .copy {
@@ -30,7 +29,7 @@
         }
     }
     @include breakpoint($breakpoint-desktop) {
-        .image-container, .copy-container {
+        .image-container {
             max-width: 1280px;
         }
     }
