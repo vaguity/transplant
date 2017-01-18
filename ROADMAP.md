@@ -1,6 +1,7 @@
 # Roadmap
 
 - Sentinel heds: Adjust line height to 40px (this will affect margins)
+- Add Sentinel-Medium webfont
 - Add module for quote with article link (Ceres)
 - Update Neptune
 - Update Constellation typography
