@@ -100,9 +100,9 @@
         <div class="supernova-container container bleed" style="background-image: url('assets/img/style-guide/supernova-c-2000.jpg');">
             <div class="segment hero supernova">
                 <div>
-                    <h1 class="hero-title">Supernova Default &mdash; Hero headline on maximum two lines</h1>
-                    <p class="last">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio laudantium saepe sunt accusantium aliquid incidunt ex enim at porro libero.</p>
-                    <div class="hero-request-demo">
+                    <h1 class="hero-title first">Supernova Default &mdash; Hero headline on maximum two lines</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio laudantium saepe sunt accusantium aliquid incidunt ex enim at porro libero.</p>
+                    <div class="hero-request-demo last">
                         <a href="#" class="btn modal-link request-demo-hero-modal-link" data-modal-class="request-demo-hero-modal-container">Take the Tour</a>
                     </div>
                 </div>
@@ -112,9 +112,9 @@
         <div class="supernova-container copy-alt image-left container bleed" style="background-image: url('assets/img/style-guide/supernova-remnant-2000.jpg');">
             <div class="segment hero supernova">
                 <div>
-                    <h1 class="hero-title">Supernova Alt &mdash; Hero headline</h1>
-                    <p class="last">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio laudantium.</p>
-                    <div class="hero-request-demo">
+                    <h1 class="hero-title first">Supernova Alt &mdash; Hero headline</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio laudantium.</p>
+                    <div class="hero-request-demo last">
                         <a href="#" class="btn modal-link request-demo-hero-modal-link" data-modal-class="request-demo-hero-modal-container">Take the Tour</a>
                     </div>
                 </div>
@@ -124,9 +124,9 @@
         <div class="supernova-container copy-alt copy-right image-right container bleed" style="background-image: url('assets/img/style-guide/supernova-remnant-2000.jpg');">
             <div class="segment hero supernova">
                 <div>
-                    <h1 class="hero-title">Supernova Alt + Right Copy &mdash; Hero headline</h1>
-                    <p class="last">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio laudantium.</p>
-                    <div class="hero-request-demo">
+                    <h1 class="hero-title first">Supernova Alt + Right Copy &mdash; Hero headline</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio laudantium.</p>
+                    <div class="hero-request-demo last">
                         <a href="#" class="btn modal-link request-demo-hero-modal-link" data-modal-class="request-demo-hero-modal-container">Take the Tour</a>
                     </div>
                 </div>
@@ -324,6 +324,102 @@
             </div>
             </div>
         </div>
+
+
+        <div class="hero-container supernova-container type-iii new-form container bleed" style="background-image: url('assets/img/style-guide/supernova-remnant-2000.jpg');">
+            <div class="mask">
+            <div class="segment hero supernova">
+                <div class="copy-container">
+                    <div class="copy">
+                        <h1 class="hero-title first last">Supernova &mdash; Hero headline on maximum two lines</h1>
+                        <div class="jump last"><a href="#" class="btn modal-link" data-modal-class="supernova-type-iii-modal-container">See Percolate</a></div>
+                    </div>
+                </div>
+                <div class="form-container">
+                    <div class="form-modal">
+                        <div class="modal-container supernova-type-iii-modal-container desktop-show">
+                            <div class="supernova-type-iii-modal desktop-show">
+                                <div class="modal-copy">
+                                    <div class="form-title">See how Percolate powers marketers behind the world’s best brands</div>
+                                    <button class="modal-close"><span class="icon icon-24 icon-close"></span></button>
+                                    <div class="modal-title">Better Marketing Starts Today</div>
+                                    <div class="modal-content">
+                                        <div class="form">
+                                            <script>
+                                            if (typeof MktoForms2 === 'undefined') {
+                                                document.write("\x3Cscript src=\"//app-sj02.marketo.com/js/forms2/js/forms2.min.js\">\x3C/script>");
+                                            }
+                                            </script>
+                                            <div class="mktoCustomError mktoCustomError_2394" style="display: none;"></div>
+
+                                            <form id="mktoForm_2480" style="visibility: hidden;" class="marketo-form" data-id="2480" data-redirect-url="?success=1" data-field-display="inline-block"></form>
+
+                                            <script>
+                                            if (typeof marketoForm === 'undefined') {
+                                                var marketoForm = {};
+                                            }
+                                            var marketoFormID = 2480;
+                                            var marketoFormSelector = '#mktoForm_' + marketoFormID;
+                                            marketoForm[marketoFormID] = {
+                                                'selector': '#mktoForm_' + marketoFormID,
+                                                'redirect-url': $(marketoFormSelector).data('redirect-url'),
+                                                'display': typeof $(marketoFormSelector).data('field-display') !== 'undefined' ? $(marketoFormSelector).data('field-display') : 'inline',
+                                                'marketoLoadForm': function() {},
+                                            };
+
+                                            marketoForm[2480]['marketoLoadForm'] = function() {
+                                                $(marketoForm[2480]['selector']).empty();
+                                                MktoForms2.loadForm("//app-sj02.marketo.com", "306-EXV-607", 2480, function(form) {
+                                                    form.onSuccess(function(values, followUpUrl) {
+                                                        formsRedirect(values, marketoForm[2480]['redirect-url'], 2480);
+                                                        return false;
+                                                    });
+                                                    form.onValidate(function(callback) {
+                                                        var submittable = true;
+                                                        var marketoValidationCheck = []
+
+                                                        marketoValidationCheck.push(formsValidateRequired($(marketoForm[2480]['selector']  + ' .mktoRequired'), 2480));
+
+                                                        marketoValidationCheck.push(formsValidateEmail($(marketoForm[2480]['selector'] + ' input#Email').val(), 2480));
+
+                                                        for (var i = marketoValidationCheck.length - 1; i >= 0; i--) {
+                                                            if (marketoValidationCheck[i] === false) {
+                                                                submittable = false;
+                                                            }
+                                                        }
+
+                                                        form.submittable(submittable);
+                                                    });
+                                                });
+
+                                                MktoForms2.whenReady(function(form) {
+                                                    formsStyleReset(marketoForm[2480]['selector'], marketoForm[2480]['display']);
+                                                    stickySetup();
+                                                });
+                                            }
+
+                                            marketoForm[2480]['marketoLoadForm']();
+
+                                            enquire.register("screen and (max-width: 1000px)", {
+                                                unmatch: function() {
+                                                    marketoForm[2480]['marketoLoadForm']();
+                                                }
+                                            });
+                                            </script>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+
+
+
+
 
         <div class="container orbit-container">
             <div class="segment orbit">
