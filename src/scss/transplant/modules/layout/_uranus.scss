@@ -14,8 +14,8 @@
             display: none;
         }
         h2, h3 {
-            font-family: $type-base;
-            font-weight: normal;
+            font-family: $type-serif;
+            font-weight: 500;
             @include type-style(24px, 32px);
         }
         p {
