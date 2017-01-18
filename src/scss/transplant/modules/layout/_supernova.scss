@@ -1,5 +1,43 @@
-.supernova-container.type-ii {
-    background: $orange;
+.supernova-container {
+    margin: 0;
+    text-align: center;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .hero-title {
+        @include type-style-serif-large;
+        max-width: 800px;
+    }
+    p {
+        font-family: $type-serif;
+        font-weight: 500;
+        @include type-style(18px, 24px);
+        @include breakpoint($breakpoint-tablet) {
+            max-width: 800px;
+            @include type-style(24px, 32px);
+        }
+    }
+    .hero-request-demo {
+        margin: 40px 0 0;
+    }
+
+    .first {
+        margin: 0 0 20px;
+        @include breakpoint($breakpoint-tablet) {
+            margin: 0 0 40px;
+        }
+    }
+    .last {
+        margin: 20px 0 0;
+        @include breakpoint($breakpoint-tablet) {
+            margin: 40px 0 0;
+        }
+    }
+}
+
+.supernova-container.copy-alt {
+    text-align: left;
     .segment.hero {
         display: block;
         margin: 0;
@@ -14,35 +52,32 @@
             padding: 150px 0;
         }
     }
-    h1 {
-        text-align: left;
-        @include breakpoint($breakpoint-tablet) {
-            max-width: 800px;
-            @include type-style(50px, 50px);
-        }
-    }
-    p {
-        font-family: $type-serif;
-        text-align: left;
-        @include type-style(20px, 28px);
-        @include breakpoint($breakpoint-tablet) {
-            max-width: 800px;
-            @include type-style(32px, 40px);
-        }
-    }
-    .first {
-        margin: 0 0 20px;
-        @include breakpoint($breakpoint-tablet) {
-            margin: 0 0 40px;
-        }
-    }
-    .last {
-        margin: 20px 0 0;
-        @include breakpoint($breakpoint-tablet) {
-            margin: 40px 0 0;
-        }
+
+    .hero-title, p {
+        max-width: 600px;
     }
 }
+
+.supernova-container.copy-right {
+    .hero > div {
+        float: right;
+    }
+}
+
+//TODO: Don't know if we need any more than these for positioning yet, sholud add case by case basis like "left top" so the image scales a certain way.
+.supernova-container.image-left {
+    background-position: left center;
+}
+
+.supernova-container.image-right {
+    background-position: right center;
+}
+
+
+.supernova-container.type-ii {
+    background: $orange;
+}
+
 
 .supernova-container.type-iii {
     .supernova {
