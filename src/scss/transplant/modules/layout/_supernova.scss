@@ -96,6 +96,7 @@
             min-height: 600px;
             display: inline-block;
             display: flex;
+            box-sizing: border-box;
         }
         .copy-container {
             display: inline-block;
