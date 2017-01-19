@@ -1,8 +1,16 @@
-.earth-container {
-    background: $lightgray;
+.content .earth-container {
+    background: $lightgray-light;
+    @include breakpoint($breakpoint-tablet) {
+        padding-top: 24px;
+        padding-bottom: 24px;
+    }
+    @include breakpoint($breakpoint-desktop-small) {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
 }
 .earth {
-    margin: 24px 0;
+    margin: 12px 0;
     .copy-container {
         display: inline-block;
         box-sizing: border-box;
@@ -12,7 +20,7 @@
     }
     .copy {
         text-align: left;
-        @include child-margins(40px);
+        @include child-margins(30px);
         h2, h3 {
             @include type-style(32px, 32px);
         }
@@ -38,6 +46,10 @@
     @include span(full);
 
     @include breakpoint($breakpoint-tablet) {
+        margin: gutter(24) 0;
+        p {
+            min-height: 170px;
+        }
         @include span(6 of 12);
         &:nth-child(2n) {
             @include span(6 of 12 last);
@@ -45,6 +57,15 @@
     }
 
     @include breakpoint($breakpoint-desktop-small) {
+        .copy-container {
+            padding: 25px;
+        }
+        .copy {
+            @include child-margins(20px);
+            p {
+                @include type-style(15px, 26px);
+            }
+        }
         @include span(4 of 12);
         &:nth-child(2n) {
             @include span(4 of 12);
@@ -54,6 +75,23 @@
         }
     }
     @include breakpoint($breakpoint-desktop) {
+        .copy {
+            @include child-margins(30px);
+            p {
+                @include type-style(16px, 28px);
+            }
+        }
+        
+    }
+    @include breakpoint($breakpoint-desktop-large) {
+        .copy-container {
+            padding: 40px;
+        }
+        .copy {
+            p {
+                min-height: 140px;
+            }
+        }
         @include span(3 of 12);
         &:nth-child(2n) {
             @include span(3 of 12);
