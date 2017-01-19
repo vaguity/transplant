@@ -1,4 +1,5 @@
 .section-hed {
+    text-align: left;
     hr {
         max-width: 100px;
         border: 5px solid $orange;
@@ -12,6 +13,8 @@
         @include type-style(24px, 24px);
     }
     @include breakpoint($breakpoint-desktop-small) {
+        max-width: 600px;
+        margin: 60px auto;
         h2, h3 {
             font-family: $type-serif;
             font-weight: normal;

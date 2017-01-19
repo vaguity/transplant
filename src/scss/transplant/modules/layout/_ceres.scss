@@ -1,5 +1,8 @@
 .ceres {
     margin: 24px 0;
+    .copy-container {
+        margin: 20px auto 0;
+    }
     .copy {
         @include child-margins(20px);
         p {
@@ -11,6 +14,22 @@
             text-indent: -0.4em;
         }
     }
+    .image-container {
+        margin: 0 auto 20px;
+    }
+    .image {
+        img {
+            width: 100%;
+        }
+    }
+    .rule-container {
+        @include break;
+    }
+    hr {
+        display: inline-block;
+        width: 100%;
+        margin: 20px 0;
+    }
     @include breakpoint($breakpoint-desktop-small) {
         margin: 60px auto;
         .copy-container {
@@ -18,9 +37,13 @@
         }
         .copy {
             @include child-margins(40px);
+            margin: 20px 0 0;
         }
         .image-container {
             @include span(2 of 12);
+        }
+        hr {
+            margin: 40px 0;
         }
     }
     @include breakpoint($breakpoint-desktop) {
