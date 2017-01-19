@@ -66,14 +66,12 @@
             @include span(15 of 36 last);
             vertical-align: middle;
             text-align: center;
-            img {
-                max-height: 600px;
-            }
         }
         .image {
             margin: 0 auto;
             img {
                 width: auto;
+                max-height: 600px;
             }
         }
         &.left {
@@ -93,7 +91,7 @@
     }
     @include breakpoint($breakpoint-desktop) {
         margin: 60px auto;
-        max-width: 1280px;
+        max-width: 1600px;
         .copy {
             @include child-margins(40px);
         }

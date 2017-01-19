@@ -29,12 +29,7 @@
     }
     @include breakpoint($breakpoint-desktop-large) {
         .copy-container {
-            max-width: 1280px;
-        }
-        .copy {
-            .quote {
-                @include type-style(32px, 40px);
-            }
+            max-width: 1000px;
         }
     }
 }
