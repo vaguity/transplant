@@ -281,6 +281,16 @@
                             padding: 0 20px 0 0;
                         }
                     }
+
+                    &:active, &:hover {
+                        color: $white
+                    }
+
+                    &.active:hover, &.active:active {
+                        color: $indigo;
+                    }
+
+
                 }
             }
         }
@@ -290,6 +300,7 @@
                 display: none;
                 li {
                     font-family: $type-base;
+                    font-weight: normal;
                     padding-left: 40px;
                     @include type-style(18px, 18px);
                 }
