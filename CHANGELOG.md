@@ -171,7 +171,10 @@
 
 - Update style and add subnav functionality to modal mobile navigation
 
-# Roadmap
+## 3.1.4
 
-- Sentinel heds: Adjust line height to 40px (this will affect margins)
-- Update Futura
+- Update Supernova Type III padding and add bleed class
+
+## 3.1.x
+
+- Fix Sentinel weights
