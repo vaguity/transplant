@@ -10,16 +10,17 @@
 1. Saturn
 1. Uranus
 1. Neptune
+1. Triton
 1. Kuiper Belt
 1. Orbit
 1. Sol
 1. Supernova
 1. Constellation
 1. Pulsar
+1. Ceres
 
 ## Unused candidates
 
-1. Ceres
 1. Pluto
 1. Haumea
 1. Makemake
@@ -49,7 +50,6 @@
 1. Umbriel
 1. Ariel
 1. Miranda
-1. Triton
 1. Proteus
 1. Nereid
 1. Charon
