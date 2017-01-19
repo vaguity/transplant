@@ -8,11 +8,14 @@
         color: $darkgray;
         @include child-margins(20px);
         .label {
-            font-family: $type-sans;
-            font-weight: bold;
-            @include type-style(13px, 13px);
-            text-transform: uppercase;
+            display: none;
         }
+        // .label {
+        //     font-family: $type-sans;
+        //     font-weight: bold;
+        //     @include type-style(13px, 13px);
+        //     text-transform: uppercase;
+        // }
         h2, h3 {
             font-family: $type-serif;
             font-weight: normal;
