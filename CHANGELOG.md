@@ -175,6 +175,6 @@
 
 - Update Supernova Type III padding and add bleed class
 
-## 3.1.x
+## 3.1.5
 
 - Fix Sentinel weights

@@ -23,6 +23,7 @@
     }
     p {
         font-family: $type-serif;
+        font-weight: 300;
         text-align: left;
         @include type-style(20px, 28px);
         @include breakpoint($breakpoint-tablet) {
@@ -60,6 +61,7 @@
         }
         p, .hero-subhed {
             font-family: $type-serif;
+            font-weight: 300;
             text-align: left;
             @include type-style(20px, 28px);
             color: $white;

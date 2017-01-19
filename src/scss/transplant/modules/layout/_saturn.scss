@@ -12,6 +12,7 @@
         @include child-margins(20px);
         p {
             font-family: $type-serif;
+            font-weight: 300;
             @include type-style(24px, 32px);
         }
     }

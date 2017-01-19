@@ -5,7 +5,7 @@
         text-align: center;
         color: $darkgray;
         font-family: $type-serif;
-        font-weight: normal;
+        font-weight: 300;
         @include type-style(40px, 40px);
         text-transform: none;
         @include breakpoint($breakpoint-desktop-small) {

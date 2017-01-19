@@ -66,6 +66,7 @@
     }
     ul li {
         font-family: $type-serif;
+        font-weight: 300;
     }
     @include breakpoint($breakpoint-desktop-small) {
         .logo {
@@ -78,6 +79,7 @@
             li {
                 display: inline-block;
                 font-family: $type-serif;
+                font-weight: 300;
                 @include type-style(18px, 18px);
                 margin: 10px 4px 2px 0;
                 &:last-child {
@@ -97,6 +99,7 @@
 .header .secondary-nav {
     ul li {
         font-family: $type-serif;
+        font-weight: 300;
         @include type-style(18px, 18px);
     }
     @include breakpoint($breakpoint-desktop-small) {
@@ -106,6 +109,7 @@
             li {
                 margin: 0 10px 0 0;
                 font-family: $type-base;
+                font-weight: normal;
                 @include type-style(13px, 13px);
                 &:last-child {
                     margin: 0;

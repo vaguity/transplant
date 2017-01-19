@@ -35,6 +35,7 @@ $type-icons: $percocons;
 
 @mixin type-style-serif-large() {
     font-family: $type-serif;
+    font-weight: 300;
     @include type-style(36px, 40px);
     @include breakpoint($breakpoint-desktop-small) {
         @include type-style(50px, 60px);
@@ -51,6 +52,7 @@ $type-icons: $percocons;
 
 @mixin type-style-serif-medium() {
     font-family: $type-serif;
+    font-weight: 300;
     @include type-style(20px, 28px);
     @include breakpoint($breakpoint-desktop-small) {
         @include type-style(24px, 36px);

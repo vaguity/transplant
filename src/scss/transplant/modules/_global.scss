@@ -15,8 +15,8 @@ a {
 h1 {
     margin: 0;
     color: $darkgray;
-    font-weight: 100;
     font-family: $type-serif;
+    font-weight: 300;
     @include type-style(48px, 48px);
     @include breakpoint($breakpoint-tablet) {
         @include type-style(60px, 60px);

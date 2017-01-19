@@ -13,7 +13,7 @@
         }
         h2, h3 {
             font-family: $type-serif;
-            font-weight: normal;
+            font-weight: 300;
             @include type-style(32px, 40px);
         }
     }
