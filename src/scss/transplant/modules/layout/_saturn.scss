@@ -5,7 +5,7 @@
         text-align: center;
     }
     .copy-container {
-        max-width: 600px;
+        max-width: 450px;
         margin: 20px auto 0;
     }
     .copy {
@@ -18,10 +18,10 @@
     @include breakpoint($breakpoint-desktop-small) {
         margin: 60px 0;
         .image-container {
-            max-width: 860px;
             margin: 0 auto 40px;
         }
         .copy-container {
+            max-width: 600px;
             margin: 40px auto 0;
         }
         .copy {

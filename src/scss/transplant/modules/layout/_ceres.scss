@@ -1,12 +1,29 @@
 .ceres {
     margin: 24px 0;
     .copy {
+        @include child-margins(20px);
+        p {
+            font-family: $type-serif;
+            @include type-style(24px, 32px);
+        }
         .hanging-quote {
             display: inline-block;
             text-indent: -0.4em;
         }
     }
     @include breakpoint($breakpoint-desktop-small) {
-        margin: 60px 0;
+        margin: 60px auto;
+        .copy-container {
+            @include span(10 of 12 last);
+        }
+        .copy {
+            @include child-margins(40px);
+        }
+        .image-container {
+            @include span(2 of 12);
+        }
+    }
+    @include breakpoint($breakpoint-desktop) {
+        max-width: 1280px;
     }
 }
