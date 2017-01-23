@@ -254,6 +254,7 @@
                     }
                 }
                 a {
+                    display: block;
                     &:after, &:before {
                         position: relative;
                         top: 2px;
