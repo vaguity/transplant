@@ -1,16 +1,21 @@
 .content .earth-container {
     background: $lightgray-light;
+    padding-top: 30px;
+    padding-bottom: 30px;
     @include breakpoint($breakpoint-tablet) {
-        padding-top: 24px;
-        padding-bottom: 24px;
+        padding-top: 60px;
+        padding-bottom: 60px;
     }
     @include breakpoint($breakpoint-desktop-small) {
-        padding-top: 30px;
-        padding-bottom: 30px;
+        padding-top: 80px;
+        padding-bottom: 80px;
     }
 }
 .earth {
     margin: 12px 0;
+    &:first-of-type {
+        margin-top: 0;
+    }
     .copy-container {
         display: inline-block;
         box-sizing: border-box;
@@ -46,6 +51,9 @@
     @include span(full);
 
     @include breakpoint($breakpoint-tablet) {
+        &:nth-child(-n+2) {
+            margin-top: 0;
+        }
         margin: gutter(24) 0;
         p {
             min-height: 170px;
@@ -57,6 +65,9 @@
     }
 
     @include breakpoint($breakpoint-desktop-small) {
+        &:nth-child(-n+3) {
+            margin-top: 0;
+        }
         .copy-container {
             padding: 25px;
         }
@@ -84,6 +95,9 @@
         
     }
     @include breakpoint($breakpoint-desktop-large) {
+        &:nth-child(-n+4) {
+            margin-top: 0;
+        }
         .copy-container {
             padding: 40px;
         }

@@ -1,3 +1,59 @@
+.pluto-container {
+	background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 .pluto {
+	margin: 0;
+    text-align: center;
+    color: $white;
+    height: 300px;
+    display: table;
 
+    > div {
+    	display: table-cell;
+    	vertical-align: middle;
+    }
+
+    h3 {
+    	font-family: $type-serif;
+    	font-weight: 500;
+    	@include type-style(24px, 32px);
+    }
+    .hero-request-demo {
+        margin: 40px 0 0;
+    }
+
+    .first {
+        margin: 0 0 20px;
+    }
+    .last {
+        margin: 45px 0 0;
+    }
+}
+
+.pluto-container.copy-alt {
+    text-align: left;
+    .segment.pluto {
+        display: block;
+        margin: 0;
+        margin-left: 0;
+        margin-right: 0;
+        height: auto;
+    }
+    .pluto > div {
+        display: block;
+        text-align: left;
+        padding: 100px 0;
+    }
+
+    h3 {
+        max-width: 600px;
+    }
+}
+
+.pluto-container.copy-right {
+    .pluto > div {
+        float: right;
+    }
 }
