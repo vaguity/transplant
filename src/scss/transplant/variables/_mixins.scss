@@ -105,13 +105,25 @@
     &> * {
         margin: $margin 0;
     }
+    &> .sentinel {
+        margin: ($margin / -4) 0;
+    }
     &> .first {
         margin: 0 0 $margin;
+        &.sentinel {
+            margin: 0 0 ($margin / -4);
+        }
     }
     &> .last {
         margin: $margin 0 0;
+        &.sentinel {
+            margin: ($margin / -4) 0 0;
+        }
     }
     &> .first.last {
         margin: 0;
+        &.sentinel {
+            margin: ($margin / -4) 0;
+        }
     }
 }

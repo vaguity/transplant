@@ -4,6 +4,8 @@
 
 ## Feedback
 
-1. Close in gutter on Neptune at high width
-1. Set 20/60 margin internally between elements, fix Sentinel line-height/margin issue
+1. Close in gutter on Neptune at high width (ask Sofia:
+    - We can limit the overall width, where should the text align)
+1. Fix Sentinel line-height/margin issue
+1. Cap width of Pluto
 
