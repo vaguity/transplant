@@ -41,9 +41,9 @@
     }
     .hero > div {
         display: block;
-        padding: 60px 0;
+        padding: 60px 24px;
         @include breakpoint($breakpoint-desktop-small) {
-            padding: 160px 0;
+            padding: 160px 24px;
         }
     }
     h1 {
@@ -72,6 +72,13 @@
 .supernova-container.copy-right {
     .hero > div {
         float: right;
+    }
+}
+
+.supernova.bleed > div {
+    padding: 0 24px;
+    @include breakpoint($breakpoint-desktop-small) {
+        padding: 0;
     }
 }
 
@@ -241,7 +248,7 @@
                 background: $orange;
             }
 
-            .form-title {
+            .modal-description {
                 max-width: 290px;
                 margin: 40px 40px 32px;
                 text-align: left;
