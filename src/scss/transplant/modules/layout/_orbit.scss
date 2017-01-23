@@ -13,6 +13,9 @@
     //     @include type-style(40px, 40px);
     //     text-transform: none;
     // }
+    .copy {
+        @include child-margins(20px);
+    }
     p {
         font-family: $type-serif;
         font-weight: 300;
@@ -23,6 +26,9 @@
         // h2, h3 {
         //     @include type-style(50px, 50px);
         // }
+        .copy {
+            @include child-margins(60px);
+        }
         p {
             @include type-style(32px, 40px);
         }

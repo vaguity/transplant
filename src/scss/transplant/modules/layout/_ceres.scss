@@ -32,7 +32,7 @@
         margin: 20px 0;
     }
     @include breakpoint($breakpoint-desktop-small) {
-        margin: 60px auto;
+        margin: 80px auto;
         .copy-container {
             @include span(10 of 12 last);
         }
