@@ -193,4 +193,4 @@
 - Add `.kepler-form` to Supernova Type III
 - Limit Orbit to 1000px
 - Limit Mercury to 600px
-
+- Limit Supernova contents to 1600px
