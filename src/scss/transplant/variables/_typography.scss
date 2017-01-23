@@ -10,6 +10,20 @@ $type-sans: $futura;
 $type-interface: $interface;
 $type-icons: $percocons;
 
+// Sentinel fonts available
+//
+// Sentinel Light
+// font-style: normal;
+// font-weight: 300;
+//
+// Sentinel Light Italic
+// font-style: italic;
+// font-weight: 300
+//
+// Sentinel Medium
+// font-style: normal
+// font-weight: 500;
+
 @function type-calculate-rem($size) {
     $remSize: $size / 16px;
     @return $remSize * 1rem;
