@@ -96,6 +96,11 @@
     background: $orange;
 }
 
+.content .supernova-container .segment.bleed {
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
 .supernova-container.type-iii {
     .supernova {
         height: auto;
