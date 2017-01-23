@@ -38,7 +38,7 @@
         }
     }
     @include breakpoint($breakpoint-desktop-small) {
-        margin: 60px 0;
+        margin: 80px 0;
         // TODO: Figure out balance of having this fallback be 100% and having padding in the container
         width: 100%;
         display: inline-block;
@@ -93,7 +93,7 @@
         }
     }
     @include breakpoint($breakpoint-desktop) {
-        margin: 60px auto;
+        margin: 80px auto;
         max-width: 1600px;
         .copy {
             @include child-margins(40px);

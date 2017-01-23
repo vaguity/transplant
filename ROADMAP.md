@@ -4,7 +4,6 @@
 
 ## Feedback
 
-1. Remove Mercury variant
-1. Create Neptune variant for quote (Nereid) without 600px max-height
-1. Close in gutter on Neptune at high width; tinker with max-height of image at high breakpoint
-1. 24/80 externally between elements, 20/60 margin internally between elements; section-hed needs 80px even internally
+1. Close in gutter on Neptune at high width
+1. Set 20/60 margin internally between elements, fix Sentinel line-height/margin issue
+

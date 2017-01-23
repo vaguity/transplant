@@ -111,4 +111,7 @@
     &> .last {
         margin: $margin 0 0;
     }
+    &> .first.last {
+        margin: 0;
+    }
 }
