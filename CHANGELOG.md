@@ -194,3 +194,6 @@
 - Limit Orbit to 1000px
 - Limit Mercury to 600px
 - Limit Supernova contents to 1600px
+- Add Triton variant of Neptune with new typography, unrestricted image height
+- Add Nereid variant of Neptune with unrestricted image height
+

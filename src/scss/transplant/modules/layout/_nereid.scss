@@ -1,4 +1,4 @@
-.triton {
+.nereid {
     margin: 24px 0;
     .copy-container {
         display: inline-block;
@@ -7,25 +7,13 @@
         @include span(full);
         color: $darkgray;
         @include child-margins(20px);
-        // TODO: Remove label
-        .label {
-            display: none;
-        }
-        h2, h3 {
-            padding: 0 0 0 40px;
-            font-family: $type-serif;
-            font-weight: 500;
-            @include type-style(24px, 32px);
-        }
         p {
             font-family: $type-base;
             @include type-style(16px, 28px);
-            padding: 0 0 0 40px;
             &.highlight {
-                padding: 0;
                 font-family: $type-serif;
                 font-weight: 300;
-                @include type-style(24px, 32px);
+                @include type-style(32px, 40px);
             }
         }
     }
@@ -63,14 +51,7 @@
             max-width: 800px;
             @include child-margins(30px);
             h2, h3 {
-                padding: 0 0 0 100px;
-                @include type-style(24px, 32px);
-            }
-            p {
-                padding: 0 0 0 100px;
-                &.highlight {
-                    padding: 0;
-                }
+                @include type-style(24px, 24px);
             }
         }
         .image-container {
@@ -110,7 +91,7 @@
     }
 }
 
-.triton-container.alt-background .triton {
+.nereid-container.alt-background .nereid {
     @include breakpoint($breakpoint-desktop) {
         margin: 0 auto;
     }
