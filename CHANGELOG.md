@@ -171,6 +171,14 @@
 
 - Update style and add subnav functionality to modal mobile navigation
 
+## 3.1.4
+
+- Update Supernova Type III padding and add bleed class
+
+## 3.1.5
+
+- Fix Sentinel weights
+
 ## 3.2.x
 
 - Update dependencies
@@ -182,4 +190,7 @@
 - Remove Uranus labels
 - Update Saturn typography
 - Add prospective names file
+- Add `.kepler-form` to Supernova Type III
+- Limit Orbit to 1000px
+- Limit Mercury to 600px
 

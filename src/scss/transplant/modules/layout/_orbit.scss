@@ -1,27 +1,30 @@
 .orbit {
-    margin: 60px auto;
+    margin: 24px auto;
+    // TODO: Remove heading style for Orbit
     h2, h3 {
-        margin: 0;
-        text-align: center;
-        color: $darkgray;
-        font-family: $type-serif;
-        font-weight: normal;
-        @include type-style(40px, 40px);
-        text-transform: none;
+        display: none;
     }
+    // h2, h3 {
+    //     margin: 0;
+    //     text-align: center;
+    //     color: $darkgray;
+    //     font-family: $type-serif;
+    //     font-weight: 300;
+    //     @include type-style(40px, 40px);
+    //     text-transform: none;
+    // }
     p {
         font-family: $type-serif;
+        font-weight: 300;
         @include type-style(24px, 28px);
     }
     @include breakpoint($breakpoint-desktop-small) {
-        h2, h3 {
-            @include type-style(50px, 50px);
-        }
+        max-width: 1000px;
+        // h2, h3 {
+        //     @include type-style(50px, 50px);
+        // }
         p {
             @include type-style(32px, 40px);
         }
-    }
-    @include breakpoint($breakpoint-desktop) {
-        max-width: 1280px;
     }
 }

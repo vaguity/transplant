@@ -44,6 +44,7 @@
         color: $white;
         margin: 24px 0;
         font-family: $type-serif;
+        font-weight: 300;
         @include type-style(22px, 24px);
         @include breakpoint($breakpoint-desktop-small) {
             @include type-style(30px, 36px);

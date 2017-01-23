@@ -1,11 +1,9 @@
 # Roadmap
 
-- Sentinel heds: Adjust line height to 40px (this will affect margins)
-- Add Sentinel-Medium webfont
+- Fix Sentinel heds line-height/margin height
 
 ## Feedback
 
-1. Limit Orbit to 1000px
 1. Match Mercury to Sol
 1. Remove Mercury variant
 1. Create Neptune variant for quote

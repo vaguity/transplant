@@ -2,28 +2,7 @@
     margin: 24px 0;
     .copy-container {
         display: none;
-        // display: inline-block;
     }
-    // .copy {
-    //     @include span(full);
-    //     color: $darkgray;
-    //     @include child-margins(20px);
-    //     .label {
-    //         font-family: $type-sans;
-    //         font-weight: bold;
-    //         @include type-style(13px, 13px);
-    //         text-transform: uppercase;
-    //     }
-    //     h2, h3 {
-    //         font-family: $type-serif;
-    //         font-weight: normal;
-    //         @include type-style(24px, 24px);
-    //     }
-    //     p {
-    //         font-family: $type-base;
-    //         @include type-style(16px, 28px);
-    //     }
-    // }
     .images-container {
         display: inline-block;
     }
@@ -48,19 +27,6 @@
     @include breakpoint($breakpoint-desktop-small) {
         width: 100%;
         margin: 60px 0;
-        // .copy-container {
-        //     @include span(6 of 12 last);
-        //     @include post(6 of 12);
-        //     float: none;
-        // }
-        // .copy {
-        //     text-align: left;
-        //     max-width: 800px;
-        //     @include child-margins(40px);
-        //     h2, h3 {
-        //         @include type-style(32px, 32px);
-        //     }
-        // }
         .images-container {
             display: inline-block;
         }

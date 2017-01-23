@@ -1,5 +1,6 @@
 .mercury {
-    margin: 24px 0;
+    margin: 24px auto;
+    max-width: 600px;
     img {
         display: block;
     }
@@ -15,8 +16,8 @@
         @include child-margins(20px);
         .quote {
             color: $darkgray;
-            font-weight: normal;
             font-family: $type-serif;
+            font-weight: 300;
             @include type-style(24px, 32px);
         }
         .hanging-quote {
@@ -25,11 +26,6 @@
         }
     }
     @include breakpoint($breakpoint-desktop-small) {
-        margin: 60px 0;
-    }
-    @include breakpoint($breakpoint-desktop-large) {
-        .copy-container {
-            max-width: 1000px;
-        }
+        margin: 60px auto;
     }
 }
