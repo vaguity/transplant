@@ -175,7 +175,7 @@
                     margin: 0 auto;
                     width: 290px;
                     margin: 0 0 13px;
-                    padding: 15px 24px;
+                    padding: 15px 24px 13px;
                     @include type-style(13px, 13px);
                 }
                 input[type='checkbox'] {
@@ -183,9 +183,12 @@
                 }
                 button {
                     @include button-background($white, $white, $orange, $darkorange);
+                    font-size: 16px;
+                    padding: 16px 0 11px;
+
                 }
                 select {
-                    padding: 15px 2em 15px 24px;
+                    padding: 18px 2em 16px 24px;
                 }
 
                 .mktoLogicalField {
@@ -261,7 +264,10 @@
                 input, select {
                     border: 1px solid $lightgray;
                     margin: 0 0 2px;
-                    padding: 15px 20px;
+                    padding: 16px 20px 13px;
+                }
+                select {
+                    padding: 19px 20px 16px
                 }
                 button {
                     margin: 20px 0 0;

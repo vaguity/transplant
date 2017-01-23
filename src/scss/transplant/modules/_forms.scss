@@ -21,7 +21,7 @@ input, select, textarea {
     @include breakpoint($breakpoint-desktop-small) {
         vertical-align: bottom;
         margin: 12px;
-        padding: 24px;
+        padding: 26px 24px 22px;
     }
 }
 
@@ -72,7 +72,8 @@ button {
     box-sizing: border-box;
     min-width: 160px;
     margin: 12px auto 0;
-    padding: 14px 24px;
+    padding: 14px 20px 10px;
+    border-radius: 2px;
     border: 1px solid $white;
     border-width: 0;
     color: $white;
