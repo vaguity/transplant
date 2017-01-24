@@ -1,59 +1,62 @@
 .pluto-container {
-	background-position: center center;
+    background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.content .pluto-container.bleed .pluto.bleed {
+    max-width: 1600px;
+}
+
 .pluto {
-	margin: 0;
-    text-align: center;
-    color: $white;
-    height: 300px;
     display: table;
-
-    > div {
-    	display: table-cell;
-    	vertical-align: middle;
-    }
-
-    h3 {
-    	font-family: $type-serif;
-    	font-weight: 500;
-    	@include type-style(24px, 32px);
-    }
-    .hero-request-demo {
-        margin: 40px 0 0;
-    }
-
-    .first {
-        margin: 0 0 20px;
-    }
-    .last {
-        margin: 45px 0 0;
-    }
-}
-
-.pluto-container.copy-alt {
+    width: 100%;
+    max-width: 1600px;
+    min-height: 300px;
+    margin: 0;
     text-align: left;
-    .segment.pluto {
-        display: block;
-        margin: 0;
-        margin-left: 0;
-        margin-right: 0;
-        height: auto;
+    color: $white;
+    > div {
+        display: table-cell;
+        vertical-align: middle;
     }
-    .pluto > div {
-        display: block;
-        text-align: left;
-        padding: 100px 0;
+    .copy-container {
+        padding: 0 24px;
     }
-
-    h3 {
-        max-width: 600px;
+    .copy {
+        @include child-margins(20px);
+        h3 {
+            font-family: $type-serif;
+            font-weight: 500;
+            @include type-style(24px, 32px);
+        }
+        .jump {
+            a {
+                display: inline-block;
+            }
+        }
     }
-}
-
-.pluto-container.copy-right {
-    .pluto > div {
-        float: right;
+    @include breakpoint($breakpoint-desktop-small) {
+        text-align: center;
+        > div {
+            padding: 0 30px;
+        }
+        .copy-container {
+            padding: 0;
+        }
+        &.left {
+            text-align: left;
+            .copy-container {
+                @include span(2 of 4 last);
+                @include post(2 of 4);
+            }
+        }
+        &.right {
+            text-align: right;
+            .copy-container {
+                @include span(2 of 4 last);
+                @include pre(2 of 4);
+            }
+        }
     }
 }
