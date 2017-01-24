@@ -1,35 +1,34 @@
-.content .earth-container {
-    background: $lightgray-light;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    @include breakpoint($breakpoint-tablet) {
-        padding-top: 60px;
-        padding-bottom: 60px;
-    }
-    @include breakpoint($breakpoint-desktop-small) {
-        padding-top: 80px;
-        padding-bottom: 80px;
-    }
+.content .earth-container.alt-background {
+    background-color: $lightgray-light;
 }
+
 .earth {
-    margin: 12px 0;
-    &:first-of-type {
-        margin-top: 0;
+    @include span(full);
+    line-height: 0;
+    .card {
+        margin: 12px 0 0;
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+    .cards-container {
+        display: inline-block;
+        .card-link {
+            @include link(inherit, inherit);
+        }
     }
     .copy-container {
         display: inline-block;
-        box-sizing: border-box;
         width: 100%;
-        padding: 40px;
-        background: $white;
+        background-color: $white;
     }
     .copy {
+        width: auto;
+        padding: 40px;
         text-align: left;
         @include child-margins(30px);
         h2, h3 {
-            @include type-style(32px, 32px);
-        }
-        h2, h3 {
+            @include sentinel-margins(30px);
             font-family: $type-serif;
             font-weight: 300;
             @include type-style(24px, 24px);
@@ -38,83 +37,105 @@
             font-family: $type-base;
             @include type-style(16px, 28px);
         }
+        .jump {
+            @include link($orange, $indigo);
+        }
     }
-    .images-container {
+    .image-container {
         display: inline-block;
         width: 100%;
     }
-    .images img {
+    .image img {
         width: 100%;
         height: auto;
     }
 
-    @include span(full);
-
     @include breakpoint($breakpoint-tablet) {
-        &:nth-child(-n+2) {
-            margin-top: 0;
+        .card {
+            @include span(6 of 12);
+            &:nth-child(-n+2) {
+                margin-top: 0;
+            }
+            &:nth-child(2n) {
+                @include span(6 of 12 last);
+            }
+            &:nth-child(n+3) {
+                margin-top: gutter(12);
+            }
         }
-        margin: gutter(24) 0;
-        p {
-            min-height: 170px;
-        }
-        @include span(6 of 12);
-        &:nth-child(2n) {
-            @include span(6 of 12 last);
+        .copy p {
+            min-height: 156px;
+            max-height: 156px;
+            overflow-y: hidden;
         }
     }
 
     @include breakpoint($breakpoint-desktop-small) {
-        &:nth-child(-n+3) {
-            margin-top: 0;
-        }
-        .copy-container {
-            padding: 25px;
+        .card {
+            @include span(4 of 12);
+            &:nth-child(-n+3) {
+                margin-top: 0;
+            }
+            &:nth-child(2n) {
+                @include span(4 of 12);
+            }
+            &:nth-child(3n) {
+                @include span(4 of 12 last);
+            }
+            &:nth-child(n+3) {
+                margin-top: 0;
+            }
+            &:nth-child(n+4) {
+                margin-top: gutter(12);
+            }
         }
         .copy {
             @include child-margins(20px);
+            padding: 24px;
+            h2, h3 {
+                @include sentinel-margins(20px);
+            }
             p {
                 @include type-style(15px, 26px);
             }
-        }
-        @include span(4 of 12);
-        &:nth-child(2n) {
-            @include span(4 of 12);
-        }
-        &:nth-child(3n) {
-            @include span(4 of 12 last);
         }
     }
     @include breakpoint($breakpoint-desktop) {
         .copy {
             @include child-margins(30px);
+            h2, h3 {
+                @include sentinel-margins(30px);
+            }
             p {
                 @include type-style(16px, 28px);
             }
         }
-        
+
     }
     @include breakpoint($breakpoint-desktop-large) {
-        &:nth-child(-n+4) {
-            margin-top: 0;
-        }
-        .copy-container {
-            padding: 40px;
-        }
-        .copy {
-            p {
-                min-height: 140px;
+        .card {
+            @include span(3 of 12);
+            &:nth-child(-n+4) {
+                margin-top: 0;
+            }
+            &:nth-child(2n) {
+                @include span(3 of 12);
+            }
+            &:nth-child(3n) {
+                @include span(3 of 12);
+            }
+            &:nth-child(4n) {
+                @include span(3 of 12 last);
+            }
+            &:nth-child(n+4) {
+                margin-top: 0;
+            }
+            &:nth-child(n+5) {
+                margin-top: gutter(12);
             }
         }
-        @include span(3 of 12);
-        &:nth-child(2n) {
-            @include span(3 of 12);
-        }
-        &:nth-child(3n) {
-            @include span(3 of 12);
-        }
-        &:nth-child(4n) {
-            @include span(3 of 12 last);
+        .copy p {
+            min-height: 140px;
         }
     }
 }
