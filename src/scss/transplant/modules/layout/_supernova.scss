@@ -5,9 +5,24 @@
     background-repeat: no-repeat;
     background-size: cover;
 
+    .supernova {
+        display: table;
+        height: 420px;
+        color: $white;
+        @include breakpoint($breakpoint-desktop) {
+            position: relative;
+            height: 600px;
+        }
+        > div {
+            display: table-cell;
+            vertical-align: middle;
+        }
+    }
+
     h1 {
         @include type-style-serif-large;
         max-width: 800px;
+        color: $white
     }
     p {
         font-family: $type-serif;
@@ -32,14 +47,14 @@
 
 .supernova-container.copy-alt {
     text-align: left;
-    .segment.hero {
+    .supernova {
         display: block;
         margin: 0;
         margin-left: 0;
         margin-right: 0;
         height: auto;
     }
-    .hero > div {
+    .supernova > div {
         display: block;
         padding: 60px 24px;
         @include breakpoint($breakpoint-desktop-small) {
@@ -56,7 +71,7 @@
 }
 
 .supernova-container.copy-right {
-    .hero > div {
+    .supernova > div {
         float: right;
     }
 }
