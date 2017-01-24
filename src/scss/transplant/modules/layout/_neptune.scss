@@ -33,16 +33,16 @@
         }
     }
     @include breakpoint($breakpoint-desktop-small) {
-        // TODO: Figure out balance of having this fallback be 100% and having padding in the container
+        // TODO: Check inline-block fallback for older browsers
         display: inline-block;
         display: flex;
         width: 100%;
         margin: 80px 0;
         .copy-container {
             display: inline-block;
+            padding: 0;
             @include span(20 of 36);
             margin: 0;
-            padding: 0;
             color: $darkgray;
             text-align: center;
             vertical-align: middle;

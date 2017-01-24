@@ -6,13 +6,14 @@
     .copy {
         @include child-margins(20px);
         p {
+            @include sentinel-margins(20px);
             font-family: $type-serif;
             font-weight: 300;
             @include type-style(24px, 32px);
         }
         .hanging-quote {
             display: inline-block;
-            text-indent: -0.4em;
+            text-indent: -.4em;
         }
     }
     .image-container {
@@ -39,6 +40,9 @@
         .copy {
             @include child-margins(40px);
             margin: 20px 0 0;
+            p {
+                @include sentinel-margins(40px);
+            }
         }
         .image-container {
             @include span(2 of 12);

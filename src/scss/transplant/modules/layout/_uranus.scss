@@ -1,8 +1,8 @@
 .uranus {
     margin: 24px 0;
     .copy-container {
-        text-align: center;
         display: inline-block;
+        text-align: center;
     }
     .copy {
         @include span(full);
@@ -14,6 +14,7 @@
             display: none;
         }
         h2, h3 {
+            @include sentinel-margins(20px);
             font-family: $type-serif;
             font-weight: 500;
             @include type-style(24px, 32px);
@@ -29,32 +30,33 @@
     }
     @include breakpoint($breakpoint-desktop-small) {
         // TODO: Figure out balance of having this fallback be 100% and have padding in the container
-        width: 100%;
-        margin: 80px 0;
         display: inline-block;
         display: flex;
+        width: 100%;
+        margin: 80px 0;
         .copy-container {
             display: inline-block;
-            align-self: center;
-            vertical-align: middle;
-            color: $darkgray;
             @include span(15 of 36);
             margin: 0;
+            color: $darkgray;
             text-align: center;
+            vertical-align: middle;
+            align-self: center;
         }
         .copy {
-            text-align: left;
             max-width: 800px;
+            text-align: left;
             @include child-margins(30px);
             h2, h3 {
+                @include sentinel-margins(30px);
                 @include type-style(24px, 32px);
             }
         }
         .image-container {
             display: inline-block;
-            vertical-align: middle;
             @include span(20 of 36 last);
             float: none;
+            vertical-align: middle;
         }
         .image {
             margin: 0;
@@ -81,11 +83,17 @@
     @include breakpoint($breakpoint-desktop) {
         .copy {
             @include child-margins(40px);
+            h2, h3 {
+                @include sentinel-margins(40px);
+            }
         }
     }
     @include breakpoint($breakpoint-desktop-large) {
         .copy {
             @include child-margins(60px);
+            h2, h3 {
+                @include sentinel-margins(60px);
+            }
         }
     }
 }

@@ -12,79 +12,74 @@
         $secondary-color: $orange;
     }
     &:link {
-        color: $primary-color;
         border-color: $border-primary-color;
+        color: $primary-color;
     }
     &:visited {
-        color: $primary-color;
         border-color: $border-primary-color;
+        color: $primary-color;
     }
     &:hover {
-        color: $secondary-color;
         border-color: $border-secondary-color;
+        color: $secondary-color;
     }
     &:active {
-        color: $secondary-color;
         border-color: $border-secondary-color;
+        color: $secondary-color;
     }
 }
 
 @mixin button() {
-    text-align: center;
+    padding: 14px 20px 10px;
     border: 1px solid transparent;
+    border-radius: 2px;
+    background-color: transparent;
     font-family: $type-sans;
     font-size: 16px;
     line-height: 1em;
+    text-align: center;
     text-transform: uppercase;
-    padding: 14px 20px 10px;
-    background-color: transparent;
-    border-radius: 2px;
 }
 
 @mixin button-background($text-primary-color: $white, $text-secondary-color: $offwhite, $background-primary-color: $orange, $background-secondary-color: $darkorange) {
-    color: $text-primary-color;
     background-color: $background-primary-color;
+    color: $text-primary-color;
     &:hover, &:active {
-        color: $text-secondary-color;
         background-color: $background-secondary-color;
+        color: $text-secondary-color;
     }
 }
 
 @mixin placeholder($color: $orange, $focus-color: $indigo) {
     &::-webkit-input-placeholder {
-       color: $color;
-       opacity: 1;
+        color: $color;
+        opacity: 1;
     }
-
     &:-moz-placeholder {
-       color: $color;
-       opacity: 1;
+        color: $color;
+        opacity: 1;
     }
-
     &::-moz-placeholder {
-       color: $color;
-       opacity: 1;
+        color: $color;
+        opacity: 1;
+    }
+    &:-ms-input-placeholder {
+        color: $color;
+        opacity: 1;
     }
 
-    &:-ms-input-placeholder {
-       color: $color;
-       opacity: 1;
-    }
     &:focus {
         &::-webkit-input-placeholder {
-           color: $focus-color;
+            color: $focus-color;
         }
-
         &:-moz-placeholder {
-           color: $focus-color;
+            color: $focus-color;
         }
-
         &::-moz-placeholder {
-           color: $focus-color;
+            color: $focus-color;
         }
-
         &:-ms-input-placeholder {
-           color: $focus-color;
+            color: $focus-color;
         }
     }
 }

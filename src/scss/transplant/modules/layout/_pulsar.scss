@@ -13,6 +13,7 @@
             @include type-style(16px, 24px);
         }
         p {
+            @include sentinel-margins(20px);
             font-family: $type-serif;
             font-weight: 300;
             @include type-style(24px, 32px);
@@ -31,6 +32,9 @@
             @include child-margins(40px);
             .jump.last {
                 display: none;
+            }
+            p {
+                @include sentinel-margins(40px);
             }
         }
         .form-modal {

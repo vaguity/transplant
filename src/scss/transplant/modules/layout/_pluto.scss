@@ -14,8 +14,8 @@
     max-width: 1600px;
     min-height: 300px;
     margin: 0;
-    text-align: left;
     color: $white;
+    text-align: left;
     > div {
         display: table-cell;
         vertical-align: middle;
@@ -25,15 +25,14 @@
     }
     .copy {
         @include child-margins(20px);
-        h3 {
+        h2, h3, .highlight {
+            @include sentinel-margins(20px);
             font-family: $type-serif;
             font-weight: 500;
             @include type-style(24px, 32px);
         }
-        .jump {
-            a {
-                display: inline-block;
-            }
+        .jump a {
+            display: inline-block;
         }
     }
     @include breakpoint($breakpoint-desktop-small) {

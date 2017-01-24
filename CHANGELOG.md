@@ -179,21 +179,27 @@
 
 - Fix Sentinel weights
 
-## 3.2.x
+## 3.2.0
 
-- Update dependencies
-- Update Futura webfont
-- Remove unused markup files
-- Add Sol module
-- Add body copy to Orbit
+- Add `section-hed` element to be used across modules
+- Add Sol
+- Add Pluto
+- Update Supernova and hero markup structure
+- Add Supernova variants
+- Add Triton variant of Neptune with new typography, unrestricted image height
+- Add Nereid variant of Neptune with unrestricted image height
+- Reconfigure Earth
+- Change Orbit to body copy
 - Remove copy from Jupiter, make Jupiter image full-width
 - Remove Uranus labels
 - Update Saturn typography
-- Add prospective names file
-- Add `.kepler-form` to Supernova Type III
 - Limit Orbit to 1000px
 - Limit Mercury to 600px
 - Limit Supernova contents to 1600px
-- Add Triton variant of Neptune with new typography, unrestricted image height
-- Add Nereid variant of Neptune with unrestricted image height
-
+- Add `.kepler-form` to Supernova Type III
+- Add `sentinel-margins` mixin to handle Sentinel line-height/margin issue
+- Update icon-down image for use with dropdown menus
+- Update dependencies
+- Update Futura webfont
+- Remove unused markup files
+- Add prospective names file
