@@ -10,16 +10,11 @@
         .label {
             display: none;
         }
-        // .label {
-        //     font-family: $type-sans;
-        //     font-weight: bold;
-        //     @include type-style(13px, 13px);
-        //     text-transform: uppercase;
-        // }
         h2, h3 {
+            @include sentinel-margins(20px);
             font-family: $type-serif;
             font-weight: 300;
-            @include type-style(24px, 24px);
+            @include type-style(24px, 32px);
         }
         p {
             font-family: $type-base;
@@ -38,37 +33,38 @@
         }
     }
     @include breakpoint($breakpoint-desktop-small) {
-        margin: 80px 0;
         // TODO: Figure out balance of having this fallback be 100% and having padding in the container
-        width: 100%;
         display: inline-block;
         display: flex;
+        width: 100%;
+        margin: 80px 0;
         .copy-container {
             display: inline-block;
-            padding: 0;
             @include span(20 of 36);
             margin: 0;
-            align-self: center;
-            vertical-align: middle;
-            text-align: center;
+            padding: 0;
             color: $darkgray;
+            text-align: center;
+            vertical-align: middle;
+            align-self: center;
         }
         .copy {
-            float: none;
-            margin: 0 auto;
-            text-align: left;
             max-width: 800px;
+            margin: 0 auto;
+            float: none;
+            text-align: left;
             @include child-margins(30px);
             h2, h3 {
-                @include type-style(24px, 24px);
+                @include sentinel-margins(30px);
+                @include type-style(24px, 32px);
             }
         }
         .image-container {
-            margin: 0;
             display: inline-block;
+            margin: 0;
             @include span(15 of 36 last);
-            vertical-align: middle;
             text-align: center;
+            vertical-align: middle;
         }
         .image {
             margin: 0 auto;
@@ -93,10 +89,19 @@
         }
     }
     @include breakpoint($breakpoint-desktop) {
-        margin: 80px auto;
         max-width: 1600px;
+        margin: 80px auto;
         .copy {
             @include child-margins(40px);
+            h2, h3 {
+                @include sentinel-margins(40px);
+            }
+        }
+        &.left .copy {
+            float: right;
+        }
+        &.right .copy {
+            float: left;
         }
     }
 }

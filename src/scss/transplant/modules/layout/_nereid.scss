@@ -88,6 +88,12 @@
         .copy {
             @include child-margins(40px);
         }
+        &.left .copy {
+            float: right;
+        }
+        &.right .copy {
+            float: left;
+        }
     }
 }
 

@@ -4,32 +4,22 @@
     h2, h3 {
         display: none;
     }
-    // h2, h3 {
-    //     margin: 0;
-    //     text-align: center;
-    //     color: $darkgray;
-    //     font-family: $type-serif;
-    //     font-weight: 300;
-    //     @include type-style(40px, 40px);
-    //     text-transform: none;
-    // }
     .copy {
         @include child-margins(20px);
     }
     p {
+        @include sentinel-margins(20px);
         font-family: $type-serif;
         font-weight: 300;
         @include type-style(24px, 28px);
     }
     @include breakpoint($breakpoint-desktop-small) {
         max-width: 1000px;
-        // h2, h3 {
-        //     @include type-style(50px, 50px);
-        // }
         .copy {
             @include child-margins(60px);
         }
         p {
+            @include sentinel-margins(60px);
             @include type-style(32px, 40px);
         }
     }

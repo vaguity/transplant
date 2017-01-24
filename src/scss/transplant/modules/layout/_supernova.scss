@@ -20,9 +20,14 @@
     }
 
     h1 {
-        @include type-style-serif-large;
         max-width: 800px;
-        color: $white
+        font-family: $type-serif;
+        font-weight: 300;
+        @include type-style(36px, 40px);
+        color: $white;
+        @include breakpoint($breakpoint-desktop-small) {
+            @include type-style(50px, 60px);
+        }
     }
     p {
         font-family: $type-serif;
