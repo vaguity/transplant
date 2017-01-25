@@ -1,3 +1,7 @@
+.ceres-container {
+    text-align: center;
+}
+
 .ceres {
     margin: 24px 0;
     .copy-container {
@@ -33,6 +37,8 @@
         margin: 20px 0;
     }
     @include breakpoint($breakpoint-desktop-small) {
+        display: inline-block;
+        width: 100%;
         margin: 80px auto;
         .copy-container {
             @include span(10 of 12 last);
@@ -40,11 +46,13 @@
         .copy {
             @include child-margins(40px);
             margin: 20px 0 0;
+            text-align: left;
             p {
                 @include sentinel-margins(40px);
             }
         }
         .image-container {
+            margin: 0 auto;
             @include span(2 of 12);
         }
         hr {
