@@ -69,7 +69,6 @@
     }
     @include breakpoint($breakpoint-desktop-small) {
         margin: 80px 0;
-        @include span(full last);
         .images {
             img {
                 @include span(2 of 12);
