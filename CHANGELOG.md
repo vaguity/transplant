@@ -203,3 +203,9 @@
 - Update Futura webfont
 - Remove unused markup files
 - Add prospective names file
+
+## 3.2.1
+
+- Fix Constellation margin stacking
+- Add image sizes to text, add image sizes file
+- Correct Ceres module spacing
