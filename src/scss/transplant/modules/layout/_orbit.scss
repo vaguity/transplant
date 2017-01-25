@@ -10,11 +10,12 @@
             @include sentinel-margins(20px);
             font-family: $type-serif;
             font-weight: 300;
-            @include type-style(24px, 28px);
+            @include type-style(24px, 32px);
         }
     }
     @include breakpoint($breakpoint-desktop-small) {
         max-width: 1000px;
+        margin: 80px auto;
         .copy {
             @include child-margins(60px);
             p {

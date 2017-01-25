@@ -4,3 +4,10 @@
         margin: 80px auto;
     }
 }
+
+.container.alt-background .segment.sol .section-hed {
+    margin: 0 auto;
+    @include breakpoint($breakpoint-desktop-small) {
+        margin: 0 auto;
+    }
+}

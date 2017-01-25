@@ -6,9 +6,9 @@
     hr {
         max-width: 100px;
         margin: 0 0 30px;
+        padding: 0;
         border: 5px solid $orange;
         border-width: 5px 0 0;
-        padding: 0;
     }
     h2, h3 {
         @include sentinel-margins(20px);
@@ -23,5 +23,12 @@
             @include sentinel-margins(24px);
             @include type-style(32px, 40px);
         }
+    }
+}
+
+.container.alt-background .segment .section-hed {
+    margin: 0 auto;
+    @include breakpoint($breakpoint-desktop-small) {
+        margin: 0 auto 80px;
     }
 }
