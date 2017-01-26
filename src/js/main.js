@@ -43,7 +43,6 @@ $(window).on('load', function () {
             $('.primary-nav-link-container a.has-children').removeClass('nav-active')
             $('.primary-nav ul li').removeClass('subnav-open')
             $('.primary-sub-nav').removeClass('active')
-
         },
     })
 })

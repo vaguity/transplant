@@ -4,6 +4,14 @@
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+    @include breakpoint($breakpoint-desktop-small) {
+        &.background-left {
+            background-position: right center;
+        }
+        &.background-right {
+            background-position: left center;
+        }
+    }
 }
 
 .supernova {
@@ -18,7 +26,6 @@
         display: table-cell;
         vertical-align: middle;
     }
-
     .copy {
         max-width: 800px;
         @include child-margins(20px);
@@ -45,44 +52,20 @@
         }
     }
     @include breakpoint($breakpoint-desktop-small) {
+        .copy-container {
+            padding: 0 24px;
+        }
         .copy h1 {
             @include type-style(50px, 60px);
         }
         &.left {
+            width: 100%;
             text-align: left;
-
         }
-    }
-}
-
-.supernova-container.copy-alt {
-    text-align: left;
-    .supernova {
-        display: block;
-        margin: 0;
-        margin-left: 0;
-        margin-right: 0;
-        height: auto;
-    }
-    .supernova > div {
-        display: block;
-        padding: 60px 24px;
-        @include breakpoint($breakpoint-desktop-small) {
-            padding: 160px 24px;
+        &.right {
+            width: 100%;
+            text-align: right;
         }
-    }
-    h1 {
-        text-align: left;
-    }
-
-    h1, p {
-        max-width: 600px;
-    }
-}
-
-.supernova-container.copy-right {
-    .supernova > div {
-        float: right;
     }
 }
 
@@ -93,23 +76,17 @@
     }
 }
 
-// TODO: Don't know if we need any more than these for positioning yet, should add case by case basis like "left top" so the image scales a certain way
-
-.supernova-container.image-left {
-    background-position: left center;
-}
-
-.supernova-container.image-right {
-    background-position: right center;
-}
-
 .supernova-container.type-ii {
     background: $orange;
-}
-
-.content .supernova-container .segment.bleed {
-    max-width: 1600px;
-    margin: 0 auto;
+    @include breakpoint($breakpoint-desktop-small) {
+        .supernova {
+            width: 100%;
+            text-align: left;
+            .copy-container {
+                padding: 0 24px;
+            }
+        }
+    }
 }
 
 .supernova-container.type-iii {

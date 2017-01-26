@@ -217,3 +217,6 @@
 - Fix Ceres display settings, add card markup
 - Limit Pluto copy max-width
 - Add hanging quote to Orbit
+- Limit Saturn and Ceres to 1000px
+- Refactor Supernova
+- Fix `sentinel-margins` mixin to calculate margins correctly

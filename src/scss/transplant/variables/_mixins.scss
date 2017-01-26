@@ -124,7 +124,7 @@
 }
 
 @mixin sentinel-margins($margin: 20px) {
-    $sentinel-margin: ($margin / -4);
+    $sentinel-margin: $margin - ($margin / 4);
     margin: $sentinel-margin 0;
     &.first {
         margin: 0 0 $sentinel-margin;
