@@ -9,6 +9,7 @@
     }
     .copy {
         @include child-margins(20px);
+        text-align: left;
         p {
             @include sentinel-margins(20px);
             font-family: $type-serif;
@@ -46,7 +47,6 @@
         .copy {
             @include child-margins(40px);
             margin: 20px 0 0;
-            text-align: left;
             p {
                 @include sentinel-margins(40px);
             }
