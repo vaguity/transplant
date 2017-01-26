@@ -16,6 +16,9 @@
         font-weight: 300;
         @include type-style(24px, 32px);
     }
+    p {
+        @include type-style(16px, 28px);
+    }
     @include breakpoint($breakpoint-desktop-small) {
         margin: 80px auto;
         @include child-margins(24px);

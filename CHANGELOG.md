@@ -211,3 +211,8 @@
 - Correct Ceres module spacing
 - Fix Constellation margin stacking
 - Add image sizes to text, add image sizes file
+
+## 3.2.2
+
+- Fix Ceres display settings, add card markup
+
