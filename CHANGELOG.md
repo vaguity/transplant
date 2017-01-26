@@ -215,4 +215,4 @@
 ## 3.2.2
 
 - Fix Ceres display settings, add card markup
-
+- Limit Pluto copy max-width
