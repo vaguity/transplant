@@ -206,8 +206,8 @@
 
 ## 3.2.1
 
-- Fix Constellation margin stacking
-- Add image sizes to text, add image sizes file
-- Correct Ceres module spacing
 - Adjust section hed margins when on alt-background
 - Fix Orbit margin at desktop width
+- Correct Ceres module spacing
+- Fix Constellation margin stacking
+- Add image sizes to text, add image sizes file
