@@ -12,6 +12,10 @@
             font-weight: 300;
             @include type-style(24px, 32px);
         }
+        .hanging-quote {
+            display: inline-block;
+            text-indent: -.4em;
+        }
     }
     @include breakpoint($breakpoint-desktop-small) {
         max-width: 1000px;
