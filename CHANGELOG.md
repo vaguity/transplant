@@ -216,3 +216,4 @@
 
 - Fix Ceres display settings, add card markup
 - Limit Pluto copy max-width
+- Add hanging quote to Orbit

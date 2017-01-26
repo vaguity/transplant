@@ -2,7 +2,7 @@
 
 |     Module    |                            Sizes                             |
 |---------------|--------------------------------------------------------------|
-| Supernova     | 2000x300 (background image)                                  |
+| Supernova     | 2000x600, 960x600 (background image)                         |
 | Mercury       | 512x68, 256x34 (review stars)                                |
 | Venus         | 400x400, 200x200                                             |
 | Earth         | 750x470, 375x235                                             |
@@ -13,4 +13,6 @@
 | Uranus        | 1400x875, 960x600                                            |
 | Pluto         | 2000x300 (background image)                                  |
 | Neptune       | 960x600, 1400x875 <br> 320x640, 640x1280 (portrait ratio)    |
+| Triton        | 960x1120, 480x560                                            |
+| Nereid        | 960x1120, 480x560                                            |
 | Constellation | 400x460, 200x230                                             |

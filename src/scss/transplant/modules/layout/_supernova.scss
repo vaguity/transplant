@@ -4,49 +4,54 @@
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+}
 
-    .supernova {
-        display: table;
-        height: 420px;
-        color: $white;
-        @include breakpoint($breakpoint-desktop) {
-            position: relative;
-            height: 600px;
-        }
-        > div {
-            display: table-cell;
-            vertical-align: middle;
-        }
+.supernova {
+    display: table;
+    height: 420px;
+    color: $white;
+    @include breakpoint($breakpoint-desktop) {
+        position: relative;
+        height: 600px;
+    }
+    > div {
+        display: table-cell;
+        vertical-align: middle;
     }
 
-    h1 {
+    .copy {
         max-width: 800px;
-        font-family: $type-serif;
-        font-weight: 300;
-        @include type-style(36px, 40px);
-        color: $white;
-        @include breakpoint($breakpoint-desktop-small) {
-            @include type-style(50px, 60px);
+        @include child-margins(20px);
+        h1 {
+            @include sentinel-margins(20px);
+            font-family: $type-serif;
+            font-weight: 300;
+            @include type-style(36px, 40px);
+            color: $white;
+        }
+        p {
+            @include sentinel-margins(20px);
+            font-family: $type-serif;
+            font-weight: 500;
+            @include type-style(18px, 24px);
+        }
+        .jump a {
+            display: inline-block;
         }
     }
-    p {
-        font-family: $type-serif;
-        font-weight: 500;
-        @include type-style(18px, 24px);
-        @include breakpoint($breakpoint-tablet) {
-            max-width: 800px;
+    @include breakpoint($breakpoint-tablet) {
+        .copy p {
             @include type-style(24px, 32px);
         }
     }
-    .hero-request-demo {
-        margin: 40px 0 0;
-    }
+    @include breakpoint($breakpoint-desktop-small) {
+        .copy h1 {
+            @include type-style(50px, 60px);
+        }
+        &.left {
+            text-align: left;
 
-    .first {
-        margin: 0 0 20px;
-    }
-    .last {
-        margin: 45px 0 0;
+        }
     }
 }
 
