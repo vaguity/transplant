@@ -52,8 +52,19 @@
             margin: 0 auto;
             @include span(2 of 12);
         }
-        hr {
+        .rule-container hr {
             margin: 40px 0;
         }
+    }
+    @include breakpoint($breakpoint-desktop) {
+        .card-container {
+            max-width: 1280px;
+        }
+        // .copy-container {
+        //     @include span(10 of 12 last);
+        // }
+        // .image-container {
+        //     @include span(2 of 12);
+        // }
     }
 }

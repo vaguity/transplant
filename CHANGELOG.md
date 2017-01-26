@@ -220,3 +220,4 @@
 - Limit Saturn and Ceres to 1000px
 - Refactor Supernova
 - Fix `sentinel-margins` mixin to calculate margins correctly
+- Remove `sentinel` class from child-margins mixin
