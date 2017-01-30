@@ -288,6 +288,19 @@
                     font-size: 16px;
                     padding: 16px 0 11px;
                 }
+                .mktoLogicalField {
+                    margin: 0px;
+                    input {
+                        display: inline;
+                        width: auto;
+                        margin: 7px 6px 6px 0;
+                    }
+                    label {
+                        display: inline-block;
+                        margin: 5px 0;
+                        color: $orange;
+                    }
+                }
             }
         }
     }
