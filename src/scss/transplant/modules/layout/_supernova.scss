@@ -145,10 +145,10 @@
     @include breakpoint($breakpoint-tablet) {
         .copy {
             h1 {
-                @include type-style(50px, 50px);
+                @include type-style(50px, 60px);
             }
             p, .hero-subhed {
-                @include type-style(32px, 40px);
+                @include type-style(36px, 40px);
             }
         }
     }
