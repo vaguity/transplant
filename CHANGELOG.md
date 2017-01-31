@@ -221,3 +221,10 @@
 - Refactor Supernova
 - Fix `sentinel-margins` mixin to calculate margins correctly
 - Remove `sentinel` class from child-margins mixin
+
+## 3.2.3
+
+- Add background positioning top and bottom to supernova
+- Update `sentinel-margins` mixin to include no margin setting
+- Update `kepler-form` hero subhed to match new typography
+- Correct `kepler-form` to handle checkbox input styling
