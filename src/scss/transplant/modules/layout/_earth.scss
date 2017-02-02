@@ -1,7 +1,3 @@
-.content .earth-container.alt-background {
-    background-color: $lightgray-light;
-}
-
 .earth {
     @include span(full);
     line-height: 0;
@@ -30,7 +26,7 @@
         h2, h3 {
             @include sentinel-margins(30px);
             font-family: $type-serif;
-            font-weight: 300;
+            font-weight: 500;
             @include type-style(24px, 24px);
         }
         p {

@@ -228,3 +228,19 @@
 - Update `sentinel-margins` mixin to include no margin setting
 - Update `kepler-form` hero subhed to match new typography
 - Correct `kepler-form` to handle checkbox input styling
+
+## 3.2.3
+
+- Add background positioning top and bottom to supernova
+- Update `sentinel-margins` mixin to include no margin setting
+- Update `kepler-form` hero subhed to match new typography
+- Correct `kepler-form` to handle checkbox input styling
+- Correct `kepler-form` to match h1 line-height
+
+## 3.2.4
+
+- Update Earth to not override `alt-background`
+- Update Earth to use medium sentinel for headlines
+- Add `background-orange` class to supernova
+- Add background positioning classes to pluto
+- Add `background-indigo` class to pluto

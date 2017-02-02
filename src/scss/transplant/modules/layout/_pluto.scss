@@ -2,6 +2,26 @@
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+    @include breakpoint($breakpoint-desktop-small) {
+        &.background-left {
+            background-position: right center;
+        }
+        &.background-right {
+            background-position: left center;
+        }
+        &.background-top {
+            background-position: center top;
+        }
+        &.background-bottom {
+            background-position: center bottom;
+        }
+    }
+    &.background-orange {
+        background: $orange;
+    }
+    &.background-indigo {
+        background: $indigo;
+    }
 }
 
 .content .pluto-container.bleed .pluto.bleed {

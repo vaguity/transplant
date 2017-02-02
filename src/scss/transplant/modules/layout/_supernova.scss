@@ -18,6 +18,9 @@
             background-position: center bottom;
         }
     }
+    &.background-orange {
+        background: $orange;
+    }
 }
 
 .supernova {
@@ -94,6 +97,8 @@
     }
 }
 
+
+//TODO: deprecate type-ii
 .supernova-container.type-ii {
     background: $orange;
     @include breakpoint($breakpoint-desktop-small) {

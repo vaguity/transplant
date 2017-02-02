@@ -146,8 +146,8 @@
             </div>
         </div>
 
-        <div class="supernova-container type-ii container bleed">
-            <div class="segment supernova bleed">
+        <div class="supernova-container background-orange container bleed">
+            <div class="segment supernova bleed left">
                 <div>
                     <div class="copy-container">
                         <div class="copy">
@@ -1230,7 +1230,7 @@
             </div>
         </div>
 
-        <div class="pluto-container container bleed" style="background-image: url('assets/img/style-guide/pluto-center-2000x300.jpg');">
+        <div class="pluto-container container background-right bleed" style="background-image: url('assets/img/style-guide/pluto-center-2000x300.jpg');">
             <div class="segment pluto bleed left">
                 <div>
                     <div class="copy-container">
@@ -1245,12 +1245,27 @@
             </div>
         </div>
 
-        <div class="pluto-container container bleed" style="background-image: url('assets/img/style-guide/pluto-center-2000x300.jpg');">
+        <div class="pluto-container container background-left bleed" style="background-image: url('assets/img/style-guide/pluto-center-2000x300.jpg');">
             <div class="segment pluto bleed right">
                 <div>
                     <div class="copy-container">
                         <div class="copy">
                             <h3 class="first">Pluto right headline &mdash; Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h3>
+                            <div class="jump last">
+                                <a href="#" class="btn">Take the Tour</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pluto-container container background-indigo bleed">
+            <div class="segment pluto bleed">
+                <div>
+                    <div class="copy-container">
+                        <div class="copy">
+                            <h3 class="first">Pluto indigo background headline &mdash; Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h3>
                             <div class="jump last">
                                 <a href="#" class="btn">Take the Tour</a>
                             </div>
@@ -1574,29 +1589,23 @@
                     </ul>
                 </div>
                 <div class="site-section">
-                    <h2><a href="{{ url_for('clients') }}">Customer Stories</a></h2>
+                    <h2><a href="{{ url_for('customers') }}">Customer Stories</a></h2>
                     <ul>
-                        <li><a href="{{ url_for('client', client_id='ge') }}">GE</a></li>
-                        <li><a href="{{ url_for('client', client_id='unilever') }}">Unilever</a></li>
-                        <li><a href="{{ url_for('client', client_id='chobani') }}">Chobani</a></li>
-                        <li><a href="{{ url_for('client', client_id='mastercard') }}">MasterCard</a></li>
-                        <li><a href="{{ url_for('client', client_id='amtrak') }}">Amtrak</a></li>
-                        <li><a href="{{ url_for('client', client_id='spark-networks') }}">Spark Networks</a></li>
-                        <li><a href="{{ url_for('client', client_id='arla-foods') }}">Arla Foods</a></li>
-                        <li><a href="{{ url_for('client', client_id='us-cellular') }}">U.S. Cellular</a></li>
-                        <li><a href="{{ url_for('client', client_id='freshpet') }}">Freshpet</a></li>
-                        <li><a href="{{ url_for('client', client_id='western-digital') }}">WD</a></li>
+                        <li><a href="{{ url_for('client', customer_id='ge') }}">GE</a></li>
+                        <li><a href="{{ url_for('client', customer_id='unilever') }}">Unilever</a></li>
+                        <li><a href="{{ url_for('client', customer_id='mastercard') }}">MasterCard</a></li>
+                        <li><a href="{{ url_for('client', customer_id='arla-foods') }}">Arla Foods</a></li>
+                        <li><a href="{{ url_for('client', customer_id='western-digital') }}">WD</a></li>
 
                     </ul>
                 </div>
                 <div class="site-section">
                     <ul class="no-heading">
-                        <li><a href="{{ url_for('made_with_client', client_id='kind') }}">KIND</a></li>
-                        <li><a href="{{ url_for('made_with_client', client_id='marriott') }}">Marriott</a></li>
-                        <li><a href="{{ url_for('made_with_client', client_id='timberland') }}">Timberland</a></li>
-                        <li><a href="{{ url_for('made_with_client', client_id='levis') }}">Levi’s</a></li>
-                        <li><a href="{{ url_for('made_with_client', client_id='wework') }}">WeWork</a></li>
-                        <li><a href="{{ url_for('made_with_client', client_id='loews') }}">Loews Hotels</a></li>
+                        <li><a href="{{ url_for('made_with_customer', customer_id='marriott') }}">Marriott</a></li>
+                        <li><a href="{{ url_for('made_with_customer', customer_id='timberland') }}">Timberland</a></li>
+                        <li><a href="{{ url_for('made_with_customer', customer_id='levis') }}">Levi’s</a></li>
+                        <li><a href="{{ url_for('made_with_customer', customer_id='loews') }}">Loews Hotels</a></li>
+                        <li><a href="{{ url_for('made_with_customer', customer_id='dove') }}">Dove Men+Care</a></li>
                     </ul>
                 </div>
                 <div class="site-section">
@@ -1607,7 +1616,6 @@
                         <li><a href="https://learn.percolate.com/social-media-customer-care-software/">Social Media Management & Customer Care</a></li>
                         <li><a href="https://learn.percolate.com/enterprise-content-marketing-software/">Content Marketing</a></li>
                         <li><a href="https://learn.percolate.com/ecommerce/">E-Commerce Marketing</a></li>
-                        <li><a href="https://learn.percolate.com/growth-marketing-software/">Growth Marketing</a></li>
                     </ul>
                 </div>
                 <div class="site-section">
