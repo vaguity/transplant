@@ -1,17 +1,8 @@
 .earth {
     @include span(full);
     line-height: 0;
-    .card {
-        margin: 12px 0 0;
-        &:first-child {
-            margin-top: 0;
-        }
-    }
     .cards-container {
         display: inline-block;
-        .card-link {
-            @include link(inherit, inherit);
-        }
     }
     .copy-container {
         display: inline-block;
@@ -27,7 +18,7 @@
             @include sentinel-margins(30px);
             font-family: $type-serif;
             font-weight: 500;
-            @include type-style(24px, 24px);
+            @include type-style(24px, 32px);
         }
         p {
             font-family: $type-base;
@@ -46,8 +37,41 @@
         height: auto;
     }
 
+    .card-link {
+        margin: 12px 0 0;
+        &:first-child {
+            margin-top: 0;
+        }
+        display: block;
+        position: relative;
+        @include link(inherit, inherit);
+        transition: transform .3s;
+        &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.2);
+            transition: opacity .3s;
+        }
+        @include breakpoint($breakpoint-tablet) {
+            &:hover {
+                transform: scale(1.03);
+                transition: transform .1s;
+                &:after {
+                    opacity: 1;
+                    transition: opacity.1s;
+                }
+            }
+        }
+    }
+
     @include breakpoint($breakpoint-tablet) {
-        .card {
+        .card-link {
             @include span(6 of 12);
             &:nth-child(-n+2) {
                 margin-top: 0;
@@ -67,7 +91,7 @@
     }
 
     @include breakpoint($breakpoint-desktop-small) {
-        .card {
+        .card-link {
             @include span(4 of 12);
             &:nth-child(-n+3) {
                 margin-top: 0;
@@ -109,7 +133,7 @@
 
     }
     @include breakpoint($breakpoint-desktop-large) {
-        .card {
+        .card-link {
             @include span(3 of 12);
             &:nth-child(-n+4) {
                 margin-top: 0;
@@ -134,4 +158,34 @@
             min-height: 140px;
         }
     }
+
+    &.type-ii {
+        max-width: 1420px;
+        float: none;
+        @include breakpoint($breakpoint-desktop-large) {
+            .card-link {
+                @include span(4 of 12);
+                &:nth-child(-n+3) {
+                    margin-top: 0;
+                }
+                &:nth-child(2n) {
+                    @include span(4 of 12);
+                }
+                &:nth-child(3n) {
+                    @include span(4 of 12 last);
+                }
+                &:nth-child(n+3) {
+                    margin-top: 0;
+                }
+                &:nth-child(n+4) {
+                    margin-top: gutter(12);
+                }
+            }
+
+        }
+    }
+}
+
+.container.alt-background .segment.type-ii {
+    margin: 0 auto;
 }

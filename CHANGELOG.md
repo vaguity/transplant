@@ -241,6 +241,8 @@
 
 - Update Earth to not override `alt-background`
 - Update Earth to use medium sentinel for headlines
+- Add `type-ii` variation to Earth
+- Add hover effect to Earth cards
 - Add `background-orange` class to supernova
 - Add background positioning classes to pluto
 - Add `background-indigo` class to pluto
