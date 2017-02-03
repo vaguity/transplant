@@ -50,7 +50,7 @@
             @include sentinel-margins(20px);
             font-family: $type-serif;
             font-weight: 500;
-            @include type-style(24px, 32px);
+            @include type-style(20px, 26px);
         }
         .jump a {
             display: inline-block;
@@ -63,6 +63,13 @@
         }
         .copy-container {
             padding: 0;
+        }
+        .copy {
+            @include child-margins(40px);
+            h2, h3, .highlight {
+                @include sentinel-margins(40px);
+                @include type-style(24px, 32px);
+            }
         }
         &.left {
             text-align: left;
