@@ -1,19 +1,19 @@
 .earth {
     line-height: 0;
     .cards-container {
-        display: inline-block;
+        display: flex;
+        flex-wrap: wrap;
     }
     .copy-container {
         display: inline-block;
         width: 100%;
-        background-color: $white;
-        padding: 25px;
+        padding: 24px;
         box-sizing: border-box;
     }
     .copy {
         width: auto;
         text-align: left;
-        text-overflow: ellipsis;
+        position: relative;
         @include child-margins(30px);
         h2, h3 {
             @include sentinel-margins(30px);
@@ -27,7 +27,15 @@
         }
     }
     .jump {
+        position: absolute;
         @include link($orange, $indigo);
+        bottom: 24px;
+        left: 24px;
+        @include breakpoint($breakpoint-desktop) {
+            bottom: 40px;
+            left: 40px;
+        }
+
     }
     .image-container {
         display: inline-block;
@@ -37,6 +45,9 @@
         width: 100%;
         height: auto;
     }
+    .card {
+        background: $white;
+    }
 
     .card-link {
         @include span(full);
@@ -44,7 +55,7 @@
         &:first-child {
             margin-top: 0;
         }
-        display: block;
+        display: flex;
         position: relative;
         @include link(inherit, inherit);
         transition: transform .3s;
@@ -85,11 +96,6 @@
                 margin-top: gutter(4);
             }
         }
-        .copy {
-            min-height: 250px;
-            max-height: 250px;
-            overflow-y: hidden;
-        }
     }
 
     @include breakpoint($breakpoint-desktop-small) {
@@ -110,9 +116,6 @@
             &:nth-child(n+4) {
                 margin-top: gutter(6);
             }
-        }
-        .copy-container {
-            padding: 24px;
         }
         .copy {
             @include child-margins(20px);
