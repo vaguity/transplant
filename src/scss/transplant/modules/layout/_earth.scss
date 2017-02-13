@@ -7,7 +7,7 @@
     .copy-container {
         display: inline-block;
         width: 100%;
-        padding: 24px;
+        padding: 24px 24px 48px;
         box-sizing: border-box;
     }
     .copy {
@@ -29,10 +29,10 @@
     .jump {
         position: absolute;
         @include link($orange, $indigo);
-        bottom: 24px;
+        bottom: 34px;
         left: 24px;
         @include breakpoint($breakpoint-desktop) {
-            bottom: 40px;
+            bottom: 45px;
             left: 40px;
         }
 
@@ -130,7 +130,7 @@
     }
     @include breakpoint($breakpoint-desktop) {
         .copy-container {
-            padding: 40px;
+            padding: 40px 40px 60px;
         }
         .copy {
             @include child-margins(30px);
