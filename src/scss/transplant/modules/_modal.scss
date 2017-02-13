@@ -7,6 +7,11 @@
 
 .modal-active-body {
     overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
 }
 
 .modal-mask {
@@ -51,7 +56,7 @@
     }
     .modal-content {
         @include span(full);
-        margin: 40px 0 0;
+        margin: 10px 0 0;
         text-align: left;
     }
     @include breakpoint($breakpoint-desktop-small) {

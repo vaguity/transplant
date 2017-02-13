@@ -3,12 +3,12 @@ input, select, textarea {
     box-sizing: border-box;
     font-family: $type-sans;
     text-transform: none;
-    font-size: 16px;
-    margin: 12px 0;
+    font-size: 13px;
+    margin: 6px 0;
     border-radius: 0;
     border: none;
     width: 100%;
-    padding: 12px;
+    padding: 14px 12px 10px;
     overflow: hidden;
     line-height: 20px;
     color: $orange;
@@ -19,6 +19,7 @@ input, select, textarea {
         width: 70%;
     }
     @include breakpoint($breakpoint-desktop-small) {
+        font-size: 16px;
         vertical-align: bottom;
         margin: 12px;
         padding: 26px 24px 22px;

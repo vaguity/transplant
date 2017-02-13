@@ -7,12 +7,13 @@
         display: inline-block;
         width: 100%;
         background-color: $white;
-        padding: 40px;
+        padding: 25px;
         box-sizing: border-box;
     }
     .copy {
         width: auto;
         text-align: left;
+        text-overflow: ellipsis;
         @include child-margins(30px);
         h2, h3 {
             @include sentinel-margins(30px);
