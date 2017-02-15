@@ -3,6 +3,7 @@ input, select, textarea {
     box-sizing: border-box;
     font-family: $type-sans;
     text-transform: none;
+    // TODO: Check use of font-size vs. type-style mixin
     font-size: 16px;
     margin: 6px 0;
     border-radius: 0;
@@ -19,6 +20,7 @@ input, select, textarea {
         width: 70%;
     }
     @include breakpoint($breakpoint-desktop-small) {
+        // TODO: Check use of font-size vs. type-style mixin
         font-size: 16px;
         vertical-align: bottom;
         margin: 12px;
