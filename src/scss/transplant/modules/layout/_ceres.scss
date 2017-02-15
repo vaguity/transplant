@@ -13,6 +13,7 @@
             @include sentinel-margins(20px);
             font-family: $type-serif;
             font-weight: 300;
+            color: $darkgray;
             @include type-style(24px, 32px);
         }
         .hanging-quote {
