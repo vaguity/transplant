@@ -6,6 +6,10 @@
     .copy {
         @include child-margins(20px);
         p {
+            font-family: $type-base;
+            @include type-style(16px, 28px);
+        }
+        .quote {
             @include sentinel-margins(20px);
             font-family: $type-serif;
             font-weight: 300;
@@ -36,17 +40,23 @@
         }
         .card {
             display: inline-block;
+            display: flex;
+            align-items: center;
             width: 100%;
         }
         .copy-container {
             margin: 0 auto;
             @include span(4 of 6 last);
+            display: inline-block;
+            display: flex;
         }
         .copy {
-            margin: 20px 0 0;
-            @include child-margins(40px);
+            @include child-margins(20px);
             p {
-                @include sentinel-margins(40px);
+                @include type-style(14px, 24px);
+            }
+            .quote {
+                @include sentinel-margins(20px);
                 @include type-style(20px, 28px);
             }
         }
@@ -60,19 +70,26 @@
     }
     @include breakpoint($breakpoint-desktop-small) {
         margin: 80px auto;
+        .copy-container {
+            @include span(8 of 12 last);
+        }
+        .image-container {
+            @include span(3 of 12);
+        }
     }
     @include breakpoint($breakpoint-desktop) {
         .card-container {
             max-width: 1000px;
         }
-        .copy-container {
-            @include span(9 of 12 last);
-        }
-        .image-container {
-            @include span(3 of 12);
-        }
-        .copy p {
-            @include type-style(24px, 32px);
+        .copy {
+             @include child-margins(40px);
+            p {
+                @include type-style(16px, 28px);
+            }
+            .quote {
+                @include sentinel-margins(40px);
+                @include type-style(24px, 32px);
+            }
         }
     }
 }
