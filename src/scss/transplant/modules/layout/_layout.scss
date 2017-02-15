@@ -15,6 +15,12 @@
             padding: 0 0 80px;
         }
     }
+    &.mid-background {
+        background-color: $offwhite;
+    }
+    &.dark-background {
+        background-color: $offwhite-dark;
+    }
 }
 
 .container.gravity .segment {
