@@ -12,9 +12,9 @@
         box-sizing: border-box;
     }
     .copy {
+        position: relative;
         width: auto;
         text-align: left;
-        position: relative;
         @include child-margins(30px);
         h2, h3 {
             @include sentinel-margins(30px);
@@ -51,35 +51,36 @@
     }
 
     .card-link {
+        // TODO: Is span(full) needed?
         @include span(full);
+        display: inline-block;
+        display: flex;
+        position: relative;
         margin: 12px 0 0;
         &:first-child {
             margin-top: 0;
         }
-        display: inline-block;
-        display: flex;
-        position: relative;
         @include link(inherit, inherit);
         transition: transform .3s;
         &:after {
-            content: "";
             display: block;
             position: absolute;
             top: 0;
             left: 0;
-            opacity: 0;
             width: 100%;
             height: 100%;
-            box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.2);
             transition: opacity .3s;
+            box-shadow: 1px 1px 4px 1px rgba($black, .2);
+            content: '';
+            opacity: 0;
         }
         @include breakpoint($breakpoint-tablet) {
             &:hover {
                 transform: scale(1.03);
                 transition: transform .1s;
                 &:after {
+                    transition: opacity .1s;
                     opacity: 1;
-                    transition: opacity.1s;
                 }
             }
         }
@@ -121,7 +122,7 @@
         }
         .copy {
             @include child-margins(20px);
-            
+
             h2, h3 {
                 @include sentinel-margins(20px);
             }
