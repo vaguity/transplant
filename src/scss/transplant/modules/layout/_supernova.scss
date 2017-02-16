@@ -102,7 +102,7 @@
 }
 
 
-//TODO: deprecate type-ii
+// TODO: Deprecate type-ii
 .supernova-container.type-ii {
     background: $orange;
     @include breakpoint($breakpoint-desktop-small) {
@@ -131,11 +131,11 @@
             @include type-style(36px, 40px);
         }
         p, .hero-subhed {
+            color: $white;
             font-family: $type-serif;
             font-weight: 300;
             text-align: left;
             @include type-style(20px, 28px);
-            color: $white;
         }
         .jump {
             text-align: left;
@@ -271,18 +271,18 @@
     @include breakpoint($breakpoint-desktop-small) {
         margin: 0 0 160px;
         .form-modal .supernova-type-iii-modal {
-            background: $white;
             position: relative;
             top: 100px;
+            min-width: 370px;
             padding: 0;
-            box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.2);
-
+            background: $white;
+            box-shadow: 1px 1px 4px 1px rgba($black, .2);
             &:before {
-                content: "";
                 display: block;
-                height: 5px;
                 width: 100%;
+                height: 5px;
                 background: $orange;
+                content: "";
             }
 
             .modal-description {
@@ -318,7 +318,7 @@
                     padding: 16px 0 11px;
                 }
                 .mktoLogicalField {
-                    margin: 0px;
+                    margin: 0;
                     input {
                         display: inline;
                         width: auto;
