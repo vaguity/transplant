@@ -245,7 +245,7 @@
 - Add body to be fixed when modal is active
 - Supernova `.left` and `.right` classes reduced to 575px
 
-## 3.2.x
+## 3.2.5
 
 - Add helper classes for alternate alt-background colors (`mid-background` and `dark-background`)
 - Update Ceres typography at certain breakpoints
