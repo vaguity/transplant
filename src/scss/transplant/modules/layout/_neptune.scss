@@ -13,7 +13,7 @@
         h2, h3 {
             @include sentinel-margins(20px);
             font-family: $type-serif;
-            font-weight: 300;
+            font-weight: 500;
             @include type-style(24px, 32px);
         }
         p {
