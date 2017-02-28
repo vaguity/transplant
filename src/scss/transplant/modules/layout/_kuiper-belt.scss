@@ -24,9 +24,9 @@
         }
         .copy {
             margin: 0 0 60px;
-            @include child-margins(40px);
+            @include child-margins(30px);
             h2, h3 {
-                @include sentinel-margins(40px);
+                @include sentinel-margins(30px);
             }
         }
     }

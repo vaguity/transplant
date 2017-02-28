@@ -250,3 +250,9 @@
 - Add helper classes for alternate alt-background colors (`mid-background` and `dark-background`)
 - Update Ceres typography at certain breakpoints
 - Add min-width to Supernova Kepler form
+
+## 3.2.6
+
+- Reduce margin spacing between headline and copy on Kuplier Belt
+- Change `min-height` to 'height' on Pluto (this fixes a display issue with table heights)
+- Refactor Earth to use fixed margin widths (this fixes an issue when using percentages in vertical margin with flexbox)
