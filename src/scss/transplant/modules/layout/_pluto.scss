@@ -36,6 +36,7 @@
     margin: 0;
     color: $white;
     text-align: left;
+    box-sizing:border-box;
     > div {
         display: table-cell;
         vertical-align: middle;

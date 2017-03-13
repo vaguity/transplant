@@ -27,6 +27,7 @@
     display: table;
     height: 420px;
     color: $white;
+    box-sizing: border-box;
     @include breakpoint($breakpoint-desktop) {
         position: relative;
         height: 600px;
