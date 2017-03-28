@@ -1,6 +1,6 @@
 # Transplant changelog
 
-## 3.2.6
+## 3.2.7
 
 - Reduce margin spacing between headline and copy on Kuiper Belt
 - Change `min-height` to `height` on Pluto (this fixes a display issue with table heights)
