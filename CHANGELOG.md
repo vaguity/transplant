@@ -1,10 +1,14 @@
 # Transplant changelog
 
+## 3.2.8
+
+- Add `single` typography variant to Saturn, Uranus
+
 ## 3.2.7
 
 - Reduce margin spacing between headline and copy on Kuiper Belt
-- Change `min-height` to `height` on Pluto (this fixes a display issue with table heights)
-- Refactor Earth to use fixed margin widths (this fixes an issue when using percentages in vertical margin with flexbox)
+- Change `min-height` to `height` on Pluto to fix display issue with table heights
+- Refactor Earth to use fixed margin widths to fix issue when using percentages in vertical margin with flexbox
 
 ## 3.2.5
 

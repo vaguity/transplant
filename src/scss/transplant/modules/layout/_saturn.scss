@@ -13,6 +13,11 @@
         p {
             font-family: $type-base;
             @include type-style(16px, 28px);
+            &.single {
+                font-family: $type-serif;
+                font-weight: 300;
+                @include type-style(20px, 28px);
+            }
         }
     }
     @include breakpoint($breakpoint-desktop-small) {
@@ -27,6 +32,9 @@
         }
         .copy {
             @include child-margins(40px);
+            p.single {
+                @include type-style(24px, 32px);
+            }
         }
     }
 }

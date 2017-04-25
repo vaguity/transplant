@@ -22,6 +22,11 @@
         p {
             font-family: $type-base;
             @include type-style(16px, 28px);
+            &.single {
+                font-family: $type-serif;
+                font-weight: 300;
+                @include type-style(20px, 28px);
+            }
         }
     }
     .image {
@@ -36,12 +41,12 @@
         margin: 80px 0;
         .copy-container {
             display: inline-block;
+            align-self: center;
             @include span(15 of 36);
             margin: 0;
             color: $darkgray;
             text-align: center;
             vertical-align: middle;
-            align-self: center;
         }
         .copy {
             max-width: 800px;
@@ -49,6 +54,9 @@
             @include child-margins(30px);
             h2, h3 {
                 @include sentinel-margins(30px);
+                @include type-style(24px, 32px);
+            }
+            p.single {
                 @include type-style(24px, 32px);
             }
         }
@@ -63,8 +71,8 @@
         }
         &.left {
             .copy-container {
-                padding: 0 (span(1 of 36) + (gutter(36) * 2)) 0 0;
                 order: 1;
+                padding: 0 (span(1 of 36) + (gutter(36) * 2)) 0 0;
             }
             .image-container {
                 order: 2;
@@ -72,8 +80,8 @@
         }
         &.right {
             .copy-container {
-                padding: 0 0 0 (span(1 of 36) + (gutter(36) * 2));
                 order: 2;
+                padding: 0 0 0 (span(1 of 36) + (gutter(36) * 2));
             }
             .image-container {
                 order: 1;
