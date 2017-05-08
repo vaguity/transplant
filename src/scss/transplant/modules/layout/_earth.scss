@@ -34,6 +34,17 @@
         @include link($orange, $indigo);
         bottom: 34px;
         left: 24px;
+        &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            left: 0;
+            bottom: -13px;
+            height: 1px;
+            width: 100%;
+            background: $orange;
+            transition: width .3s;
+        }
         @include breakpoint($breakpoint-desktop) {
             bottom: 45px;
             left: 40px;
@@ -80,6 +91,10 @@
                     transition: opacity .1s;
                     opacity: 1;
                 }
+                .jump:after {
+                    width: 100%;
+                    transition: width .3s;
+                }
             }
         }
     }
@@ -90,6 +105,9 @@
             margin: 0 30px 30px 0;
             &:nth-child(2n) {
                 margin-right: 0;
+            }
+            .jump:after {
+                width: 0;
             }
         }
     }
@@ -146,9 +164,6 @@
                 margin-right: 0;
             }
             
-        }
-        .copy p {
-            min-height: 140px;
         }
     }
 

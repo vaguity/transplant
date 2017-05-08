@@ -1,5 +1,10 @@
 # Transplant changelog
 
+## 3.2.9
+
+- Add hover state to `jump` on Earth
+- Remove `min-height` on copy from desktop breakpoint on Earth
+
 ## 3.2.8
 
 - Add `single` typography variant to Saturn, Uranus
