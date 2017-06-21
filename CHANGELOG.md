@@ -1,5 +1,11 @@
 # Transplant changelog
 
+## 3.2.10
+
+- Update form email validation function to check for a dot in the email domain
+- Fix Supernova Type III form width
+- Update Kepler form error color on desktop
+
 ## 3.2.9
 
 - Add hover state to `jump` on Earth

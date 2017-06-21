@@ -102,7 +102,6 @@
     }
 }
 
-
 // TODO: Deprecate type-ii
 .supernova-container.type-ii {
     background: $orange;
@@ -245,6 +244,9 @@
         .modal-title, .modal-close {
             display: none;
         }
+        .modal-content .form {
+            max-width: 290px;
+        }
     }
 }
 
@@ -299,39 +301,41 @@
                 margin: 0 0 40px;
             }
             .modal-content .form {
+                max-width: 290px;
                 margin: 0 40px;
             }
         }
-
-        .form-container {
-            form {
-                input, select {
-                    border: 1px solid $lightgray;
-                    margin: 0 0 2px;
-                    padding: 16px 20px 13px;
+        .form-container form {
+            input, select {
+                border: 1px solid $lightgray;
+                margin: 0 0 2px;
+                padding: 16px 20px 13px;
+            }
+            select {
+                padding: 19px 20px 16px
+            }
+            button {
+                margin: 20px 0 0;
+                font-size: 16px;
+                padding: 16px 0 11px;
+            }
+            .mktoLogicalField {
+                margin: 0;
+                input {
+                    display: inline;
+                    width: auto;
+                    margin: 7px 6px 6px 0;
                 }
-                select {
-                    padding: 19px 20px 16px
-                }
-                button {
-                    margin: 20px 0 0;
-                    font-size: 16px;
-                    padding: 16px 0 11px;
-                }
-                .mktoLogicalField {
-                    margin: 0;
-                    input {
-                        display: inline;
-                        width: auto;
-                        margin: 7px 6px 6px 0;
-                    }
-                    label {
-                        display: inline-block;
-                        margin: 5px 0;
-                        color: $orange;
-                    }
+                label {
+                    display: inline-block;
+                    margin: 5px 0;
+                    color: $orange;
                 }
             }
+        }
+        .mktoCustomError {
+            color: $indigo;
+            text-align: left;
         }
     }
 }

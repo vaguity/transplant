@@ -99,6 +99,11 @@ function formsValidateRequired ($fields, formID) {
 function formsValidateEmail (email, formID) {
     var validationStatus = true
     var emailDomain = email.replace(/.+@(.+)/, '\$1')
+    if (emailDomain.indexOf('.') === -1) {
+        validationStatus = false
+        $('.mktoCustomError_' + formID).html('<strong>Uh oh.</strong> Please enter a valid email address.').css('display', 'block')
+        return false
+    }
     var personalDomains = ['aol.com', 'att.net', 'bellsouth.net', 'comcast.net', 'cox.net', 'earthlink.net', 'gmail.com', 'gmx.com', 'gmx.de', 'googlemail.com', 'hotmail.co.uk', 'hotmail.com', 'icloud.com', 'live.com', 'mac.com', 'mail.com', 'mail.ru', 'me.com', 'msn.com', 'outlook.com', 'rocketmail.com', 'sbcglobal.net', 'verizon.net', 'web.de', 'yahoo.co.uk', 'yahoo.com', 'yandex.ru', 'ymail.com']
     for (var i = personalDomains.length - 1; i >= 0; i--) {
         if (emailDomain === personalDomains[i]) {
