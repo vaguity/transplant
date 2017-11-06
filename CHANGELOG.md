@@ -1,5 +1,9 @@
 # Transplant changelog
 
+## 3.2.11
+
+- Add Chinese personal email domains to form blocklist
+
 ## 3.2.10
 
 - Update form email validation function to check for a dot in the email domain

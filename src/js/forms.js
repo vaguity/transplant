@@ -104,7 +104,7 @@ function formsValidateEmail (email, formID) {
         $('.mktoCustomError_' + formID).html('<strong>Uh oh.</strong> Please enter a valid email address.').css('display', 'block')
         return false
     }
-    var personalDomains = ['aol.com', 'att.net', 'bellsouth.net', 'comcast.net', 'cox.net', 'earthlink.net', 'gmail.com', 'gmx.com', 'gmx.de', 'googlemail.com', 'hotmail.co.uk', 'hotmail.com', 'icloud.com', 'live.com', 'mac.com', 'mail.com', 'mail.ru', 'me.com', 'msn.com', 'outlook.com', 'rocketmail.com', 'sbcglobal.net', 'verizon.net', 'web.de', 'yahoo.co.uk', 'yahoo.com', 'yandex.ru', 'ymail.com']
+    var personalDomains = ['126.com', '163.com', 'aol.com', 'att.net', 'bellsouth.net', 'comcast.net', 'cox.net', 'earthlink.net', 'foxmail.com', 'gmail.com', 'gmx.com', 'gmx.de', 'googlemail.com', 'hotmail.co.uk', 'hotmail.com', 'icloud.com', 'live.com', 'mac.com', 'mail.com', 'mail.ru', 'me.com', 'msn.com', 'outlook.com', 'qq.com', 'rocketmail.com', 'sbcglobal.net', 'sina.com', 'verizon.net', 'web.de', 'yahoo.co.uk', 'yahoo.com', 'yandex.ru', 'ymail.com']
     for (var i = personalDomains.length - 1; i >= 0; i--) {
         if (emailDomain === personalDomains[i]) {
             validationStatus = false
