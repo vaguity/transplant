@@ -1,0 +1,39 @@
+{
+  "name": "eslint-config-percolate",
+  "version": "1.6.0",
+  "engines": {
+    "node": "0.10.x || 0.12.x || 4.x.x"
+  },
+  "description": "Percolate's JavaScript style guide.",
+  "scripts": {
+    "test": "eslint --ext '.js,.jsx' ./test/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/percolate/eslint-config-percolate.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/percolate/eslint-config-percolate/issues"
+  },
+  "devDependencies": {
+    "eslint": "1.10.3",
+    "eslint-plugin-mocha": "1.1.0",
+    "eslint-plugin-react": "3.11.3",
+    "eslint-plugin-sinon": "0.1.0"
+  },
+  "peerDependencies": {
+    "eslint": "1.10.3",
+    "eslint-plugin-mocha": "1.1.0",
+    "eslint-plugin-react": "3.11.3",
+    "eslint-plugin-sinon": "0.1.0"
+  },
+  "gitHead": "e66ef2a5341d162a2328eb5e86a001290a2150ae",
+  "readme": "# eslint-config-percolate\n\n[![Circle CI](https://circleci.com/gh/percolate/eslint-config-percolate.svg?style=svg&circle-token=a2dfaae06d0d2ce659ee32eb8b060d602d58445c)](https://circleci.com/gh/percolate/eslint-config-percolate)\n\nPercolate's JavaScript style guide.\n\n## Installation\n\n```sh\n$ npm install git+https://git@github.com/percolate/eslint-config-percolate.git\n```\n\n## Usage\n\n[Extend](http://eslint.org/docs/developer-guide/shareable-configs) your local `.eslintrc` configuration:\n\n```json\n{\n  \"extends\": \"./node_modules/eslint-config-percolate/.eslintrc\"\n}\n```\n\nOr use the package directly:\n\n```sh\n$ ./node_modules/eslint-config-percolate/node_modules/.bin/eslint -c ./node_modules/eslint-config-percolate/.eslintrc ./lib/ ./test/\n```\n",
+  "readmeFilename": "README.md",
+  "homepage": "https://github.com/percolate/eslint-config-percolate#readme",
+  "_id": "eslint-config-percolate@1.6.0",
+  "_shasum": "d33938b823e17a2d354454df724fcf702bd36a7a",
+  "_from": "git+https://git@github.com/percolate/eslint-config-percolate.git#v1.6.0",
+  "_resolved": "git+https://git@github.com/percolate/eslint-config-percolate.git#e66ef2a5341d162a2328eb5e86a001290a2150ae"
+}
