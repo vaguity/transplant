@@ -1,154 +1,240 @@
-.header-container {
-    @include container(full);
-    padding: 0;
-}
-
-.header {
-    .primary-nav {
-        @include span(80%);
-        margin: 0;
-        ul {
-            display: none;
-        }
-    }
-    .nav-icon {
-        min-width: 0;
-        line-height: 0;
-        @include span(20% last);
-        margin: 0;
-    }
-    .secondary-nav, .footer-nav {
-        display: none;
-    }
-    @include breakpoint($breakpoint-desktop-small) {
-        @include container(full);
-        .nav-icon {
-            display: none;
-        }
-        .primary-nav {
-            @include span(75%);
-            margin: 0;
-            ul {
-                display: block;
-            }
-        }
-        .secondary-nav {
-            display: block;
-            @include span(25% last);
-            margin: 0;
-        }
-    }
-    @include breakpoint(1080px) {
-        .primary-nav {
-            @include span(70%);
-            margin: 0;
-        }
-        .secondary-nav {
-            @include span(30% last);
-        }
-    }
-    @include breakpoint($breakpoint-desktop) {
-        .primary-nav {
-            @include span(70%);
-            margin: 0;
-        }
-        .secondary-nav {
-            @include span(30% last);
-            margin: 0;
-        }
-    }
-}
-
 .header .primary-nav {
-    .logo, .modal-nav-logo {
-        @include span(160px);
-        margin: 24px;
-    }
-    ul li {
-        font-family: $type-serif;
-        font-weight: 300;
-    }
-    @include breakpoint($breakpoint-desktop-small) {
-        .logo {
-            @include span(200px);
-            margin: 30px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 1px solid $lightgray;
+    &.sticky.enabled {
+        ul.main {
+            @include breakpoint($breakpoint-desktop-small) {
+                float: left;
+                margin-right: 240px;
+                transition: margin .3s;
+                li:last-of-type {
+                    .subnav-card {
+                        left: 50%;
+                        &:before, &:after {
+                            left: 50%;
+                        }
+                    }
+                }
+            }
+            @include breakpoint(1134px) {
+                margin-right: 310px;
+            }            
         }
-        ul {
-            margin: 30px 0 28px;
-            float: left;
-            li {
-                display: inline-block;
-                font-family: $type-serif;
-                font-weight: 300;
-                @include type-style(18px, 18px);
-                margin: 10px 4px 2px 0;
-                &:last-child {
-                    margin: 10px 0 2px;
+        .buttons {
+            @include breakpoint($breakpoint-desktop-small) {
+                overflow: visible;
+                ul {
+                    right: -10px;
+                    opacity: 1;
                 }
             }
         }
     }
-    @include breakpoint($breakpoint-desktop) {
-        ul li {
-            @include type-style(20px, 20px);
-            margin: 8px 22px 2px 0;
+    .logo, .modal-nav-logo {
+        width: 160px;
+        margin: 27px 20px 23px 24px;
+        @include breakpoint($breakpoint-desktop-small) {
+            margin: 25px 20px 25px 30px;
+            width: 200px;
+        }
+        @include breakpoint(1134px) {
+            margin: 25px 30px;
+        }
+    }
+    ul {
+        display: none;
+        padding-right: 0;
+        @include breakpoint($breakpoint-desktop-small) {
+            display: block;
+            margin: 28px 30px 0 0;
+        }
+        &.main {
+            margin-right: 30px;
+            transition: margin .3s;
+            li:last-of-type {
+                .subnav-card {
+                    left: 5%;
+                    &:before, &:after {
+                        left: 75%;
+                    }
+                }
+            }
+        }
+        li {
+            position: relative;
+            font-weight: 700;
+            @include type-style(16px, 16px);
+            &.mobile {
+                display: block;
+                &.subnav-open {
+                    display: none;
+                }
+                @include breakpoint($breakpoint-desktop-small) {
+                    display: none
+                }
+            }
+            @include breakpoint($breakpoint-desktop-small) {
+                margin: 0 10px 0 0;
+                padding-bottom: 33px;
+                &:last-of-type {
+                    margin-right: 0;
+                }
+                &.has-subnav:hover {
+                    .subnav-card {
+                        opacity: 1;
+                        top: 49px;
+                        pointer-events: auto;
+                    }
+                }
+            }
+            @include breakpoint(1050px) {
+                @include type-style(18px, 18px);
+                margin: 0 30px 0 0;
+                padding-bottom: 31px;
+            }
+        }
+    }
+    .subnav-card {
+        display: none;
+        position: relative;
+        &.active {
+            display: block;
+            @include breakpoint($breakpoint-desktop-small) {
+                margin-top: 10px;
+            }
+        }
+        @include breakpoint($breakpoint-desktop-small) {
+            display: block;
+            opacity: 0;
+            pointer-events: none;
+            background: $white;
+            border: 1px solid $lightgray;
+            min-width: 155px;
+            margin: 0;
+            white-space: nowrap;
+            float: none;
+            position: absolute;
+            top: 70px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+            transition: top .2s, opacity .2s;
+            &:after, &:before {
+                bottom: 100%;
+                left: 50%;
+                border: solid transparent;
+                content: '';
+                height: 0;
+                width: 0;
+                position: absolute;
+                pointer-events: none;
+            }
+
+            &:after {
+                border-color: transparent;
+                border-bottom-color: $white;
+                border-width: 10px;
+                margin-left: -10px;
+            }
+            &:before {
+                border-color: transparent;
+                border-bottom-color: $lightgray;
+                border-width: 11px;
+                margin-left: -11px;
+            }
+        }
+        li {
+            font-family: $type-base;
+            @include type-style(15px, 15px);
+            font-weight: 500;
+            color: $indigo;
+            margin: 0;
+            padding: 0;
+            display: block;
+            float: none;
+            border-bottom: 1px solid $lightgray;
+            .modal-active & {
+                border-color: $white;
+            }
+            @include breakpoint($breakpoint-desktop-small) {
+                &:last-of-type {
+                    border-bottom: none;
+                }
+            }                   
+            a {
+                display: block;
+                @include breakpoint($breakpoint-desktop-small) {
+                    padding: 15px;
+                    &:hover {
+                        color: $indigo;
+                        background: $offwhite-dark;
+                    }
+                }
+            }
+        }
+                
+    }    
+    .nav-icon {
+        min-width: 0;
+        line-height: 0;
+        width: 20%;
+        margin: 0;
+        @include breakpoint($breakpoint-desktop-small) {
+            display: none;
+        }
+    }
+    .buttons {
+        position: relative;
+        overflow: hidden;
+        ul  {
+            position: absolute;
+            right: -300px;
+            opacity: 0;
+            transition: right .3s, opacity .3s;
+            li {
+                margin-right: 10px;
+                @include breakpoint(1134px) {
+                    margin-right: 20px;
+                }
+                &:last-of-type {
+                    margin-right: 0;
+                }
+            }
         }
     }
 }
 
 .header .secondary-nav {
-    ul li {
-        font-family: $type-serif;
-        font-weight: 300;
-        @include type-style(18px, 18px);
-    }
+    width: 100%;
+    border-bottom: 1px solid $lightgray;
+    display: none;
     @include breakpoint($breakpoint-desktop-small) {
-        ul {
-            margin: 30px 30px 22px 0;
-            text-align: right;
-            li {
-                margin: 0 10px 0 0;
-                font-family: $type-base;
-                font-weight: normal;
-                @include type-style(13px, 13px);
-                &:last-child {
-                    margin: 0;
-                }
-                &.hiring {
-                    display: none;
-                }
-            }
-        }
-        .highlight a {
-            display: block;
-            @include link($white, $offwhite, false);
-            @include button;
-            @include button-background($white, $offwhite, $orange, $darkorange);
-            @include type-style(13px, 13px);
-            padding: 15px 18px 12px;
-            border-width: 0;
-        }
+        display: block;
     }
-    @include breakpoint(1080px) {
-        ul li.hiring {
-            display: inline-block;
-        }
-    }
-    @include breakpoint($breakpoint-desktop) {
-        ul li {
-            margin: 0 20px 0 0;
+    ul {
+        @include susy-clearfix;
+        text-align: left;
+        margin: 25px 30px;
+        li {
+            float: right;
+            margin: 0 0 0 20px;
             &:first-child {
-                margin: 0 20px 0 20px;
+                float: left;
+                margin: 0;
             }
-            &.hiring {
-                display: inline-block;
+            &.sales-phone {
+                font-family: $type-base;
+                @include type-style(15px, 15px);
             }
         }
     }
+    
 }
 
 .header .nav-icon {
-    padding: 24px 24px 0 0;
+    padding-right: 24px;
     border: none;
     color: transparent;
     background: transparent;
@@ -165,8 +251,11 @@
     }
 }
 
-.header .footer-nav ul li {
-    display: block;
+.header .footer-nav {
+    display: none;
+    ul li {
+        display: block;
+    }
 }
 
 .header {
@@ -203,6 +292,10 @@
 
 // Modal header
 
+.header-container.modal-active.no-nav {
+    display: none;
+}
+
 .header .primary-nav {
     .modal-nav-header, .modal-nav-primary-sub-nav {
         display: none;
@@ -227,26 +320,41 @@
     .primary-nav {
         display: inline-block;
         width: 100%;
-        margin: 0 0 20px;
+        margin: 0;
+        border: none;
         @include type-style(24px, 24px);
         .logo {
             display: none;
         }
         .modal-nav-header {
-            @include span(full);
-            display: block;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
             border: 1px solid $white;
             border-width: 0 0 1px;
         }
         ul {
-            @include span(full);
-            display: block;
+            width: 100%;
+            &.main {
+                display: block;
+            }
             li {
                 display: block;
                 margin: 0 24px;
-                padding: 12px 0;
                 border: 1px solid $white;
                 border-width: 0 0 1px;
+                ul li {
+                    margin: 0;
+                    &:first-of-type {
+                        border-width: 1px 0;
+                    }
+                    &:last-of-type {
+                        border-width: 0;
+                    }
+                    a {
+                        padding: 15px 15px 15px 37px;
+                    }
+                }
                 &.subnav-open {
                     display: none;
                     &.active {
@@ -254,6 +362,7 @@
                     }
                 }
                 a {
+                    padding: 12px 0;
                     display: block;
                     &:after, &:before {
                         position: relative;
@@ -324,41 +433,17 @@
         }
     }
 
-    .secondary-nav, .footer-nav {
-        display: block;
-        @include span(full last);
-    }
-
-    .secondary-nav {
-        margin: 20px 0;
-        @include type-style(18px, 18px);
-        ul {
-            margin: 0 0 0 24px;
-            li {
-                display: block;
-                margin: 12px 0;
-                &:first-of-type {
-                    margin: 0 0 12px;
-                }
-                &:last-of-type {
-                    margin: 12px 0 0;
-                }
-            }
-        }
-    }
     .footer-nav {
-        margin: 20px 0 0;
+        display: block;
+        margin: 0;
         ul {
             margin: 0 0 0 24px;
             li {
                 display: block;
-                margin: 6px 0;
-                &:first-of-type {
-                    margin: 0 0 6px;
-                }
-                &:last-of-type {
-                    margin: 6px 0 0;
-                }
+                font-family: $type-base;
+                font-weight: 400;
+                @include type-style(15px, 15px);
+                margin: 25px 0;
             }
         }
     }
@@ -368,4 +453,86 @@
             @include link($indigo, $white);
         }
     }
+}
+
+
+
+.nav-placeholder.enabled {
+    display: block;
+    height: 82px;
+}
+
+.modal-active .header-container {
+    border-width: 0;
+}
+
+.modal-active-body .header-container .sticky.enabled {
+    z-index: 1;
+}
+.header-container {
+    //check if this can be assigned to itself
+    .modal-active & {
+        border-width: 0;
+    }
+    .sticky.enabled {
+        z-index: 60;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: $white;
+    }
+    .header {
+        .btn {
+            transition: background .3s, padding .3s;
+            @include type-style(14px, 14px);
+            padding: 8px 14px;
+            border: 1px solid $orange;
+            box-shadow: none;
+            @include breakpoint(1134px) {
+                @include type-style(18px, 18px);
+                padding: 10px 20px;
+            }
+            &:hover {
+                border-color: $orange;
+                transition: background .3s;
+            }
+            &.login {
+                @include button-background($orange, $offwhite, $white, $orange);
+                border: 1px solid $orange;
+                padding: 8px 14px;
+                @include breakpoint(1134px) {
+                    padding: 9px 20px;
+                }
+            }
+        }
+        .footer-nav {
+            margin: 0;
+            ul li {
+                
+            }
+        }            
+    }
+}
+
+.header-container.no-nav .header {
+    .primary-nav {
+        width: auto;
+        margin: 0;
+        border: none;
+        ul {
+            display: none;
+            li {
+                @include type-style(14px, 14px);
+                font-weight: 400;
+            }
+             @include breakpoint($breakpoint-desktop-small) {
+                display: block;
+                width: 40%;
+                float: right;
+                margin-right: 30px;
+                text-align: right;
+            }
+        }
+    }
+   
 }

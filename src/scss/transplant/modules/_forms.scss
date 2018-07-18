@@ -81,7 +81,8 @@ button {
     color: $white;
     background-color: $orange;
     text-transform: uppercase;
-    @include type-style-sans-base;
+    font-family: $type-averta;
+    @include type-style(16px, 16px);
     &:focus {
         outline: none;
     }
@@ -115,7 +116,8 @@ form, .modal-content form {
 .mktoCustomError {
     display: none;
     margin: 0 0 40px;
-    @include type-style-base-base;
+    font-family: $type-base;
+    @include type-style(16px, 16px);
     text-align: center;
     &.active {
         display: block;

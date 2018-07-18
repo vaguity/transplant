@@ -122,7 +122,9 @@
     text-transform: uppercase;
     margin: 0;
     text-align: left;
-    @include type-style-sans-medium;
+    font-family: $type-base;
+    font-weight: 400;
+    @include type-style(16px, 16px);
     @include breakpoint($breakpoint-desktop-small) {
         text-align: center;
     }

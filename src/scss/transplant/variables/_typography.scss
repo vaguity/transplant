@@ -1,28 +1,14 @@
-$helvetica: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$averta: 'Averta Standard', Helvetica, Arial, sans-serif;
 $sentinel: 'Sentinel A', 'Sentinel B', Georgia, serif; // Sentinel supports Light, Light Italic, and Medium (500)
-// $futura: 'Futura W01 Bold', Arial, sans-serif; // Old Futura webfont
 $futura: 'FuturaLTPro-Bold', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $interface: 'InterFace', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $percocons: 'Percocons';
-$type-base: $helvetica;
+$type-base: $averta;
+$type-averta: $averta;
 $type-serif: $sentinel;
 $type-sans: $futura;
 $type-interface: $interface;
 $type-icons: $percocons;
-
-// Sentinel fonts available
-//
-// Sentinel Light
-// font-style: normal;
-// font-weight: 300;
-//
-// Sentinel Light Italic
-// font-style: italic;
-// font-weight: 300
-//
-// Sentinel Medium
-// font-style: normal
-// font-weight: 500;
 
 @function type-calculate-rem($size) {
     $remSize: $size / 16px;

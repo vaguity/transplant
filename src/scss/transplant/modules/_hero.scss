@@ -1,8 +1,3 @@
-.content .container.full section.hero {
-    padding-top: 0;
-    padding-bottom: 0;
-}
-
 .hero-container {
     margin: 0;
     background-position: center;
@@ -11,63 +6,5 @@
     text-align: center;
     .mask {
         @include mask($indigo, .6);
-    }
-}
-
-.hero {
-    display: table;
-    height: 420px;
-    color: $white;
-    > div {
-        display: table-cell;
-        vertical-align: middle;
-    }
-    // TODO: h1 style is legacy
-    h1 {
-        color: $white;
-    }
-    .hero-title {
-        color: $white;
-        margin: 0 0 24px;
-        @include type-style-sans-large;
-        @include breakpoint($breakpoint-desktop-small) {
-            margin: 0 0 24px;
-        }
-        br {
-            display: none;
-            @include breakpoint($breakpoint-desktop) {
-                display: block;
-            }
-        }
-    }
-    .hero-subhed {
-        color: $white;
-        margin: 24px 0;
-        font-family: $type-serif;
-        font-weight: 300;
-        @include type-style(22px, 24px);
-        @include breakpoint($breakpoint-desktop-small) {
-            @include type-style(30px, 36px);
-        }
-    }
-    a {
-        @include link($white, $orange);
-    }
-    .request-demo {
-        margin: 40px 0 0;
-        @include breakpoint($breakpoint-desktop-small) {
-            margin: 60px 0 0;
-        }
-        a {
-            display: inline-block;
-            @include link($white, $offwhite, false);
-            @include button;
-            @include button-background($white, $offwhite, $orange, $darkorange);
-        }
-    }
-
-    @include breakpoint($breakpoint-desktop) {
-        position: relative;
-        height: 600px;
     }
 }

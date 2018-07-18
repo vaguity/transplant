@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" href="assets/css/sentinel.css">
     <link rel="stylesheet" href="assets/font/webfont.css">
+    <link rel="stylesheet" href="assets/font/averta/averta.css">
 
     <script type="text/javascript" src="assets/common.js"></script>
     <script type="text/javascript" src="assets/transplant.js"></script>
@@ -17,8 +18,15 @@
 
 <div class="header-container">
     <header id="header" class="header">
-
-        <nav class="primary-nav">
+        <nav class="secondary-nav">
+            <ul>
+                <li class="sales-phone"><a href="tel:646-832-2956">Sales: 646-832-2956</a></li>
+                <li><a class="btn" href="https://percolate.com/see-tour">Take the tour</a></li>
+                <li><a class="btn login" href="https://percolate.com/app/login">Login</a></li>
+            </ul>
+        </nav>
+        <div class="nav-placeholder sticky-begin"></div>
+        <nav class="primary-nav sticky">
             <div class="logo">
                 <a href="#"><img src="https://percolate.com/static/images/logo.png" alt="Percolate"></a>
             </div>
@@ -28,57 +36,109 @@
                 </div>
                 <button type="button" class="nav-icon modal-close"><span class="icon icon-24 icon-close"></span></button>
             </div>
-            <ul>
-                <li><div class="primary-nav-link-container"><a href="https://percolate.com/product" data-nav="product" class="has-children">Product</a></div></li>
-                <li><div class="primary-nav-link-container"><a href="https://percolate.com/services" data-nav="services" class=" active has-children">Services</a></div></li>
-                <li><div class="primary-nav-link-container"><a href="https://percolate.com/customers/" class="active">Customers</a></div></li>
-                <li><div class="primary-nav-link-container"><a href="https://percolate.com/partners">Partners</a></div></li>
-                <li><div class="primary-nav-link-container"><a href="https://percolate.com/company" data-nav="company" class="has-children">Company</a></div></li>
-                <li><div class="primary-nav-link-container"><a href="https://blog.percolate.com/">Blog</a></div></li>
-            </ul>
-
-            <nav class="modal-nav-primary-sub-nav">
-                <ul class="primary-sub-nav product">
-                    <li><a href="https://percolate.com/product">Overview</a></li>
-                    <li><a href="https://percolate.com/product/plan">Plan</a></li>
-                    <li><a href="https://percolate.com/product/create">Create</a></li>
-                    <li><a href="https://percolate.com/product/execute">Execute</a></li>
-                    <li><a href="https://percolate.com/product/learn">Learn</a></li>
+            <div class="main-container">
+                <ul class="main">
+                    <li class="has-subnav">
+                        <div class="primary-nav-link-container">
+                            <a href="#" data-nav="product" class="active has-children">Product</a>
+                        </div>
+                        <ul class="primary-sub-nav subnav-card product">
+                            <li><a href="https://percolate.com/product">Overview</a></li>
+                            <li><a href="https://percolate.com/product/marketing-plans">Build marketing plans</a></li>
+                            <li><a href="https://percolate.com/product/coordinate-campaigns">Coordinate campaign production</a></li>
+                            <li><a href="https://percolate.com/product/manage-content">Manage content in action</a></li>
+                            <li><a href="https://percolate.com/product/marketing-impact">Understand marketing’s impact</a></li>
+                            <li><a href="https://percolate.com/product/enterprise-scale">Do it all at enterprise scale</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-subnav">
+                        <div class="primary-nav-link-container">
+                            <a href="#" data-nav="solutions" class="has-children">Solutions</a>
+                        </div>
+                        <ul class="primary-sub-nav subnav-card solutions">
+                            <li><a href="https://percolate.com/solutions">Overview</a></li>
+                            <li><a href="https://percolate.com/solutions/technology">Technology</a></li>
+                            <li><a href="https://percolate.com/solutions/financial-services">Financial Services & Insurance</a></li>
+                            <li><a href="https://percolate.com/solutions/retail">Retail</a></li>
+                            <li><a href="https://percolate.com/solutions/communications">PR & Communications</a></li>
+                            <li><a href="https://percolate.com/solutions/industrial">Industrial</a></li>
+                            <li><a href="https://percolate.com/solutions/healthcare">Healthcare</a></li>
+                            <li><a href="https://percolate.com//solutions/cpg">CPG</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-subnav">
+                        <div class="primary-nav-link-container">
+                            <a href="#" data-nav="ecosystem" class="has-children">Ecosystem</a>
+                        </div>
+                        <ul class="primary-sub-nav subnav-card ecosystem">
+                            <li><a href="https://percolate.com/ecosystem">Overview</a></li>
+                            <li><a href="https://percolate.com/ecosystem/services">Services</a></li>
+                            <li><a href="https://percolate.com/ecosystem/partners">Partners</a></li>
+                            <li><a href="https://percolate.com/ecosystem/integrations">Integrations</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-subnav">
+                        <div class="primary-nav-link-container">
+                            <a href="#" data-nav="community" class="has-children">Community</a>
+                        </div>
+                        <ul class="primary-sub-nav subnav-card community">
+                            <li><a href="https://percolate.com/events">Events</a></li>
+                            <li><a href="https://blog.percolate.com">Blog</a></li>
+                            <li><a href="https://learn.percolate.com">Resources</a></li>
+                            <li><a href="https://success.percolate.com">Support</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-subnav">
+                        <div class="primary-nav-link-container">
+                            <a href="#" data-nav="company" class="has-children">Company</a>
+                        </div>
+                        <ul class="primary-sub-nav subnav-card company">
+                            <li><a href="https://percolate.com/about">About</a></li>
+                            <li><a href="https://percolate.com/careers">Careers</a></li>
+                            <li><a href="https://percolate.com/team">Team</a></li>
+                            <li><a href="https://percolate.com/values">Values</a></li>
+                            <li><a href="https://percolate.com/press">Press</a></li>
+                        </ul>
+                    </li>
                 </ul>
-                <ul class="primary-sub-nav services">
-                    <li><a href="https://percolate.com/services">Global Services</a></li>
-                    <li><a href="https://percolate.com/services/implementation">Implementation</a></li>
-                    <li><a href="https://percolate.com/services/customer-success-support">Customer Success</a></li>
-                </ul>
-                <ul class="primary-sub-nav company">
-                    <li><a href="https://percolate.com/about">About</a></li>
-                    <li><a href="https://percolate.com/careers">Careers</a></li>
-                    <li><a href="https://percolate.com/team">Team</a></li>
-                    <li><a href="https://percolate.com/values">Values</a></li>
-                    <li><a href="https://percolate.com/culture">Culture</a></li>
-                </ul>
-            </nav>
+                <div class="buttons">
+                    <ul>
+                        <li><a class="btn login" href="https://percolate.com/app/login">Login</a></li>
+                        <li><a class="btn" href="https://percolate.com/see-tour">Take the tour</a></li>
+                    </ul>
+                </div>
+            </div>
+            <button type="button" class="nav-icon">
+                Navigation
+                <i class="nav-icon-bar"></i>
+                <i class="nav-icon-bar"></i>
+                <i class="nav-icon-bar"></i>
+            </button>
         </nav>
 
-        <button type="button" class="nav-icon">
-            Navigation
-            <i class="nav-icon-bar"></i>
-            <i class="nav-icon-bar"></i>
-            <i class="nav-icon-bar"></i>
-        </button>
-
-        <nav class="secondary-nav">
-            <ul>
-                <li class="hiring"><a href="https://percolate.com/careers/">We’re Hiring</a></li>
-                <li><a href="https://percolate.com/app/login">Login</a></li>
-                <li class="highlight"><a href="https://percolate.com/request-demo">Request a Demo</a></li>
-            </ul>
-        </nav>
-
+        
         <nav class="footer-nav">
             <ul>
+                <li class="hiring"><a href="https://percolate.com/careers/">We’re Hiring</a></li>
+                <li class="highlight"><a href="https://percolate.com/request-demo">Request a Demo</a></li>
+                <li class="request-demo-phone"><a href="tel:646-396-3136" class="request-demo-phone">Talk to Sales</a></li>
                 <li><a href="https://percolate.com/terms">Terms of Service</a></li>
                 <li><a href="https://percolate.com/privacy">Privacy</a></li>
+            </ul>
+        </nav>
+    </header>
+</div>
+
+<div class="header-container no-nav">
+    <header id="header2" class="header">
+
+        <nav class="primary-nav">
+            <div class="logo">
+                <a href="#"><img src="https://percolate.com/static/images/logo.png" alt="Percolate"></a>
+            </div>
+            <ul>
+                <li class="tel"><a href="tel:646-832-2956">Sales: 646-832-2956</a></li>
+                <li class="highlight"><a class="btn" href="https://percolate.com/request-demo" data-tracking="Demo Request Main Nav">Request a Demo</a></li>
             </ul>
         </nav>
     </header>
