@@ -288,6 +288,35 @@
             }
         }
     }
+    .btn {
+        transition: background .3s, padding .3s;
+        @include type-style(14px, 14px);
+        padding: 8px 14px;
+        border: 1px solid $orange;
+        box-shadow: none;
+        @include breakpoint(1134px) {
+            @include type-style(18px, 18px);
+            padding: 10px 20px;
+        }
+        &:hover {
+            border-color: $orange;
+            transition: background .3s;
+        }
+        &.login {
+            @include button-background($orange, $offwhite, $white, $orange);
+            border: 1px solid $orange;
+            padding: 8px 14px;
+            @include breakpoint(1134px) {
+                padding: 9px 20px;
+            }
+        }
+    }
+    .footer-nav {
+        margin: 0;
+        ul li {
+            
+        }
+    } 
 }
 
 // Modal header
@@ -455,8 +484,6 @@
     }
 }
 
-
-
 .nav-placeholder.enabled {
     display: block;
     height: 82px;
@@ -470,47 +497,12 @@
     z-index: 1;
 }
 .header-container {
-    //check if this can be assigned to itself
-    .modal-active & {
-        border-width: 0;
-    }
     .sticky.enabled {
         z-index: 60;
         position: fixed;
         top: 0;
         width: 100%;
         background: $white;
-    }
-    .header {
-        .btn {
-            transition: background .3s, padding .3s;
-            @include type-style(14px, 14px);
-            padding: 8px 14px;
-            border: 1px solid $orange;
-            box-shadow: none;
-            @include breakpoint(1134px) {
-                @include type-style(18px, 18px);
-                padding: 10px 20px;
-            }
-            &:hover {
-                border-color: $orange;
-                transition: background .3s;
-            }
-            &.login {
-                @include button-background($orange, $offwhite, $white, $orange);
-                border: 1px solid $orange;
-                padding: 8px 14px;
-                @include breakpoint(1134px) {
-                    padding: 9px 20px;
-                }
-            }
-        }
-        .footer-nav {
-            margin: 0;
-            ul li {
-                
-            }
-        }            
     }
 }
 
