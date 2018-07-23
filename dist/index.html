@@ -1778,90 +1778,134 @@
             </div>
         </div>
 
-        <div class="container pulsar-container">
-            <div class="segment pulsar">
+        <div class="bottom-form-container next-gray-background">
+            <div class="segment bottom-form">
                 <div class="copy-container">
                     <div class="copy">
-                        <div class="label first">Pulsar &mdash; Better Marketing Starts Today</div>
-                        <p class="last">See how Percolate makes it easier to turn storytelling into sales growth</p>
-                        <div class="jump last"><a href="#" class="btn modal-link pulsar-button pulsar-modal-link" data-modal-class="pulsar-modal-container">See Percolate</a></div>
+                        <img src="assets/img/style-guide/laptop/workflow_laptop.png">
+                        <h1 class="hero-title first">Evolve your marketing technology to better serve customers</h1>
+                        <p class="request-demo-subhed last"> Learn how Percolate can integrate with the rest of your marketing stack and optimize your marketing process</p>
                     </div>
                 </div>
-                <div class="form-container">
-                    <div class="form-modal">
-                        <div class="modal-container pulsar-modal-container desktop-show">
-                            <div class="pulsar-modal desktop-show">
-                                <div class="modal-copy">
-                                    <button class="modal-close"><span class="icon icon-24 icon-close"></span></button>
-                                    <div class="modal-title">Better Marketing Starts Today</div>
-                                    <div class="modal-content">
-                                        <div class="form borders">
-                                            <script>
-                                            if (typeof MktoForms2 === 'undefined') {
-                                                document.write("\x3Cscript src=\"//app-sj02.marketo.com/js/forms2/js/forms2.min.js\">\x3C/script>");
+                <div id="reqdemo" class="form-container">
+                    <div class="form">
+                        <script>
+                        if (typeof MktoForms2 === 'undefined') {
+                            document.write("\x3Cscript src=\"//app-sj02.marketo.com/js/forms2/js/forms2.min.js\">\x3C/script>");
+                        }
+                        </script>
+                        <div class="mktoCustomError mktoCustomError_2972" style="display: none;"></div>
+
+                        <form id="mktoForm_2972" style="visibility: hidden;" class="marketo-form" data-id="2972" data-redirect-url="https://percolate.com/request-demo?success=1" data-field-display="inline-block"></form>
+                        <script>
+                            if (typeof marketoForm === 'undefined') {
+                                var marketoForm = {};
+                            }
+                            var marketoFormID = 2972;
+                            var marketoFormSelector = '#mktoForm_' + marketoFormID;
+                            marketoForm[marketoFormID] = {
+                                'selector': '#mktoForm_' + marketoFormID,
+                                'redirect-url': $(marketoFormSelector).data('redirect-url'),
+                                'display': typeof $(marketoFormSelector).data('field-display') !== 'undefined' ? $(marketoFormSelector).data('field-display') : 'inline',
+                                'marketoLoadForm': function() {},
+                            };
+
+                            marketoForm[2972]['marketoLoadForm'] = function() {
+                                $(marketoForm[2972]['selector']).empty();
+                                MktoForms2.loadForm("//app-sj02.marketo.com", "306-EXV-607", 2972, function(form) {
+                                    form.onSuccess(function(values, followUpUrl) {
+                                        formsRedirect(values, marketoForm[2972]['redirect-url'], 2972);
+                                        return false;
+                                    });
+                                    form.onValidate(function(callback) {
+                                        var submittable = true;
+                                        var marketoValidationCheck = []
+
+                                        marketoValidationCheck.push(formsValidateRequired($(marketoForm[2972]['selector']  + ' .mktoRequired'), 2972));
+
+                                        for (var i = marketoValidationCheck.length - 1; i >= 0; i--) {
+                                            if (marketoValidationCheck[i] === false) {
+                                                submittable = false;
                                             }
-                                            </script>
-                                            <div class="mktoCustomError mktoCustomError_2325" style="display: none;"></div>
+                                        }
+                                        form.submittable(submittable);
+                                    });
+                                    $(marketoForm[2972]['selector'] + ' .mktoCheckboxList label').on('click', function(e) {
+                                      e.preventDefault();
+                                        if ( $(this).prev().closest('input[type="checkbox"]').is(':checked') ) {
+                                            $(this).prev().closest('input[type="checkbox"]').prop('checked', false);
+                                        }
+                                        else {
+                                            $(this).prev().closest('input[type="checkbox"]').prop('checked', true);
+                                        }
+                                    });
+                                });
 
-                                            <form id="mktoForm_2325" style="visibility: hidden;" class="marketo-form" data-id="2325" data-redirect-url="?success=1" data-field-display="inline-block"></form>
+                                MktoForms2.whenReady(function(form) {
+                                    formsStyleReset(marketoForm[2972]['selector'], marketoForm[2972]['display']);
+                                    var docCookie = document.cookie.match('_mkto_trk=(.*?);');
+                                    if ( docCookie !== null ) {
+                                        var matchedCookie = docCookie[1];
+                                        var parsedCookie = matchedCookie.replace('&', '%26');
+                                        $.ajax({
+                                            type: 'POST',
+                                            url: 'https://percolate.com/mkto',
+                                            data: {
+                                                'mkto-cookie': parsedCookie,
+                                            },
+                                            success: function(data) {
+                                                if ( data.result[0] ) {
+                                                    var leadInfo = data.result[0];
 
-                                            <script>
-                                            if (typeof marketoForm === 'undefined') {
-                                                var marketoForm = {};
-                                            }
-                                            var marketoFormID = 2325;
-                                            var marketoFormSelector = '#mktoForm_' + marketoFormID;
-                                            marketoForm[marketoFormID] = {
-                                                'selector': '#mktoForm_' + marketoFormID,
-                                                'redirect-url': $(marketoFormSelector).data('redirect-url'),
-                                                'display': typeof $(marketoFormSelector).data('field-display') !== 'undefined' ? $(marketoFormSelector).data('field-display') : 'inline',
-                                                'marketoLoadForm': function() {},
-                                            };
-
-                                            marketoForm[2325]['marketoLoadForm'] = function() {
-                                                $(marketoForm[2325]['selector']).empty();
-                                                MktoForms2.loadForm("//app-sj02.marketo.com", "306-EXV-607", 2325, function(form) {
-                                                    form.onSuccess(function(values, followUpUrl) {
-                                                        formsRedirect(values, marketoForm[2325]['redirect-url'], 2325);
-                                                        return false;
-                                                    });
-                                                    form.onValidate(function(callback) {
-                                                        var submittable = true;
-                                                        var marketoValidationCheck = []
-
-                                                        marketoValidationCheck.push(formsValidateRequired($(marketoForm[2325]['selector']  + ' .mktoRequired'), 2325));
-
-                                                        marketoValidationCheck.push(formsValidateEmail($(marketoForm[2325]['selector'] + ' input#Email').val(), 2325));
-
-                                                        for (var i = marketoValidationCheck.length - 1; i >= 0; i--) {
-                                                            if (marketoValidationCheck[i] === false) {
-                                                                submittable = false;
-                                                            }
+                                                    for ( var index in leadInfo ) {
+                                                    
+                                                        if (leadInfo[index] == '[Unknown]') {
+                                                        
+                                                            leadInfo[index] = null;
                                                         }
+                                                    }                       
 
-                                                        form.submittable(submittable);
-                                                    });
-                                                });
+                                                    var prefillFields = {
+                                                        "Email" : leadInfo.email,
+                                                        "FirstName" : leadInfo.firstName,
+                                                        "LastName" : leadInfo.lastName,
+                                                        "Company" : leadInfo.company,
+                                                        "Job_Function__c": leadInfo.Job_Function__c,
+                                                        "Phone": leadInfo.phone,
+                                                        "Employee_Size__c_lead": leadInfo.Employee_Size__c_lead,
+                                                        "Industry": leadInfo.industry,
+                                                        "State": leadInfo.state,
+                                                    };
 
-                                                MktoForms2.whenReady(function(form) {
-                                                    formsStyleReset(marketoForm[2325]['selector'], marketoForm[2325]['display']);
-                                                    stickySetup();
-                                                });
-                                            }
+                                                    form.vals(prefillFields);
+                                                    if ( leadInfo.Employee_Size__c_lead !== null && $('#Employee_Size__c_lead').val() !== leadInfo.Employee_Size__c_lead ) {
+                                                        $('#Employee_Size__c_lead').parent().parent().remove();
+                                                    }
 
-                                            marketoForm[2325]['marketoLoadForm']();
-
-                                            enquire.register("screen and (max-width: 1000px)", {
-                                                unmatch: function() {
-                                                    marketoForm[2325]['marketoLoadForm']();
+                                                    if ( leadInfo.Job_Function__c !== null && $('#Job_Function__c').val() !== leadInfo.Job_Function__c ) {
+                                                        $('#Job_Function__c').parent().parent().remove();
+                                                    }
                                                 }
-                                            });
-                                            </script>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                                                
+                                            },
+                                            error: function(response) {
+                                                console.error('Error: ' + response.responseText);
+                                            },
+                                            async: true,
+                                        });
+                                    }        
+                                    stickySetup();
+                                });
+                            }
+
+                            marketoForm[2972]['marketoLoadForm']();
+
+                            enquire.register("screen and (max-width: 930px)", {
+                                unmatch: function() {
+                                    marketoForm[2972]['marketoLoadForm']();
+                                }
+                            });
+                        </script>                                            
                     </div>
                 </div>
             </div>
@@ -1948,14 +1992,6 @@
         </div>
     </footer>
 </div>
-
-<?php
-include( 'inc/partials/footer-includes.php' );
-wp_footer(); ?>
-
-</body>
-</html>
-
 
 </body>
 </html>

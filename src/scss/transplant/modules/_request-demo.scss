@@ -1,84 +1,294 @@
-.request-demo-container {
-    background-color: $offwhite-light;
+//legacy may still need for learn
+// .request-demo-container {
+//     background-color: $offwhite-light;
+// }
+
+// .request-demo {
+//     color: $orange;
+//     text-align: center;
+//     .copy {
+//         margin: 60px 0;
+//     }
+//     .request-demo-title {
+//         @include type-style-sans-medium;
+//         margin: 0 0 40px;
+//         text-transform: uppercase;
+//     }
+//     .request-demo-description {
+//         @include type-style-serif-medium;
+//         color: $darkgray;
+//         margin: 40px 0;
+//     }
+//     .request-demo-button {
+//         display: inline-block;
+//         @include button;
+//         @include link($white, $offwhite, false);
+//         @include button-background($white, $offwhite, $orange, $darkorange);
+//     }
+// }
+
+// .request-demo-hero-modal-container, .request-demo-modal-container {
+//     @include container(1200px);
+//     max-width: 1200px;
+//     &.modal-active {
+//         margin: 0 auto;
+//     }
+// }
+
+// .request-demo-hero-modal, .request-demo-modal {
+//     .copy {
+//         display: inline-block;
+//         width: 100%;
+//     }
+// }
+
+// .request-demo-container.desktop-show {
+//     @include breakpoint($breakpoint-desktop-small) {
+//         .copy {
+//             margin: 60px 0 0;
+//         }
+//         .request-demo-link {
+//             display: none;
+//         }
+//     }
+// }
+
+// .request-demo-modal-container.desktop-show {
+//     .borders {
+//         input, select, textarea {
+//             border-width: 0;
+//             @include breakpoint($breakpoint-desktop-small) {
+//                 border-width: 1px;
+//             }
+//         }
+//     }
+//     @include breakpoint($breakpoint-desktop-small) {
+//         display: block;
+//         @include container(full);
+//         background-color: $offwhite-light;
+//         .copy {
+//             margin: 0 auto 60px
+//         }
+//         .modal-close {
+//             display: none;
+//         }
+//         .modal-title {
+//             display: none;
+//         }
+//         .modal-content {
+//             display: block;
+//             form button {
+//                 @include button-background($white, $offwhite, $orange, $darkorange);
+//             }
+//         }
+//     }
+// }
+
+
+.form-container {
+    background: $next-off-white;
+
+    .bottom-form & {
+        background: $orange;
+        @include breakpoint($breakpoint-tablet) { 
+            background: $next-off-white;
+        }
+    }
+
+    .bottom-form-container.next-gray-background & {
+        background: $next-gray;
+        @include breakpoint($breakpoint-tablet) { 
+            background: $next-off-white;
+        }
+    }
 }
 
-.request-demo {
-    color: $orange;
-    text-align: center;
-    .copy {
-        margin: 60px 0;
+.form {
+    max-height: 100%;
+    padding: 30px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    align-self: flex-start;
+    @include breakpoint($breakpoint-desktop-small) {
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
     }
-    .request-demo-title {
-        @include type-style-sans-medium;
-        margin: 0 0 40px;
-        text-transform: uppercase;
+    .next-bottom-form & {
+        padding-top: 0;
+        @include breakpoint($breakpoint-tablet) { 
+            padding-top: 30px;
+        }
     }
-    .request-demo-description {
-        @include type-style-serif-medium;
-        color: $darkgray;
-        margin: 40px 0;
-    }
-    .request-demo-button {
-        display: inline-block;
-        @include button;
-        @include link($white, $offwhite, false);
-        @include button-background($white, $offwhite, $orange, $darkorange);
-    }
-}
 
-.request-demo-hero-modal-container, .request-demo-modal-container {
-    @include container(1200px);
-    max-width: 1200px;
-    &.modal-active {
+    .logo {
+        width: 160px;
+        @include breakpoint($breakpoint-desktop-small) {
+            width: 200px;
+        }
+    }
+
+    &.event-signup {
+        max-width: 400px;
         margin: 0 auto;
+        padding: 0;
     }
-}
 
-.request-demo-hero-modal, .request-demo-modal {
-    .copy {
-        display: inline-block;
+    h2 {
+        @include type-style(27px, 34px);
+        font-weight: 400;
+        margin: 30px 0 10px;
+        color: $darkgray;
+    }
+
+    .mktoFieldDescriptor.mktoFormCol {
         width: 100%;
     }
-}
-
-.request-demo-container.desktop-show {
-    @include breakpoint($breakpoint-desktop-small) {
-        .copy {
-            margin: 60px 0 0;
-        }
-        .request-demo-link {
-            display: none;
-        }
+    .mktoFieldWrap {
+        width: 100%;
     }
-}
+    .mktoFieldWrap.mktoRequiredField {
+        width: 100%;
+    }
 
-.request-demo-modal-container.desktop-show {
-    .borders {
-        input, select, textarea {
-            border-width: 0;
-            @include breakpoint($breakpoint-desktop-small) {
-                border-width: 1px;
+    .mktoCustomError {
+        margin-bottom: 5px;
+    }
+
+    input, select {
+        font-family: $type-averta;
+        font-weight: 400;
+        @include type-style(15px, 15px);
+        color: $darkgray;
+        @include placeholder($darkgray);
+        width: 100%;
+        padding: 10px 10px;
+        margin: 10px 0;
+        border: 1px solid $lightgray-dark;
+        border-radius: 2px;
+
+        .next-bottom-form & {
+            border: none;
+            @include breakpoint($breakpoint-tablet) {
+                border: 1px solid $lightgray-dark;
             }
         }
     }
-    @include breakpoint($breakpoint-desktop-small) {
-        display: block;
-        @include container(full);
-        background-color: $offwhite-light;
-        .copy {
-            margin: 0 auto 60px
+
+    textarea {
+        font-family: $type-averta;
+        font-weight: 400;
+        @include type-style(15px, 15px);
+        @include placeholder($darkgray);
+        color: $darkgray;
+        width: 100%;
+        margin: 10px 0;
+        border: 1px solid $lightgray-dark;
+    }
+
+    button {
+        font-family: $type-averta;
+        font-weight: 700;
+        @include type-style(15px, 15px);
+        width: 100%;
+        padding: 12px 20px;
+        text-transform: none;
+        border-radius: 2px;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
+        transition: background .3s;
+        &:hover {
+            transition: background .3s;
         }
-        .modal-close {
-            display: none;
-        }
-        .modal-title {
-            display: none;
-        }
-        .modal-content {
-            display: block;
-            form button {
+        .next-bottom-form & {
+            @include button-background($white, $offwhite, $indigo, $darkorange);
+            @include breakpoint($breakpoint-tablet) {
                 @include button-background($white, $offwhite, $orange, $darkorange);
             }
+
+        }
+
+    }
+    .mktoCheckboxList label {
+        font-family: $type-averta;
+        max-width: 350px;
+        font-size: 13px;
+        margin: 0 0 0 8px;
+        .next-bottom-form & { 
+            color: $white;
+            @include breakpoint($breakpoint-desktop-small) {
+                color: $darkgray;
+            }
+        }
+    }
+}
+
+.bottom-form-container {
+    &.background-orange {
+        background: $orange;
+    }
+    &.next-gray-background {
+        background: $next-gray;
+    }
+}
+
+.bottom-form {
+    display: block;
+    @include breakpoint($breakpoint-tablet) {
+        display: flex;
+        justify-content: space-between;
+    }
+    .form-container {
+        width: 100%;
+        @include breakpoint($breakpoint-tablet) {
+            max-width: 450px;
+            flex: 0 0 50%;
+        }
+    }
+
+    .copy-container {
+        padding: 24px 24px 0;
+        align-self: center;
+        flex-grow: 1;
+        text-align: center;
+        &.left {
+            text-align: left;
+        }
+        @include breakpoint($breakpoint-tablet) {
+            padding: 0 40px;
+        }
+        h1 {
+            @include type-style(28px, 36px);
+            color: $white;
+            @include breakpoint($breakpoint-tablet) {
+                @include type-style(36px, 42px);
+                margin-bottom: 40px;
+            }
+            @include breakpoint($breakpoint-desktop-small) {
+                @include type-style(48px, 52px);
+            }
+        }
+        .copy {
+            color: $white;
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        p {
+            font-family: $type-averta;
+            font-weight: 400;
+            @include type-style(16px, 26px);
+            @include breakpoint($breakpoint-tablet) {
+                @include type-style(18px, 28px);
+            }
+            @include type-style(18px, 28px);
+            @include breakpoint($breakpoint-desktop-large) {
+                @include type-style(22px, 32px);
+            }
+        }
+        img {
+            width: 550px;
+            margin-bottom: 20px;
         }
     }
 }
