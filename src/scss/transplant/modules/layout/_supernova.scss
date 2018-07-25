@@ -25,12 +25,12 @@
 
 .supernova {
     display: table;
-    height: 420px;
+    height: 400px;
     color: $white;
     box-sizing: border-box;
     @include breakpoint($breakpoint-desktop) {
         position: relative;
-        height: 600px;
+        height: 480px;
     }
     > div {
         display: table-cell;
@@ -46,11 +46,16 @@
             @include type-style(36px, 40px);
             color: $white;
         }
+        h3 {
+            font-family: $type-averta;
+            font-weight: 500;
+            @include type-style(26px, 36px);
+        }
         p {
             @include sentinel-margins(20px);
-            font-family: $type-serif;
+            font-family: $type-averta;
             font-weight: 500;
-            @include type-style(18px, 24px);
+            @include type-style(18px, 32px);
         }
         .jump a {
             display: inline-block;
@@ -58,7 +63,7 @@
     }
     @include breakpoint($breakpoint-tablet) {
         .copy p {
-            @include type-style(24px, 32px);
+            @include type-style(18px, 28px);
         }
     }
     @include breakpoint($breakpoint-desktop-small) {
@@ -70,7 +75,7 @@
         .copy {
             @include child-margins(40px);
             h1 {
-                @include type-style(50px, 60px);
+                @include type-style(48px, 56px);
                 @include sentinel-margins(40px);
             }
             p {
@@ -99,20 +104,6 @@
     padding: 0 24px;
     @include breakpoint($breakpoint-desktop-small) {
         padding: 0;
-    }
-}
-
-// TODO: Deprecate type-ii
-.supernova-container.type-ii {
-    background: $orange;
-    @include breakpoint($breakpoint-desktop-small) {
-        .supernova {
-            width: 100%;
-            text-align: left;
-            .copy-container {
-                padding: 0 24px;
-            }
-        }
     }
 }
 
@@ -213,7 +204,7 @@
                 button {
                     @include button-background($white, $white, $orange, $darkorange);
                     font-size: 16px;
-                    padding: 16px 0 11px;
+                    padding: 15px 0;
 
                 }
                 select {
@@ -245,6 +236,7 @@
             display: none;
         }
         .modal-content .form {
+            padding: 0;
             max-width: 290px;
         }
     }
@@ -301,6 +293,7 @@
                 margin: 0 0 40px;
             }
             .modal-content .form {
+                padding: 0;
                 max-width: 290px;
                 margin: 0 40px;
             }
@@ -317,7 +310,7 @@
             button {
                 margin: 20px 0 0;
                 font-size: 16px;
-                padding: 16px 0 11px;
+                padding: 15px 0;
             }
             .mktoLogicalField {
                 margin: 0;

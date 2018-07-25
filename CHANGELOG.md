@@ -1,5 +1,14 @@
 # Transplant changelog
 
+## 4.0.0
+- Update base font to Averta Standard
+- Update style of Main navigation and footer
+- Update default button style
+- Remove most unused legacy styles
+
+- Supernova: update height / add logo
+
+
 ## 3.2.11
 
 - Add Chinese personal email domains to form blocklist
