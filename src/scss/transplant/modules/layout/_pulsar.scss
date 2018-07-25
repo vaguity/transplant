@@ -1,6 +1,12 @@
 .pulsar-container {
     &.background-orange {
         background: $orange;
+        button {
+            @include button-background($white, $offwhite, $indigo, $darkorange);
+            @include breakpoint($breakpoint-tablet) {
+                @include button-background($white, $offwhite, $orange, $darkorange);
+            }
+        }
     }
     &.next-gray-background {
         background: $next-gray;
@@ -23,6 +29,16 @@
         @include breakpoint($breakpoint-tablet) {
             max-width: 450px;
             flex: 0 0 50%;
+        }
+    }
+
+    .form {
+        padding: 30px;
+        input, select {
+            border: none;
+            @include breakpoint($breakpoint-tablet) {
+                border: 1px solid $lightgray-dark;
+            }
         }
     }
 
@@ -73,7 +89,7 @@
     }
 
     .form-container {
-        background: $next-off-white;
+        background: $orange;
         @include breakpoint($breakpoint-tablet) { 
             background: $next-off-white;
         }

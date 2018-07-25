@@ -55,15 +55,10 @@
             @include sentinel-margins(20px);
             font-family: $type-averta;
             font-weight: 500;
-            @include type-style(18px, 32px);
+            @include type-style(18px, 28px);
         }
         .jump a {
             display: inline-block;
-        }
-    }
-    @include breakpoint($breakpoint-tablet) {
-        .copy p {
-            @include type-style(18px, 28px);
         }
     }
     @include breakpoint($breakpoint-desktop-small) {
@@ -252,12 +247,9 @@
     .copy {
         p {
             @include sentinel-margins(20px);
-            font-family: $type-serif;
+            font-family: $type-averta;
             font-weight: 500;
-            @include type-style(18px, 24px);
-            @include breakpoint($breakpoint-tablet) {
-                @include type-style(24px, 32px);
-            }
+            @include type-style(18px, 28px);
             @include breakpoint($breakpoint-desktop-small) {
                 @include sentinel-margins(40px);
             }
