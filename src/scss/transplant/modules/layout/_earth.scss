@@ -1,5 +1,32 @@
+.earth-container .segment {
+    margin: 0 auto;
+    padding: 80px 0 40px;
+}
+
 .earth {
+    max-width: 1420px;
+    float: none;
     line-height: 0;
+    .section-hed {
+        max-width: 830px;
+        margin: 0 auto 80px;
+        h1, h3, h2 {
+            text-align: center;
+        }
+        .btn {
+            display: inline-block;
+        }
+        &.after {
+            margin: 0 auto;
+            padding-top: 0;
+            @include breakpoint($breakpoint-desktop-small) {
+                text-align: center;
+            }
+            p {
+                text-align: left;
+            }
+        }
+    }
     .cards-container {
         display: inline-block;
         display: flex;
@@ -19,37 +46,18 @@
         text-align: left;
         @include child-margins(30px);
         h2, h3 {
-            @include sentinel-margins(30px);
-            font-family: $type-serif;
+            font-family: $type-averta;
             font-weight: 500;
-            @include type-style(24px, 32px);
+            @include type-style(20px, 32px);
         }
         p {
-            font-family: $type-base;
-            @include type-style(16px, 28px);
+            font-family: $type-averta;
+            font-weight: 400;
+            @include type-style(16px, 26px);
         }
     }
     .jump {
-        position: absolute;
         @include link($orange, $indigo);
-        bottom: 34px;
-        left: 24px;
-        &:after {
-            content: "";
-            display: block;
-            position: absolute;
-            left: 0;
-            bottom: -13px;
-            height: 1px;
-            width: 100%;
-            background: $orange;
-            transition: width .3s;
-        }
-        @include breakpoint($breakpoint-desktop) {
-            bottom: 45px;
-            left: 40px;
-        }
-
     }
     .image-container {
         display: inline-block;
@@ -79,22 +87,13 @@
             width: 100%;
             height: 100%;
             transition: opacity .3s;
-            box-shadow: 1px 1px 4px 1px rgba($black, .2);
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
             content: '';
-            opacity: 0;
         }
         @include breakpoint($breakpoint-tablet) {
             &:hover {
                 transform: scale(1.03);
                 transition: transform .1s;
-                &:after {
-                    transition: opacity .1s;
-                    opacity: 1;
-                }
-                .jump:after {
-                    width: 100%;
-                    transition: width .3s;
-                }
             }
         }
     }
@@ -105,9 +104,6 @@
             margin: 0 30px 30px 0;
             &:nth-child(2n) {
                 margin-right: 0;
-            }
-            .jump:after {
-                width: 0;
             }
         }
     }
@@ -150,41 +146,68 @@
         }
 
     }
-    @include breakpoint($breakpoint-desktop-large) {
-        .card-link {
-            width: calc(25% - 45px);
-            margin: 0 60px 60px 0;
-            &:nth-child(2n) {
-                margin-right: 60px;
-            }
-            &:nth-child(3n) {
-                margin-right: 60px;
-            }
-            &:nth-child(4n) {
-                margin-right: 0;
-            }
-            
-        }
-    }
 
     &.type-ii {
-        max-width: 1420px;
-        float: none;
+        max-width: none;
         @include breakpoint($breakpoint-desktop-large) {
             .card-link {
-                width: calc(33.3333% - 27px);
-                margin: 0 40px 40px 0;
+                width: calc(25% - 45px);
+                margin: 0 60px 60px 0;
                 &:nth-child(2n) {
-                    margin-right: 40px;
+                    margin-right: 60px;
                 }
                 &:nth-child(3n) {
+                    margin-right: 60px;
+                }
+                &:nth-child(4n) {
                     margin-right: 0;
                 }
+                
             }
         }
     }
-}
 
-.container.alt-background .segment.type-ii {
-    margin: 0 auto;
+    &.type-iii {
+       .card-link {
+            &:hover {
+                transform: none;
+                transition: none;
+            }
+            &:after {
+                box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
+                border: 1px solid $light-gray;
+            }
+        }
+        .copy-container {
+            @include breakpoint($breakpoint-desktop) {
+                padding: 40px;
+            }
+        }
+
+        .copy {
+            h2 {
+                font-family: $type-averta;
+                font-weight: 500;
+                @include type-style(20px, 32px);
+                margin-bottom: 10px;
+                @include breakpoint($breakpoint-mobile) {
+                    margin-bottom: 20px;
+                }
+            }
+            p {
+                font-family: $type-averta;
+                font-weight: 400;
+                margin: 0;
+            }
+            .image {
+                width: 24px;
+                margin: 0 0 20px;
+            }
+
+            .highlight {
+                font-weight: 700;
+                margin-top: 20px;
+            }
+        }
+    }
 }
