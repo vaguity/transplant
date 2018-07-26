@@ -24,6 +24,12 @@
 }
 
 .container {
+    &.white-background {
+        background-color: $white;
+    }
+    &.light-background {
+        background-color: $off-white;
+    }
     &.light-background {
         background-color: $off-white;
     }
@@ -35,6 +41,7 @@
         .btn {
             @include button-background($white, $gray, rgba(0,0,0,0), $white);
             border: 1px solid $white;
+            box-shadow: none;
             &:hover {
                 border-color: $white;
             }

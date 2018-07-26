@@ -1,39 +1,56 @@
+.venus-container {
+    background: $off-white;
+    position: relative;
+    overflow: hidden;
+    &.gray-background, &.product-background {
+        h1 {
+            color: $white;
+        }
+    }
+}
+
 .venus {
-    margin: 24px 0;
     text-align: center;
-    // TODO: Remove copy-container
-    .copy-container {
-        display: none;
+    .copy {
+        text-align: center;
+        h1 {
+            @include type-style(28px, 40px);
+            margin: 40px 0;
+            @include breakpoint($breakpoint-mobile) {
+                @include type-style(32px, 44px);
+            }
+            @include breakpoint($breakpoint-tablet) {
+                @include type-style(36px, 48px);
+            }
+        }
     }
-    .images-container {
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        @include breakpoint($breakpoint-desktop-small) {
+            flex-wrap: nowrap;
+        }
+        > div {
+            max-width: 136px;
+            @include breakpoint($breakpoint-mobile) {
+                max-width: 216px;
+            }
+
+            @include breakpoint($breakpoint-tablet) {
+                max-width: 224px;
+            }
+            @include breakpoint($breakpoint-desktop-small) {
+                max-width: none;
+            }
+        }
+    }
+    .jump {
+        padding-bottom: 30px;
+    }
+
+    .btn {
         display: inline-block;
-    }
-    .images {
-        img {
-            margin: 0 0 gutter(4);
-            @include span(2 of 4);
-            &:nth-child(2n) {
-                @include span(2 of 4 last);
-            }
-        }
-    }
-    @include breakpoint($breakpoint-desktop-small) {
-        margin: 80px 0;
-        .images-container {
-            max-width: 1280px;
-            margin: 0 auto;
-        }
-        .images {
-            img {
-                margin: 0 0 gutter(12);
-                @include span(3 of 12);
-                &:nth-child(2n) {
-                    @include span(3 of 12);
-                }
-                &:nth-child(4n) {
-                    @include span(3 of 12 last);
-                }
-            }
-        }
+        margin: 40px 0;
     }
 }
