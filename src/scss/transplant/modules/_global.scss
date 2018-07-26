@@ -31,8 +31,9 @@ h2 {
 
 h3 {
     margin: 0;
-    font-family: $type-sans;
-    @include type-style(20px, 28px);
+    font-family: $type-averta;
+    font-weight: 500;
+    @include type-style(20px, 30px);
 }
 
 hr {

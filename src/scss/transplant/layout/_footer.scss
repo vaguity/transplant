@@ -15,7 +15,7 @@
     }
 
     a {
-        @include link($white, $next-gray);
+        @include link($white, $gray);
     }
 }
 
@@ -85,7 +85,7 @@
 }
 
 .footer-container {
-    background: $next-dark-gray;
+    background: $dark-gray;
     padding: 0;
 
     .upper-nav {
@@ -117,14 +117,14 @@
             }
 
             @include breakpoint($breakpoint-tablet) {
-                color: $next-dark-gray;
+                color: $dark-gray;
             }
         }
         @include breakpoint($breakpoint-tablet) {
-            background: $next-off-white;
+            background: $off-white;
             padding: 36px 30px;     
             a {
-                @include link($next-dark-gray, $next-gray);
+                @include link($dark-gray, $gray);
             }
         }
     }

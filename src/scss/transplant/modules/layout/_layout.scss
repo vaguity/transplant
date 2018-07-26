@@ -23,9 +23,36 @@
     }
 }
 
+.container {
+    &.light-background {
+        background-color: $off-white;
+    }
+    &.light-gray-background {
+        background-color: $light-gray;
+    }
+    &.gray-background {
+        background-color: $gray;
+        .btn {
+            @include button-background($white, $gray, rgba(0,0,0,0), $white);
+            border: 1px solid $white;
+            &:hover {
+                border-color: $white;
+            }
+        }
+    }
+    &.dark-gray-background {
+        background-color: $dark-gray;
+    }
+    &.product-background {
+        background-color: $product-gray;
+    }
+}
+
 .container.gravity .segment {
     margin: 0 0 24px;
     @include breakpoint($breakpoint-desktop-small) {
         margin: 0 0 80px;
     }
 }
+
+

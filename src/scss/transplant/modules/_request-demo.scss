@@ -173,13 +173,6 @@
         &:hover {
             transition: background .3s;
         }
-        .next-bottom-form & {
-            @include button-background($white, $offwhite, $indigo, $darkorange);
-            @include breakpoint($breakpoint-tablet) {
-                @include button-background($white, $offwhite, $orange, $darkorange);
-            }
-
-        }
 
     }
     .mktoCheckboxList label {
@@ -187,11 +180,5 @@
         max-width: 350px;
         font-size: 13px;
         margin: 0 0 0 8px;
-        .next-bottom-form & { 
-            color: $white;
-            @include breakpoint($breakpoint-desktop-small) {
-                color: $darkgray;
-            }
-        }
     }
 }
