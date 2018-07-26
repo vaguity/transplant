@@ -292,14 +292,12 @@
         transition: background .3s, padding .3s;
         @include type-style(14px, 14px);
         padding: 8px 14px;
-        border: 1px solid $orange;
         box-shadow: none;
         @include breakpoint(1134px) {
             @include type-style(18px, 18px);
             padding: 10px 20px;
         }
         &:hover {
-            border-color: $white;
             transition: background .3s;
         }
         &.login {
