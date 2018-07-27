@@ -6,9 +6,11 @@
 .sol {
     margin: 24px auto;
     .copy-container {
-    	text-align: center;
     	max-width: 830px;
     	margin: 0 auto;
+    	@include breakpoint($breakpoint-desktop-small) {
+    		text-align: center;
+    	}
     }
     h2, h3 {
     	font-family: $type-serif;
@@ -29,9 +31,16 @@
     }
     p {
     	text-align: left;
+    	@include type-style(16px, 26px);
+    	@include breakpoint($breakpoint-tablet) {
+	       @include type-style(18px, 28px);
+	    }
     }
     .jump {
-    	margin: 40px;
+    	margin: 20px 0 0;
+    	@include breakpoint($breakpoint-desktop-small) {
+    		margin: 40px 0;
+    	}
     }
     .btn {
     	display: inline-block;

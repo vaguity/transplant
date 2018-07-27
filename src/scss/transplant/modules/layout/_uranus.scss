@@ -48,12 +48,7 @@
         }
         p {
             font-family: $type-averta;
-            @include type-style(16px, 28px);
-            &.single {
-                font-family: $type-averta;
-                font-weight: 400;
-                @include type-style(18px, 28px);
-            }
+            @include type-style(18px, 28px);
         }
     }
     .image {

@@ -27,6 +27,9 @@
             @include sentinel-margins(24px);
             @include type-style(32px, 40px);
         }
+        p {
+            @include type-style(18px, 28px);
+        }
     }
 }
 
