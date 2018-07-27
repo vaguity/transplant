@@ -14,21 +14,15 @@
             margin: 0;
             padding: 0 0 80px;
         }
-    }
-    &.mid-background {
-        background-color: $offwhite;
-    }
-    &.dark-background {
-        background-color: $offwhite-dark;
-    }
+    }    
 }
 
 .container {
     &.white-background {
         background-color: $white;
     }
-    &.light-background {
-        background-color: $off-white;
+    &.orange-background {
+        background-color: $orange;
     }
     &.light-background {
         background-color: $off-white;
@@ -38,6 +32,27 @@
     }
     &.gray-background {
         background-color: $gray;
+    }
+    &.dark-gray-background {
+        background-color: $dark-gray;
+    }
+    &.product-background {
+        background-color: $product-gray;
+    }
+    // Legacy bg colors
+    &.dark-background {
+        background-color: $offwhite-dark;
+    }
+    &.mid-background {
+        background-color: $offwhite;
+    }
+    &.indigo-background {
+        background-color: $indigo;
+    }
+}
+
+.container {
+    &.dark-gray-background, &.gray-background {
         .btn {
             @include button-background($white, $gray, rgba(0,0,0,0), $white);
             border: 1px solid $white;
@@ -46,12 +61,6 @@
                 border-color: $white;
             }
         }
-    }
-    &.dark-gray-background {
-        background-color: $dark-gray;
-    }
-    &.product-background {
-        background-color: $product-gray;
     }
 }
 

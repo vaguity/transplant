@@ -1,3 +1,19 @@
+.content .container.uranus-container {
+    .segment {
+        @include breakpoint($breakpoint-desktop-small) {
+            padding: 40px 0;
+        }
+    }
+}
+
+.uranus-container {
+    &.dark-gray-background , &.gray-background {
+        .copy {
+                color: $white;
+        }
+    }
+}
+
 .uranus {
     margin: 24px 0;
     .copy-container {
@@ -8,30 +24,28 @@
         @include span(full);
         color: $darkgray;
         text-align: left;
-        @include child-margins(20px);
-        // TODO: Remove label
-        .label {
-            display: none;
-        }
+        @include child-margins(15px);
         h2, h3 {
-            @include sentinel-margins(20px);
-            font-family: $type-serif;
-            font-weight: 500;
-            @include type-style(24px, 32px);
+            font-family: $type-averta;
+            font-weight: 700;
+            @include type-style(24px, 34px);
         }
         p {
-            font-family: $type-base;
+            font-family: $type-averta;
             @include type-style(16px, 28px);
             &.single {
-                font-family: $type-serif;
-                font-weight: 300;
-                @include type-style(20px, 28px);
+                font-family: $type-averta;
+                font-weight: 400;
+                @include type-style(18px, 28px);
             }
         }
     }
     .image {
-        @include span(full);
+        width: 100%;
         margin: 0 0 24px;
+    }
+    .btn {
+        display: inline-block;
     }
     @include breakpoint($breakpoint-desktop-small) {
         // TODO: Figure out balance of having this fallback be 100% and have padding in the container
@@ -42,7 +56,7 @@
         .copy-container {
             display: inline-block;
             align-self: center;
-            @include span(15 of 36);
+            width: auto;
             margin: 0;
             color: $darkgray;
             text-align: center;
@@ -51,19 +65,17 @@
         .copy {
             max-width: 800px;
             text-align: left;
-            @include child-margins(30px);
+            @include child-margins(25px);
             h2, h3 {
-                @include sentinel-margins(30px);
-                @include type-style(24px, 32px);
+                @include type-style(24px, 34px);
             }
             p.single {
-                @include type-style(24px, 32px);
+                @include type-style(22px, 32px);
             }
         }
         .image-container {
             display: inline-block;
-            @include span(20 of 36 last);
-            float: none;
+            width: 88%;
             vertical-align: middle;
         }
         .image {
@@ -85,22 +97,6 @@
             }
             .image-container {
                 order: 1;
-            }
-        }
-    }
-    @include breakpoint($breakpoint-desktop) {
-        .copy {
-            @include child-margins(40px);
-            h2, h3 {
-                @include sentinel-margins(40px);
-            }
-        }
-    }
-    @include breakpoint($breakpoint-desktop-large) {
-        .copy {
-            @include child-margins(60px);
-            h2, h3 {
-                @include sentinel-margins(60px);
             }
         }
     }

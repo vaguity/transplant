@@ -1,12 +1,16 @@
 # Transplant changelog
 
 ## 4.0.0
-- Update base font to Averta Standard
+- Update overall typography and change base font to Averta Standard
 - Update style of Main navigation and footer
 - Update default button style
+- Add new gray colors
 - Remove most unused legacy styles
 
-- Supernova: update height / add logo
+- Supernova: update height
+- Mercury: update to new style of quote with variations
+- Earth: make default have max width and type-ii full width. Add type-iii variant
+- 
 
 
 ## 3.2.11
