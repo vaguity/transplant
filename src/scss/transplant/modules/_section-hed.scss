@@ -1,7 +1,7 @@
 .section-hed {
-    max-width: 600px;
+    max-width: 830px;
     margin: 24px auto;
-    text-align: left;
+    text-align: center;
     @include child-margins(20px);
     hr {
         max-width: 100px;
@@ -18,6 +18,7 @@
     }
     p {
         @include type-style(16px, 28px);
+        text-align: left;
     }
     @include breakpoint($breakpoint-desktop-small) {
         margin: 80px auto;

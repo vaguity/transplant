@@ -9,13 +9,29 @@
 .uranus-container {
     &.dark-gray-background , &.gray-background {
         .copy {
-                color: $white;
+            color: $white;
+        }
+        
+    }
+
+    &.dark-gray-background {
+        .uranus.border {
+            border-color: $gray;
+        }
+    }
+    &.gray-background {
+        .uranus.border {
+            border-color: $light-gray;
         }
     }
 }
 
 .uranus {
     margin: 24px 0;
+    &.border {
+        border: 1px solid $dark-gray;
+        border-width: 1px 0 0 0;
+    }
     .copy-container {
         display: inline-block;
         text-align: center;
