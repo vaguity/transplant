@@ -47,10 +47,14 @@
         }
     }
 }
+//TODO: add mercury styling after staturn
 
 .saturn-container {
-    &.dark-gray-background , &.gray-background, &.product-background {
+    &.dark-gray-background , &.gray-background, &.product-background, &.orange-background {
         .copy {
+            color: $white;
+        }
+         .section-hed {
             color: $white;
         }
     }
@@ -59,6 +63,11 @@
     margin: 24px 0;
     h1 {
         @include type-style(32px, 40px);
+    }
+    .section-hed {
+        p {
+            @include type-style(16px, 26px);
+        }
     }
     .image-container {
         text-align: center;
@@ -71,6 +80,12 @@
     .copy-container {
         max-width: 100%;
         margin: 20px auto 0;
+    }
+    .btn {
+        display: inline-block;
+    }
+    .jump {
+        text-align: center;
     }
     .copy {
         @include child-margins(20px);

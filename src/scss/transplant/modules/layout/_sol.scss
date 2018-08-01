@@ -3,6 +3,13 @@
 		padding: 30px 0;
 	}
 }
+.sol-container {
+    &.dark-gray-background , &.gray-background, &.product-background, &.orange-background {
+        .copy {
+            color: $white;
+        }
+    }
+}
 .sol {
     margin: 24px auto;
     .copy-container {
