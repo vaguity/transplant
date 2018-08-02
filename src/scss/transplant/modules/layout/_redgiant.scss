@@ -1,0 +1,153 @@
+.content .container.redgiant-container {
+	padding: 0;
+}
+.redgiant {
+	display: block;
+	display: flex;
+	
+	align-items: center;
+	overflow: hidden;
+	@include breakpoint($breakpoint-desktop-small) {
+		height: 485px;
+	}
+	@include breakpoint($breakpoint-desktop-large) {
+		height: 635px;
+	}
+	&.video {
+		display: block;
+		height: auto;
+		@include breakpoint($breakpoint-desktop-small) {
+			padding: 40px 0;
+	    	display:flex;
+	    }		
+		.copy-container {
+			flex-basis: 25%;
+			height: auto;
+			@include breakpoint($breakpoint-desktop-small) {
+				min-width: 470px;
+			}
+			@include breakpoint($breakpoint-desktop) {
+				min-width: 520px;
+			}
+		}
+
+		.image-container {
+			display: block;
+		    justify-content: center;
+		    align-items: center;
+		    flex-basis: 75%;
+		    padding: 0 20px 20px;
+		    width: 100%;
+		    box-sizing: border-box;
+		    @include breakpoint($breakpoint-desktop-small) {
+		    	display:flex;
+		    	padding: 0 20px 0 0;
+		    	width: 50%;
+		    }
+		    .image {
+		    	width: 100%;
+		    	max-width: 1000px;
+		    	height: auto;
+		    }
+		}
+		h1 {
+			@include type-style(28px, 36px);
+			@include breakpoint($breakpoint-desktop-small) {
+				@include type-style(36px, 42px);
+			}
+			@include breakpoint($breakpoint-desktop) {
+				@include type-style(48px, 56px);
+			}			
+		}
+	}
+	.image-container {
+		width: 50%;
+		height: 100%;
+		display: none;
+		@include breakpoint($breakpoint-desktop-small) {
+			display: block;
+		}
+	}
+
+	.image {
+		background-size: cover;
+		height: 100%;
+		background-position: top center;
+		&.background-left {
+			background-position: left center;
+		}
+		&.background-right {
+			background-position: right center;
+		}
+	}
+	.copy-container {
+		padding: 24px;
+	    position: relative;
+	    height: 100%;
+	    width: 100%;
+	    box-sizing: border-box;
+	    display: flex;
+	    align-items: center;
+	    @include breakpoint($breakpoint-tablet) {
+			padding: 45px 24px;
+		}
+	    @include breakpoint($breakpoint-desktop-small) {
+	    	padding: 0 45px;
+	    	width: 50%;
+	    }
+	}
+	.copy {
+		max-width: 560px;
+	}
+	h1 {
+		@include type-style(28px, 36px);
+		@include breakpoint($breakpoint-tablet) {
+			@include type-style(36px, 42px);
+		}
+		@include breakpoint($breakpoint-desktop-small) {
+			@include type-style(48px, 56px);
+		}
+	}
+	p {
+		font-family: $type-averta;
+		font-weight: 400;
+		@include type-style(16px, 26px);
+		@include breakpoint($breakpoint-desktop-small) {
+			@include type-style(18px, 28px);
+		}
+	}
+
+	.btn {
+		display: inline-block;
+		&.desk {
+			display: none;
+			@include breakpoint($breakpoint-desktop-small) {
+				display: inline-block;
+			}
+		}
+
+		&.mobile {
+			display: inline-block;
+			@include breakpoint($breakpoint-desktop-small) {
+				display: none;
+			}
+		}
+
+		&.tour {
+			display: none;			
+			@include button-background($gray, $white, $white, $gray);
+			border: 1px solid $gray;
+			margin-left: 10px;
+			@include breakpoint($breakpoint-desktop-small) {
+				display: inline-block;
+			}
+			@include breakpoint($breakpoint-desktop) {
+				margin-left: 10px;
+			}
+		}
+		&.first {
+			margin-top: 0;
+		}
+
+	}
+}
