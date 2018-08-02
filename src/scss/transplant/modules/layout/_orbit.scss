@@ -1,31 +1,80 @@
+.orbit-container {
+
+}
+
 .orbit {
     margin: 24px auto;
-    // TODO: Remove heading style for Orbit
-    h2, h3 {
-        display: none;
+    .list-description {
+        h2 {
+            font-family: $type-averta;
+            font-weight: 500;
+            @include type-style(22px, 32px);
+            margin: 60px 0 20px 0;
+            @include breakpoint($breakpoint-desktop-small) {
+                 padding-left: 40px;
+                 @include type-style(26px, 36px);
+            }
+        }
+        &+.link-list {
+            border-top: 1px solid $gray;
+        }
+        &:first-of-type {
+            h2 {
+                margin-top: 0;
+            }
+        }
     }
-    .copy {
-        @include child-margins(20px);
+    .link-list {
+        margin: 0;
+        padding: 13px 0;
+        font-family: $type-averta;
+        font-weight: 700;
+        @include type-style(18px, 28px);
+        border-bottom: 1px solid $gray;
+        @include breakpoint($breakpoint-desktop-small) {
+            padding: 24px 40px;
+        }
+        &:first-of-type {
+            border-top: 1px solid $gray;
+        }
+        a {
+            @include link($indigo, $orange);
+        }
         p {
-            @include sentinel-margins(20px);
-            font-family: $type-serif;
-            font-weight: 300;
-            @include type-style(24px, 32px);
+            margin: 0;
         }
-        .hanging-quote {
-            display: inline-block;
-            text-indent: -.4em;
+        .link-secondary {
+            font-family: $type-averta;
+            font-weight: 400;
+            @include type-style(18px, 28px);
+            @include breakpoint($breakpoint-desktop-small) {
+                float: right;
+                min-width: 275px;
+            }
         }
+    }
+    .list {
+        display: block;
+    }
+
+    .jump {
+        text-align: center;
+        margin-top: 50px;
     }
     @include breakpoint($breakpoint-desktop-small) {
         max-width: 1000px;
         margin: 80px auto;
+        .list {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+             p {
+                display: block;
+                max-width: 740px;
+             }
+        }
         .copy {
             @include child-margins(60px);
-            p {
-                @include sentinel-margins(60px);
-                @include type-style(32px, 40px);
-            }
         }
     }
 }

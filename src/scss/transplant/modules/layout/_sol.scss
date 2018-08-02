@@ -12,6 +12,10 @@
 }
 .sol {
     margin: 24px auto;
+    @include breakpoint($breakpoint-desktop-small) {
+    	margin: 60px auto;
+    }
+
     .copy-container {
     	max-width: 830px;
     	margin: 0 auto;
@@ -42,6 +46,9 @@
     	@include breakpoint($breakpoint-tablet) {
 	       @include type-style(18px, 28px);
 	    }
+    }
+    .copy {
+    	@include child-margins(20px);
     }
     .jump {
     	margin: 20px 0 0;
