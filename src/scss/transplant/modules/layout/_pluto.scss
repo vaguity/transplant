@@ -16,74 +16,67 @@
             background-position: center bottom;
         }
     }
-    &.background-orange {
-        background: $orange;
-    }
-    &.background-indigo {
-        background: $indigo;
-    }
 }
 
-.content .pluto-container.bleed .pluto.bleed {
-    max-width: 1600px;
+.content .pluto-container.bleed .pluto {
+    max-width: 1200px;
 }
 
 .pluto {
-    display: table;
-    width: 100%;
-    max-width: 1600px;
-    height: 300px;
-    margin: 0;
-    color: $white;
-    text-align: left;
-    box-sizing:border-box;
-    > div {
-        display: table-cell;
-        vertical-align: middle;
+    margin: 0 auto;
+    height: auto;
+    max-width: 1200px;
+    justify-content: space-around;
+    align-items: center;
+
+    @include breakpoint($breakpoint-desktop-small) {
+        min-height: 280px;
+        display: flex;
     }
     .copy-container {
-        padding: 0 24px;
+        width: 100%;
+        display: flex;
+        text-align: left;
+        @include breakpoint($breakpoint-desktop-small) {
+            width: 70%;
+            max-width: 570px;
+        }
+    }
+    .image-container {
+        width: 30%;
+        padding-top:40px;
+        margin: 0 0 24px;
+        @include breakpoint($breakpoint-desktop-small) {
+            display: flex;
+            align-items: center;
+            padding-top: 0;
+            margin: 0;
+        }
+    }
+    .image {
+        max-width: 140px;
+        margin: 0 auto;
+        &.logo-large {
+            max-width: 230px;
+        }
     }
     .copy {
-        max-width: 790px;
+        margin: 0;
+        color: $white;
         @include child-margins(20px);
         h2, h3, .highlight {
             @include sentinel-margins(20px);
             font-family: $type-serif;
-            font-weight: 500;
-            @include type-style(20px, 26px);
+            font-weight: 300;
+            @include type-style(32px, 40px);
         }
-        .jump a {
+        .btn {
             display: inline-block;
-        }
-    }
-    @include breakpoint($breakpoint-desktop-small) {
-        text-align: center;
-        > div {
-            padding: 0 30px;
-        }
-        .copy-container {
-            padding: 0;
-        }
-        .copy {
-            @include child-margins(40px);
-            h2, h3, .highlight {
-                @include sentinel-margins(40px);
-                @include type-style(24px, 32px);
-            }
-        }
-        &.left {
-            text-align: left;
-            .copy-container {
-                @include span(2 of 4 last);
-                @include post(2 of 4);
-            }
-        }
-        &.right {
-            text-align: right;
-            .copy-container {
-                @include span(2 of 4 last);
-                @include pre(2 of 4);
+            @include button-background($white, $gray, rgba(0,0,0,0), $white);
+            border: 1px solid $white;
+            box-shadow: none;
+            &:hover {
+                border-color: $white;
             }
         }
     }
