@@ -7,42 +7,46 @@
 
 .container.saturn-container.saturn-rings {
     background: $white;
-
     .image-container {
-        padding: 0;
+        padding: 0 20px;
         @include breakpoint($breakpoint-desktop-small) {
-            padding: 5px 0 80px;
+            padding: 5px 20px 80px;
             margin-top: 300px;
             .image {
                 margin-top: -240px;
             }
         }
         
-    }
+    }   
 
-    &.dark-gray-background .image-container {
-        background: $dark-gray;
-    }
-    &.gray-background .image-container {
-        background: $gray;
-    }
-    &.product-background .image-container {
-        background: $product-gray;
-    }
-    &.light-gray-background .image-container {
-        background: $light-gray;
-    }
-    &.light-background .image-container {
-        background: $off-white;
-    }
-    &.orange-background .image-container {
-        background: $orange;
+    @include breakpoint($breakpoint-desktop-small) {
+
+        &.dark-gray-background .image-container {
+            background: $dark-gray;
+        }
+        &.gray-background .image-container {
+            background: $gray;
+        }
+        &.product-background .image-container {
+            background: $product-gray;
+        }
+        &.light-gray-background .image-container {
+            background: $light-gray;
+        }
+        &.light-background .image-container {
+            background: $off-white;
+        }
+        &.orange-background .image-container {
+            background: $orange;
+        }
     }
 }
 
 .content .container.saturn-container + .container.sol-container {
     .segment {
+        margin-top: 20px;
         @include breakpoint($breakpoint-desktop-small) {
+            margin: 0;
             padding: 0 0 80px 0;
         }
     }
@@ -58,6 +62,14 @@
             color: $white;
         }
     }
+    &.container.alt-background {
+        .section-hed {
+            margin: 0 0 24px;
+            @include breakpoint($breakpoint-desktop-small) {
+                margin: 0 auto 80px;
+            }
+        }
+    }
 }
 .saturn {
     margin: 24px 0;
@@ -71,7 +83,6 @@
     }
     .image-container {
         text-align: center;
-        padding: 0 20px;
         max-width: 100%;   
     }
     .image {
