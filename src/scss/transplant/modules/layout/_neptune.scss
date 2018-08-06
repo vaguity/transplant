@@ -1,10 +1,21 @@
+.content .container.neptune-container.flush-image-container .segment {
+    padding: 0;
+}
+
+.neptune-container {
+    &.dark-gray-background , &.gray-background, &.product-background, &.orange-background {
+        .copy {
+            color: $white;
+        }
+    }
+}
 .neptune {
     margin: 24px 0;
     .copy-container {
+        width: 100%;
         display: inline-block;
     }
     .copy {
-        @include span(full);
         color: $darkgray;
         @include child-margins(20px);
         .label {
@@ -13,16 +24,17 @@
         h2, h3 {
             @include sentinel-margins(20px);
             font-family: $type-serif;
-            font-weight: 500;
+            font-weight: 300;
             @include type-style(24px, 32px);
         }
         p {
-            font-family: $type-base;
+            font-family: $type-averta;
             @include type-style(16px, 28px);
+            font-weight: 400;
         }
     }
     .image-container {
-        @include span(full);
+        width: 100%;
         margin: 0 0 24px;
     }
     .image {
@@ -32,16 +44,19 @@
             height: auto;
         }
     }
-    @include breakpoint($breakpoint-desktop-small) {
-        // TODO: Check inline-block fallback for older browsers
+    .btn {
         display: inline-block;
+    }
+    @include breakpoint($breakpoint-desktop-small) {
         display: flex;
+        justify-content: space-around;
         width: 100%;
         margin: 80px 0;
         .copy-container {
             display: inline-block;
             padding: 0;
-            @include span(20 of 36);
+            width: 35%;
+            max-width: 570px;
             margin: 0;
             color: $darkgray;
             text-align: center;
@@ -56,15 +71,16 @@
             @include child-margins(30px);
             h2, h3 {
                 @include sentinel-margins(30px);
-                @include type-style(24px, 32px);
+                @include type-style(32px, 40px);
             }
         }
         .image-container {
             display: inline-block;
             margin: 0;
-            @include span(15 of 36 last);
             text-align: center;
             vertical-align: middle;
+            width: 40%;
+            
         }
         .image {
             margin: 0 auto;
@@ -73,18 +89,46 @@
                 max-height: 600px;
             }
         }
-        &.left {
+        &.right {
             .copy-container {
-                padding: 0 (span(1 of 36) + (gutter(36) * 2)) 0 0;
                 order: 1;
             }
             .image-container {
                 order: 2;
             }
         }
-        &.right {
-            .copy-container {
-                padding: 0 0 0 (span(1 of 36) + (gutter(36) * 2));
+
+    }
+    &.flush-image {
+        display: flex;
+        flex-flow: column;
+        @include breakpoint($breakpoint-desktop-small) {
+            flex-flow: row;
+            padding-bottom: 0;
+        }
+        .image-container {
+            align-self: flex-end;
+            margin: 0;
+            order: 2;
+            @include breakpoint($breakpoint-desktop-small) {
+                padding-top: 80px;
+                order: 1;
+            }
+            .image {
+                margin: 0 auto;
+                text-align: center;
+                img {
+                    width: auto;
+                    max-height: 490px;
+                }
+            }
+        }
+        .copy-container {
+            order: 1;
+            padding: 24px 0;
+            @include breakpoint($breakpoint-desktop-small) {
+                order: 2;
+                padding: 80px 0;
             }
         }
     }
@@ -96,12 +140,6 @@
             h2, h3 {
                 @include sentinel-margins(40px);
             }
-        }
-        &.left .copy {
-            float: right;
-        }
-        &.right .copy {
-            float: left;
         }
     }
 }

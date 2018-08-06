@@ -52,7 +52,7 @@
 }
 
 .container {
-    &.dark-gray-background, &.gray-background {
+    &.dark-gray-background, &.gray-background, &.product-background {
         .btn {
             @include button-background($white, $gray, rgba(0,0,0,0), $white);
             border: 1px solid $white;
