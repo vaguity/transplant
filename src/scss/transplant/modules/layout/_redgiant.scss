@@ -98,6 +98,7 @@
 	}
 	.copy {
 		max-width: 560px;
+		@include child-margins(20px);
 	}
 	h1 {
 		@include type-style(28px, 36px);
