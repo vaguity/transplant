@@ -1,6 +1,14 @@
+.container.alt-background.earth-container {
+    .segment {
+        margin: 0;
+        padding: 24px 0;
+        @include breakpoint($breakpoint-desktop-small) {
+            padding: 80px 0 40px;
+        }
+    }
+}
 .earth-container .segment {
-    margin: 0 auto;
-    padding: 80px 0 40px;
+    margin: 80px auto 40px ;
 }
 
 .earth {
