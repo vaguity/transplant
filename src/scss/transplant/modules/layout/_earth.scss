@@ -109,6 +109,7 @@
             transition: opacity .3s;
             box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
             content: '';
+            pointer-events: none;
         }
         @include breakpoint($breakpoint-tablet) {
             &:hover {
