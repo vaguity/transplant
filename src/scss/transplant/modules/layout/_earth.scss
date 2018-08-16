@@ -7,7 +7,10 @@
     }
 }
 .earth-container .segment {
-    margin: 80px auto 40px ;
+    margin: 24px auto ;
+    @include breakpoint($breakpoint-desktop-small) {
+        margin: 80px auto 40px ;
+    }
 }
 
 .earth {
@@ -16,7 +19,11 @@
     line-height: 0;
     .section-hed {
         max-width: 830px;
-        margin: 0 auto 80px;
+        margin: 0 auto 24px;
+        @include breakpoint($breakpoint-desktop-small) {
+            margin: 0 auto 80px;
+        }
+
         h1, h3, h2 {
             text-align: center;
         }
