@@ -49,6 +49,30 @@
     &.indigo-background {
         background-color: $indigo;
     }
+
+    hr {
+        &.white-background {
+            border-color: $white;
+        }
+        &.orange-background {
+            border-color: $orange;
+        }
+        &.light-background {
+            border-color: $off-white;
+        }
+        &.light-gray-background {
+            border-color: $light-gray;
+        }
+        &.gray-background {
+            border-color: $gray;
+        }
+        &.dark-gray-background {
+            border-color: $dark-gray;
+        }
+        &.product-background {
+            border-color: $product-gray;
+        }
+    }
 }
 
 .container {
