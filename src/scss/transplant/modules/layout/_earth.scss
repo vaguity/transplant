@@ -5,6 +5,12 @@
             padding-bottom: 40px;
         }
     }
+    .section-hed {
+        margin: 0 auto 24px;
+        @include breakpoint($breakpoint-desktop-small) {
+            margin: 0 auto 80px;
+        }
+    }
 }
 .earth-container .segment {
     margin: 24px auto ;
