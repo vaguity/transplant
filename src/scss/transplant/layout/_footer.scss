@@ -128,4 +128,34 @@
             }
         }
     }
+
+    &.landing-page {
+        .secondary-nav {
+            @include breakpoint($breakpoint-desktop-small) {
+                display: flex;
+            }
+            .footer-logo a {
+                margin: 0;
+                padding: 30px;
+                @include breakpoint($breakpoint-desktop-small) {
+                    padding: 0;
+                    margin: 40px 0 40px 30px;
+                }
+            }
+            .footer-nav {
+                ul {
+                    margin: 0;
+                    padding: 0 0 30px 30px;
+                    @include breakpoint($breakpoint-desktop-small) {
+                        margin: 40px 30px 40px 0;
+                        padding: 0;                    
+                        li {
+                            margin: 12px 24px 0 0;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
 }
