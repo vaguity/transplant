@@ -1,10 +1,9 @@
 input, select, textarea {
     display: inline-block;
     box-sizing: border-box;
-    font-family: $type-sans;
+    font-family: $type-base;
     text-transform: none;
-    // TODO: Check use of font-size vs. type-style mixin
-    font-size: 16px;
+    @include type-style(15px, 15px);
     margin: 6px 0;
     border-radius: 0;
     border: none;
@@ -12,7 +11,7 @@ input, select, textarea {
     padding: 14px 12px 10px;
     overflow: hidden;
     line-height: 20px;
-    color: $orange;
+    color: $darkgray;    
     &:focus {
         outline: none;
     }

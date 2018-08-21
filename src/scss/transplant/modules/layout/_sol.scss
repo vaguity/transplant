@@ -57,6 +57,13 @@
     .copy {
     	@include child-margins(20px);
     }
+    .highlight {
+    	text-align: center;
+    	@include type-style(16px, 26px);
+    	@include breakpoint($breakpoint-tablet) {
+	       @include type-style(22px, 32px);
+	    }
+    }
     .jump {
     	margin: 20px 0 0;
     	@include breakpoint($breakpoint-desktop-small) {
