@@ -93,6 +93,17 @@
             }
         }
     }
+
+    .form.event-signup {
+        margin: 0 auto;
+        min-width: 250px;
+        @include breakpoint($breakpoint-mobile) {
+            min-width: 320px;
+        }
+        @include breakpoint($breakpoint-tablet) {
+            width: 400px;
+        }
+    }
 }
 
 .supernova.bleed > div {

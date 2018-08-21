@@ -234,7 +234,6 @@
             </div>
         </div>
 
-
         <div class="supernova-container container bleed background-right" style="background-image: url('assets/img/style-guide/supernova-c-2000.jpg');">
             <div class="segment supernova">
                 <div>
@@ -243,6 +242,82 @@
                             <h3 class="first">Supernova title H3</h3>
                             <div class="jump last first">
                                 <a href="#" class="btn">Take the Tour</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="supernova-container container bleed background-right" style="background-image: url('assets/img/style-guide/supernova-c-2000.jpg');">
+            <div class="segment supernova">
+                <div>
+                    <div class="copy-container">
+                        <div class="copy">
+                            <h3 class="first">Supernova title H3</h3>
+                            <div class="form event-signup">
+                                <script>
+                                if (typeof MktoForms2 === 'undefined') {
+                                    document.write("\x3Cscript src=\"//app-sj02.marketo.com/js/forms2/js/forms2.min.js\">\x3C/script>");
+                                }
+                                </script>
+                                <div class="mktoCustomError mktoCustomError_2705" style="display: none;"></div>
+
+                                <form id="mktoForm_2705" style="visibility: hidden;" class="marketo-form" data-id="2705" data-redirect-url="?success=1" data-field-display="inline-block"></form>
+
+                                <script>
+                                if (typeof marketoForm === 'undefined') {
+                                    var marketoForm = {};
+                                }
+                                var marketoFormID = 2705;
+                                var marketoFormSelector = '#mktoForm_' + marketoFormID;
+                                marketoForm[marketoFormID] = {
+                                    'selector': '#mktoForm_' + marketoFormID,
+                                    'redirect-url': $(marketoFormSelector).data('redirect-url'),
+                                    'display': typeof $(marketoFormSelector).data('field-display') !== 'undefined' ? $(marketoFormSelector).data('field-display') : 'inline',
+                                    'marketoLoadForm': function() {},
+                                };
+
+                                marketoForm[2705]['marketoLoadForm'] = function() {
+                                    $(marketoForm[2705]['selector']).empty();
+                                    MktoForms2.loadForm("//app-sj02.marketo.com", "306-EXV-607", 2705, function(form) {
+                                        form.onSuccess(function(values, followUpUrl) {
+                                            formsRedirect(values, marketoForm[2705]['redirect-url'], 2705);
+                                            return false;
+                                        });
+                                        form.onValidate(function(callback) {
+                                            var submittable = true;
+                                            var marketoValidationCheck = []
+
+                                            marketoValidationCheck.push(formsValidateRequired($(marketoForm[2705]['selector']  + ' .mktoRequired'), 2705));
+
+                                            marketoValidationCheck.push(formsValidateEmail($(marketoForm[2705]['selector'] + ' input#Email').val(), 2705));
+
+                                            for (var i = marketoValidationCheck.length - 1; i >= 0; i--) {
+                                                if (marketoValidationCheck[i] === false) {
+                                                    submittable = false;
+                                                }
+                                            }
+
+                                            form.submittable(submittable);
+                                        });
+                                    });
+
+                                    MktoForms2.whenReady(function(form) {
+                                        formsStyleReset(marketoForm[2705]['selector'], marketoForm[2705]['display']);
+                                        stickySetup();
+                                    });
+                                }
+
+                                marketoForm[2705]['marketoLoadForm']();
+
+                                enquire.register("screen and (max-width: 1000px)", {
+                                    unmatch: function() {
+                                        marketoForm[2705]['marketoLoadForm']();
+                                    }
+                                });
+                                </script>
                             </div>
                         </div>
                     </div>
