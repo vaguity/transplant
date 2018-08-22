@@ -45,7 +45,7 @@ input, select {
 }
 
 input, textarea {
-    @include placeholder($orange);
+    @include placeholder($darkgray);
 }
 
 select {

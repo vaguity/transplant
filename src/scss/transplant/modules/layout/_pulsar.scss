@@ -40,6 +40,12 @@
                 border: 1px solid $lightgray-dark;
             }
         }
+        label {
+            color: $white;
+            @include breakpoint($breakpoint-tablet) {
+                color: $darkgray;
+            }
+        }
     }
 
     .copy-container {
