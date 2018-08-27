@@ -74,3 +74,79 @@
     	display: inline-block;
     }
 }
+
+.sol-modal-container {
+	max-width: 960px;
+    margin: 0 auto;
+    padding: 40px;
+    background: $white;
+    color: $darkgray;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .15);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+
+    .modal-close {
+        @include link($gray, $orange);
+        right: 20px;
+        top: 20px;
+    }
+
+    .modal {
+        display: flex;
+    }
+
+    .image-container {
+        flex-basis: 40%;
+    }
+
+    .copy-container {
+        flex-basis: 60%;
+        margin-left: 40px;
+    }
+
+    .copy {
+        margin: 0;
+    }
+
+    h3 {
+        font-family: $type-averta;
+        font-weight: 700;
+        @include type-style(24px, 32px);
+    }
+
+    p {
+        font-family: $type-averta;
+        font-weight: 400;
+        @include type-style(16px, 26px);
+        &.highlight {
+            @include type-style(22px, 28px);
+        }
+    }
+    .form {
+    	padding: 0;
+    	box-sizing: unset;
+    	.mktoFieldDescriptor.mktoFormCol {
+    		width: auto;
+    	}
+    }
+    .modal-content {
+    	form {
+    		input {
+    			@include placeholder($darkgray);
+
+    		}
+    		button {
+    			@include button-background($white, $offwhite, $orange, $darkorange);
+    			width: 300px;
+    			font-family: $type-averta;
+				font-weight: 700;
+				@include type-style(16px, 16px);
+				text-transform: none;
+				padding: 10px 20px;
+    		}
+    	}
+    	
+    }
+}
