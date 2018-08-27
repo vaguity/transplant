@@ -32,7 +32,7 @@
 .modal-container {
     display: none;
     width: 100%;
-    background-color: $orange;
+    background-color: $white;
     .segment {
         padding: 5%;
     }
@@ -40,7 +40,7 @@
         min-width: 0;
         padding: 0;
         border: none;
-        color: $white;
+        color: $darkgray;
         background: transparent;
         font-size: 0;
         line-height: 32px;
@@ -100,10 +100,10 @@
     position: fixed;
     overflow-y: scroll;
     overflow-x: hidden;
-    background: $orange;
+    background: $white;
     min-height: 100vh;
     z-index: 20;
-    color: $white;
+    color: $darkgray;
     @include span(full);
     -webkit-overflow-scrolling: touch;
     @include breakpoint($breakpoint-desktop-small) {
@@ -118,7 +118,7 @@
 }
 
 .modal-title {
-    color: $white;
+    color: $darkgray;
     margin: 0;
     text-align: left;
     font-family: $type-base;
@@ -152,16 +152,9 @@
         box-sizing: border-box;
         @include breakpoint($breakpoint-desktop-small) {
             @include span(264px);
-            @include placeholder($orange);
+            @include placeholder($darkgray);
             margin: 12px;
         }
-    }
-    button {
-        margin: 12px 0 100px;
-        @include button;
-        @include link($white, $indigo);
-        @include button-background($white, $offwhite, $indigo, $darkorange);
-        border-width: 0;
     }
     @include breakpoint($breakpoint-desktop-small) {
         text-align: center;
