@@ -155,9 +155,6 @@
             display: block;
             float: none;
             border-bottom: 1px solid $lightgray;
-            .modal-active & {
-                border-color: $white;
-            }
             @include breakpoint($breakpoint-desktop-small) {
                 &:last-of-type {
                     border-bottom: none;
@@ -357,7 +354,7 @@
             width: 100%;
             display: flex;
             justify-content: space-between;
-            border: 1px solid $white;
+            border: 1px solid $lightgray;
             border-width: 0 0 1px;
         }
         ul {
@@ -368,7 +365,7 @@
             li {
                 display: block;
                 margin: 0 24px;
-                border: 1px solid $white;
+                border: 1px solid $lightgray;
                 border-width: 0 0 1px;
                 ul li {
                     margin: 0;
@@ -420,11 +417,11 @@
                     }
 
                     &:active, &:hover {
-                        color: $white
+                        color: $darkgray;
                     }
 
                     &.active:hover, &.active:active {
-                        color: $indigo;
+                        color: $orange;
                     }
 
 
@@ -456,13 +453,14 @@
         .icon {
             display: block;
             margin: 0;
-            color: $white;
+            color: $darkgray;
         }
     }
 
     .footer-nav {
         display: block;
         margin: 0;
+        padding-bottom: 200px;
         ul {
             margin: 0 0 0 24px;
             li {
@@ -475,9 +473,9 @@
         }
     }
     a {
-        @include link($white, $indigo);
+        @include link($darkgray, $orange);
         &.active {
-            @include link($indigo, $white);
+            @include link($orange, $orange);
         }
     }
 }
