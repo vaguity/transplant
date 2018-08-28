@@ -66,6 +66,7 @@
     }
     .jump {
     	margin: 20px 0 0;
+    	text-align: center;
     	@include breakpoint($breakpoint-desktop-small) {
     		margin: 40px 0;
     	}
@@ -78,7 +79,6 @@
 .sol-modal-container {
 	max-width: 960px;
     margin: 0 auto;
-    padding: 40px;
     background: $white;
     color: $darkgray;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .15);
@@ -87,6 +87,9 @@
     transform: translate(-50%, -50%);
     box-sizing: border-box;
 
+    @include breakpoint($breakpoint-desktop-small) {
+    	padding: 40px;
+    }
     .modal-close {
         @include link($gray, $orange);
         right: 20px;
@@ -131,7 +134,20 @@
     		width: auto;
     	}
     }
+    .modal-description {
+    	display: block;
+    	text-align: left;
+    	margin: 40px 0 0 0;
+    	@include breakpoint($breakpoint-desktop-small) {
+    		text-align: center;
+    		margin: 40px 0;
+    	}
+    }
     .modal-content {
+    	padding-bottom: 100px;
+    	@include breakpoint($breakpoint-desktop-small) {
+    		padding-bottom: 0;
+    	}
     	form {
     		input {
     			@include placeholder($darkgray);
@@ -139,7 +155,10 @@
     		}
     		button {
     			@include button-background($white, $offwhite, $orange, $darkorange);
-    			width: 300px;
+    			width: 100%;
+    			@include breakpoint($breakpoint-desktop-small) {
+    				width:300px;
+    			}
     			font-family: $type-averta;
 				font-weight: 700;
 				@include type-style(16px, 16px);
