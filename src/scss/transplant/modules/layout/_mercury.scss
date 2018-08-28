@@ -120,4 +120,8 @@
             @include type-style(22px, 32px);
         }
     }
+
+    .btn {
+        display: inline-block;
+    }
 }
