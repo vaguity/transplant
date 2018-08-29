@@ -79,7 +79,6 @@ button {
     border-width: 0;
     color: $white;
     background-color: $orange;
-    text-transform: uppercase;
     font-family: $type-averta;
     @include type-style(16px, 16px);
     &:focus {
