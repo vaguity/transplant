@@ -2,16 +2,26 @@
 
 ## 4.0.0
 - Update overall typography and change base font to Averta Standard
-- Update style of Main navigation and footer
+- Update style of main navigation and footer
+- Update style of mobile navigation
 - Update default button style
 - Add new gray colors
-- Remove most unused legacy styles
+- Add background color classes to main containers
+- Add color style classes to hr
+- Remove most unused legacy styles and modules (support for these sould be in the project itself under legacy)
 
-- Supernova: update height
+- Supernova: update height and add default form style
 - Mercury: update to new style of quote with variations
 - Earth: make default have max width and type-ii full width. Add type-iii variant
-- 
-
+- Sol: update to handle titles and intros
+- Uranus: adjust ratio of image and copy
+- Venus: update style for customer logos
+- Saturn: add new variant `saturn-rings`
+- Neptune: add new variant `flush-image`
+- Pluto: update style to handle customer logos
+- Orbit: update to new style to handle lists
+- Pulsar: updated form module and added color variants
+- Add new module Redgiant
 
 ## 3.2.11
 
